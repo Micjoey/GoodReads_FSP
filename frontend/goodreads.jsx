@@ -22,4 +22,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
+  // ReactDOM.render(<h1>TESTING OUT</h1>, root);
 });
