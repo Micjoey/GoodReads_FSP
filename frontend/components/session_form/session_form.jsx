@@ -42,7 +42,6 @@ class SessionForm extends React.Component {
   render() {
 
     return (
-      <header className="">
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <br />
@@ -74,7 +73,6 @@ class SessionForm extends React.Component {
             </div>
           </form>
         </div>
-      </header>
     );
   }
 }

@@ -1,51 +1,25 @@
-* {
+/* * {
     background-color: rgb(254, 243, 219);
-}
-
+} */
 
 .header-link {
-    height: 65px;
-    padding-top: 10px;
-    width: 970px;
-    margin: 0 auto;
+    background-color: violet;
+    align-items: left;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    
-}
-.login-input {
-    background-color: white;
-    font-size: 13px;
-    margin: 2px;
-    color: #333333;
-    border: #DCD6CC 1px solid;
-    border-radius: 3px;
-    padding: 5px;
-    width: 120px;
-
-}
-.login-form {
-    float: right
-}
-.login-signup {
-    float: right;
+    padding-left: 50px;
 }
 
-.session-submit {
-    border-radius: 3px;
-    border: 1px solid #D6D0C4;
-    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-    font-size: 14px;
-    -moz-appearance: none;
-    -o-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    cursor: pointer;
-    display: inline-block;
-    text-decoration: none;
-    color: #333333;
-    background-color: #F4F1EA;
-    line-height: 1;
-    padding: 8px 12px;
+.login-form { 
+    background-color: green;
+    display: flex;
+    position: relative;
+    padding: 10px;
+    justify-content: space-between;
+    flex-direction: row;
+
 }
+
+
+
 

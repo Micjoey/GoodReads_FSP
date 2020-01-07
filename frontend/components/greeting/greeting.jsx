@@ -11,9 +11,9 @@ const Greeting = ({ currentUser, logout }) => {
     //   &nbsp;or&nbsp;
     //   <Link to="/signup">Sign up!</Link>
     // </nav>
-    <header>
-      <LoginFormContainer />
-    </header>
+    <div className="login-fields">
+      <LoginFormContainer/>
+    </div>
    
   );
 
