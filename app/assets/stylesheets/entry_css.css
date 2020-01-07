@@ -22,7 +22,6 @@
 }
 
 .firework {
-    background-image:url("../images/fireworks.jpeg");
     background-position:center;
     width:100%;
     height:400px;
@@ -33,7 +32,9 @@
     margin: 0px;
 }
 .login-form { 
-    background-color: green;
+    /* Preview code */
+    /* background-color: green; */
+    /*  */
     display: flex;
     position: relative;
     padding: 10px;

@@ -12,30 +12,33 @@ import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-
+import EntryFile from './entry/entryfile'
 
 const App = () => (
   <div>
-    <header className="header-link">
-      <Link to="/" className="myreads-title">
-       MyReads
-      </Link>
-      <div className="greeting-container">
-        <GreetingContainer />
-      </div>
-    </header>
-    <div className="background-box">
-      <img src={images.fireworks} className="firework" alt=""/>
-      Image should be here
-    </div>
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-      {/* <ProtectedRoute exact path="/benches/new" component={BenchFormContainer} /> */}
-      {/* <Route path="/benches/:benchId" component={BenchShowContainer} /> */}
-      {/* <Route exact path="/" component={SearchContainer} /> */}
+      <Route path="/" component={EntryFile}/>
     </Switch>
   </div>
 );
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <ProtectedRoute exact path="/benches/new" component={BenchFormContainer} /> */}
+{/* <Route path="/benches/:benchId" component={BenchShowContainer} /> */}
+{/* <Route exact path="/" component={SearchContainer} /> */}
