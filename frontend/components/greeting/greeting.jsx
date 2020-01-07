@@ -6,16 +6,12 @@ import LoginFormContainer from '../session_form/login_form_container';
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
-    // <nav className="login-signup">
-    //   <Link to="/login">Login</Link>
-    //   &nbsp;or&nbsp;
-    //   <Link to="/signup">Sign up!</Link>
-    // </nav>
     <div className="login-fields">
       <LoginFormContainer/>
     </div>
    
   );
+
 
 
 

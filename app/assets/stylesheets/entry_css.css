@@ -3,13 +3,40 @@
 } */
 
 .header-link {
-    background-color: violet;
+    /* background-color: violet; */
     align-items: left;
     display: flex;
     justify-content: space-between;
     padding-left: 50px;
+    padding-right: 50px;
+    background-color: #f4f2e9;
+    text-decoration: none;
+    align-items: center;
 }
 
+.myreads-title {
+    text-decoration: none;
+    font-size: 50px;
+    color: black
+}
+
+.header-name {
+    display: flex;
+    position: relative;
+    padding: 5px;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+.header-button {
+    
+}
+
+
+.login-fields {
+    padding: 0px;
+    margin: 0px;
+}
 .login-form { 
     background-color: green;
     display: flex;
@@ -17,8 +44,9 @@
     padding: 10px;
     justify-content: space-between;
     flex-direction: row;
-
+    align-items: center;
 }
+
 
 
 
