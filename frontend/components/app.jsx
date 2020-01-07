@@ -13,14 +13,21 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
+
 const App = () => (
   <div>
     <header className="header-link">
       <Link to="/" className="myreads-title">
        MyReads
       </Link>
-        <GreetingContainer/>
+      <div className="greeting-container">
+        <GreetingContainer />
+      </div>
     </header>
+    <div className="background-box">
+      <img src={images.fireworks} className="firework" alt=""/>
+      Image should be here
+    </div>
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />

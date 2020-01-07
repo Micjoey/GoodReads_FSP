@@ -6,9 +6,15 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <script type="text/javascript">
+      window.images = {
+        fireworks: "<%= image_url('fireworks.jpeg')%>"
+      }
+    </script>
   </head>
 
   <body>
     <%= yield %>
+
   </body>
 </html>
