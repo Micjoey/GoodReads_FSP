@@ -17,7 +17,7 @@ const App = () => (
   <div>
     <header>
       <Link to="/" className="header-link">
-        <h1>MyReads</h1>
+        <h1 id="title">MyReads</h1>
       </Link>
       <GreetingContainer />
     </header>
