@@ -1,0 +1,24 @@
+.header-link {
+    display: block;
+    margin: 0 auto;
+    text-align: left;
+    width: 970px;
+    position: relative;
+    font-size: 12px;
+    cursor: pointer;
+    color: black;
+}
+
+.login-signup {
+    background: #FFFFFF;
+    border-radius: 3px;
+    border: #DCD6CC 1px solid;
+    color: #333333;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    resize: none;
+}
+
+#password-field {
+    -webkit-text-security: disc;
+}
+
