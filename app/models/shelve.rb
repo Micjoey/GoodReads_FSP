@@ -1,0 +1,2 @@
+class Shelve < ApplicationRecord
+end
