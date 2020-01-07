@@ -42,39 +42,38 @@ class SessionForm extends React.Component {
   render() {
 
     return (
-      <header className="hello">
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br/>
-
-          {this.renderErrors()}
-          <div className="login-form">
-            <br/>
-            <label>
-              {/* Username: */}
-              <input type="text"
-                placeholder="Username"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>
-              {/* Password: */}
-              <input type="password"
-                placeholder="Password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-                id='password-field'
-              />
-            </label>
-            <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
-          </div>
-        </form>
-      </div>
+      <header className="">
+        <div className="login-form-container">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            <br />
+            {this.renderErrors()}
+            <div className="login-form">
+              <br />
+              <label>
+                {/* Username: */}
+                <input type="text"
+                  placeholder="Username"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  className="login-input"
+                />
+              </label>
+              <br />
+              <label>
+                {/* Password: */}
+                <input type="password"
+                  placeholder="Password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="login-input"
+                  id='password-field'
+                />
+              </label>
+              <br />
+              <input className="session-submit" type="submit" value={this.props.formType} />
+            </div>
+          </form>
+        </div>
       </header>
     );
   }
