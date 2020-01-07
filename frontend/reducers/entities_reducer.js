@@ -5,7 +5,8 @@ import reviews from './reviews_reducer';
 import users from './users_reducer';
 
 export default combineReducers({
-  benches,
+  books,
+  bookshelf,
   reviews,
   users,
 });
