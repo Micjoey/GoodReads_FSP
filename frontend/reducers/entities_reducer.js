@@ -3,8 +3,8 @@ import { combineReducers } from 'redux';
 import users from './users_reducer';
 
 export default combineReducers({
-  books,
-  bookshelf,
-  reviews,
+  // book,
+  // bookshelf,
+  // reviews,
   users,
 });
