@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginFormContainer from '../session_form/login_form_container';
+import personalGreeting from './logged_in';
+import LoggedInContainer from './logged_in_container.js';
 
 
 
@@ -9,18 +11,13 @@ const Greeting = ({ currentUser, logout }) => {
     <div className="login-fields">
       <LoginFormContainer/>
     </div>
-   
   );
 
-
-
-
-
   const personalGreeting = () => (
-    <hgroup className="header-group">
-      <h2 className="header-name">Hi, {currentUser.username}!</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
-    </hgroup>
+    <div>
+      <LoggedInContainer/>
+    </div>
+
   );
 
   return currentUser ? personalGreeting() : sessionLinks();
