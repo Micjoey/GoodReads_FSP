@@ -12,14 +12,15 @@ import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import EntryFile from './entry/entryfile'
+import EntryFileContainer from './entry/entryfile_container'
 
 const App = () => (
   <div>
     <Switch>
-      <AuthRoute exact path="/login" component={LogInFormContainer} />
-      <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-      <Route exact path="/" component={EntryFile}/>
+      {/* <AuthRoute exact path="/login" component={LogInFormContainer} />
+      <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
+      <Route exact path="/" component={EntryFileContainer}/>
+      {/* <Route exact path="/home" component={EntryFile}/> */}
     </Switch>
   </div>
 );

@@ -12,49 +12,57 @@ import LoggedInContainer from '../greeting/logged_in_container'
 class EntryFile extends React.Component {
     constructor(props) {
         super(props); 
+
     }
 
 
 
+    personalGreeting() {
+        return(
+        <params className="header-group">
+            <Link to="/" className="myreads-title">MyReads</Link>
+                <h2 className="header-name">Hi, {this.props.currentUser.username}!</h2>
+            <button className="header-button" onClick={this.props.logout}>Log Out</button>
+        </params>
+        )
+    }
+
+    sessionLinks() {
+        return (
+            <GreetingContainer/>
+        )
+    }
 
     render() {
         // debugger
-        console.log(this.props.currentUser)
-
-        const whatever = this.props.currentUser ? (
-            <div>
-                something
-            </div>
-        ) : (
-            <div>
-                not something
-            </div>
-        )
-
-        return(
-            <div className="entryFile">
-                <div className="header-bar" id="header-link">
-                    <Link to="/" className="myreads-title">MyReads</Link>
-                    {whatever}
-                    {typeof (currentUser) === 'undefined' ? <LogInFormContainer /> : <LoggedInContainer /> } 
-                    {/* { this.props.formType === 'login' ? <LogInFormContainer /> : <LoggedInContainer /> }  */}
-                </div>
-                <div className="greeting-container">
-                    <GreetingContainer />
-                </div>
-                {/* <div className="background-box">
-                        <img src={images.fireworks} className="firework" alt="" />
-                        <div className="sign-up-form-box">
-                            <div className="sign-up-form">
-                                <p className="sign-up-form-title">New Here? Sign Up Below!</p>
-                                <SignUpFormContainer/>
-                            </div>
-                        </div>
-                    </div> */}
-            </div>
-        )
+            if (this.props.currentUser) {
+                return this.personalGreeting()
+            } else {
+                return this.sessionLinks()
+            }
+            // <div className="entryFile">
+            //     <div className="header-bar" id="header-link">
+            //       
+            //         {this.props.currentUser ? <LoggedInContainer /> : <GreetingContainer /> } 
+            //     </div>
+            // </div>
     }
 }
 
 
 export default EntryFile;
+
+{/* <div className="greeting-container">
+<GreetingContainer />
+</div> */}
+{/* <div className="background-box">
+<img src={images.fireworks} className="firework" alt="" />
+<div className="sign-up-form-box">
+<div className="sign-up-form">
+<p className="sign-up-form-title">New Here? Sign Up Below!</p>
+<SignUpFormContainer/>
+</div>
+</div>
+</div> */}
+{/* { typeof(this.props.currentUser === 'undefined') ? <LogInFormContainer /> : <LoggedInContainer />} */}
+{/* {this.props.currentUser ? <LogInFormContainer /> : <LoggedInContainer /> }  */}

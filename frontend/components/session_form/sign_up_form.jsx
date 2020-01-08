@@ -30,24 +30,23 @@ class SessionFormSignUp extends React.Component {
     // }
   }
 
-  // renderErrors() {
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  renderErrors() {
+    const errors = this.props.errors.length === 0 ? (<div className="hidden"></div>) : (<ul>
+      {this.props.errors.map((error, i) => (
+        <li className="login-errors" key={`error-${i}`}>
+          {error}
+        </li>
+      ))}
+    </ul>)
+    return errors
+  }
 
   render() {
     
     return (
         <div className="sign-up-container">
           <form onSubmit={this.handleSubmit} className="sign-up-box">
-            {/* {this.renderErrors()} */}
+            {this.renderErrors()}
             <div className="sign-up">
               <label className="username-field">
                 {/* Username: */}

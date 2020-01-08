@@ -17,6 +17,8 @@ body {
     height: 50px;
 
 }
+
+
 /* .entryFile {
     display: flex;
 } */
@@ -58,10 +60,18 @@ body {
 }
 
 .logged-in{
-
 display: inline-block;
 justify-content: space-around;
 
+}
+
+.entryfile-view-to-login {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f4f2e9;
+    height: 70px;
+    vertical-align: text-bottom;
+    align-self: auto;
 }
 
 .sign-up-form-box {
@@ -146,15 +156,16 @@ justify-content: space-around;
     background-color: #f4f2e9;
     display: flex;
     justify-content: space-between;
-    vertical-align: middle;
+    vertical-align: text-bottom;
     height: 20%;
 }
 
 .login-form-container {
-    display: flex;
+
     /* width: 10px; */
-    align-items: left;
+    align-items: center;
     background-color: #f4f2e9;
+
 }
 
 
@@ -164,27 +175,15 @@ justify-content: space-around;
     position: relative;
     flex-wrap: wrap;
     width: 0px;
-    padding-left: 0%; */
+    padding-left: 0%; 
     /* flex-direction: row-reverse; */
     /* width: 100px; */
-    /* height: 0px;
+    /* height: 0px; */
+    align-items:center;
 
 }
 
 
-.password-field {
-    /* display: flex;
-    position: relative;
-    flex-wrap: wrap;
-    width: 100px; 
-    height: 0px; */
-}
-
-.test {
-    display: flex;
-    justify-content: space-between;
-    vertical-align: center;
-}
 
 .login-form { 
     /* Preview code */
@@ -194,7 +193,6 @@ justify-content: space-around;
     position: relative;
     flex-wrap: wrap;
     padding: 10px;
-    justify-content: space-between;
     flex-direction: row;
     align-items: center;
     vertical-align: middle;

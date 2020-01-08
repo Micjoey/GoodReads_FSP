@@ -1,36 +1,63 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginFormContainer from '../session_form/login_form_container';
-import LoggedInContainer from './logged_in_container.js';
 import SignUpFormContainer from '../session_form/signup_form_container'
 
 
-const Greeting = ({ currentUser, logout }) => {
-  const sessionLinks = () => (
-    <div className="header-link">
-          {/* <div className="sign-up-form-box"> */}
-            <div className="sign-up-form-box">
-              <p className="sign-up-form-title">New Here? Sign Up Below!</p>
-              <SignUpFormContainer />
-            </div>
-          {/* </div> */}
-        <div className="background-box">
-          <img src={images.fireworks} className="firework" alt="" />
+
+class Greeting extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return (
+      <div className="entryfile-view-to-login-or-signup">
+        <div className="entryfile-view-to-login">
+            <Link to="/" className="myreads-title">MyReads</Link>
+            <LoginFormContainer/>
         </div>
+          <div className="sign-up-form-box">
+            <p className="sign-up-form-title">New Here? Sign Up Below!</p>
+            <SignUpFormContainer />
+          </div>
+            <div className="background-box">
+              <img src={images.fireworks} className="firework" alt="" />
+            </div>
+      </div>
+    )
+  }
 
-    </div>
-  );
+}
 
-  const personalGreeting = () => (
-    <div className="logged-in">
-      <LoggedInContainer/>
-    </div>
 
-  );
 
-  return currentUser ? personalGreeting() : sessionLinks();
-  // return sessionLinks()
-};
+// const Greeting = ({ currentUser, logout }) => {
+//   const sessionLinks = () => (
+//     <div className="header-link">
+//           {/* <div className="sign-up-form-box"> */}
+//             <div className="sign-up-form-box">
+//               <p className="sign-up-form-title">New Here? Sign Up Below!</p>
+//               <SignUpFormContainer />
+//             </div>
+//           {/* </div> */}
+//         <div className="background-box">
+//           <img src={images.fireworks} className="firework" alt="" />
+//         </div>
+
+//     </div>
+//   );
+
+//   const personalGreeting = () => (
+//     <div className="logged-in">
+//       <LoggedInContainer/>
+//     </div>
+
+//   );
+
+//   return currentUser ? personalGreeting() : sessionLinks();
+//   // return sessionLinks()
+// };
 
 
 export default Greeting;
