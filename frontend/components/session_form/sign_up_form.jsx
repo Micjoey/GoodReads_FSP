@@ -49,16 +49,13 @@ class SessionFormSignUp extends React.Component {
             {this.renderErrors()}
             <div className="sign-up">
               <label className="username-field">
-                {/* Username: */}
                 <input type="text"
                   placeholder="Username"
                   value={this.state.username}
                   onChange={this.update('username')}
                 />
               </label>
-
             <label className="email-field">
-                {/* Username: */}
                 <input type="email"
                   placeholder="Email"
                   value={this.state.email}
@@ -66,7 +63,6 @@ class SessionFormSignUp extends React.Component {
                 />
             </label> 
             <label className="password-field">
-                {/* Password: */}
                 <input type="password"
                   placeholder="Password"
                   value={this.state.password}
