@@ -27,10 +27,9 @@ class EntryFile extends React.Component {
                 <div className="background-box">
                     <img src={images.fireworks} className="firework" alt="" />
                     <div className="sign-up-form-box">
-                        <p id="new-here">New Here? Sign Up Below!</p>
                         <div className="sign-up-form">
-
-                        <SignUpFormContainer/>
+                            <p className="sign-up-form-title">New Here? Sign Up Below!</p>
+                            <SignUpFormContainer/>
                         </div>
                     </div>
                 </div>
