@@ -2,6 +2,9 @@
     background-color: rgb(254, 243, 219);
 } */
 
+body {
+    margin: 0px
+}
 
 .myreads-title {
     text-decoration: none;
@@ -12,31 +15,75 @@
 .header-name {
     display: flex;
     position: relative;
-    padding: 5px;
+    /* padding: 5px; */
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
+    padding-right: 50px;
 }
 .header-button {
     
 }
 
+#new-here {
+    cursor: unset;
+}
+
+
+
+.sign-up-form-box{
+    /*  */
+    border: 2px black solid;
+    left: 80%;
+    transform: translateX(-60%);
+    /*  */
+    
+    position: flex;
+    width: 250px;
+    display: flex;
+    position: fixed;
+    flex-wrap: wrap;
+    padding: 10px;
+    flex-direction: row;
+    background-color: #f4f2e9;
+    /* padding-right: 50px; */
+    align-items: center;
+    
+    
+
+}
 .firework {
     background-position:center;
     width:100%;
+    /*  */
+    /* height: 100%; */
+    /*  */
     height:400px;
+    position: fixed;
+    z-index: -1;
 }
 
 .login-fields {
     padding: 0px;
     margin: 0px;
 }
+
+.login-form-box {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    height: 20px
+}
+
+
 .login-form { 
     /* Preview code */
     /* background-color: green; */
     /*  */
     display: flex;
     position: relative;
+    flex-wrap: wrap;
+    
     padding: 10px;
     justify-content: space-between;
     flex-direction: row;
@@ -44,8 +91,16 @@
 }
 
 .background-box {
+    /*  */
+    border:2px red solid;
+    align-items: right;
+    /* height: 100%; */
+    /*  */
     width: 100%;
-    height: 200px;
+    height: 400px;
+    display: inline-block;
+    align-items: flex-end;
+
 }
 
 .header-link {

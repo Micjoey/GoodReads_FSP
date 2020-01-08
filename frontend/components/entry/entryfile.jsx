@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
 import GreetingContainer from '../greeting/greeting_container';
+import SignUpFormContainer from '../session_form/signup_form_container';
+
 
 
 
@@ -13,7 +15,7 @@ class EntryFile extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="entryFile">
                 <header className="header-link">
                     <Link to="/" className="myreads-title">
                         MyReads
@@ -24,7 +26,13 @@ class EntryFile extends React.Component {
                 </header>
                 <div className="background-box">
                     <img src={images.fireworks} className="firework" alt="" />
-                    Image should be here
+                    <div className="sign-up-form-box">
+                        <p id="new-here">New Here? Sign Up Below!</p>
+                        <div className="sign-up-form">
+
+                        <SignUpFormContainer/>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

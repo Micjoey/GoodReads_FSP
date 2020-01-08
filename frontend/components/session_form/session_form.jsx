@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
             {this.renderErrors()}
             <div className="login-form">
               <br />
-              <label>
+              <label className="username-field">
                 {/* Username: */}
                 <input type="text"
                   placeholder="Username"
@@ -58,7 +58,7 @@ class SessionForm extends React.Component {
                 />
               </label>
               <br />
-              <label>
+            <label className="password-field">
                 {/* Password: */}
                 <input type="password"
                   placeholder="Password"
