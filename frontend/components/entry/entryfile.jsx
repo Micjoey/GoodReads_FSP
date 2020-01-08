@@ -11,17 +11,33 @@ import LoggedInContainer from '../greeting/logged_in_container'
 
 class EntryFile extends React.Component {
     constructor(props) {
-        super(props);
+        super(props); 
     }
 
 
 
-    render(currentUser) {
+
+    render() {
+        // debugger
+        console.log(this.props.currentUser)
+
+        const whatever = this.props.currentUser ? (
+            <div>
+                something
+            </div>
+        ) : (
+            <div>
+                not something
+            </div>
+        )
+
         return(
             <div className="entryFile">
                 <div className="header-bar" id="header-link">
                     <Link to="/" className="myreads-title">MyReads</Link>
+                    {whatever}
                     {typeof (currentUser) === 'undefined' ? <LogInFormContainer /> : <LoggedInContainer /> } 
+                    {/* { this.props.formType === 'login' ? <LogInFormContainer /> : <LoggedInContainer /> }  */}
                 </div>
                 <div className="greeting-container">
                     <GreetingContainer />

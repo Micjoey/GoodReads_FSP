@@ -1,15 +1,15 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-class SessionFormLogin extends React.Component {
+class SessionFormSignUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: '',
+      email: '',
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   update(field) {
@@ -20,44 +20,35 @@ class SessionFormLogin extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props)
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
     // if (this.props.formType === 'Sign Up') {
+    //   console.log(this.props)
     //   this.props.history.push(`/signup`)
     // } else {
     //   this.props.history.push(`/login`)
     // }
   }
 
-  handleDemoLogin() {
-    this.setState({
-      username: "test",
-      password: "password"
-    }),
-      this.props.processForm(this.state).then(() => this.props.history.push('/'))
-  }
-
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   return(
+  //     <ul>
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   render() {
-
+    
     return (
-        <div className="login-form-container">
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-            <br />
-            {this.renderErrors()}
-            <div className="login-form">
+        <div className="sign-up-container">
+          <form onSubmit={this.handleSubmit} className="sign-up-box">
+            {/* {this.renderErrors()} */}
+            <div className="sign-up">
               <label className="username-field">
                 {/* Username: */}
                 <input type="text"
@@ -66,6 +57,15 @@ class SessionFormLogin extends React.Component {
                   onChange={this.update('username')}
                 />
               </label>
+
+            <label className="email-field">
+                {/* Username: */}
+                <input type="email"
+                  placeholder="Email"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                />
+            </label> 
             <label className="password-field">
                 {/* Password: */}
                 <input type="password"
@@ -75,7 +75,6 @@ class SessionFormLogin extends React.Component {
                 />
               </label>
               <input className="session-submit" type="submit" value={this.props.formType} />
-              <button onClick={this.handleDemoLogin}>Demo Login</button>
             </div>
           </form>
         </div>
@@ -83,4 +82,4 @@ class SessionFormLogin extends React.Component {
   }
 }
 
-export default withRouter(SessionFormLogin);
+export default withRouter(SessionFormSignUp);

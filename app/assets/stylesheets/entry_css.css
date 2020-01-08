@@ -43,6 +43,7 @@ body {
 }
 
 
+
 .header-link {
 
     /* align-items: left; */
@@ -100,11 +101,12 @@ justify-content: space-around;
     /* align-items: center; */
     /* color: white; */
     text-align: left;
-    padding: 0px;
-    padding-top: 5px;
+    padding: 5px 0px;
+    /* padding-top: 5px; */
     margin: 0px;
     margin-left: 10px;
     font-weight: bold;
+    
     
 }
 .firework {
@@ -145,6 +147,7 @@ justify-content: space-around;
     display: flex;
     justify-content: space-between;
     vertical-align: middle;
+    height: 20%;
 }
 
 .login-form-container {
