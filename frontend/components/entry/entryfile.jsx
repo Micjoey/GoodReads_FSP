@@ -29,8 +29,7 @@ class EntryFile extends React.Component {
                     <div className="sign-up-form-box">
                         <p id="new-here">New Here? Sign Up Below!</p>
                         <div className="sign-up-form">
-
-                        <SignUpFormContainer/>
+                            <SignUpFormContainer/>
                         </div>
                     </div>
                 </div>
