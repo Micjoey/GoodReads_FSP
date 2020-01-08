@@ -16,10 +16,8 @@ class EntryFile extends React.Component {
     render() {
         return(
             <div className="entryFile">
-                <header className="header-link">
-                    <Link to="/" className="myreads-title">
-                        MyReads
-                </Link>
+                <header id="header-link">
+                    <Link to="/" className="myreads-title">MyReads</Link>
                     <div className="greeting-container">
                         <GreetingContainer />
                     </div>

@@ -5,12 +5,18 @@
 body {
     margin: 0px
 }
+.login-form-container {
+    display: flex;
+    /* width: 10px; */
+}
 
 .myreads-title {
     text-decoration: none;
     font-size: 50px;
     color: black;
     vertical-align: middle;
+    padding-left: 30px;
+
 }
 
 .header-name {
@@ -102,12 +108,18 @@ body {
     position: relative;
 }
 
+#header-link {
+    height: 0%;
+}
+
 .login-form-box {
     display: flex;
     position: relative;
     flex-wrap: wrap;
     /* width: 100px; */
     /* height: 0px; */
+    width: 0px;
+    padding-left: 0%;
 }
 
 
@@ -119,6 +131,11 @@ body {
     height: 0px; */
 }
 
+.test {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: center;
+}
 
 .login-form { 
     /* Preview code */
@@ -148,22 +165,26 @@ body {
 
 }
 
-.header-link {
-
-    align-items: left;
+.login-form-box {
     display: flex;
     justify-content: space-between;
-    padding: 10px 50px;
-    /* margin: 2px; */
-    background-color: #f4f2e9;
-    text-decoration: none;
-    align-items: center;
+    width: calc(100% - 40px);
     vertical-align: middle;
 }
 
 
 
 
+.header-link {
 
+    /* align-items: left; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* padding: 10px 50px; */
+    /* background-color: #f4f2e9; */
+    /* text-decoration: none; */
+    /* align-items: center; */
+    /* vertical-align: middle;  */
 
+}
 
