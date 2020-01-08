@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SessionFormLogin extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class SessionFormLogin extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   update(field) {
@@ -18,13 +20,22 @@ class SessionFormLogin extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log(this.props)
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
     // if (this.props.formType === 'Sign Up') {
-    //   this.props.history.push(`/sign_up`)
+    //   this.props.history.push(`/signup`)
     // } else {
-      // this.props.history.push(`/sign_in`)
+    //   this.props.history.push(`/login`)
     // }
+  }
+
+  handleDemoLogin() {
+    this.setState({
+      username: "test",
+      password: "password"
+    }),
+      this.props.processForm(this.state).then(() => this.props.history.push('/'))
   }
 
   renderErrors() {
@@ -64,6 +75,7 @@ class SessionFormLogin extends React.Component {
                 />
               </label>
               <input className="session-submit" type="submit" value={this.props.formType} />
+              <button onClick={this.handleDemoLogin}>Demo Login</button>
             </div>
           </form>
         </div>
@@ -71,4 +83,4 @@ class SessionFormLogin extends React.Component {
   }
 }
 
-export default SessionFormLogin;
+export default withRouter(SessionFormLogin);

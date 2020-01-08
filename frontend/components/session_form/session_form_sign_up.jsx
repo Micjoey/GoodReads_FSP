@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SessionFormSignUp extends React.Component {
   constructor(props) {
@@ -22,30 +23,31 @@ class SessionFormSignUp extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
     // if (this.props.formType === 'Sign Up') {
-    //   this.props.history.push(`/sign_up`)
+    //   console.log(this.props)
+    //   this.props.history.push(`/signup`)
     // } else {
-      // this.props.history.push(`/sign_in`)
+    //   this.props.history.push(`/login`)
     // }
   }
 
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   return(
+  //     <ul>
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   render() {
     
     return (
         <div className="sign-up-container">
           <form onSubmit={this.handleSubmit} className="sign-up-box">
-            {this.renderErrors()}
+            {/* {this.renderErrors()} */}
             <div className="sign-up">
               <label className="username-field">
                 {/* Username: */}
@@ -81,4 +83,4 @@ class SessionFormSignUp extends React.Component {
   }
 }
 
-export default SessionFormSignUp;
+export default withRouter(SessionFormSignUp);

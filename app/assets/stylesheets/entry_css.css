@@ -1,14 +1,12 @@
-/* * {
-    background-color: rgb(254, 243, 219);
-} */
+* {
+    /* background-color: rgb(254, 243, 219); */
+    /* border: solid black 2px */
+}
 
 body {
     margin: 0px
 }
-.login-form-container {
-    display: flex;
-    /* width: 10px; */
-}
+
 
 .myreads-title {
     text-decoration: none;
@@ -16,9 +14,12 @@ body {
     color: black;
     vertical-align: middle;
     padding-left: 30px;
+    height: 50px;
 
 }
-
+/* .entryFile {
+    display: flex;
+} */
 .header-name {
     display: flex;
     position: relative;
@@ -28,6 +29,7 @@ body {
     align-items: center;
     padding-right: 50px;
 }
+
 .header-button {
     
 }
@@ -40,6 +42,26 @@ body {
     height: min-content;
 }
 
+
+.header-link {
+
+    /* align-items: left; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* padding: 10px 50px; */
+    /* background-color: #f4f2e9; */
+    /* text-decoration: none; */
+    /* align-items: center; */
+    /* vertical-align: middle;  */
+
+}
+
+.logged-in{
+
+display: inline-block;
+justify-content: space-around;
+
+}
 
 .sign-up-form-box {
     /*  */
@@ -109,17 +131,30 @@ body {
 }
 
 #header-link {
-    height: 0%;
+
+    /* height: 0%; */
+    display: flex;
+}
+
+
+
+.login-form-container {
+    display: flex;
+    /* width: 10px; */
+    align-items: left;
+    background-color: #f4f2e9;
 }
 
 .login-form-box {
     display: flex;
     position: relative;
     flex-wrap: wrap;
-    /* width: 100px; */
-    /* height: 0px; */
     width: 0px;
-    padding-left: 0%;
+    padding-left: 0%; */
+    /* flex-direction: row-reverse; */
+    /* width: 100px; */
+    /* height: 0px;
+
 }
 
 
@@ -170,21 +205,11 @@ body {
     justify-content: space-between;
     width: calc(100% - 40px);
     vertical-align: middle;
-}
-
-
-
-
-.header-link {
-
-    /* align-items: left; */
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* padding: 10px 50px; */
+    height: 60px;
     /* background-color: #f4f2e9; */
-    /* text-decoration: none; */
-    /* align-items: center; */
-    /* vertical-align: middle;  */
-
 }
+
+
+
+
 

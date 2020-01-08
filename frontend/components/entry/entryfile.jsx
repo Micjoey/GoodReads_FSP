@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
 import GreetingContainer from '../greeting/greeting_container';
 import SignUpFormContainer from '../session_form/signup_form_container';
+import LogInFormContainer from '../session_form/login_form_container';
 
 
 
@@ -16,12 +17,13 @@ class EntryFile extends React.Component {
     render() {
         return(
             <div className="entryFile">
-                <header id="header-link">
+                <div className="header-bar" id="header-link">
                     <Link to="/" className="myreads-title">MyReads</Link>
-                    <div className="greeting-container">
-                        <GreetingContainer />
-                    </div>
-                </header>
+                    <LogInFormContainer/>
+                </div>
+                <div className="greeting-container">
+                    <GreetingContainer />
+                </div>
                 {/* <div className="background-box">
                         <img src={images.fireworks} className="firework" alt="" />
                         <div className="sign-up-form-box">
