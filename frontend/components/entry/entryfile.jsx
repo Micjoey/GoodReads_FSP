@@ -4,7 +4,7 @@ import { logout } from '../../actions/session_actions';
 import GreetingContainer from '../greeting/greeting_container';
 import SignUpFormContainer from '../session_form/signup_form_container';
 import LogInFormContainer from '../session_form/login_form_container';
-
+import LoggedInContainer from '../greeting/logged_in_container'
 
 
 
@@ -14,12 +14,14 @@ class EntryFile extends React.Component {
         super(props);
     }
 
-    render() {
+
+
+    render(currentUser) {
         return(
             <div className="entryFile">
                 <div className="header-bar" id="header-link">
                     <Link to="/" className="myreads-title">MyReads</Link>
-                    <LogInFormContainer/>
+                    {typeof (currentUser) === 'undefined' ? <LogInFormContainer /> : <LoggedInContainer /> } 
                 </div>
                 <div className="greeting-container">
                     <GreetingContainer />

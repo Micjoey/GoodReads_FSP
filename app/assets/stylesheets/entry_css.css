@@ -124,10 +124,13 @@ justify-content: space-around;
 }
 
 .username-field,
-.login-form,
 .password-field {
     display: block;
     position: relative;
+}
+
+.login-form {
+    display: fixed;
 }
 
 #header-link {
@@ -137,6 +140,12 @@ justify-content: space-around;
 }
 
 
+.header-bar {
+    background-color: #f4f2e9;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
 
 .login-form-container {
     display: flex;
@@ -144,6 +153,8 @@ justify-content: space-around;
     align-items: left;
     background-color: #f4f2e9;
 }
+
+
 
 .login-form-box {
     display: flex;
@@ -179,12 +190,12 @@ justify-content: space-around;
     display: flex;
     position: relative;
     flex-wrap: wrap;
-    
     padding: 10px;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
     vertical-align: middle;
+
 }
 
 .background-box {
@@ -206,6 +217,8 @@ justify-content: space-around;
     width: calc(100% - 40px);
     vertical-align: middle;
     height: 60px;
+    padding: 2px;
+    padding-bottom: 4px;
     /* background-color: #f4f2e9; */
 }
 

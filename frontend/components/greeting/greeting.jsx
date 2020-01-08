@@ -29,6 +29,7 @@ const Greeting = ({ currentUser, logout }) => {
   );
 
   return currentUser ? personalGreeting() : sessionLinks();
+  // return sessionLinks()
 };
 
 
