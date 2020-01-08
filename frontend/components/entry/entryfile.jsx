@@ -24,15 +24,15 @@ class EntryFile extends React.Component {
                         <GreetingContainer />
                     </div>
                 </header>
-                <div className="background-box">
-                    <img src={images.fireworks} className="firework" alt="" />
-                    <div className="sign-up-form-box">
-                        <div className="sign-up-form">
-                            <p className="sign-up-form-title">New Here? Sign Up Below!</p>
-                            <SignUpFormContainer/>
+                {/* <div className="background-box">
+                        <img src={images.fireworks} className="firework" alt="" />
+                        <div className="sign-up-form-box">
+                            <div className="sign-up-form">
+                                <p className="sign-up-form-title">New Here? Sign Up Below!</p>
+                                <SignUpFormContainer/>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </div> */}
             </div>
         )
     }

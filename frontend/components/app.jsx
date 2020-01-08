@@ -17,9 +17,9 @@ import EntryFile from './entry/entryfile'
 const App = () => (
   <div>
     <Switch>
-      <Route exact path="/" component={EntryFile}/>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      <Route exact path="/" component={EntryFile}/>
     </Switch>
   </div>
 );
