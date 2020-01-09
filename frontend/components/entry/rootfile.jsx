@@ -9,7 +9,7 @@ import LoggedInContainer from '../greeting/logged_in_container'
 
 
 
-class EntryFile extends React.Component {
+class RootFile extends React.Component {
     constructor(props) {
         super(props); 
 
@@ -53,7 +53,7 @@ class EntryFile extends React.Component {
 }
 
 
-export default EntryFile;
+export default RootFile;
 
 {/* <div className="greeting-container">
 <GreetingContainer />

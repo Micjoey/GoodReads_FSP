@@ -4,7 +4,7 @@ body {
     margin: 0px;
 }
 
-.entryfile-view-to-login {
+.rootfile-view-to-login {
     display: flex;
     justify-content: space-between;
     background-color: #f4f2e9;
@@ -16,7 +16,7 @@ body {
     
 }
 
-.entryfile-view-to-login-or-signup {
+.rootfile-view-to-login-or-signup {
     position: flex;
     width: 100%;
     padding: 0px;
