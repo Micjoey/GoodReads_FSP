@@ -51,6 +51,7 @@ class SessionFormLogin extends React.Component {
     return (
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
+          {this.props.errors.length > 0 ? this.renderErrors() : null}
             <div className="login-form">
               <label >
                 {/* Username: */}
