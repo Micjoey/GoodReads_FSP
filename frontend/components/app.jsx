@@ -13,9 +13,11 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import RootFileContainer from './entry/rootfile_container'
+import Modal from './modal/modal'
 
 const App = () => (
   <div className="app">
+    <Modal />
     <RootFileContainer />
     <Switch>
       {/* <AuthRoute exact path="/login" component={LogInFormContainer} />

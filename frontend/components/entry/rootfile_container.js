@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-
 import { logout } from '../../actions/session_actions';
-import rootfile from './rootfile';
+import Root from './rootfile';
+import { openModal } from '../../actions/model_actions';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
     return {
@@ -10,10 +10,11 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(rootfile);
+)(Root);
