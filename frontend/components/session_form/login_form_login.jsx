@@ -38,7 +38,9 @@ class SessionFormLogin extends React.Component {
   }
 
   renderErrors() {
-    const errors = this.props.errors.length === 0 ? (<div className="hidden"></div>) : (<ul>
+    if (this.props.errors[0].includes("Invalid")) {
+    const errors = (
+    <ul>
       {this.props.errors.map((error, i) => (
         <li className="login-errors" key={`error-${i}`}>
           {error}
@@ -46,14 +48,14 @@ class SessionFormLogin extends React.Component {
       ))}
     </ul>)
     return errors
+    }
   }
 
   render() {
-
     return (
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.renderErrors()}
+          {this.props.errors.length > 0 ? this.renderErrors() : null}
             <div className="login-form">
               <label className="username-field">
                 {/* Username: */}
@@ -71,8 +73,8 @@ class SessionFormLogin extends React.Component {
                   onChange={this.update('password')}
                 />
               </label>
-                <input className="session-submit" type="submit" value={this.props.formType} />
-                <button onClick={this.handleDemoLogin}>Demo Login</button>
+                <input className="login-form-submit-button" type="submit" value={this.props.formType} />
+                <button className="demo-login" onClick={this.handleDemoLogin}>Demo Login</button>
             </div>
           </form>
           {/* <div className="background-box">

@@ -17,14 +17,14 @@ class Greeting extends React.Component {
             <Link to="/" className="myreads-title">MyReads</Link>
             <LoginFormContainer/>
         </div>
-          <div className="sign-up-form-box">
-            <p className="sign-up-form-title">New Here? Sign Up Below!</p>
-            <SignUpFormContainer />
-          </div>
-            <div className="background-box">
-              <img src={images.fireworks} className="firework" alt="" />
-            </div>
-      </div>
+        <div className="sign-up-form-box">
+          <p className="sign-up-form-title">New Here? Sign Up Below!</p>
+          <SignUpFormContainer />
+        </div>
+        <div className="background-box">
+          <img src={images.fireworks} className="firework" alt="" />
+        </div>
+    </div>
     )
   }
 
@@ -32,32 +32,7 @@ class Greeting extends React.Component {
 
 
 
-// const Greeting = ({ currentUser, logout }) => {
-//   const sessionLinks = () => (
-//     <div className="header-link">
-//           {/* <div className="sign-up-form-box"> */}
-//             <div className="sign-up-form-box">
-//               <p className="sign-up-form-title">New Here? Sign Up Below!</p>
-//               <SignUpFormContainer />
-//             </div>
-//           {/* </div> */}
-//         <div className="background-box">
-//           <img src={images.fireworks} className="firework" alt="" />
-//         </div>
 
-//     </div>
-//   );
-
-//   const personalGreeting = () => (
-//     <div className="logged-in">
-//       <LoggedInContainer/>
-//     </div>
-
-//   );
-
-//   return currentUser ? personalGreeting() : sessionLinks();
-//   // return sessionLinks()
-// };
 
 
 export default Greeting;
