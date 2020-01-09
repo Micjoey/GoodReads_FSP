@@ -70,9 +70,9 @@ class SessionFormLogin extends React.Component {
                   className="password-field"
                   />
               </label>
-              <div className="login-buttons">
+              {/* <div className="login-buttons"> */}
                 <input className="login-form-submit-button" type="submit" value={this.props.formType} />
-              </div>
+              {/* </div> */}
             </div>
           </form>
           <button className="demo-login" onClick={this.handleDemoLogin}>Demo Login</button>

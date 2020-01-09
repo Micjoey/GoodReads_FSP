@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: #f4f2e9;
-    height: 110px;
+    height: 90px;
     vertical-align: text-bottom;
     align-items: center;
     flex-wrap: nowrap;
@@ -34,7 +34,7 @@ body {
 }
 .myreads-title {
     text-decoration: none;
-    font-size: 50px;
+    font-size: 40px;
     color: black;
     vertical-align: middle;
     padding-left: 30px;
@@ -155,16 +155,26 @@ body {
 
 
 .login-form {
-    display: -webkit-box;
+    /* display: -webkit-box;
     width: auto;
     font-size: 13px; 
     size: 20px;  
-}
-
-.login-form label {
+    padding-right: 10px;
+    margin-right: 20px;
+    text-align: center;
+    padding-bottom: 0px;
+    margin-bottom: 0px; */
+    display: flex;
+    position: relative;
+    flex-wrap: nowrap;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: middle;
+    width: auto;
+    height: auto;
     
 }
-
 
 #header-link {
 
@@ -186,7 +196,8 @@ body {
     align-items: center;
     background-color: #f4f2e9;
     height: auto;
-
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 
@@ -214,7 +225,6 @@ body {
     vertical-align: middle;
     width: auto;
     height: auto;
-    padding-top: 25px;
 }
 
 .login-form-box {
@@ -249,16 +259,25 @@ body {
     background-color: burlywood;
 }
 
+
+.login-form-submit-button {
+    width: 50px;
+    height: 30px;
+    /* border: 0px; */
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: -10px;
+    width: 85px;
+    font-weight: bolder;
+    text-align: center;
+    padding-left: 4px;
+}
+
 .demo-login:hover {
     cursor: pointer;
     background-color: darkgray;
-}
 
-.login-form-submit-button {
-    width: 80px;
-    
 }
-
 .demo-login {
     width: 80px;
     background-color: #f5e7a5;
@@ -267,11 +286,13 @@ body {
 ::placeholder{
     padding-left: 5px;
 }
+
 .username-field,
 .password-field {
-    height: 30px;
-    font-size: 20px;
+    height: unset;
+    font-size: 15px;
     text-align: left;
+    padding: 3px
     
 }
 
