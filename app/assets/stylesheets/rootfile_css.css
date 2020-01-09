@@ -106,14 +106,17 @@ body {
     
 }
 
+
+
 .header-group {
     display: flex;
     justify-content: space-between;
     position: flex;
     width: 100%;
     padding: 0px;
+    padding-bottom: 7px;
     height: 40px;
-
+    border-bottom: 1px solid black;
 }
 
 /* .header-link {

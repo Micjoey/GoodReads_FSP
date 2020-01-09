@@ -21,12 +21,13 @@ class RootFile extends React.Component {
         return(
         <div className="header-group">
             <Link to="/" className="myreads-title">MyReads</Link>
-                <h2 className="header-currentuser-name">Hi, {this.props.currentUser.username}!</h2>
-                <button className="header-button" onClick={() => this.props.openModal('logout')}>yippy yippy</button>
-                <button className="header-button" onClick={this.props.logout}>Log Out</button>
-                <select className=".dropdown">
-                    <option>Hello</option>
-                </select>
+                <div className="dropdown">
+                    <img src={images.account_image} className="dropdown-image-icon" alt="" />
+                    <div className="dropdown-content">
+                        <disabled className="header-currentuser-name">Hi, {this.props.currentUser.username}!</disabled>
+                        <button className="header-button" onClick={this.props.logout}>Log Out</button>
+                    </div>
+                </div>
         </div>
         )
     }
