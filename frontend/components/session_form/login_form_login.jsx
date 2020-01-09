@@ -22,19 +22,15 @@ class SessionFormLogin extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-    // if (this.props.formType === 'Sign Up') {
-    //   this.props.history.push(`/signup`)
-    // } else {
-    //   this.props.history.push(`/login`)
-    // }
+    this.props.history.push(`/`)
   }
 
   handleDemoLogin() {
-    this.setState({
-      username: "test",
-      password: "password"
-    }),
-      this.props.processForm(this.state).then(() => this.props.history.push('/'))
+      this.props.processForm({
+        username: "test",
+        password: "password"
+      }).then(() => this.props.history.push('/'))
+     
   }
 
   renderErrors() {
@@ -74,12 +70,12 @@ class SessionFormLogin extends React.Component {
                 />
               </label>
                 <input className="login-form-submit-button" type="submit" value={this.props.formType} />
-                <button className="demo-login" onClick={this.handleDemoLogin}>Demo Login</button>
             </div>
           </form>
           {/* <div className="background-box">
             <img src={images.fireworks} className="firework" alt="" />
-        </div> */}
+          </div> */}
+          <button className="demo-login" onClick={this.handleDemoLogin}>Demo Login</button>
         </div>
     );
   }
