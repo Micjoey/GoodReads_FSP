@@ -17,9 +17,10 @@ import EntryFileContainer from './entry/entryfile_container'
 const App = () => (
   <div>
     <Switch>
-      <AuthRoute exact path="/login" component={LogInFormContainer} /> 
+      {/* <AuthRoute exact path="/home" component={LogInFormContainer} />  */}
       {/* <AuthRoute exact path="/signup" component={SignUpFormContainer} />  */}
       <Route exact path="/" component={EntryFileContainer}/>
+      <AuthRoute exact path="/home" component={GreetingContainer}/>
     </Switch>
   </div>
 );

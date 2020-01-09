@@ -267,6 +267,7 @@ body {
 ::placeholder{
     padding-left: 5px;
 }
+
 .username-field,
 .password-field {
     height: 30px;

@@ -38,7 +38,6 @@ class EntryFile extends React.Component {
     }
 
     render() {
-        // debugger
             if (this.props.currentUser) {
                 return this.personalGreeting()
             } else {

@@ -22,7 +22,7 @@ class SessionFormLogin extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-    this.props.history.push(`/login`)
+    this.props.history.push(`/`)
   }
 
   handleDemoLogin() {
@@ -30,7 +30,7 @@ class SessionFormLogin extends React.Component {
       username: "test",
       password: "password"
     }),
-      this.props.processForm(this.state).then(() => this.props.history.push('/login'))
+      this.props.processForm(this.state).then(() => this.props.history.push('/'))
   }
 
   renderErrors() {
