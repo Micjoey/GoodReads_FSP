@@ -95,6 +95,16 @@ body {
     padding-right: 50px;
 }
 
+.header-group {
+    display: flex;
+    justify-content: space-between;
+    position: flex;
+    width: 100%;
+    padding: 0px;
+    height: 40px;
+
+}
+
 /* .header-link {
 
     align-items: left;

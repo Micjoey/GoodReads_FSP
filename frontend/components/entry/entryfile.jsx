@@ -16,13 +16,18 @@ class EntryFile extends React.Component {
     }
 
 
-
     personalGreeting() {
         return(
         <div className="header-group">
             <Link to="/" className="myreads-title">MyReads</Link>
                 <h2 className="header-name">Hi, {this.props.currentUser.username}!</h2>
-            <button className="header-button" onClick={this.props.logout}>Log Out</button>
+                {/* <button className="header-button" onClick={this.props.logout}>Log Out</button> */}
+                <select className=".dropdown">
+                    <option>Hello</option>
+                    <option onClick={this.props.logout}>Log Out</option>
+                    <option href="#" >{LogOut}</option>
+                    
+                </select>
         </div>
         )
     }
