@@ -85,7 +85,7 @@ body {
     font-weight: lighter;
 }
 
-/* .header-name {
+.header-name {
     display: flex;
     position: relative;
      padding: 5px;
@@ -93,7 +93,7 @@ body {
     flex-direction: row;
     align-items: center;
     padding-right: 50px;
-} */
+}
 
 /* .header-link {
 

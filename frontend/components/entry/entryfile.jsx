@@ -19,39 +19,17 @@ class EntryFile extends React.Component {
 
     personalGreeting() {
         return(
-<<<<<<< HEAD
-            <div className="entryFile">
-                <header className="header-link">
-                    <Link to="/" className="myreads-title">
-                        MyReads
-                </Link>
-                    <div className="greeting-container">
-                        <GreetingContainer />
-                    </div>
-                </header>
-                <div className="background-box">
-                    <img src={images.fireworks} className="firework" alt="" />
-                    <div className="sign-up-form-box">
-                        <p id="new-here">New Here? Sign Up Below!</p>
-                        <div className="sign-up-form">
-                            <SignUpFormContainer/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-=======
-        <params className="header-group">
+        <div className="header-group">
             <Link to="/" className="myreads-title">MyReads</Link>
                 <h2 className="header-name">Hi, {this.props.currentUser.username}!</h2>
             <button className="header-button" onClick={this.props.logout}>Log Out</button>
-        </params>
+        </div>
         )
     }
 
     sessionLinks() {
         return (
             <GreetingContainer/>
->>>>>>> dev_branch
         )
     }
 
