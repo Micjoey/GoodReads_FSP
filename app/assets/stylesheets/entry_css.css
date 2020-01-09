@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: #f4f2e9;
-    height: 110px;
+    height: 90px;
     vertical-align: text-bottom;
     align-items: center;
     flex-wrap: nowrap;
@@ -34,7 +34,7 @@ body {
 }
 .myreads-title {
     text-decoration: none;
-    font-size: 50px;
+    font-size: 40px;
     color: black;
     vertical-align: middle;
     padding-left: 30px;
@@ -159,12 +159,9 @@ body {
     width: auto;
     font-size: 13px; 
     size: 20px;  
+    padding-right: 10px;
+    margin-right: 20px;
 }
-
-.login-form label {
-    
-}
-
 
 #header-link {
 
@@ -186,7 +183,8 @@ body {
     align-items: center;
     background-color: #f4f2e9;
     height: auto;
-
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -270,8 +268,8 @@ body {
 
 .username-field,
 .password-field {
-    height: 30px;
-    font-size: 20px;
+    height: unset;
+    font-size: 15px;
     text-align: left;
     
 }
