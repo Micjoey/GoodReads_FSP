@@ -22,12 +22,12 @@ class SessionFormSignUp extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-    if (this.props.formType === 'Sign Up') {
-      console.log(this.props)
-      this.props.history.push(`/signup`)
-    } else {
-      this.props.history.push(`/login`)
-    }
+    // if (this.props.formType === 'Sign Up') {
+    //   console.log(this.props)
+    //   this.props.history.push(`/signup`)
+    // } else {
+    //   this.props.history.push(`/login`)
+    // }
   }
 
   renderErrorsSignUp() {
