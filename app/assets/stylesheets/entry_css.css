@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: #f4f2e9;
-    height: 100px;
+    height: 110px;
     vertical-align: text-bottom;
     align-items: center;
     flex-wrap: nowrap;
@@ -49,7 +49,7 @@ body {
     transform: translateX(-60%); 
     position: flex;
     width: 300px;
-    height: 320px;
+    height: auto;
     display: inline-block;
     position: fixed;
     flex-wrap: wrap;
@@ -145,8 +145,8 @@ body {
 
 
 .login-form {
-    display: flex;
-    width: 400px;
+    display: -webkit-box;
+    width: auto;
     font-size: 13px; 
     size: 20px;  
 }
@@ -172,10 +172,10 @@ body {
 }
 
 .login-form-container {
-
-    /* width: 10px; */
+    width: auto;
     align-items: center;
     background-color: #f4f2e9;
+    height: auto;
 
 }
 
@@ -185,32 +185,27 @@ body {
     display: flex;
     position: relative;
     flex-wrap: wrap;
-    width: 0px;
+    width: auto;
     padding-left: 0%; 
     flex-flow: non-reverse;
     /* width: 100px; */
     /* height: 0px; */
     align-items:center;
-
+    height: auto;
 }
 
-
-
 .login-form { 
-    /* Preview code */
-    /* background-color: green; */
-    /*  */
     display: flex;
     position: relative;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 10px;
     flex-direction: row;
     align-items: center;
     vertical-align: middle;
-
+    width: auto;
+    height: auto;
+    padding-top: 25px;
 }
-
-
 
 .login-form-box {
     display: flex;
@@ -220,14 +215,57 @@ body {
     height: 60px;
     padding: 2px;
     padding-bottom: 4px;
-    /* background-color: #f4f2e9; */
+    height: auto;
 }
 
 
-/* .username-field,
+.login-error-message {
+    /* display: flex;
+    font-size: 20px;
+    text-transform: capitalize;
+    height: 10px;
+    font-weight: bold; */
+    /* background-color: none; */
+}
+
+.login-buttons {
+    flex-wrap: nowrap;
+    width: 80px;
+    background-color: #f4f2e9;
+}
+
+.login-form-submit-button:hover {
+    cursor: pointer;
+    background-color: burlywood;
+}
+
+.demo-login:hover {
+    cursor: pointer;
+    background-color: darkgray;
+}
+
+.login-form-submit-button {
+    width: 80px;
+    
+}
+
+.demo-login {
+    width: 80px;
+    background-color: #f5e7a5;
+}
+
+::placeholder{
+    padding-left: 5px;
+}
+.username-field,
 .password-field {
-    display: block;
-    position: relative;
-} */
+    height: 30px;
+    font-size: 20px;
+    text-align: left;
+    
+}
+
+
+
 
 

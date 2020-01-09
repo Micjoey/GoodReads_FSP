@@ -22,11 +22,11 @@ class SessionFormLogin extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-    // if (this.props.formType === 'Sign Up') {
-    //   this.props.history.push(`/signup`)
-    // } else {
-    //   this.props.history.push(`/login`)
-    // }
+    if (this.props.formType === 'Sign Up') {
+      this.props.history.push(`/signup`)
+    } else {
+      this.props.history.push(`/login`)
+    }
   }
 
   handleDemoLogin() {
@@ -55,31 +55,38 @@ class SessionFormLogin extends React.Component {
     return (
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.props.errors.length > 0 ? this.renderErrors() : null}
             <div className="login-form">
-              <label className="username-field">
+              <label >
                 {/* Username: */}
                 <input type="text"
                   placeholder="Username"
                   value={this.state.username}
                   onChange={this.update('username')}
-                />
+                  className="username-field"
+                  />
               </label>
-            <label className="password-field">
+            <label>
                 {/* Password: */}
                 <input type="password"
                   placeholder="Password"
                   value={this.state.password}
                   onChange={this.update('password')}
-                />
+                  className="password-field"
+                  />
               </label>
+              <div className="login-buttons">
                 <input className="login-form-submit-button" type="submit" value={this.props.formType} />
                 <button className="demo-login" onClick={this.handleDemoLogin}>Demo Login</button>
+              </div>
+              <div className="login-error-message">
+                {this.props.errors.length > 0 ? this.renderErrors() : null}
+              </div>
             </div>
           </form>
           {/* <div className="background-box">
             <img src={images.fireworks} className="firework" alt="" />
         </div> */}
+        
         </div>
     );
   }
