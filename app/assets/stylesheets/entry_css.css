@@ -155,12 +155,25 @@ body {
 
 
 .login-form {
-    display: -webkit-box;
+    /* display: -webkit-box;
     width: auto;
     font-size: 13px; 
     size: 20px;  
     padding-right: 10px;
     margin-right: 20px;
+    text-align: center;
+    padding-bottom: 0px;
+    margin-bottom: 0px; */
+    display: flex;
+    position: relative;
+    flex-wrap: nowrap;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: middle;
+    width: auto;
+    height: auto;
+    
 }
 
 #header-link {
@@ -184,7 +197,7 @@ body {
     background-color: #f4f2e9;
     height: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
 }
 
 
@@ -212,7 +225,6 @@ body {
     vertical-align: middle;
     width: auto;
     height: auto;
-    padding-top: 25px;
 }
 
 .login-form-box {
@@ -247,16 +259,25 @@ body {
     background-color: burlywood;
 }
 
+
+.login-form-submit-button {
+    width: 50px;
+    height: 30px;
+    /* border: 0px; */
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: -10px;
+    width: 85px;
+    font-weight: bolder;
+    text-align: center;
+    padding-left: 4px;
+}
+
 .demo-login:hover {
     cursor: pointer;
     background-color: darkgray;
-}
 
-.login-form-submit-button {
-    width: 80px;
-    
 }
-
 .demo-login {
     width: 80px;
     background-color: #f5e7a5;
@@ -271,6 +292,7 @@ body {
     height: unset;
     font-size: 15px;
     text-align: left;
+    padding: 3px
     
 }
 
