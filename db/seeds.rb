@@ -21,7 +21,7 @@ include Faker
 i = 0
 while i <= 3 do
     if i ==0
-        return test = User.create(username: "test", email: "test@gmail.com", password: "password")
+        test = User.create(username: "test", email: "test@gmail.com", password: "password")
     else
         test = User.create(username: "test#{i}", email: "test#{i}@gmail.com", password: "password")
     end
