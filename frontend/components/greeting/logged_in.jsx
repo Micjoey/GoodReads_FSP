@@ -6,7 +6,7 @@ const LoggedIn = ({ currentUser, logout}) => {
         return(
         <params className="header-group">
             <Link to="/" className="myreads-title">MyReads</Link>
-            <h2 className="header-name">Hi, {currentUser.username}!</h2>
+            <h2 className="header-currentuser-name">Hi, {currentUser.username}!</h2>
             <button className="header-button" onClick={logout}>Log Out</button>
         </params>
         )

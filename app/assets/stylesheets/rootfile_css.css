@@ -4,6 +4,13 @@ body {
     margin: 0px;
 }
 
+
+/* .filler-background-box {
+    object-fit: cover;
+    z-index: -2;
+    height: 2000px;
+} */
+
 .rootfile-view-to-login {
     display: flex;
     justify-content: space-between;
@@ -17,10 +24,10 @@ body {
 }
 
 .rootfile-view-to-login-or-signup {
-    position: flex;
     width: 100%;
     padding: 0px;
     height: 40px;
+
 }
 .background-box {
     align-items: right;
@@ -30,7 +37,7 @@ body {
     align-items: flex-end;
     margin: 0px;
     padding: 0px;
-
+    overflow: scroll;
 }
 .myreads-title {
     text-decoration: none;
@@ -87,7 +94,7 @@ body {
     font-weight: lighter;
 }
 
-.header-name {
+.header-currentuser-name {
     display: flex;
     position: relative;
      padding: 5px;
@@ -95,6 +102,8 @@ body {
     flex-direction: row;
     align-items: center;
     padding-right: 50px;
+    text-transform: capitalize;
+    
 }
 
 .header-group {
@@ -141,12 +150,13 @@ body {
 .firework {
     background-position:center;
     width:100%;
-    /*  */
-    /* height: calc(100%-100px); */
-    /*  */
     height:100%;
     position: fixed;
     z-index: -1;
+    overflow: scroll;
+    orientation: landscape;
+    background-repeat: repeat;
+    object-fit: cover;
 }
 
 .login-fields {
@@ -157,15 +167,6 @@ body {
 
 
 .login-form {
-    /* display: -webkit-box;
-    width: auto;
-    font-size: 13px; 
-    size: 20px;  
-    padding-right: 10px;
-    margin-right: 20px;
-    text-align: center;
-    padding-bottom: 0px;
-    margin-bottom: 0px; */
     display: flex;
     position: relative;
     flex-wrap: nowrap;

@@ -15,11 +15,12 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import RootFileContainer from './entry/rootfile_container'
 
 const App = () => (
-  <div>
+  <div className="app">
+    <RootFileContainer />
     <Switch>
       {/* <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
-      <Route exact path="/" component={RootFileContainer}/>
+      {/* <Route exact path="/" component={RootFileContainer}/> */}
     </Switch>
   </div>
 );

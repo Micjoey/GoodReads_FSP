@@ -20,12 +20,10 @@ class RootFile extends React.Component {
         return(
         <div className="header-group">
             <Link to="/" className="myreads-title">MyReads</Link>
-                <h2 className="header-name">Hi, {this.props.currentUser.username}!</h2>
+                <h2 className="header-currentuser-name">Hi, {this.props.currentUser.username}!</h2>
                 <button className="header-button" onClick={this.props.logout}>Log Out</button>
                 <select className=".dropdown">
                     <option>Hello</option>
-
-                    
                 </select>
         </div>
         )
@@ -43,29 +41,9 @@ class RootFile extends React.Component {
             } else {
                 return this.sessionLinks()
             }
-            // <div className="entryFile">
-            //     <div className="header-bar" id="header-link">
-            //       
-            //         {this.props.currentUser ? <LoggedInContainer /> : <GreetingContainer /> } 
-            //     </div>
-            // </div>
     }
 }
 
 
 export default RootFile;
 
-{/* <div className="greeting-container">
-<GreetingContainer />
-</div> */}
-{/* <div className="background-box">
-<img src={images.fireworks} className="firework" alt="" />
-<div className="sign-up-form-box">
-<div className="sign-up-form">
-<p className="sign-up-form-title">New Here? Sign Up Below!</p>
-<SignUpFormContainer/>
-</div>
-</div>
-</div> */}
-{/* { typeof(this.props.currentUser === 'undefined') ? <LogInFormContainer /> : <LoggedInContainer />} */}
-{/* {this.props.currentUser ? <LogInFormContainer /> : <LoggedInContainer /> }  */}
