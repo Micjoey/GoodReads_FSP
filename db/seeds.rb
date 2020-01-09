@@ -9,12 +9,21 @@
 require 'faker'
 include Faker
 
-20.times do 
-    Books.create(
-        title: Faker::Book.title,
-        author: Faker::Book.author,
-        genre: Faker::Book.genre,
-        rating: rand(0..5),
-        review: Faker::Quotes::Shakespeare
-    )
+# 20.times do 
+#     book = Book.create(
+#         title: Faker::Book.title,
+#         author: Faker::Book.author,
+#         genre: Faker::Book.genre,
+#         rating: rand(0..5),
+#         review: Faker::Quotes::Shakespeare
+#     )
+# end
+i = 0
+while i <= 3 do
+    if i ==0
+        return test = User.create(username: "test", email: "test@gmail.com", password: "password")
+    else
+        test = User.create(username: "test#{i}", email: "test#{i}@gmail.com", password: "password")
+    end
+    i += 1
 end
