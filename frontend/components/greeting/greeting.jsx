@@ -12,8 +12,8 @@ class Greeting extends React.Component {
 
   render() {
     return (
-      <div className="entryfile-view-to-login-or-signup">
-        <div className="entryfile-view-to-login">
+      <div className="rootfile-view-to-login-or-signup">
+        <div className="rootfile-view-to-login">
             <Link to="/" className="myreads-title">MyReads</Link>
             <LoginFormContainer/>
         </div>

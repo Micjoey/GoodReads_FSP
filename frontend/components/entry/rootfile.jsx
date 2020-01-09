@@ -9,7 +9,7 @@ import LoggedInContainer from '../greeting/logged_in_container'
 
 
 
-class EntryFile extends React.Component {
+class RootFile extends React.Component {
     constructor(props) {
         super(props); 
 
@@ -23,9 +23,8 @@ class EntryFile extends React.Component {
                 <h2 className="header-name">Hi, {this.props.currentUser.username}!</h2>
                 <button className="header-button" onClick={this.props.logout}>Log Out</button>
                 <select className=".dropdown">
-                    {/* <option>Hello</option>
-                    <option onClick={this.props.logout}>Log Out</option>
-                    <option href="#" >{LogOut}</option> */}
+                    <option>Hello</option>
+
                     
                 </select>
         </div>
@@ -55,7 +54,7 @@ class EntryFile extends React.Component {
 }
 
 
-export default EntryFile;
+export default RootFile;
 
 {/* <div className="greeting-container">
 <GreetingContainer />
