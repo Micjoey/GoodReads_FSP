@@ -44,15 +44,7 @@ body {
     }
 
 
-.sign-up label input {
-    /* width: 70%; */
-    height: 40px;
-    width: 270px;
-    padding: 7px 5px;
-    margin: 0;
-    font-size: 16px;
-    font-weight: lighter;
-}
+
 
 .header-currentuser-name {
     display: flex;
@@ -111,25 +103,7 @@ body {
 
 
 
-.login-fields {
-    padding: 0px;
-    margin: 0px;
-}
 
-
-
-.login-form {
-    display: flex;
-    position: relative;
-    flex-wrap: nowrap;
-    padding: 10px;
-    flex-direction: row;
-    align-items: center;
-    vertical-align: middle;
-    width: auto;
-    height: auto;
-    
-}
 
 #header-link {
 
@@ -146,110 +120,7 @@ body {
     height: 20%;
 }
 
-.login-form-container {
-    width: auto;
-    align-items: center;
-    background-color: #f4f2e9;
-    height: auto;
-    display: flex;
-    flex-direction: row-reverse;
-}
 
-
-
-.login-form-box {
-    display: contents;
-    position: relative;
-    flex-wrap: nowrap;
-    width: auto;
-    padding-left: 0%; 
-    flex-flow: non-reverse;
-    /* width: 100px; */
-    /* height: 0px; */
-    align-items:center;
-    height: auto;
-}
-
-.login-form { 
-    display: flex;
-    position: relative;
-    flex-wrap: nowrap;
-    padding: 10px;
-    flex-direction: row;
-    align-items: center;
-    vertical-align: middle;
-    width: auto;
-    height: auto;
-}
-
-.login-form-box {
-    display: flex;
-    justify-content: space-between;
-    width: calc(100% - 40px);
-    vertical-align: middle;
-    height: 60px;
-    padding: 2px;
-    padding-bottom: 4px;
-    height: auto;
-}
-
-
-.login-error-message {
-    /* display: flex;
-    font-size: 20px;
-    text-transform: capitalize;
-    height: 10px;
-    font-weight: bold; */
-    /* background-color: none; */
-}
-
-.login-buttons {
-    flex-wrap: nowrap;
-    width: 80px;
-    background-color: #f4f2e9;
-}
-
-.login-form-submit-button:hover {
-    cursor: pointer;
-    background-color: burlywood;
-}
-
-
-.login-form-submit-button {
-    width: 50px;
-    height: 30px;
-    /* border: 0px; */
-    border-radius: 4px;
-    font-size: 13px;
-    line-height: -10px;
-    width: 85px;
-    font-weight: bolder;
-    text-align: center;
-    padding-left: 4px;
-}
-
-.demo-login:hover {
-    cursor: pointer;
-    background-color: darkgray;
-
-}
-.demo-login {
-    width: 80px;
-    background-color: #f5e7a5;
-}
-
-::placeholder{
-    padding-left: 5px;
-}
-
-.username-field,
-.password-field {
-    height: unset;
-    font-size: 15px;
-    text-align: left;
-    padding: 3px
-    
-}
 
 
 

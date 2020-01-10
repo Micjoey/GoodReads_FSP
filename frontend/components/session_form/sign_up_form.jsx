@@ -28,7 +28,7 @@ class SessionFormSignUp extends React.Component {
   renderErrorsSignUp() {
     if (!this.props.errors[0].includes("Invalid")) {
       const errors = (
-        <ul>
+        <ul className="login-errors-box">
           {this.props.errors.map((error, i) => (
             <li className="login-errors" key={`error-${i}`}>
               {error}

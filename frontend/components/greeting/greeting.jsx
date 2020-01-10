@@ -14,7 +14,7 @@ class Greeting extends React.Component {
     return (
       <div className="navbar-view-to-login-or-signup">
         <div className="navbar-view-to-login">
-            <Link to="/" className="myreads-title">MyReads</Link>
+            <Link to="/home" className="myreads-title">MyReads</Link>
             <LoginFormContainer/>
         </div>
         {/* <div className="filler-background-box"></div> */}
