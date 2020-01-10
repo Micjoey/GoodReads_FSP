@@ -4,7 +4,8 @@ import Book from './show_books'
 
 const mapStateToProps = ({session, entities: { books }}) => {
     return {
-        currentUser: users[session.id]
+        currentUser: users[session.id],
+        books: state.entities.books[ownProps.match.params.bookId],
 
     }
 }
