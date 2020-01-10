@@ -20,12 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 
 
-  window.getState = store.getState;
+  // window.getState = store.getState;
 });
 
 

@@ -5,7 +5,9 @@ body {
 }
 
 
-
+ .header {
+     display: block;
+ }
 
 .navbar-view-to-login {
     display: flex;
@@ -21,9 +23,9 @@ body {
 
 .navbar-view-to-login-or-signup {
     width: 100%;
-    padding: 0px;
-    height: 40px;
+    /* padding: 0px; */
     position: fixed;
+
 }
 
 .myreads-title {

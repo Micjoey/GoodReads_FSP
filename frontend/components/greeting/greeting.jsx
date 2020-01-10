@@ -16,7 +16,6 @@ class Greeting extends React.Component {
             <Link to="/home" className="myreads-title">MyReads</Link>
             <LoginFormContainer/>
         </div>
-        {/* <div className="filler-background-box"></div> */}
     </div>
     )
   }

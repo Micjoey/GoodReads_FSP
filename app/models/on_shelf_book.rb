@@ -11,6 +11,6 @@ class OnShelfBook < ApplicationRecord
 
    has_one :user,
    through: :shelf,
-   source: :user
+   source: :users
 
 end

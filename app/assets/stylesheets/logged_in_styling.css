@@ -20,7 +20,8 @@
     height: 60px;
     border-bottom: 1px solid black;
     align-items: center;
-    position: fixed;
+    position: relative;
+    top: 0px
 }
 
 .dropdown-image-icon {

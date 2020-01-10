@@ -13,7 +13,7 @@ class Book < ApplicationRecord
     through: :onshelfbooks,
     source: :user
 
-    has_many :shelfs,
+    has_many :shelves,
     through: :onshelfbooks,
     source: :shelf
    

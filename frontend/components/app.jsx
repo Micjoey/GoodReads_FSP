@@ -19,12 +19,16 @@ import IndexBookContainer from './book/index_book_container'
 
 const App = () => (
   <div className="app">
-    <Modal />
-    <NavBarContainer />
-    <Switch>
-      <AuthRoute exact path="/" component={Splash} /> 
-      <ProtectedRoute exact path="/home" component={IndexBookContainer} />
-    </Switch>
+      <Modal />
+    <header className="header">
+      <NavBarContainer />
+    </header>
+    <div className="content">
+      <Switch>
+        <AuthRoute exact path="/" component={Splash} /> 
+        <ProtectedRoute exact path="/home" component={IndexBookContainer} />
+      </Switch>
+    </div>
   </div>
 );
 

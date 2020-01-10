@@ -5,8 +5,8 @@ class Shelf < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
-    has_many :onshelfbook,
-    foreign_key: :shelve_id,
+    has_many :onshelfbooks,
+    foreign_key: :shelf_id,
     class_name: :OnShelfBook
 
     has_many :books,
