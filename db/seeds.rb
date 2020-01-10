@@ -35,9 +35,9 @@ ActiveRecord::Base.transaction do
 
     bob = User.new(username: "test#{i}", email: "test#{i}@gmail.com", password: "password")
     bob.save!
-    book1 = Book.new(title: "book1", genre:"fiction", author: "vanessa", bookshelf_id:"1")
+    book1 = Book.new(title: "book1", genre:"fiction", author: "vanessa", bookshelf_id:"1", cover_image_url:"1")
     book1.save!
-    book2 = Book.new(title: "book2", genre:"horror", author: "killerjo", bookshelf_id:"1")
+    book2 = Book.new(title: "book2", genre:"horror", author: "killerjo", bookshelf_id:"1", cover_image_url:"1")
     book2.save!
 
     book1_review = Review.create!(title:"book1review", user_id:bob.id, book_id: book1.id, rating:"3", date_reviewed:"1/2/2019")

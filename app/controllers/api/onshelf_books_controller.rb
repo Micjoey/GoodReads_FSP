@@ -23,6 +23,6 @@ class Api::OnShelfBookController < ApplicationController
 
     private
     def onshelfbook_params
-        params.require(:onshelfbook).permit(:book_id, :shelf_id)
+        params.require(:onshelfbook).permit(:book_id, :shelve_id)
     end
 end
