@@ -34,40 +34,41 @@ class RootFile extends React.Component {
                         </div>
                     </div>
             </div>
-            {/* temp code */}
-            {/* <div>
-                <h2>Clickable Dropdown</h2>
-                <p>Click on the button to open the dropdown menu.</p>
-
-                <div className="dropdown">
-                        <button onClick={this.dropDownIdSwitch()} className="dropbtn">Dropdown</button>
-                    <div id="myDropdown" className="dropdown-content">
-                        <a href="#home">Home</a>
-                        <a href="#about">About</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                </div>
-            </div> */}
-            {/* tempcode */}
         </div>
         )
     }
-
+    
     sessionLinks() {
         return (
             <GreetingContainer/>
-        )
-    }
-
-    render() {
+            )
+        }
+        
+        render() {
             if (this.props.currentUser) {
                 return this.personalGreeting()
             } else {
                 return this.sessionLinks()
             }
+        }
     }
-}
+    
+    
+    export default RootFile;
+    
+    
+    {/* temp code */}
+    {/* <div>
+        <h2>Clickable Dropdown</h2>
+        <p>Click on the button to open the dropdown menu.</p>
 
-
-export default RootFile;
-
+        <div className="dropdown">
+                <button onClick={this.dropDownIdSwitch()} className="dropbtn">Dropdown</button>
+            <div id="myDropdown" className="dropdown-content">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </div> */}
+    {/* tempcode */}

@@ -1,0 +1,68 @@
+.background-and-signup-box {
+    padding-top: 101px;
+    min-height: 300px;
+    overflow-y: auto;
+
+}
+    .sign-up-form-box {
+    left: 80%;
+    transform: translateX(-60%); 
+    position: flex;
+    width: 300px;
+    height: auto;
+    display: inline-block;
+    position: fixed;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-right: 5px;
+    flex-direction: row;
+    background-color: #f4f2e9;
+    align-items: center;
+    }   
+
+        .sign-up-form-title {
+        justify-content: space-between;
+        flex-direction: row;
+        text-align: left;
+        padding: 5px 0px;
+        margin: 0px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 18px;
+        }
+
+    .background-box {
+        align-items: right;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        align-items: flex-end;
+        margin: 0px;
+        padding: 0px;
+        overflow: scroll;
+        min-height: 400px;
+        z-index: -1;
+    }
+
+        .sign-up-box {
+            height: min-content;
+        }
+   
+
+    .firework {
+        background-position:center;
+        width:100%;
+        height:100%;
+        position: fixed;
+        z-index: -1;
+        overflow: scroll;
+        orientation: landscape;
+        background-repeat: repeat;
+        object-fit: cover;
+    }
+
+
+
+

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import Root from './rootfile';
+import Root from './navbar'
 import { openModal } from '../../actions/model_actions';
 
 

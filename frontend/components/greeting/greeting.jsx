@@ -12,28 +12,16 @@ class Greeting extends React.Component {
 
   render() {
     return (
-      <div className="rootfile-view-to-login-or-signup">
-        <div className="rootfile-view-to-login">
+      <div className="navbar-view-to-login-or-signup">
+        <div className="navbar-view-to-login">
             <Link to="/" className="myreads-title">MyReads</Link>
             <LoginFormContainer/>
         </div>
-        <div className="sign-up-form-box">
-          <p className="sign-up-form-title">New Here? Sign Up Below!</p>
-          <SignUpFormContainer />
-        </div>
-        <div className="background-box">
-          <img src={images.fireworks2} className="firework" alt="" />
-        </div>
-        <div className="filler-background-box"></div>
+        {/* <div className="filler-background-box"></div> */}
     </div>
     )
   }
-
+  
 }
-
-
-
-
-
 
 export default Greeting;

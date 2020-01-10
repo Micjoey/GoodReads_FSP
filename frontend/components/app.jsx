@@ -12,17 +12,18 @@ import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import RootFileContainer from './root/rootfile_container'
 import Modal from './modal/modal'
+import NavBarContainer from './navbar/navbar_container';
+import Splash from './splash/splash';
 
 const App = () => (
   <div className="app">
     <Modal />
-    <RootFileContainer />
+    <NavBarContainer />
     <Switch>
-      {/* <AuthRoute exact path="/login" component={LogInFormContainer} />
-      <AuthRoute exact path="/signup" component={SignUpFormContainer} /> */}
-      {/* <Route exact path="/" component={RootFileContainer}/> */}
+      <AuthRoute exact path="/" component={Splash} />
+      {/* <AuthRoute exact path="/login" component={LogInFormContainer} /> */}
+      {/* { <Route exact path="/" component={RootFileContainer}/> */}
     </Switch>
   </div>
 );

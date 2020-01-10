@@ -4,7 +4,7 @@ import users from './users_reducer';
 import UsersReducer from './users_reducer';
 
 export default combineReducers({
-  // book,
+  // books,
   // bookshelf,
   // reviews,
   users: UsersReducer
