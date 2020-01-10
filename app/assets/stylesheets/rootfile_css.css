@@ -49,16 +49,7 @@ body {
     height: 50px;
     
 }
-.myreads-title-logged-in {
-    text-decoration: none;
-    font-size: 40px;
-    color: black;
-    vertical-align: middle;
-    padding-left: 30px;
-    padding-right: 50px;
-    height: 50px;
-    vertical-align: center;
-}
+
 
 .sign-up-box {
     height: min-content;

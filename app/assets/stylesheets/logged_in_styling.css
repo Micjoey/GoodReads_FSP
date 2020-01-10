@@ -1,0 +1,29 @@
+.myreads-title-logged-in {
+    text-decoration: none;
+    font-size: 40px;
+    color: black;
+    vertical-align: middle;
+    padding-left: 30px;
+    padding-right: 50px;
+    height: 50px;
+    vertical-align: center;
+    padding-top: 5px;
+}
+
+
+.header-group-logged-in {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px;
+    padding-bottom: 7px;
+    height: 60px;
+    border-bottom: 1px solid black;
+    align-items: center;
+    position: fixed;
+}
+
+.dropdown-image-icon {
+    display: flex;
+    align-items: center;
+}

@@ -24,7 +24,7 @@ class RootFile extends React.Component {
     personalGreeting() {
         return(
         <div>
-            <div className="header-group">
+            <div className="header-group-logged-in">
                 <Link to="/" className="myreads-title-logged-in">MyReads</Link>
                     <div className="dropdown">
                         <img src={images.account_image} className="dropdown-image-icon" alt="" />

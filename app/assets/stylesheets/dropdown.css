@@ -3,6 +3,8 @@
   position: relative;
   display: inline-block;
   padding-right: 10px;
+  padding-top: 4px;
+  top: inherit;
 }
 
 .dropdown-content {
@@ -14,7 +16,9 @@
   padding: 12px 16px;
   z-index: 1;
   right: 10px;
+  border: none;
 }
+
 
 .dropdown:hover .dropdown-content {
   display: block;
