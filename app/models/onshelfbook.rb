@@ -1,4 +1,4 @@
-class BookshelfBooks < ApplicationRecord
+class OnShelfBook < ApplicationRecord
    validates :shelve_id, :book_id, presence: true
 
    belongs_to :shelf,
@@ -7,5 +7,5 @@ class BookshelfBooks < ApplicationRecord
 
    belongs_to :book,
    foreign_key: :book_id,
-   class_name: :Book
+   class_name: :OnShelfBook
 end

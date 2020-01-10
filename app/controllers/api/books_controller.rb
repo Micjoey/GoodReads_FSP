@@ -1,11 +1,13 @@
 class Api::BooksController < ApplicationController
     def index
-        @books = Class_name.all
-        render "api/books/"
+        @books = Book.all
+        # render "api/books/"
+        render :index
     end
 
     def show
-        @book = Class_name.find(params[:id])
-        render "api/books/:id"
+        @book = Book.find(params[:id])
+        # render "api/books/:id"
+        render :show
     end
 end

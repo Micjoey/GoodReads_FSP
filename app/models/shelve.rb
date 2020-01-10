@@ -3,7 +3,7 @@ class Shelve < ApplicationRecord
 
     has_many :shelves,
     foreign_key: :shelve_id,
-    class_name: :BookshelfBooks
+    class_name: :Shelve
 
     belongs_to :user,
     foreign_key: :user_id,
