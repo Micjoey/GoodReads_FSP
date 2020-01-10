@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/session_api_util';
+import * as BookAPIUtil from '../util/book_api_util';
 
 export const RECEIVE_ALL_BOOKS = 'RECEIVE_ALL_BOOKS';
 export const RECEIVE_BOOK = 'RECEIVE_BOOK';
@@ -13,16 +13,17 @@ const receiveBook = book => ({
   book
 });
 
-
+// need to complete the book api
 
 export const fetchBooks = () => dispatch => (
-  PostApiUtil.fetchBooks()
-    .then(books => dispatch(receiveAllBooks(books))
+  BookAPIUtil.fetchBooks()
+    .then(books => dispatch(allbooks(books))
 ));
 
 export const fetchBook = bookId => dispatch => (
-  PostApiUtil.fetchBook(bookId)
+  BookAPIUtil.fetchBook(bookId)
     .then(book => dispatch(receiveBook(book)))
 );
+
 
 		
