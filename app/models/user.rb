@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
     has_many :reviews,
     foreign_key: :user_id,
-    class_name: :Bookshelf
+    class_name: :Review
 
     has_many :shelves,
     foreign_key: :user_id,

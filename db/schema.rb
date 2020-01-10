@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_060802) do
+ActiveRecord::Schema.define(version: 2020_01_10_174650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_01_10_060802) do
     t.index ["title"], name: "index_books_on_title"
   end
 
-  create_table "onshelfbooks", force: :cascade do |t|
+  create_table "on_shelf_books", force: :cascade do |t|
     t.integer "shelve_id", null: false
     t.integer "book_id", null: false
     t.datetime "created_at", null: false

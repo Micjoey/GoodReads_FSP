@@ -8,7 +8,7 @@ class Api::SessionsController < ApplicationController
     end
 
     def update
-        @review = REview.find(params[:id])
+        @review = Review.find(params[:id])
         if @review.update(review_params)
             render :show
         else
@@ -26,7 +26,12 @@ class Api::SessionsController < ApplicationController
     end
 
     def destroy
-
+        @review = Review.find(params[:id])
+        if @review.destroy
+            render :show
+        else
+            render json: @review.errors.full_messages, status: 400
+        end
     end
 
     private

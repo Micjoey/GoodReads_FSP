@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
     validates :title, :genre, :author, presence: true
 
-    has_many :shelves,
+    has_many :onshelfbooks,
     foreign_key: :book_id,
     class_name: :OnShelfBook
 
@@ -10,7 +10,7 @@ class Book < ApplicationRecord
     class_name: :Review
 
     has_many :users,
-    through: :shelves,
+    through: :onshelfbooks,
     source: :user
    
 end

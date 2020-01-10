@@ -43,6 +43,7 @@ ActiveRecord::Base.transaction do
     book1_review = Review.create!(title:"book1review", user_id:bob.id, book_id: book1.id, rating:"3", date_reviewed:"1/2/2019")
     
     shelve = Shelve.new(bookshelf_title:"trial", user_id:"4")
-
-
+    shelve.save!
+    onshelf = OnShelfBook.new(shelve_id: "1", book_id:"2")
+    onshelf.save!
 end

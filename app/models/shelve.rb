@@ -1,16 +1,16 @@
 class Shelve < ApplicationRecord
     validates :bookshelf_title, :user_id, presence: true
 
-    belongs_to :user,
+    has_one :user,
     foreign_key: :user_id,
     class_name: :User
 
-    has_many :onshelfbooks,
+    has_many :onshelfbook,
     foreign_key: :shelve_id,
     class_name: :OnShelfBook
 
     has_many :books,
-    through: :onshelfbooks,
+    through: :onshelfbook,
     source: :book
 
 end
