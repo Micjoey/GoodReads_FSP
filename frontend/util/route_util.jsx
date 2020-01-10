@@ -2,15 +2,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 
+// Auth is for when someone is not logged in
+// When NOT LOGGED in, it will render the component, otherwise it will redirect
 const Auth = ({ component: Component, path, loggedIn, exact }) => (
   <Route path={path} exact={exact} render={(props) => (
     !loggedIn ? (
       <Component {...props} />
     ) : (
-      <Redirect to="/home"/>
+      <Redirect to="/"/>
     )
   )} />
 );
+
+// Protected is for when someone is logged in
+// When LOGGED in, it will render the component, otherwise it will redirect
 
 const Protected = ({ component: Component, path, loggedIn, exact }) => (
   <Route path={path} exact={exact} render={(props) => (

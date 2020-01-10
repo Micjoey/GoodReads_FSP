@@ -21,7 +21,7 @@ const App = () => (
     <Modal />
     <NavBarContainer />
     <Switch>
-      <AuthRoute exact path="/" component={Splash} />
+      <AuthRoute exact path="/" component={Splash} /> 
       {/* <ProtectedRoute exact path="/home" component={HomeContainer} /> */}
     </Switch>
   </div>

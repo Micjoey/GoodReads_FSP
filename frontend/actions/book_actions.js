@@ -16,12 +16,12 @@ const receiveBook = book => ({
 // need to complete the book api
 
 export const fetchBooks = () => dispatch => (
-  BookAPIUtil.fetchBooks()
-    .then(books => dispatch(allbooks(books))
+  BookApiUtil.fetchBooks()
+    .then(books => dispatch(receiveAllBooks(books))
 ));
 
 export const fetchBook = bookId => dispatch => (
-  BookAPIUtil.fetchBook(bookId)
+  BookApiUtil.fetchBook(bookId)
     .then(book => dispatch(receiveBook(book)))
 );
 
