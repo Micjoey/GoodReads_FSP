@@ -3,6 +3,7 @@ import { logout } from '../../actions/session_actions';
 import Root from './rootfile';
 import { openModal } from '../../actions/model_actions';
 
+
 const mapStateToProps = ({ session, entities: { users } }) => {
     return {
         currentUser: users[session.id]
@@ -11,7 +12,8 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
-    openModal: modal => dispatch(openModal(modal))
+    openModal: modal => dispatch(openModal(modal)),
+    // idSwitch: target => dispatch(dropDownIdSwitch(target))
 });
 
 export default connect(

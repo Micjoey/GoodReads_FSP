@@ -5,11 +5,11 @@ body {
 }
 
 
-/* .filler-background-box {
+.filler-background-box {
     object-fit: cover;
     z-index: -2;
     height: 2000px;
-} */
+}
 
 .rootfile-view-to-login {
     display: flex;
@@ -27,7 +27,7 @@ body {
     width: 100%;
     padding: 0px;
     height: 40px;
-
+    position: fixed;
 }
 .background-box {
     align-items: right;
@@ -48,6 +48,16 @@ body {
     padding-right: 50px;
     height: 50px;
     
+}
+.myreads-title-logged-in {
+    text-decoration: none;
+    font-size: 40px;
+    color: black;
+    vertical-align: middle;
+    padding-left: 30px;
+    padding-right: 50px;
+    height: 50px;
+    vertical-align: center;
 }
 
 .sign-up-box {
@@ -115,8 +125,9 @@ body {
     width: 100%;
     padding: 0px;
     padding-bottom: 7px;
-    height: 40px;
+    height: 60px;
     border-bottom: 1px solid black;
+    align-content: center;
 }
 
 /* .header-link {

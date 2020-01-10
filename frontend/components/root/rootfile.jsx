@@ -13,21 +13,42 @@ import { openModal } from '../../actions/model_actions';
 class RootFile extends React.Component {
     constructor(props) {
         super(props); 
+        this.dropDownIdSwitch = this.dropDownIdSwitch.bind(this)
+    }
 
+    dropDownIdSwitch() {
+        document.getElementById("myDropdown").classList.toggle("show");
     }
 
 
     personalGreeting() {
         return(
-        <div className="header-group">
-            <Link to="/" className="myreads-title">MyReads</Link>
+        <div>
+            <div className="header-group">
+                <Link to="/" className="myreads-title-logged-in">MyReads</Link>
+                    <div className="dropdown">
+                        <img src={images.account_image} className="dropdown-image-icon" alt="" />
+                        <div className="dropdown-content">
+                            <disabled className="header-currentuser-name">Hi, {this.props.currentUser.username}!</disabled>
+                            <button className="header-button" onClick={this.props.logout}>Log Out</button>
+                        </div>
+                    </div>
+            </div>
+            {/* temp code */}
+            {/* <div>
+                <h2>Clickable Dropdown</h2>
+                <p>Click on the button to open the dropdown menu.</p>
+
                 <div className="dropdown">
-                    <img src={images.account_image} className="dropdown-image-icon" alt="" />
-                    <div className="dropdown-content">
-                        <disabled className="header-currentuser-name">Hi, {this.props.currentUser.username}!</disabled>
-                        <button className="header-button" onClick={this.props.logout}>Log Out</button>
+                        <button onClick={this.dropDownIdSwitch()} className="dropbtn">Dropdown</button>
+                    <div id="myDropdown" className="dropdown-content">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
                     </div>
                 </div>
+            </div> */}
+            {/* tempcode */}
         </div>
         )
     }
