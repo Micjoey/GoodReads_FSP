@@ -1,4 +1,4 @@
-class Shelve < ApplicationRecord
+class Shelf < ApplicationRecord
     validates :bookshelf_title, :user_id, presence: true
 
     has_one :user,

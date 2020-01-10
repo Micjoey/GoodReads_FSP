@@ -13,9 +13,9 @@ class Book < ApplicationRecord
     through: :onshelfbooks,
     source: :user
 
-    has_many :shelves,
+    has_many :shelfs,
     through: :onshelfbooks,
-    source: :shelve
+    source: :shelf
    
 end
 

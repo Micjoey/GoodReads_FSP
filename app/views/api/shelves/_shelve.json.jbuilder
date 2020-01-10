@@ -1,1 +1,1 @@
-json.extract! shelve, :id , :title,
+json.extract! shelf, :id , :title,

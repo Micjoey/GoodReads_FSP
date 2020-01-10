@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_174650) do
+ActiveRecord::Schema.define(version: 2020_01_10_215746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_01_10_174650) do
   end
 
   create_table "on_shelf_books", force: :cascade do |t|
-    t.integer "shelve_id", null: false
+    t.integer "shelf_id", null: false
     t.integer "book_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -42,13 +42,6 @@ ActiveRecord::Schema.define(version: 2020_01_10_174650) do
     t.integer "rating", null: false
     t.text "body"
     t.date "date_reviewed", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shelves", force: :cascade do |t|
-    t.string "bookshelf_title", null: false
-    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

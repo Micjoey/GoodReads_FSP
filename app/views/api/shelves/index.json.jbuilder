@@ -1,6 +1,6 @@
 
-    @shelves.each do |shelve|
-        json.set! shelve.id do 
-            json.partial! "shelve", shelve: shelve
+    @shelves.each do |shelf|
+        json.set! shelf.id do 
+            json.partial! "shelf", shelf: shelf
         end
     end

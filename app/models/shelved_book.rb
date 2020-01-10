@@ -1,15 +1,15 @@
 class ShelvedBook < ApplicationRecord
-    validates :shelve_id, :book_id, presence: true
+    validates :shelf_id, :book_id, presence: true
 
-   belongs_to :shelve,
-   foreign_key: :shelve_id,
-   class_name: :Shelve
+   belongs_to :shelf,
+   foreign_key: :shelf_id,
+   class_name: :Shelf
 
    belongs_to :book,
    foreign_key: :book_id,
    class_name: :Book
 
    has_one :user,
-   through: :shelve,
+   through: :shelf,
    source: :user
 end
