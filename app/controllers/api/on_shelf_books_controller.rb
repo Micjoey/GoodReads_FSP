@@ -1,24 +1,28 @@
-class Api::OnShelfBooksController < ApplicationController
+class Api::OnShelfBookController < ApplicationController
     def create
-        @shelved_book = Shelve.new(shelved_book_params)
-        if @shelved_book.save
+        @onshelfbook = OnShelfBook.new(onshelfbook_params)
+        if @onshelfbook.save
             render :show
         else
-            render json: @shelve.errors.full_messages, status: 406
+            render json: @onshelfbook.errors.full_messages, status: 406
         end
     end
 
+    def show
+        @onshelfbook = @onshelfbook.find(params[:book_id])
+    end
+
     def destroy
-        @shelved_book = Shelve.find(params[:id])
-        if @shelved_book.destroy
+        @onshelfbook = OnShelfBook.find(params[:id])
+        if @onshelfbook.destroy
             render :show
         else
-            render json: @shelved_book.errors.full_messages, status: 406
+            render json: @onshelfbook.errors.full_messages, status: 406
         end
     end
 
     private
-    def shelved_book_params
-        params.require(:shelved_book).permit(:book_id, :shelf_id)
+    def onshelfbook_params
+        params.require(:onshelfbook).permit(:book_id, :shelf_id)
     end
 end
