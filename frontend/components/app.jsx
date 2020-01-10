@@ -15,6 +15,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal'
 import NavBarContainer from './navbar/navbar_container';
 import Splash from './splash/splash';
+import IndexBookContainer from './book/index_book_container'
 
 const App = () => (
   <div className="app">
@@ -22,7 +23,7 @@ const App = () => (
     <NavBarContainer />
     <Switch>
       <AuthRoute exact path="/" component={Splash} /> 
-      {/* <ProtectedRoute exact path="/home" component={HomeContainer} /> */}
+      <ProtectedRoute exact path="/home" component={IndexBookContainer} />
     </Switch>
   </div>
 );
