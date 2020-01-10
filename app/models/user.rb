@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     attr_reader :password
-
+    validates :email, uniqueness: true
     validates :username, :password_digest, :session_token, presence: true
     validates :username, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
@@ -12,6 +12,9 @@ class User < ApplicationRecord
     through: :bookshelves,
     source: :book_ids
 
+    has_many :reviews,
+    foreign_key: :user_id,
+    class_name: :Bookshelf
 
     has_many :bookshelves,
     foreign_key: :user_id,
