@@ -1,18 +1,15 @@
 import { connect } from 'react-redux'
-import { fetchBooks, fetchBook } from '../../actions/book_actions'
+import { retrieveBooks, retrieveBook } from '../../actions/book_actions'
 import indexBook from './index_book'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return {
-        userId: state.session.id,
-        books: state.entities.books[ownProps.match.params.bookId],
-        shelf: state.entities.shelf,
-        review: state.entities.reviews
+        books: Object.keys(state.entities.books).map(id => state.entities.books[id])
     }
 }
 
 const mapDispatchToProps = dispatch => ({
-    fetchBook: () => dispatch(fetchBook()),
+    retrieveBooks: books => dispatch(retrieveBooks(books)),
 })
 
 export default connect(

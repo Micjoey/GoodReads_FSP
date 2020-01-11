@@ -13,16 +13,21 @@ ActiveRecord::Base.transaction do
     Review.destroy_all
 
 
-    # require 'faker'
-    # include Faker
+    require 'faker'
+    include Faker
 
-    # 20.times do 
-    #     book = Book.create(
-    #         title: Faker::Book.title,
-    #         author: Faker::Book.author,
-    #         genre: Faker::Book.genre,
-    #     )
-    # end
+    i = 0
+    20.times do 
+        book = `book-#{i}`
+        book = Book.create(
+            title: Faker::Book.title,
+            author: Faker::Book.author,
+            genre: Faker::Book.genre,
+            bookshelf_id: 1,
+            cover_image_url: "hello"
+        )
+        i += 1
+    end
     i = 0
     while i <= 3 do
         if i ==0

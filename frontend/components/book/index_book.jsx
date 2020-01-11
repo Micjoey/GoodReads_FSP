@@ -4,17 +4,20 @@ import { link, Redirect } from 'react-router-dom'
 class indexBook extends React.Component {
     constructor(props) {
         super(props)
-
+        
     }
 
-    
+    componentDidMount() {
+        this.props.retrieveBooks()
+    }
 
     render() {
         // debugger
+
         const books = (this.props.books) ? (
                 <ul>
-                    {this.props.books.map((book, i) => (
-                        <ul className="all-books" key={`book-{i}`}>
+                    {books.map((book, i) => (
+                        <ul className="all-books" key={`book-${i}`}>
                             {book}
                         </ul>
                     ))}
@@ -25,6 +28,7 @@ class indexBook extends React.Component {
                   {books}
                 </div>
         )
+        
     }
 
 }
