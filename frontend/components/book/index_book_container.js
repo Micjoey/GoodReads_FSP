@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
 import { retrieveBooks, retrieveBook } from '../../actions/book_actions'
-import indexBook from './index_book'
+import IndexBook from './index_book'
 
 const mapStateToProps = (state) => {
     return {
-        books: Object.keys(state.entities.books).map(id => state.entities.books[id])
+        books: Object.values(state.entities.books)
     }
 }
 
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(indexBook)
+)(IndexBook)

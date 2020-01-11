@@ -93,6 +93,8 @@
 .demo-login {
     width: 80px;
     background-color: #f5e7a5;
+    height: 35px;
+    font-weight: bold;
 }
 
 ::placeholder{

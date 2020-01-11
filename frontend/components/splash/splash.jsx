@@ -20,7 +20,6 @@ class Splash extends React.Component {
                 <div className="background-box">
                     <img src={images.fireworks2} className="firework" alt="" />
                 </div>
-                {/* <div className="filler-background-box"></div> */}
             </div>
         )
     }

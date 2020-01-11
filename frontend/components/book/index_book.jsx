@@ -1,7 +1,7 @@
 import React from 'react';
 import { link, Redirect } from 'react-router-dom'
 
-class indexBook extends React.Component {
+class IndexBook extends React.Component {
     constructor(props) {
         super(props)
         
@@ -12,19 +12,19 @@ class indexBook extends React.Component {
     }
 
     render() {
-        // debugger
-
-        const books = (this.props.books) ? (
+        const books = (this.props.books.length !== 0) ? (
                 <ul>
-                    {books.map((book, i) => (
+                    {this.props.books.map((book, i) => (
                         <ul className="all-books" key={`book-${i}`}>
-                            {book}
+                            <ul>{book.title}, {book.author}</ul>
+                            <ul></ul>
+                                    
                         </ul>
                     ))}
                 </ul>
             ) : (<p>Sorry! No Books!</p>)
         return (
-                <div className="test"> 
+                <div className="all-book-information"> 
                   {books}
                 </div>
         )
@@ -33,4 +33,4 @@ class indexBook extends React.Component {
 
 }
 
-export default indexBook
+export default IndexBook
