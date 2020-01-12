@@ -26,6 +26,8 @@ class RootFile extends React.Component {
         <div>
             <div className="header-group-logged-in">
                 <Link to="/" className="myreads-title-logged-in">MyReads</Link>
+                <Link to='/Shelf' className="myBooks-link">My Books</Link>
+                <Link to='/Shelf' className="myBooks-link"></Link>
                     <div className="dropdown">
                         <img src={images.account_image} className="dropdown-image-icon" alt="" />
                         <div className="dropdown-content">
@@ -33,6 +35,9 @@ class RootFile extends React.Component {
                             <button className="header-button" onClick={this.props.logout}>Log Out</button>
                         </div>
                     </div>
+            </div>
+            <div >
+                asdfasdf
             </div>
         </div>
         )

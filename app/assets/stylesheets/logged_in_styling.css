@@ -21,7 +21,8 @@
     border-bottom: 1px solid black;
     align-items: center;
     position: relative;
-    top: 0px
+    top: 0px;
+    background-color: #f4f2e9;
 }
 
 .dropdown-image-icon {

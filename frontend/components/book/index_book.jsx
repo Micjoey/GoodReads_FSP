@@ -29,16 +29,19 @@ class IndexBook extends React.Component {
             images.wild_game,
         ]
         const books = (this.props.books.length !== 0) ? (
-                <ul>
+                <div className="all-books">
                     {this.props.books.map((book, i) => (
-                        <ul className="all-books" key={`book-${i}`}>
-                            <ul><img src={book_cover[i]} className="all-book-covers" alt=""/></ul>
-                            <ul>{book.title}, {book.author}</ul>
-                            <ul></ul>
-                                    
-                        </ul>
+                        // <ul className="all-books" key={`book-${i}`}>
+                        //     <ul className="all-books-book-info"><img src={book_cover[i]} className="all-book-covers" alt="" />{book.title}, {book.author}</ul>
+                        // </ul>
+                        <div key={`book-${i}`} className="all-books-book-info">
+                            <img src={book_cover[i]} className="all-book-covers" alt="" />
+                            <div className='show-book-information-title'>{book.title} by,</div>
+                            <div className='show-book-information-author'>{book.author}</div>
+
+                        </div>
                     ))}
-                </ul>
+                </div>
             ) : (<p>Sorry! No Books!</p>)
         return (
                 <div className="all-book-information"> 
