@@ -1,16 +1,24 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom'
-import ShowBookContainer from './show_books_container';
+import { Link, Redirect, withRouter } from 'react-router-dom'
+import ShowBookContainer from './show_book_container';
 
 class IndexBook extends React.Component {
     constructor(props) {
         super(props)
+        this.indexBook = this.indexBook.bind(this);
     }
 
     componentDidMount() {
         this.props.retrieveBooks()
+
     }
 
+
+
+    indexBook() {
+        const book = `/book/${this.props.match.params.bookId}`
+        this.props.hist.push(book)
+    }
 
     render() {
         const book_cover = [
@@ -29,20 +37,14 @@ class IndexBook extends React.Component {
             images.they_called_us_enemy,
             images.wild_game,
         ]
-        const indexBook = (book) => {
-            return (
-                <ShowBookContainer book={book} />
-            )
-        }
+    
         const books = (
                 <div className="show-books">
                     {this.props.books.map((book, i) => (
                         <div key={`book-${i}`} className="show-books-book-info">
-                            {/* <Redirect to={`/home/${book.id}`}> */}
-                                <div className="show-book-covers"><img src={book_cover[i]} className="show-book-cover"/></div>
-                            {/* </Redirect> */}
-                            <div className='show-book-information-title'>{book.title} by,</div>
-                            <div className='show-book-information-author'>{book.author}</div>
+                            <div className="show-book-covers"><img src={book_cover[i]} className="show-book-cover"/></div>
+                            <div className='show-book-information-title'>{book.title}</div>
+                            <div className='show-book-information-author'>by: {book.author}</div>
                         </div>
                     ))}
                 </div>
@@ -57,4 +59,5 @@ class IndexBook extends React.Component {
 
 }
 
-export default IndexBook
+
+export default withRouter(IndexBook)

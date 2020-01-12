@@ -7,7 +7,7 @@ class showBook extends React.Component {
     }
 
     componentDidMount() {
-        this.props.retrieveBook(this.props.id)
+        this.props.retrieveBook(this.props.match.params.bookId)
     }
 
     render() {

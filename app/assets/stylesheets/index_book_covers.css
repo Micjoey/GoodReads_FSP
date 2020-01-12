@@ -9,6 +9,8 @@
 
     .show-book-information {
         padding: 10px;
+        height: auto;
+        width: auto;
     }
 
         .show-books {

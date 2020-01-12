@@ -26,8 +26,10 @@ class RootFile extends React.Component {
         <div>
             <div className="header-group-logged-in">
                 <Link to="/" className="myreads-title-logged-in">MyReads</Link>
+                <Link to="/" className="nav-bar-home-button">Home</Link>
                 <Link to='/Shelf' className="myBooks-link">My Books</Link>
-                <Link to='/Shelf' className="myBooks-link"></Link>
+                <button>Placeholder - search bar</button>
+                {/* <Link to='/Shelf' className="myBooks-link"></Link> */}
                     <div className="dropdown">
                         <img src={images.account_image} className="dropdown-image-icon" alt="" />
                         <div className="dropdown-content">
@@ -36,9 +38,9 @@ class RootFile extends React.Component {
                         </div>
                     </div>
             </div>
-            <div className="all-books-sidebar">
+            {/* <div className="all-books-sidebar">
                 Sidebar
-            </div>
+            </div> */}
         </div>
         )
     }
