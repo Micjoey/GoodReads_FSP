@@ -16,6 +16,7 @@ import Modal from './modal/modal'
 import NavBarContainer from './navbar/navbar_container';
 import Splash from './splash/splash';
 import IndexBookContainer from './book/index_book_container'
+import ShowBookContainer from './book/show_books_container';
 
 const App = () => (
   <div className="app">
@@ -27,6 +28,7 @@ const App = () => (
       <Switch>
         <AuthRoute exact path="/" component={Splash} /> 
         <ProtectedRoute exact path="/home" component={IndexBookContainer} />
+        <ProtectedRoute exact path="/home/:id" component={ShowBookContainer}/>
       </Switch>
     </div>
   </div>

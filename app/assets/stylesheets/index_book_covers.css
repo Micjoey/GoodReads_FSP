@@ -19,6 +19,11 @@
                 border: none;
                 box-shadow: none;
             }
+            .show-books-book-info2 {
+                border: none;
+                box-shadow: none;
+                padding: none;
+            }
 
             .show-book-covers{
 
@@ -29,7 +34,8 @@
                         height: auto;
                         min-width: 70px;
                         border: none;
-                        
+                        padding: none;
+                        margin: none;
                     }
 
                     .show-book-cover:hover {

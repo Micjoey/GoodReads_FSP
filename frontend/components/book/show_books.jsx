@@ -13,7 +13,7 @@ class showBook extends React.Component {
     render() {
         const books = (typeof this.props.books !== 'undefined') ? (
             <div className="index-book">
-                {this.props.book_information.title}
+                HI
             </div>
         ) : (<p>Sorry! No Books!</p>)
     }
