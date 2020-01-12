@@ -6,8 +6,8 @@ class showBook extends React.Component {
         super(props)
     }
 
-    componentDidMount(id) {
-        this.props.retrieveBook(id)
+    componentDidMount() {
+        this.props.retrieveBook(this.props.id)
     }
 
     render() {

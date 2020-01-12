@@ -15,10 +15,19 @@
     flex-wrap: nowrap;
     width: auto;
     padding-left: 0%; 
+    padding-right: 0px;
     flex-flow: non-reverse;
     /* width: 100px; */
     /* height: 0px; */
     align-items:center;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 40px);
+    vertical-align: middle;
+    height: 60px;
+    padding: 2px;
+    padding-bottom: 4px;
     height: auto;
 }
 
@@ -31,17 +40,6 @@
     align-items: center;
     vertical-align: middle;
     width: auto;
-    height: auto;
-}
-
-.login-form-box {
-    display: flex;
-    justify-content: space-between;
-    width: calc(100% - 40px);
-    vertical-align: middle;
-    height: 60px;
-    padding: 2px;
-    padding-bottom: 4px;
     height: auto;
 }
 
@@ -75,14 +73,12 @@
 .login-form-submit-button {
     width: 50px;
     height: 30px;
-    /* border: 0px; */
-    border-radius: 4px;
+    border: none;
     font-size: 13px;
     line-height: -10px;
     width: 85px;
     font-weight: bolder;
     text-align: center;
-    padding-left: 4px;
 }
 
 .demo-login:hover {
@@ -91,10 +87,18 @@
 
 }
 .demo-login {
-    width: 80px;
     background-color: #f5e7a5;
-    height: 35px;
     font-weight: bold;
+    border: none;
+    white-space: nowrap;
+    width: 50px;
+    height: 30px;
+    border: none;
+    font-size: 13px;
+    line-height: -10px;
+    width: 85px;
+    font-weight: bolder;
+    text-align: center;
 }
 
 ::placeholder{
@@ -106,8 +110,11 @@
     height: unset;
     font-size: 15px;
     text-align: left;
-    padding: 3px
+    padding: 3px;
     
+}
+.password-field {
+    margin-right: 10px;
 }
 
 .login-fields {
