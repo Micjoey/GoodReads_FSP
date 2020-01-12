@@ -20,32 +20,36 @@
                 box-shadow: none;
             }
 
-                .show-book-covers {
-                    width: 210px;
-                    max-width: 100%;
-                    height: auto;
-                    min-width: 70px;
-                    border: none;
+            .show-book-covers{
+
+            }
+                    .show-book-cover {
+                        width: 210px;
+                        max-width: 100%;
+                        height: auto;
+                        min-width: 70px;
+                        border: none;
+                        
+                    }
+
+                    .show-book-cover:hover {
+                        width: 300px;
+                        max-width: 100%;
+                        height: auto;
+                        min-width: 70px;
+                        cursor: grab;
+                        align-content: center;
+                    }
                     
+                .show-book-information-title,
+                .show-book-information-author {
+                    max-width: 220px;
+                    border: none;
                 }
 
-                .show-book-covers:hover {
-                    width: 300px;
-                    max-width: 100%;
-                    height: auto;
-                    min-width: 70px;
-                    cursor: grab;
-                    align-content: center;
+                .show-book-information-button {
+                    border: none;
+                    padding: 0px;
                 }
-                    .show-book-information-title,
-                    .show-book-information-author {
-                        max-width: 220px;
-                        border: none;
-                    }
-
-                    .show-book-information-button {
-                        border: none;
-                        padding: 0px;
-                    }
     
 

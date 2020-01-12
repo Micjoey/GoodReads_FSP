@@ -11,18 +11,9 @@ class showBook extends React.Component {
     }
 
     render() {
-        const books = (this.props.books.length !== 0) ? (
-            <div className="index-books">
-                {this.props.books.map((book, i) => (
-                    // <ul className="index-books" key={`book-${i}`}>
-                    //     <ul className="index-books-book-info"><img src={book_cover[i]} className="index-book-covers" alt="" />{book.title}, {book.author}</ul>
-                    // </ul>
-                    <div key={`book-${i}`} className="index-books-book-info">
-                        <img src={book_cover[i]} className="index-book-covers" alt="" />
-                        <div className='index-book-information-title'>{book.title} by,</div>
-                        <div className='index-book-information-author'>{book.author}</div>
-                    </div>
-                ))}
+        const books = (typeof this.props.books !== 'undefined') ? (
+            <div className="index-book">
+                {this.props.book_information.title}
             </div>
         ) : (<p>Sorry! No Books!</p>)
     }
