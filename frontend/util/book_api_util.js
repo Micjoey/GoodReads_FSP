@@ -1,4 +1,4 @@
-export const retrieveBooks = () => (
+export const retrieveBooks = (key, id) => (
     $.ajax({
         method: 'GET',
         url: `/api/books`
@@ -12,3 +12,4 @@ export const retrieveBook = bookId => (
         url: `/api/books/${bookId}`
     })
 )
+
