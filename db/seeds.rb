@@ -19,99 +19,99 @@ ActiveRecord::Base.transaction do
 
 # 1
 book1 = Book.create(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "American Spy",
+    author: "Lauren Wilkinson",
     genre: Faker::Book.genre,
     cover_image_url: "app/assets/images/American_Spy_By_Lauren_wilkinson.png",
 )
 # 2
 book2 = Book.create(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "Book Of Strange New Things",
+    author: "Michel Faber",
     genre: Faker::Book.genre,
     cover_image_url: "app/assets/images/Book-of-Strange-New-Things.jpg",
 )
 # 3
 book3 = Book.create(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "Upright Women Wanted",
+    author: "Sarah Gailey",
     genre: Faker::Book.genre,
-    cover_image_url: "app/assets/images/D5fmBfKUYAAWhf8.jpg-large.jpeg",
+    cover_image_url: "app/assets/images/upright_woman_wanted.jpeg",
 )
 # 4
 book4 = Book.create(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "City of Girls",
+    author: "Elizabeth Gilbert",
     genre: Faker::Book.genre,
     cover_image_url: "app/assets/images/Elizabeth_Gilbert_by_city_of_girls.png",
 )
 # 5
 book5 = Book.create(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "Maybe You Should Talk To Someone",
+    author: "Lori Gottlieb",
     genre: Faker::Book.genre,
     cover_image_url: "app/assets/images/Maybe_You_Should_Talk_To_Someone_by_Lori_Gottlieb.png",
 )
 # 6
 book6 = Book.create(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "The Names Of The Dead",
+    author: "Kevin Wignall",
     genre: Faker::Book.genre,
-    cover_image_url:"app/assets/images/psychopath-test.jpg",
+    cover_image_url:"app/assets/images/The_Names_of_the_dead_by_Kevin_wignall.png",
 )
 # 7
 bool7 = Book.create(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "Quichotte",
+    author: "Salman Rushdie",
     genre: Faker::Book.genre,
     cover_image_url:"app/assets/images/Salman_Rushdie_by_Quichotte.png",
 )
 # 8
 book8 = Book.create(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "Swann's Way",
+    author: "Marcel Proust",
     genre: Faker::Book.genre,
     cover_image_url: "app/assets/images/Swann's_Way_by_Marcel_Proust.png",
 )
 # 9
 book9 = Book.create(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "Super Pumped, The Batle For Uber",
+    author: "Mike Isaac",
     genre: Faker::Book.genre,
     cover_image_url: "app/assets/images/Super_Pumped_by_Mike_Isaac.png",
 )
 # 10
 book10 = Book.create(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "The Nickel Boys",
+    author: "Colson Whitehead",
     genre: Faker::Book.genre,
     cover_image_url:"app/assets/images/The_Nickel_Boys_by_Colson_Whitehead.png",
 )
 # 11
 book11 = Book.create(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "The Starless Sea",
+    author: "Erin Morgenstern",
     genre: Faker::Book.genre,
     cover_image_url:"app/assets/images/The_starless_sea_by_erin_morgenstern.png",
 )
 # 12
 book12 = Book.create(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "The Testaments",
+    author: "Atwood",
     genre: Faker::Book.genre,
     cover_image_url:"app/assets/images/The_Testaments_by_Atwood.png",
 )
 # 13
 book13 = Book.create(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "They Called Us Enemy",
+    author: "George Takei",
     genre: Faker::Book.genre,
-    cover_image_url:"app/assets/images/They_Called_us_enemy_by_Georege_takei.png",
+    cover_image_url:"app/assets/images/They_Called_us_enemy_by_george_takei.png",
 )
 # 14
 book14 = Book.create(
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "Wild Game, My Mother, Her Lover, and Me",
+    author: "Adrienne Brodeur",
     genre: Faker::Book.genre,
     cover_image_url:"app/assets/images/Wild_Game_by_Adrienne_Brodeur.png",
 )
