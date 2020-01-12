@@ -2,9 +2,10 @@
  .dropdown {
   position: relative;
   display: inline-block;
-  padding-right: 10px;
-  padding-top: 4px;
+  /* padding-right: 10px; */
+  /* padding-top: 4px; */
   top: inherit;
+  padding: 4px 10px;
 }
 
 .dropdown-content {
@@ -17,11 +18,26 @@
   z-index: 1;
   right: 10px;
   border: none;
+  opacity: 1;
 }
 
 
+
+.dropdown:hover {
+  background-color: rgba(165, 140, 42, 0.632);
+}
+
 .dropdown:hover .dropdown-content {
   display: block;
+  
+}
+
+
+.dropdown-image-icon {
+    display: flex;
+    align-items: center;
+    border-radius: 50%
+    
 }
 
 /* Temp Code */

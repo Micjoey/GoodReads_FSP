@@ -1,24 +1,20 @@
 import { connect } from 'react-redux'
-import { retrieveBooks, retrieveBook} from '../../actions/book_actions'
-import showBook from './show_books'
+import { retrieveBooks, retrieveBook } from '../../actions/book_actions'
+import ShowBook from './show_books'
 
-const mapStateToProps = ({session, entities: { books }}) => {
+const mapStateToProps = (state) => {
+    const bookId = props.match.params.bookId
     return {
-        // currentUser: users[session.id],
-        // books: state.entities.books[ownProps.match.params.bookId],
-        userId: state.session.id,
-        books: state.entities.books[ownProps.match.params.bookId],
-        shelf: state.entities.shelf,
-        review: state.entities.reviews
-
+        bookId: bookId,
+        book: Object.values(state.entities.books[bookId])
     }
 }
 
 const mapDispatchToProps = dispatch => ({
-    retrieveBooks: () => dispatch(retrieveBooks()),
+    retrieveBook: booksId => dispatch(retrieveBook(booksId)),
 })
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(showBook)
+)(ShowBook)

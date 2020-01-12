@@ -36,8 +36,8 @@ class RootFile extends React.Component {
                         </div>
                     </div>
             </div>
-            <div >
-                asdfasdf
+            <div className="all-books-sidebar">
+                Sidebar
             </div>
         </div>
         )
@@ -60,20 +60,3 @@ class RootFile extends React.Component {
     
     
     export default RootFile;
-    
-    
-    {/* temp code */}
-    {/* <div>
-        <h2>Clickable Dropdown</h2>
-        <p>Click on the button to open the dropdown menu.</p>
-
-        <div className="dropdown">
-                <button onClick={this.dropDownIdSwitch()} className="dropbtn">Dropdown</button>
-            <div id="myDropdown" className="dropdown-content">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </div> */}
-    {/* tempcode */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { link, Redirect } from 'react-router-dom'
+import ShowBookContainer from './show_books_container';
 
 class IndexBook extends React.Component {
     constructor(props) {
@@ -9,6 +10,12 @@ class IndexBook extends React.Component {
 
     componentDidMount() {
         this.props.retrieveBooks()
+    }
+
+    renderBook(book, bookId) {
+        return (
+        <ShowBookContainer />
+        )
     }
 
     render() {
@@ -24,27 +31,25 @@ class IndexBook extends React.Component {
             images.the_nickel_boys,
             images.the_starless_sea,
             images.the_testaments,
-            images.they_called_us_enemy,
+            images.they_cshowed_us_enemy,
             images.upright_woman_wanted,
             images.wild_game,
         ]
-        const books = (this.props.books.length !== 0) ? (
-                <div className="all-books">
+        const books = (
+                <div className="show-books">
                     {this.props.books.map((book, i) => (
-                        // <ul className="all-books" key={`book-${i}`}>
-                        //     <ul className="all-books-book-info"><img src={book_cover[i]} className="all-book-covers" alt="" />{book.title}, {book.author}</ul>
-                        // </ul>
-                        <div key={`book-${i}`} className="all-books-book-info">
-                            <img src={book_cover[i]} className="all-book-covers" alt="" />
+                        <div key={`book-${i}`} className="show-books-book-info">
+                            {/* <button className="demo-login" onClick={this.handleDemoLogin}>Demo Login</button> */}
+                            <button className="show-book-information-button" onClick={this.renderBook(book, book.id)}><img src={book_cover[i]} className="show-book-covers" alt="" /></button>
                             <div className='show-book-information-title'>{book.title} by,</div>
                             <div className='show-book-information-author'>{book.author}</div>
 
                         </div>
                     ))}
                 </div>
-            ) : (<p>Sorry! No Books!</p>)
+            )
         return (
-                <div className="all-book-information"> 
+                <div className="show-book-information"> 
                   {books}
                 </div>
         )

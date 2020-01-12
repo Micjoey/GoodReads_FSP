@@ -1,0 +1,51 @@
+.show-books {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 14px;
+}
+
+    .show-book-information {
+        padding: 10px;
+    }
+
+        .show-books {
+
+        }
+
+            .show-books-book-info {
+                border: none;
+                box-shadow: none;
+            }
+
+                .show-book-covers {
+                    width: 210px;
+                    max-width: 100%;
+                    height: auto;
+                    min-width: 70px;
+                    border: none;
+                    
+                }
+
+                .show-book-covers:hover {
+                    width: 300px;
+                    max-width: 100%;
+                    height: auto;
+                    min-width: 70px;
+                    cursor: grab;
+                    align-content: center;
+                }
+                    .show-book-information-title,
+                    .show-book-information-author {
+                        max-width: 220px;
+                        border: none;
+                    }
+
+                    .show-book-information-button {
+                        border: none;
+                        padding: 0px;
+                    }
+    
+
