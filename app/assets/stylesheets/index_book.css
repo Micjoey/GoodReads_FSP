@@ -28,10 +28,10 @@
             }
 
             .index-book-covers{
-
+                align-items: center;
             }
                     .index-book-cover {
-                        width: 210px;
+                        width: 250px;
                         max-width: 100%;
                         height: auto;
                         min-width: 70px;
@@ -47,6 +47,7 @@
                         min-width: 70px;
                         cursor: grab;
                         align-content: center;
+                        background-color: lavenderblush;
                     }
                     
                 .index-book-information-title,
