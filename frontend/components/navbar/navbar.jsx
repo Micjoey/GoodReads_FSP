@@ -25,8 +25,8 @@ class RootFile extends React.Component {
         return(
         <div>
             <div className="header-group-logged-in">
-                <Link to="/" className="myreads-title-logged-in">MyReads</Link>
-                <Link to="/" className="nav-bar-home-button">Home</Link>
+                <Link to="/home" className="myreads-title-logged-in">MyReads</Link>
+                <Link to="/home" className="nav-bar-home-button">Home</Link>
                 <Link to='/Shelf' className="myBooks-link">My Books</Link>
                 <button>Placeholder - search bar</button>
                 {/* <Link to='/Shelf' className="myBooks-link"></Link> */}

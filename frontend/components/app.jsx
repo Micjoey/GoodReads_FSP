@@ -26,9 +26,9 @@ const App = () => (
     </header>
     <div className="content">
       <Switch>
+        <ProtectedRoute path="/book/:bookId" component={ShowBookContainer}/>
         <AuthRoute exact path="/" component={Splash} /> 
         <ProtectedRoute exact path="/home" component={IndexBookContainer} />
-        <ProtectedRoute exact path="/book" component={ShowBookContainer}/>
       </Switch>
     </div>
   </div>

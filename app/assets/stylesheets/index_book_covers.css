@@ -1,4 +1,4 @@
-.show-books {
+.index-books {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 10px;
@@ -13,15 +13,15 @@
         width: auto;
     }
 
-        .show-books {
+        .index-books {
 
         }
 
-            .show-books-book-info {
+            .index-books-book-info {
                 border: none;
                 box-shadow: none;
             }
-            .show-books-book-info2 {
+            .index-books-book-info2 {
                 border: none;
                 box-shadow: none;
                 padding: none;
