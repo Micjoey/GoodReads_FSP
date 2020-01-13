@@ -35,7 +35,7 @@ class showBook extends React.Component {
         const book_information = (typeof this.props.book !== 'undefined') ? (
             <div className="show-book-information">
                 {/* <div className="show-book-cover-div"> */}
-                    <img className="show-book-cover" src={book_cover[book.id - 1]} />
+                    {/* <img className="show-book-cover" src={book_cover[book.id - 1]} /> */}
                     <div className='show-book-information-title'>{book.title}</div>
                     <div className='show-book-information-author'>by: {book.author}</div>
                     <div className='show-book-information-genre'>Genre: {book.genre}</div>
@@ -47,13 +47,10 @@ class showBook extends React.Component {
             <div className="show-book">
                 <div className='show-book-all-information'>
                     <div className="show-book-information-cover-image">
-                        {/* {cover} */}
+                        {cover}
                     </div>
                     <div className="show-book-information-detail">
                         {book_information}
-                        {/* <div className='show-book-information-title'>{book.title}</div>
-                        <div className='show-book-information-author'>by: {book.author}</div>
-                        <div className='show-book-information-genre'>Genre: {book.genre}</div> */}
                     </div>
                 </div>
                 <div className="show-book-my-activity">
