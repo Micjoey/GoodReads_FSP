@@ -4,16 +4,14 @@ import {link, Redirect} from 'react-router-dom'
 class showBook extends React.Component {
     constructor(props){
         super(props) 
-
     }
 
     componentDidMount() {
         this.props.retrieveBook(this.props.match.params.bookId)
     }
     
-    
-
     render() {
+        if (typeof this.props.book === 'undefined') return null;
         const book_cover = [
             images.american_spy,
             images.book_of_strange,
@@ -31,27 +29,32 @@ class showBook extends React.Component {
             images.wild_game,
         ]
         const book = this.props.book
-        console.log(book)
-        const books = (typeof this.props.book !== 'undefined') ? (
+        const cover = (
+            <img className="show-book-cover" src={book_cover[book.id - 1]} />
+        )
+        const book_information = (typeof this.props.book !== 'undefined') ? (
             <div className="show-book-information">
                 {/* <div className="show-book-cover-div"> */}
-                    <img className="show-book-cover"src={book_cover[book.id-1]}  />
+                    <img className="show-book-cover" src={book_cover[book.id - 1]} />
                     <div className='show-book-information-title'>{book.title}</div>
                     <div className='show-book-information-author'>by: {book.author}</div>
                     <div className='show-book-information-genre'>Genre: {book.genre}</div>
                 {/* </div> */}
             </div>
         ) : (<p>Sorry! No Books!</p>)
+        
         return (
             <div className="show-book">
                 <div className='show-book-all-information'>
                     <div className="show-book-information-cover-image">
-
+                        {/* {cover} */}
                     </div>
                     <div className="show-book-information-detail">
-
+                        {book_information}
+                        {/* <div className='show-book-information-title'>{book.title}</div>
+                        <div className='show-book-information-author'>by: {book.author}</div>
+                        <div className='show-book-information-genre'>Genre: {book.genre}</div> */}
                     </div>
-                    {books}
                 </div>
                 <div className="show-book-my-activity">
                     <div className="show-book-activity-rating">
