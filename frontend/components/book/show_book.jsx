@@ -33,16 +33,33 @@ class showBook extends React.Component {
         const book = this.props.book
         console.log(book)
         const books = (typeof this.props.book !== 'undefined') ? (
-            <div className="index-book">
-                <div className="index-book-covers"><img src={book_cover[book[0]]} className="index-book-cover" /></div>
-                <div className='index-book-information-title'>{book[1]}</div>
-                <div className='index-book-information-author'>by: {book[3]}</div>
-                <div className='index-book-information-genre'>Genre: {book[2]}</div>
+            <div className="show-book-information">
+                {/* <div className="show-book-cover-div"> */}
+                    <img className="show-book-cover"src={book_cover[book.id-1]}  />
+                    <div className='show-book-information-title'>{book.title}</div>
+                    <div className='show-book-information-author'>by: {book.author}</div>
+                    <div className='show-book-information-genre'>Genre: {book.genre}</div>
+                {/* </div> */}
             </div>
         ) : (<p>Sorry! No Books!</p>)
         return (
-            <div>
-                {books}
+            <div className="show-book">
+                <div className='show-book-all-information'>
+                    <div className="show-book-information-cover-image">
+
+                    </div>
+                    <div className="show-book-information-detail">
+
+                    </div>
+                    {books}
+                </div>
+                <div className="show-book-my-activity">
+                    <div className>
+
+                    </div>
+
+                </div>
+               
             </div>
         )
     }

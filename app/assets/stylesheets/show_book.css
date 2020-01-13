@@ -1,0 +1,37 @@
+.show-book {
+    display: flex;
+    align-content: center;
+    padding: 20px;
+    background-color: #deb887;
+}
+
+    .show-book-information {
+        display: flex;
+
+    }
+        .show-book-cover-div {
+            display: flex;
+        }
+            .show-book-cover {
+                display: flex;
+                height: 300px;
+                width: auto;
+            }
+
+        .show-book-information-title,
+        .show-book-information-author,
+        .show-book-information-genre {
+            display: block;
+        }
+
+        .show-book-information-title {
+
+        }
+
+        .show-book-information-author {
+
+        }
+
+        .show-book-information-genre {
+
+        }

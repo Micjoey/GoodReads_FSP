@@ -7,7 +7,7 @@
     font-size: 14px;
 }
 
-    .show-book-information {
+    .index-book-information {
         padding: 10px;
         height: auto;
         width: auto;
@@ -27,10 +27,10 @@
                 padding: none;
             }
 
-            .show-book-covers{
+            .index-book-covers{
 
             }
-                    .show-book-cover {
+                    .index-book-cover {
                         width: 210px;
                         max-width: 100%;
                         height: auto;
@@ -40,7 +40,7 @@
                         margin: none;
                     }
 
-                    .show-book-cover:hover {
+                    .index-book-cover:hover {
                         width: 300px;
                         max-width: 100%;
                         height: auto;
@@ -49,13 +49,13 @@
                         align-content: center;
                     }
                     
-                .show-book-information-title,
-                .show-book-information-author {
+                .index-book-information-title,
+                .index-book-information-author {
                     max-width: 220px;
                     border: none;
                 }
 
-                .show-book-information-button {
+                .index-book-information-button {
                     border: none;
                     padding: 0px;
                 }

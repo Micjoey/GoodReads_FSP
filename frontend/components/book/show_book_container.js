@@ -4,10 +4,9 @@ import ShowBook from './show_book'
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
-    const book = Object.values(state.entities.books[ownProps.match.params.bookId]);
+    const book = state.entities.books[ownProps.match.params.bookId];
     return ({
         book: book,
-        
     })
 }
 
