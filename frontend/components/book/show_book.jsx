@@ -54,12 +54,23 @@ class showBook extends React.Component {
                     {books}
                 </div>
                 <div className="show-book-my-activity">
-                    <div className>
+                    <div className="show-book-activity-rating">
+
+                    </div>
+                    <div className="show-book-activity-shelf">
+
+                    </div>
+                    <div className="show-book-activity-status">
+
+                    </div>
+                    <div className="show-book-activity-review">
 
                     </div>
 
                 </div>
-               
+                <div className="show-book-all-reviews">
+
+               </div>
             </div>
         )
     }
