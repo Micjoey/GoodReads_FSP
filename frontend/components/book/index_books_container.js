@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    retrieveBooks: books => dispatch(retrieveBooks(books)),
+    retrieveBooks: () => dispatch(retrieveBooks()),
 })
 
 

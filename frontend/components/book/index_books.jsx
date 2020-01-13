@@ -43,7 +43,7 @@ class IndexBook extends React.Component {
                     {this.props.books.map((book, i) => (
                         <div key={`book-${i}`} className="index-books-book-info">
                             <Link to={`/book/${i+1}`}>
-                                <div className="index-book-covers"><img src={book_cover[i]} className="index-book-cover"/></div>
+                                <div className="index-book-covers"><img src={book.photo} className="index-book-cover"/></div>
                             </Link>
                             <div className='index-book-information-title'>{book.title}</div>
                             <div className='index-book-information-author'>by: {book.author}</div>
