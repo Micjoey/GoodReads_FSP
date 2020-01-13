@@ -16,6 +16,8 @@ class Book < ApplicationRecord
     has_many :shelves,
     through: :onshelfbooks,
     source: :shelf
+
+    has_one_attached :photo
    
 end
 
