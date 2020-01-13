@@ -106,6 +106,7 @@
 }
 
 .username-field,
+.email-field,
 .password-field {
     height: unset;
     font-size: 15px;
