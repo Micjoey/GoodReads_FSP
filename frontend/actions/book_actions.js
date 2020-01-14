@@ -2,6 +2,7 @@ import * as BookAPIUtil from '../util/book_api_util';
 
 export const RECEIVE_ALL_BOOKS = 'RECEIVE_ALL_BOOKS';
 export const RECEIVE_BOOK = 'RECEIVE_BOOK';
+export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 
 const receiveAllBooks = books => ({
   type: RECEIVE_ALL_BOOKS,
@@ -13,6 +14,11 @@ const receiveBook = book => ({
   book
 });
 
+export const receiveReview = ({ review, average_rating }) => ({
+  type: RECEIVE_REVIEW,
+  review,
+  average_rating,
+});
 
 
 export const retrieveBooks = () => dispatch => (
@@ -25,5 +31,10 @@ export const retrieveBook = bookId => dispatch => (
     .then(book => dispatch(receiveBook(book)))
 );
 
+export const createReview = review => dispatch => (
+  BookAPIUtil.createReview(review).then(review => (
+    dispatch(receiveReview(review))
+  ))
+)
 
 		

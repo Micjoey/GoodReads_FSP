@@ -17,7 +17,6 @@
   padding: 12px 16px;
   z-index: 1;
   right: 10px;
-  border: 2px solid rgba(165, 140, 42, 0.632) ;
   opacity: 1;
 }
 
@@ -60,17 +59,18 @@
   padding: 12px 16px;
   z-index: 1;
   /* right: 10px; */
-  border: none;
   opacity: 1;
   left: 20%;
   top: 30%;
   max-width: 200px;
+  border: 4px ridge rgba(152, 126, 22, 0.632) ;
 }
 
 
 
 .index-books-book-info:hover {
-  background-color: rgba(165, 140, 42, 0.632);
+  /* background-color: rgba(165, 140, 42, 0.632); */
+  zoom: 105%;
 }
 
 .index-books-book-info:hover .dropdown-book-content {
