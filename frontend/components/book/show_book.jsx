@@ -52,7 +52,6 @@ class showBook extends React.Component {
 
                         </div>
                         <div className="show-book-activity-review">
-
                     </div>
                 </div>
                 <div className="show-book-reviews">
