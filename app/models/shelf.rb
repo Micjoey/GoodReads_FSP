@@ -13,4 +13,5 @@ class Shelf < ApplicationRecord
     through: :shelfBooks,
     source: :book
 
+
 end

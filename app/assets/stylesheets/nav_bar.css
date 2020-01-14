@@ -32,10 +32,13 @@
     .nav-bar-home-button {
         text-decoration: none;
         color: black;
+        min-width: 20px;
+        flex-flow: nowrap;
     }
     .nav-bar-mybooks-button {
         text-decoration: none;
         color: black;
+        flex-flow: nowrap;
     }
 
     .nav-bar-home-button:hover,
