@@ -23,3 +23,9 @@ export const receiveShelves = () => dispatch => (
     ShelfAPIUtil.receiveShelves()
         .then(shelves => dispatch(receiveShelves(shelves)))
 )
+
+export const createShelf = shelf => dispatch => (
+    ShelfAPIUtil.createShelf(shelf).then(shelf => (
+        dispatch(receiveShelf(shelf))
+    ))
+)
