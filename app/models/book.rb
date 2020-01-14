@@ -21,7 +21,8 @@ class Book < ApplicationRecord
 
    def average_rating
         book = self
-        average_rating =  book.reviews.average(:rating)
+        average_rating = book.reviews.average(:rating)
+        average_rating.round(2)
    end
 
    

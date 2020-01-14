@@ -1,5 +1,5 @@
 .show-book {
-    display: flex;
+    display: block;
     align-content: center;
     padding: 20px;
     /* background-color: #deb887; */
@@ -8,6 +8,7 @@
     .show-book-all-information {
         display: flex;
         padding: 5px;
+        padding-left: 0px;
     }
 
         .show-book-cover-image {
@@ -53,9 +54,26 @@
         }
 
     .show-book-my-activity {
+        display: block;
+        margin-top: 10px;
 
     }
         .show-book-my-activity-text {
-            width: 100%
+            width: 100%;
+            vertical-align: auto;
         }
 
+    .show-book-my-activity {
+        background: transparent;
+        border-bottom: 1px solid #D8D8D8;
+    }
+
+    .show-book-individual-review {
+        border-top: 1px solid #D8D8D8;
+        border-bottom: 1px solid #D8D8D8;
+        padding-top: 3px;
+    }
+
+    .show-book-all-reviews {
+        padding-top: 15px;
+    }

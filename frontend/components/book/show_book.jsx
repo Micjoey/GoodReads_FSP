@@ -30,6 +30,7 @@ class showBook extends React.Component {
             </div>
         ) : (<p>Sorry! No Books!</p>)
         
+   
         return (
             <div className="show-book">
                     <div className='show-book-all-information'>
@@ -41,22 +42,32 @@ class showBook extends React.Component {
                         </div>
                     </div>
                 <div className="show-book-my-activity"> 
-                    <div className="show-book-activity-rating">
-                    <params className="show-book-my-activity-text">MY ACTIVITY</params>
-                    </div>
-                    <div className="show-book-activity-shelf">
+                        <div className="show-book-activity-rating">
+                        <params className="show-book-my-activity-text">MY ACTIVITY</params>
+                        </div>
+                        <div className="show-book-activity-shelf">
+
+                        </div>
+                        <div className="show-book-activity-status">
+
+                        </div>
+                        <div className="show-book-activity-review">
 
                     </div>
-                    <div className="show-book-activity-status">
-
-                    </div>
-                    <div className="show-book-activity-review">
-
-                    </div>
-
                 </div>
-                <div className="show-book-all-reviews">
-
+                <div className="show-book-reviews">
+                    <div className="show-book-all-reviews">
+                    <div className="show-book-all-reviews-text">ALL REVIEWS</div>
+                        {book.reviews.map((review,i) => (
+                            <div key={`review-${i}`} className="show-book-individual-review">
+                                    <div>Date Reviewed: {review.date_reviewed}</div>
+                                    <div>Review Title: {review.title}</div>
+                                    <div>User Id: {review.user_id}</div>
+                                    <div>User Rating: {review.rating}</div>
+                                    <div>Body: {review.body}</div>
+                            </div>
+                        ))}
+                    </div>
                </div>
             </div>
         )
