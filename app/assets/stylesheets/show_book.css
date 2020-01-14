@@ -2,7 +2,7 @@
     display: flex;
     align-content: center;
     padding: 20px;
-    background-color: #deb887;
+    /* background-color: #deb887; */
 }
 
     .show-book-all-information {
@@ -50,5 +50,12 @@
         .show-book-information-description {
             font-family: "Merriweather", "Georgia", serif;
             line-height: 21px;
+        }
+
+    .show-book-my-activity {
+
+    }
+        .show-book-my-activity-text {
+            width: 100%
         }
 

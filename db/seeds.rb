@@ -196,132 +196,38 @@ shelf8 = Shelf.create(bookshelf_title: "Adventure", user_id: "2")
  
 # on_shelf_books
 
-on_shelf_books1 = OnShelfBook.create(shelf_id: 1, book_id: 1)
-on_shelf_books1 = OnShelfBook.create(shelf_id: 1, book_id: 1)
-on_shelf_books2 = OnShelfBook.create(shelf_id: 2, book_id: 2)
-on_shelf_books3 = OnShelfBook.create(shelf_id: 3, book_id: 3)
-on_shelf_books4 = OnShelfBook.create(shelf_id: 4, book_id: 4)
-on_shelf_books5 = OnShelfBook.create(shelf_id: 5, book_id: 5)
-on_shelf_books6 = OnShelfBook.create(shelf_id: 6, book_id: 6)
-on_shelf_books7 = OnShelfBook.create(shelf_id: 7, book_id: 7)
-on_shelf_books8 = OnShelfBook.create(shelf_id: 8, book_id: 8)
-on_shelf_books9 = OnShelfBook.create(shelf_id: 1, book_id: 9)
-on_shelf_books10 = OnShelfBook.create(shelf_id: 2, book_id: 10)
-on_shelf_books11 = OnShelfBook.create(shelf_id: 3, book_id: 11)
-on_shelf_books12 = OnShelfBook.create(shelf_id: 4, book_id: 12)
-on_shelf_books13 = OnShelfBook.create(shelf_id: 5, book_id: 13)
-on_shelf_books14 = OnShelfBook.create(shelf_id: 1, book_id: 14)
+on_shelf_books1 = OnShelfBook.create(shelf_id: shelf1.id, book_id: book1.id)
+on_shelf_books1 = OnShelfBook.create(shelf_id: shelf1.id, book_id: book1.id)
+on_shelf_books2 = OnShelfBook.create(shelf_id: shelf2.id, book_id: book2.id)
+on_shelf_books3 = OnShelfBook.create(shelf_id: shelf3.id, book_id: book3.id)
+on_shelf_books4 = OnShelfBook.create(shelf_id: shelf4.id, book_id: book4.id)
+on_shelf_books5 = OnShelfBook.create(shelf_id: shelf5, book_id: book5.id)
+on_shelf_books6 = OnShelfBook.create(shelf_id: shelf6.id, book_id: book6.id)
+on_shelf_books7 = OnShelfBook.create(shelf_id: shelf7.id, book_id: book7.id)
+on_shelf_books8 = OnShelfBook.create(shelf_id: shelf8.id, book_id: book8.id)
+on_shelf_books9 = OnShelfBook.create(shelf_id: shelf1.id, book_id: book9.id)
+on_shelf_books10 = OnShelfBook.create(shelf_id: shelf2.id, book_id: book10.id)
+on_shelf_books11 = OnShelfBook.create(shelf_id: shelf3.id, book_id: book11.id)
+on_shelf_books12 = OnShelfBook.create(shelf_id: shelf4.id, book_id: book12.id)
+on_shelf_books13 = OnShelfBook.create(shelf_id: shelf5.id, book_id: book13.id)
+on_shelf_books14 = OnShelfBook.create(shelf_id: shelf1.id, book_id: book14.id)
 
 
 #reviews
+    i = 0
 
-review1 = Review.create(
-    title: Faker::Quotes::Shakespeare.hamlet_quote, 
-    user_id: rand(1..3), 
-    book_id: rand(1..14), 
-    rating: rand(1..5),
-    body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-    date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
-)
-review2 = Review.create(
-    title: Faker::Quotes::Shakespeare.hamlet_quote, 
-    user_id: rand(1..3), 
-    book_id: rand(1..14), 
-    rating: rand(1..5),
-    body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-    date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
-)
-review3 = Review.create(
-    title: Faker::Quotes::Shakespeare.hamlet_quote, 
-    user_id: rand(1..3), 
-    book_id: rand(1..14), 
-    rating: rand(1..5),
-    body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-    date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
-)
-review4 = Review.create(
-    title: Faker::Quotes::Shakespeare.hamlet_quote, 
-    user_id: rand(1..3), 
-    book_id: rand(1..14), 
-    rating: rand(1..5),
-    body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-    date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
-)
-review5 = Review.create(
-    title: Faker::Quotes::Shakespeare.hamlet_quote, 
-    user_id: rand(1..3), 
-    book_id: rand(1..14), 
-    rating: rand(1..5),
-    body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-    date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
-)
-review6 = Review.create(
-    title: Faker::Quotes::Shakespeare.hamlet_quote, 
-    user_id: rand(1..3), 
-    book_id: rand(1..14), 
-    rating: rand(1..5),
-    body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-    date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
-)
-review7 = Review.create(
-    title: Faker::Quotes::Shakespeare.hamlet_quote, 
-    user_id: rand(1..3), 
-    book_id: rand(1..14), 
-    rating: rand(1..5),
-    body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-    date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
-)
-review8 = Review.create(
-    title: Faker::Quotes::Shakespeare.hamlet_quote, 
-    user_id: rand(1..3), 
-    book_id: rand(1..14), 
-    rating: rand(1..5),
-    body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-    date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
-)
-review9 = Review.create(
-    title: Faker::Quotes::Shakespeare.hamlet_quote, 
-    user_id: rand(1..3), 
-    book_id: rand(1..14), 
-    rating: rand(1..5),
-    body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-    date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
-)
-review10 = Review.create(
-    title: Faker::Quotes::Shakespeare.hamlet_quote, 
-    user_id: rand(1..3), 
-    book_id: rand(1..14), 
-    rating: rand(1..5),
-    body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-    date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
-)
-review11 = Review.create(
-    title: Faker::Quotes::Shakespeare.hamlet_quote, 
-    user_id: rand(1..3), 
-    book_id: rand(1..14), 
-    rating: rand(1..5),
-    body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-    date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
-)
-review12 = Review.create(
-    title: Faker::Quotes::Shakespeare.hamlet_quote, 
-    user_id: rand(1..3), 
-    book_id: rand(1..14), 
-    rating: rand(1..5),
-    body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-    date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
-)
-review13 = Review.create(
-    title: Faker::Quotes::Shakespeare.hamlet_quote, 
-    user_id: rand(1..3), 
-    book_id: rand(1..14), 
-    rating: rand(1..5),
-    body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-    date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
-)
+    100.times do
+    review = Review.create(
+        title: Faker::Quotes::Shakespeare.hamlet_quote, 
+        user_id: rand(1..3), 
+        book_id: rand(1..14), 
+        rating: rand(1..5),
+        body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
+        date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
+    )
+    i += 1
+    end
 
 
-
-
-    
+  
 end

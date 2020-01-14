@@ -18,6 +18,11 @@ class Book < ApplicationRecord
     source: :shelf
 
     has_one_attached :photo
+
+   def average_rating
+        average_rating =  Review.average(:rating)
+   end
+
    
 end
 

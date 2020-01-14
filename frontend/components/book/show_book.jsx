@@ -17,21 +17,14 @@ class showBook extends React.Component {
         const cover = (
             <img className="show-book-cover" src={book.photo} />
         )
-        const rating = (
-            <div>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span> 
-            </div>
-        )
+
+
+        
         const book_information = (typeof this.props.book !== 'undefined') ? (
             <div className="show-book-information">
                     <div className='show-book-information-title'>{book.title}</div>
                     <div className='show-book-information-author'>by: {book.author}</div>
-                    <div className='show-book-information-rating'>Rating: {book.rating}</div>
-                    <div className='staticStars'>{rating}</div>
+                    <div className='show-book-information-rating'>Rating: {book.average_rating}</div>
                     <div className='show-book-information-genre'>Genre: {book.genre}</div>
                     <div className='show-book-information-description'>Description: {book.description} </div>
             </div>
@@ -39,17 +32,17 @@ class showBook extends React.Component {
         
         return (
             <div className="show-book">
-                <div className='show-book-all-information'>
-                    <div className="show-book-information-cover-image">
-                        {cover}
+                    <div className='show-book-all-information'>
+                        <div className="show-book-information-cover-image">
+                            {cover}
+                        </div>
+                        <div className="show-book-information-detail">
+                            {book_information}
+                        </div>
                     </div>
-                    <div className="show-book-information-detail">
-                        {book_information}
-                    </div>
-                </div>
-                <div className="show-book-my-activity">
+                <div className="show-book-my-activity"> 
                     <div className="show-book-activity-rating">
-
+                    <params className="show-book-my-activity-text">MY ACTIVITY</params>
                     </div>
                     <div className="show-book-activity-shelf">
 
