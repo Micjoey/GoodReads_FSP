@@ -31,6 +31,7 @@ class Api::ShelvesController < ApplicationController
             render :show
         else
             render json: @shelf.errors.full_messages, status: 406
+        end
     end
 
     private

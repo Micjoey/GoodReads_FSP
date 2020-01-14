@@ -64,19 +64,3 @@ export default IndexBook
 
 
 
-// const book_cover = [
-//     images.american_spy,
-//     images.book_of_strange,
-//     images.upright_woman_wanted,
-//     images.city_of_girls,
-//     images.maybe_you_should_talk_to_someone,
-//     images.the_names_of_the_dead,
-//     images.quichotte,
-//     images.swanns_way,
-//     images.super_pumped,
-//     images.the_nickel_boys,
-//     images.the_starless_sea,
-//     images.the_testaments,
-//     images.they_called_us_enemy,
-//     images.wild_game,
-// ]

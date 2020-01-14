@@ -1,15 +1,15 @@
-export const receiveShelf = shelfId => (
+export const retrieveShelf = shelfId => (
     $.ajax({
         method: 'GET',
-        url:`/api/shelf/${shelfId}`
+        url:`/api/shelves/${shelfId}`
     })
 )
 
 
-export const receiveShelves = () => (
+export const retrieveShelves = () => (
     $.ajax({
         method: 'GET',
-        url: '/api/shelf'
+        url: `/api/shelves`
     })
 )
 
@@ -17,7 +17,7 @@ export const receiveShelves = () => (
 export const createShelf = shelf => (
     $.ajax({
         method: 'POST',
-        url: '/api/shelf',
+        url: `/api/shelf`,
         data: {shelf}
     })
 )

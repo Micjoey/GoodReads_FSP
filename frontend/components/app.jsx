@@ -8,15 +8,14 @@ import {
   HashRouter
 } from 'react-router-dom';
 
-import GreetingContainer from './greeting/greeting_container';
-import SignUpFormContainer from './session_form/signup_form_container';
-import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal'
 import NavBarContainer from './navbar/navbar_container';
 import Splash from './splash/splash';
 import IndexBookContainer from './book/index_books_container'
 import ShowBookContainer from './book/show_book_container';
+import IndexShelvesContainer from './shelf/index_shelves_container';
+
 
 const App = () => (
   <div className="app">
@@ -29,6 +28,7 @@ const App = () => (
         <AuthRoute exact path="/" component={Splash} /> 
         <ProtectedRoute exact path="/home" component={IndexBookContainer} />
         <ProtectedRoute path="/book/:bookId" component={ShowBookContainer}/>
+        <ProtectedRoute path="/shelf" component={IndexShelvesContainer} />
       </Switch>
     </div>
   </div>

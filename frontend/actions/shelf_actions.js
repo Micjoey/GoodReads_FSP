@@ -14,13 +14,13 @@ const receiveShelves = shelves => ({
     shelves
 })
 
-export const receiveShelf = shelfId => dispatch => (
-    ShelfAPIUtil.receiveShelf(shelfId)
+export const retrieveShelf = shelfId => dispatch => (
+    ShelfAPIUtil.retrieveShelf(shelfId)
         .then(shelf => dispatch(receiveShelf(book)))
 )
 
-export const receiveShelves = () => dispatch => (
-    ShelfAPIUtil.receiveShelves()
+export const retrieveShelves = () => dispatch => (
+    ShelfAPIUtil.retrieveShelves()
         .then(shelves => dispatch(receiveShelves(shelves)))
 )
 
