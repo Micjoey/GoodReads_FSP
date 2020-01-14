@@ -1,34 +1,34 @@
-class Book < ApplicationRecord
-    validates :title, :genre,:description, :author, presence: true
+# class Book < ApplicationRecord
+#     validates :title, :genre,:description, :author, presence: true
 
-    has_many :onshelfbooks,
-    foreign_key: :book_id,
-    class_name: :OnShelfBook
+#     has_many :onshelfbooks,
+#     foreign_key: :book_id,
+#     class_name: :OnShelfBook
 
-    has_many :reviews,
-    foreign_key: :book_id,
-    class_name: :Review
+#     has_many :reviews,
+#     foreign_key: :book_id,
+#     class_name: :Review
 
-    has_many :users,
-    through: :onshelfbooks,
-    source: :user
+#     has_many :users,
+#     through: :onshelfbooks,
+#     source: :user
 
-    has_many :shelves,
-    through: :onshelfbooks,
-    source: :shelf
+#     has_many :shelves,
+#     through: :onshelfbooks,
+#     source: :shelf
 
-    has_one_attached :photo
+#     has_one_attached :photo
 
-   def average_rating
-        book = self
-        average_rating = book.reviews.average(:rating)
-        average_rating.round(2)
-   end
+#    def average_rating
+#         book = self
+#         average_rating = book.reviews.average(:rating)
+#         average_rating.round(2)
+#    end
 
-   def unique_shelves
-     shelves = self.shelves.uniq()
-   end
+#    def unique_shelves
+#      shelves = self.shelves.uniq()
+#    end
 
    
-end
+# end
 
