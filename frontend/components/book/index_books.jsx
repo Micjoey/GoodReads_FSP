@@ -27,11 +27,20 @@ class IndexBook extends React.Component {
                 <div className="index-books">
                     {this.props.books.map((book, i) => (
                         <div key={`book-${i}`} className="index-books-book-info">
+                            <div className='dropdown-book'>
                             <Link to={`/book/${i+1}`}>
                                 <div className="index-book-covers"><img src={book.photo} className="index-book-cover"/></div>
                             </Link>
-                            <div className='index-book-information-title'>{book.title}</div>
-                            <div className='index-book-information-author'>by: {book.author}</div>
+                            </div>
+                            <div className="dropdown-book-content">
+                                {/* <div className='index-book-information-title'>{book.title}</div>
+                                <div className='index-book-information-author'>by: {book.author}</div> */}
+                                <div className='index-book-information-title'>{book.title}</div>
+                                <div className='index-book-information-author'>by: {book.author}</div>
+                                <div className='index-book-information-rating'>Rating: {book.average_rating}</div>
+                                <div className='index-book-information-genre'>Genre: {book.genre}</div>
+                                <div className='index-book-information-description'>Description: {book.description} </div>
+                            </div>
                         </div>
                     ))}
                 </div>
