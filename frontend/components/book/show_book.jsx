@@ -35,7 +35,7 @@ class showBook extends React.Component {
         const book_information = (typeof this.props.book !== 'undefined') ? (
             <div className="show-book-information">
                 {/* <div className="show-book-cover-div"> */}
-                    {/* <img className="show-book-cover" src={book_cover[book.id - 1]} /> */}
+                    <img className="show-book-cover"src={book.photo}  />
                     <div className='show-book-information-title'>{book.title}</div>
                     <div className='show-book-information-author'>by: {book.author}</div>
                     <div className='show-book-information-genre'>Genre: {book.genre}</div>

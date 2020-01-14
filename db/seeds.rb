@@ -5,16 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
 ActiveRecord::Base.transaction do
     
     User.destroy_all
     Book.destroy_all
     Review.destroy_all
-
+    
     require 'faker'
     include Faker
-    require 'open-uri'
 
 # books
 
@@ -26,8 +26,8 @@ book1 = Book.create(
     # cover_image_url: open('https://myreads-seeds./American_Spy_By_Lauren_wilkinson.png'),
     description: "American Spy is her story, written in 1992 in the first person as a diary for her young twin sons to read when they're older. The action spans the thirty preceding years—from the Cuban Missile Crisis to the `New World Order` following the end of the Cold War. Marie is the younger of two sisters.",
 )
-# file = open("https://myreads-seeds.s3-us-west-1.amazonaws.com/American_Spy_By_Lauren_wilkinson.png")
-# book1.photo.attach(io: file, filename:'American_Spy.jpg')
+file1 = open("https://myreads-seeds.s3-us-west-1.amazonaws.com/American_Spy_By_Lauren_wilkinson.png")
+book1.photo.attach(io: file1, filename:'American_Spy.jpg')
 # 2
 book2 = Book.create(
     title: "Book Of Strange New Things",
@@ -37,8 +37,13 @@ book2 = Book.create(
     description: "The Book of Strange New Things is a 2014 science fiction novel by Dutch-born author Michel Faber. The work was first published in the United States on October 28, 2014 and concerns an English pastor who is sent to the planet of Oasis to teach its reclusive native inhabitants about Christianity.",
 )
 
+<<<<<<< HEAD
 # file = open("https://myreads-seeds.s3-us-west-1.amazonaws.com/Book-of-Strange-New-Things.jpg")
 # book2.photo.attach(io: file, filename:'Book-of-Strange-New-Things.jpg')
+=======
+file = open("https://myreads-seeds.s3-us-west-1.amazonaws.com/Book-of-Strange-New-Things.jpg")
+book2.photo.attach(io: file, filename:'Book-of-Strange-New-Things.jpg')
+>>>>>>> seeding
 # 3
 book3 = Book.create(
     title: "Upright Women Wanted",
@@ -47,8 +52,13 @@ book3 = Book.create(
     # cover_image_url: open('https://myreads-seeds./upright_woman_wanted.jpeg'),
     description: "Esther is a stowaway. She’s hidden herself away in the Librarian’s book wagon in an attempt to escape the marriage her father has arranged for her―a marriage to the man who was previously engaged to her best friend. Her best friend who she was in love with. Her best friend who was just executed for possession of resistance propaganda.",
 )
+<<<<<<< HEAD
 # file = open("https://myreads-seeds.s3-us-west-1.amazonaws.com/upright_woman_wanted.jpeg")
 # book3.photo.attach(io: file, filename:'upright_woman_wanted.jpeg')
+=======
+file = open("https://myreads-seeds.s3-us-west-1.amazonaws.com/upright_woman_wanted.jpeg")
+book3.photo.attach(io: file, filename:'upright_woman_wanted.jpeg')
+>>>>>>> seeding
 # 4
 book4 = Book.create(
     title: "City of Girls",
@@ -57,8 +67,13 @@ book4 = Book.create(
     # cover_image_url: open('https://myreads-seeds./Elizabeth_Gilbert_by_city_of_girls.png'),
     description: "Beloved author Elizabeth Gilbert returns to fiction with a unique love story set in the New York City theater world during the 1940s. Told from the perspective of an older woman as she looks back on her youth with both pleasure and regret (but mostly pleasure), City of Girls explores themes of female sexuality and promiscuity, as well as the idiosyncrasies of true love. ",
 )
+<<<<<<< HEAD
 # file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/Elizabeth_Gilbert_by_city_of_girls.png')
 # book4.photo.attach(io: file, filename:'Elizabeth_Gilbert_by_city_of_girls.png')
+=======
+file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/Elizabeth_Gilbert_by_city_of_girls.png')
+book4.photo.attach(io: file, filename:'Elizabeth_Gilbert_by_city_of_girls.png')
+>>>>>>> seeding
 
 # 5
 book5 = Book.create(
@@ -68,8 +83,13 @@ book5 = Book.create(
     # cover_image_url: open('https://myreads-seeds./Maybe_You_Should_Talk_To_Someone_by_Lori_Gottlieb.png'),
     description: "Maybe You Should Talk to Someone: A Therapist, Her Therapist, and Our Lives Revealed is a book by Lori Gottlieb, published in 2019. It is a memoir where Gottlieb portrays a difficult time in her professional and personal life.",
 )
+<<<<<<< HEAD
 # file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/Maybe_You_Should_Talk_To_Someone_by_Lori_Gottlieb.png')
 # book5.photo.attach(io: file, filename:'Maybe_You_Should_Talk_To_Someone_by_Lori_Gottlieb.png')
+=======
+file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/Maybe_You_Should_Talk_To_Someone_by_Lori_Gottlieb.png')
+book5.photo.attach(io: file, filename:'Maybe_You_Should_Talk_To_Someone_by_Lori_Gottlieb.png')
+>>>>>>> seeding
 
 # 6
 book6 = Book.create(
@@ -79,19 +99,29 @@ book6 = Book.create(
     # cover_image_url: open('https://myreads-seeds./The_Names_of_the_dead_by_Kevin_wignall.png'),
     description: "They locked him up. Now he's out--for revenge. Former CIA officer James 'Wes' Wesley paid the ultimate price for his patriotism when he was locked up in a French jail for an anti-terror operation gone wrong--abandoned by the Agency he served, shunned by his colleagues and friends, cut off from his family.",
 )
+<<<<<<< HEAD
 # file = open('https://myreads-seeds./The_Names_of_the_dead_by_Kevin_wignall.png')
 # book6.photo.attach(io: file, filename:'The_Names_of_the_dead_by_Kevin_wignall.png')
+=======
+file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/The_Names_of_the_dead_by_Kevin_wignall.png')
+book6.photo.attach(io: file, filename:'The_Names_of_the_dead_by_Kevin_wignall.png')
+>>>>>>> seeding
 
 # 7
-bool7 = Book.create(
+book7 = Book.create(
     title: "Quichotte",
     author: "Salman Rushdie",
     genre: Faker::Book.genre,
     # cover_image_url: open('https://myreads-seeds./Salman_Rushdie_by_Quichotte.png'),
     description: "Inspired by Miguel de Cervantes' classic novel Don Quixote, Quichotte is a metafiction that tells the story of an addled Indian American man who travels across America in pursuit of a celebrity television host with whom he has become obsessed.",
 )
+<<<<<<< HEAD
 # file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/Salman_Rushdie_by_Quichotte.png')
 # book7.photo.attach(io: file, filename:'Salman_Rushdie_by_Quichotte.png')
+=======
+file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/Salman_Rushdie_by_Quichotte.png')
+book7.photo.attach(io: file, filename:'Salman_Rushdie_by_Quichotte.png')
+>>>>>>> seeding
 
 # 8
 book8 = Book.create(
@@ -101,19 +131,29 @@ book8 = Book.create(
     # cover_image_url: open('https://myreads-seeds./Swanns_Way_by_Marcel_Proust.png'),
     description: "A new translation of the first volume of Proust's In Search of Lost Time follows a sensitive boy's impressions of his family and neighbors; and includes the novella, Swann's Love.",
 )
+<<<<<<< HEAD
 # file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com//Swanns_Way_by_Marcel_Proust.png')
 # book8.photo.attach(io: file, filename:'Swanns_Way_by_Marcel_Proust.png')
+=======
+file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/Swanns_Way_by_Marcel_Proust.png')
+book8.photo.attach(io: file, filename:'Swanns_Way_by_Marcel_Proust.png')
+>>>>>>> seeding
 
 # 9
 book9 = Book.create(
-    title: "Super Pumped, The Batle For Uber",
+    title: "Super Pumped, The Battle For Uber",
     author: "Mike Isaac",
     genre: Faker::Book.genre,
     # cover_image_url: open('https://myreads-seeds.s3-us-west-1.amazonaws.com//Super_Pumped_by_Mike_Issac.png'),
     description: "Uber had catapulted to the top of the tech world, yet for many came to symbolize everything wrong with Silicon Valley. Award-winning New York Times technology correspondent Mike Isaac's Super Pumped presents the dramatic rise and fall of Uber, set against an era of rapid upheaval in Silicon Valley.",
 )
+<<<<<<< HEAD
 # file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com//Super_Pumped_by_Mike_Issac.png')
 # book9.photo.attach(io: file, filename:'Super_Pumped_by_Mike_Issac.png')
+=======
+file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/Super_Pumped_by_Mike_Isaac.png')
+book9.photo.attach(io: file, filename:'Super_Pumped_by_Mike_Issac.png')
+>>>>>>> seeding
 
 # 10
 book10 = Book.create(
@@ -123,8 +163,13 @@ book10 = Book.create(
     # cover_image_url: open('https://myreads-seeds.s3-us-west-1.amazonaws.com//The_Nickel_Boys_by_Colson_Whitehead.png'),
     description: "Based on the real story of a reform school in Florida that operated for one hundred and eleven years and warped the lives of thousands of children, The Nickel Boys is a devastating, driven narrative that showcases a great American novelist writing at the height of his powers.",
 )
+<<<<<<< HEAD
 # file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com//The_Nickel_Boys_by_Colson_Whitehead.png')
 # book10.photo.attach(io: file, filename:'The_Nickel_Boys_by_Colson_Whitehead.png')
+=======
+file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/The_Nickel_Boys_by_Colson_Whitehead.png')
+book10.photo.attach(io: file, filename:'The_Nickel_Boys_by_Colson_Whitehead.png')
+>>>>>>> seeding
 
 # 11
 book11 = Book.create(
@@ -134,8 +179,13 @@ book11 = Book.create(
     # cover_image_url: open('https://myreads-seeds.s3-us-west-1.amazonaws.com//The_starless_sea_by_erin_morgenstern.png') ,
     description: "The Starless Sea tells a tale about an underground labyrinth that serves as a sanctuary for stories and storytellers. It's located in a place called the Starless Sea. It's also about a young man who finds a book of nested stories, including one that is about him.",
 )
+<<<<<<< HEAD
 # file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com//The_starless_sea_by_erin_morgenstern.png')
 # book11.photo.attach(io: file, filename:'The_starless_sea_by_erin_morgenstern.png')
+=======
+file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/The_starless_sea_by_erin_morgenstern.png')
+book11.photo.attach(io: file, filename:'The_starless_sea_by_erin_morgenstern.png')
+>>>>>>> seeding
 
 # 12
 book12 = Book.create(
@@ -145,8 +195,13 @@ book12 = Book.create(
     # cover_image_url: open('https://myreads-seeds.s3-us-west-1.amazonaws.com//The_Testaments_by_Atwood.png'),
     description: "More than fifteen years after the events of The Handmaid's Tale, the theocratic regime of the Republic of Gilead maintains its grip on power, but there are signs it is beginning to rot from within. At this crucial moment, the lives of three radically different women converge, with potentially explosive results.",
 )
+<<<<<<< HEAD
 # file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com//The_Testaments_by_Atwood.png')
 # book12.photo.attach(io: file, filename:'The_Testaments_by_Atwood.png')
+=======
+file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/The_Testaments_by_Atwood.png')
+book12.photo.attach(io: file, filename:'The_Testaments_by_Atwood.png')
+>>>>>>> seeding
 
 # 13
 book13 = Book.create(
@@ -156,8 +211,13 @@ book13 = Book.create(
     # cover_image_url: open('https://myreads-seeds.s3-us-west-1.amazonaws.com//They_Called_us_enemy_by_Georege_takei.png'),
     description: "George Takei has captured hearts and minds worldwide with his captivating stage presence and outspoken commitment to equal rights. But long before he braved new frontiers in Star Trek, he woke up as a four-year-old boy to find his own birth country at war with his father's -- and their entire family forced from their home into an uncertain future.",
 )
+<<<<<<< HEAD
 # file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com//They_Called_us_enemy_by_Georege_takei.png')
 # book13.photo.attach(io: file, filename:'They_Called_us_enemy_by_Georege_takei.png')
+=======
+file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/They_Called_us_enemy_by_Georege_takei.png')
+book13.photo.attach(io: file, filename:'They_Called_us_enemy_by_Georege_takei.png')
+>>>>>>> seeding
 
 # 14
 book14 = Book.create(
@@ -167,8 +227,13 @@ book14 = Book.create(
     # cover_image_url: open('https://myreads-seeds.s3-us-west-1.amazonaws.com//Wild_Game_by_Adrienne_Brodeur.png'),
     description: "On a hot July night on Cape Cod when Adrienne was fourteen, her mother, Malabar, woke her at midnight with five simple words that would set the course of both of their lives for years to come: Ben Souther just kissed me.",
 )
+<<<<<<< HEAD
 # file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com//Wild_Game_by_Adrienne_Brodeur.png')
 # book14.photo.attach(io: file, filename:'Wild_Game_by_Adrienne_Brodeur.png')
+=======
+file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/Wild_Game_by_Adrienne_Brodeur.png')
+book14.photo.attach(io: file, filename:'Wild_Game_by_Adrienne_Brodeur.png')
+>>>>>>> seeding
 
 
 #users
@@ -197,8 +262,7 @@ shelf8 = Shelf.create(bookshelf_title: "Adventure", user_id: "2")
 # on_shelf_books
 
 on_shelf_books1 = OnShelfBook.create(shelf_id: 1, book_id: 1)
-on_shelf_books1 = OnShelfBook.new(shelf_id: 1, book_id: 1)
-on_shelf_books1.save!
+on_shelf_books1 = OnShelfBook.create(shelf_id: 1, book_id: 1)
 on_shelf_books2 = OnShelfBook.create(shelf_id: 2, book_id: 2)
 on_shelf_books3 = OnShelfBook.create(shelf_id: 3, book_id: 3)
 on_shelf_books4 = OnShelfBook.create(shelf_id: 4, book_id: 4)
