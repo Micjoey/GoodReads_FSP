@@ -56,6 +56,8 @@
     .show-book-my-activity {
         display: block;
         margin-top: 10px;
+        background: transparent;
+        border-bottom: 1px solid #D8D8D8;
 
     }
         .show-book-my-activity-text {
@@ -63,10 +65,6 @@
             vertical-align: auto;
         }
 
-    .show-book-my-activity {
-        background: transparent;
-        border-bottom: 1px solid #D8D8D8;
-    }
 
     .show-book-individual-review {
         border-top: 1px solid #D8D8D8;
@@ -77,3 +75,19 @@
     .show-book-all-reviews {
         padding-top: 15px;
     }
+
+    
+
+    .show-book-activity-shelf {
+        display: flex
+    }
+
+        .show-book-all-shelves {
+            display: flex;
+            padding-left: 3px;
+        }   
+
+        .dropdown-content2 {
+            /* background-color: brown; */
+            color: black;
+        }

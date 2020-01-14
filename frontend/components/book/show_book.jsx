@@ -19,7 +19,7 @@ class showBook extends React.Component {
         )
 
 
-        
+        const shelf = (book.unique_shelves > 1) ? <p>Shelf Titles:</p> : <p>Shelf Title:</p>
         const book_information = (typeof this.props.book !== 'undefined') ? (
             <div className="show-book-information">
                     <div className='show-book-information-title'>{book.title}</div>
@@ -30,7 +30,7 @@ class showBook extends React.Component {
             </div>
         ) : (<p>Sorry! No Books!</p>)
         
-   
+        console.log(this.props.currentUser)
         return (
             <div className="show-book">
                     <div className='show-book-all-information'>
@@ -43,15 +43,23 @@ class showBook extends React.Component {
                     </div>
                 <div className="show-book-my-activity"> 
                         <div className="show-book-activity-rating">
-                        <params className="show-book-my-activity-text">MY ACTIVITY</params>
+                            <params className="show-book-my-activity-text">MY ACTIVITY</params>
                         </div>
                         <div className="show-book-activity-shelf">
-
+                            {shelf}
+                            <div className="dropdown-content2">
+                                <ul className="show-book-all-shelves">
+                                    {book.unique_shelves.map((shelf, i)=>(
+                                        <ul key={`shelf-${i}`}>{shelf.bookshelf_title}</ul>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                         <div className="show-book-activity-status">
 
                         </div>
                         <div className="show-book-activity-review">
+
                     </div>
                 </div>
                 <div className="show-book-reviews">

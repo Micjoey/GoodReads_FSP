@@ -187,14 +187,24 @@ end
 
 shelf1 = Shelf.create(bookshelf_title: "Want To Read", user_id: "1")
 shelf2 = Shelf.create(bookshelf_title: "Reading", user_id: "1")
-shelf3 = Shelf.create(bookshelf_title: "Read", user_id: "1")
+shelf3 = Shelf.create(bookshelf_title: "Have Read", user_id: "1")
 shelf4 = Shelf.create(bookshelf_title: "Adventure", user_id: "1")
 shelf5 = Shelf.create(bookshelf_title: "Want To Read", user_id: "2")
 shelf6 = Shelf.create(bookshelf_title: "Reading", user_id: "2")
-shelf7 = Shelf.create(bookshelf_title: "Read", user_id: "2")
+shelf7 = Shelf.create(bookshelf_title: "Have Read", user_id: "2")
 shelf8 = Shelf.create(bookshelf_title: "Adventure", user_id: "2")
+shelf5 = Shelf.create(bookshelf_title: "Want To Read", user_id: "3")
+shelf6 = Shelf.create(bookshelf_title: "Reading", user_id: "3")
+shelf7 = Shelf.create(bookshelf_title: "Have Read", user_id: "3")
+shelf8 = Shelf.create(bookshelf_title: "Adventure", user_id: "3")
+shelf5 = Shelf.create(bookshelf_title: "Want To Read", user_id: "0")
+shelf6 = Shelf.create(bookshelf_title: "Reading", user_id: "0")
+shelf7 = Shelf.create(bookshelf_title: "Have Read", user_id: "0")
+shelf8 = Shelf.create(bookshelf_title: "Adventure", user_id: "0")
  
 # on_shelf_books
+
+    
 
 on_shelf_books1 = OnShelfBook.create(shelf_id: shelf1.id, book_id: book1.id)
 on_shelf_books1 = OnShelfBook.create(shelf_id: shelf1.id, book_id: book1.id)

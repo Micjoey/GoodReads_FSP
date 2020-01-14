@@ -25,6 +25,10 @@ class Book < ApplicationRecord
         average_rating.round(2)
    end
 
+   def unique_shelves
+     shelves = self.shelves.uniq()
+   end
+
    
 end
 
