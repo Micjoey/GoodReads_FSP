@@ -12,34 +12,28 @@ class showBook extends React.Component {
     
     render() {
         if (typeof this.props.book === 'undefined') return null;
-        const book_cover = [
-            images.american_spy,
-            images.book_of_strange,
-            images.upright_woman_wanted,
-            images.city_of_girls,
-            images.maybe_you_should_talk_to_someone,
-            images.the_names_of_the_dead,
-            images.quichotte,
-            images.swanns_way,
-            images.super_pumped,
-            images.the_nickel_boys,
-            images.the_starless_sea,
-            images.the_testaments,
-            images.they_called_us_enemy,
-            images.wild_game,
-        ]
+        
         const book = this.props.book
         const cover = (
-            <img className="show-book-cover" src={book_cover[book.id - 1]} />
+            <img className="show-book-cover" src={book.photo} />
+        )
+        const rating = (
+            <div>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span> 
+            </div>
         )
         const book_information = (typeof this.props.book !== 'undefined') ? (
             <div className="show-book-information">
-                {/* <div className="show-book-cover-div"> */}
-                    <img className="show-book-cover"src={book.photo}  />
                     <div className='show-book-information-title'>{book.title}</div>
                     <div className='show-book-information-author'>by: {book.author}</div>
+                    <div className='show-book-information-rating'>Rating: {book.rating}</div>
+                    <div className='staticStars'>{rating}</div>
                     <div className='show-book-information-genre'>Genre: {book.genre}</div>
-                {/* </div> */}
+                    <div className='show-book-information-description'>Description: {book.description} </div>
             </div>
         ) : (<p>Sorry! No Books!</p>)
         
@@ -79,3 +73,19 @@ class showBook extends React.Component {
 
 export default showBook
 
+// const book_cover = [
+//     images.american_spy,
+//     images.book_of_strange,
+//     images.upright_woman_wanted,
+//     images.city_of_girls,
+//     images.maybe_you_should_talk_to_someone,
+//     images.the_names_of_the_dead,
+//     images.quichotte,
+//     images.swanns_way,
+//     images.super_pumped,
+//     images.the_nickel_boys,
+//     images.the_starless_sea,
+//     images.the_testaments,
+//     images.they_called_us_enemy,
+//     images.wild_game,
+// ]
