@@ -3,10 +3,19 @@
     justify-content: space-evenly;
     background-color: #f4f2e9;
     height: 50px;
+    align-items: center;
+    bottom: 0px;
 }
 
-.footer-linkedin {
-    object-fit:cover;
-    height: 45;
-    width: 30px;
+#footerLink {
+    
 }
+
+.footer-linkedin,
+.footer-github {
+    /* object-fit:cover; */
+    height: 40px;
+    text-decoration: none;
+    color: black;
+}
+

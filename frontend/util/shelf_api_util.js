@@ -17,7 +17,7 @@ export const retrieveShelves = () => (
 export const createShelf = shelf => (
     $.ajax({
         method: 'POST',
-        url: `/api/shelf`,
+        url: `/api/shelves`,
         data: {shelf}
     })
 )
@@ -25,7 +25,7 @@ export const createShelf = shelf => (
 export const deleteShelf = shelfId => (
     $.ajax({
         method: 'DELETE',
-        url: `/api.shelves/${shelfId}`
+        url: `/api/shelves/${shelfId}`
     })
 )
 

@@ -67,12 +67,14 @@
             }
 
             .index-shelf-titles {
+                display: flex;
                 font-weight: bold;
                 font-size: 14px;
                 font-style: oblique;
                 border-top: solid 1px rosybrown;
                 border-bottom:solid 1px rosybrown;
-                padding-top: 1px
+                padding-top: 1px;
+                justify-content: space-between;
             }
 
             .index-shelves-cover {

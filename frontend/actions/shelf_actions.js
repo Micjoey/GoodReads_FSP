@@ -32,7 +32,7 @@ export const createShelf = shelf => dispatch => (
 
 export const deleteShelf = () => dispatch => (
     ShelfAPIUtil.deleteShelf().then(shelf => (
-        dispatch(receiveShelf(shelf))
+        dispatch(deleteShelf(shelf))
     ))
 )
 

@@ -1,6 +1,6 @@
 class Api::ShelvesController < ApplicationController
     def create
-        @shelf = shelf.new(shelf_params)
+        @shelf = Shelf.new(shelf_params)
         if @shelf.save
             render :show
         else
@@ -13,11 +13,11 @@ class Api::ShelvesController < ApplicationController
     end
 
     def show
-        @shelf = @shelf.find(params[:id])
+        @shelf = Shelf.find(params[:id])
     end
 
     def destroy
-        @shelf = shelf.find(params[:id])
+        @shelf = Shelf.find(params[:id])
         if @shelf.destroy
             render :show
         else

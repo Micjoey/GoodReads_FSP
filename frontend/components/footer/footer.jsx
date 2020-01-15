@@ -8,12 +8,12 @@ class Footer extends React.Component {
 
     render() {
         return (
-            <div id="footer">
+            <div className="footer">
                 <a href="https://www.linkedin.com/in/macallan-savett/">
-                    <i className="footer-linkedin"></i>
+                    <img className="footer-linkedin" src={images.linkedin} alt=""/>
                 </a>
                 <a href="https://github.com/Micjoey/MyReads_FSP/wiki">
-                    <i className="footer-github"></i>
+                    <img src={images.github} className="footer-github" alt=""/>
                 </a>
                 <a href="https://github.com/Micjoey" id="footerLink">©  Macallan Savett</a>
             </div>
