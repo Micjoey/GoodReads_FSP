@@ -4,9 +4,11 @@ import { withRouter } from 'react-router'
 import ShelfForm from './shelf_form'
 
 const mapStateToProps = (state) => {
+    const user = state.entities.users[state.session];
     return {
         // formType: 'Create Shelf',
-        shelves: Object.values(state.entities.shelf)
+        shelves: Object.values(state.entities.shelf),
+        currentUser: user,
     }
 }
 

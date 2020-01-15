@@ -3,17 +3,21 @@ import { retrieveShelves, retrieveShelf, createShelf } from '../../actions/shelf
 import IndexShelves from '../shelf/index_shelves'
 import { withRouter } from 'react-router'
 import { deleteShelf } from '../../util/shelf_api_util'
+import { retrieveBooks } from '../../actions/book_actions'
 
 const mapStateToProps = (state) => {
+
     return {
-        shelves: Object.values(state.entities.shelf)
+        shelves: Object.values(state.entities.shelf),
+        allBooks: Object.values(state.entities.books)
     }
 }
 
 const mapDispatchToProps = dispatch => ({
     retrieveShelves: () => dispatch(retrieveShelves()),
     createShelf: shelf => dispatch(createShelf(shelf)),
-    deleteShelf: shelf => dispatch(deleteShelf(shelf))
+    deleteShelf: shelf => dispatch(deleteShelf(shelf)),
+    retrieveBooks: () => dispatch(retrieveBooks()),
 })
 
 

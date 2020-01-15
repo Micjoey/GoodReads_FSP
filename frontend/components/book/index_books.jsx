@@ -27,6 +27,7 @@ class IndexBook extends React.Component {
             </div>) : (<div className='index-book-information-genre'> Date Read: Haven't Read Yet</div>)
     };
 
+   
     render() {
         
         if (!this.props.books) return null;

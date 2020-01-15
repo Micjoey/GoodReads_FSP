@@ -14,7 +14,13 @@
  *= require_self
  */
 
- 
+ .app {
+     /* overflow: auto; */
+ }
+
+ .content {
+     height: 100%;
+ }
 
 
 

@@ -14,11 +14,6 @@ const receiveBook = book => ({
   book
 });
 
-export const receiveReview = ({ review, average_rating }) => ({
-  type: RECEIVE_REVIEW,
-  review,
-  average_rating,
-});
 
 
 export const retrieveBooks = () => dispatch => (
@@ -31,10 +26,6 @@ export const retrieveBook = bookId => dispatch => (
     .then(book => dispatch(receiveBook(book)))
 );
 
-export const createReview = review => dispatch => (
-  BookAPIUtil.createReview(review).then(review => (
-    dispatch(receiveReview(review))
-  ))
-)
+
 
 		

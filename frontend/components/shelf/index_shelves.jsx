@@ -10,6 +10,7 @@ class IndexShelves extends React.Component {
 
     componentDidMount() {
         this.props.retrieveShelves()
+        this.props.retrieveBooks()
     }
 
     handleSubmit(e) {
@@ -18,9 +19,23 @@ class IndexShelves extends React.Component {
         this.props.createShelf(shelf);
     }
 
+    myRating(title) {
+        const allBooks = this.props.allBooks
+        const correctBooks = []
+        allBooks.each( book => {
+            if (title === book.title) {
+                
+            }
+        }) 
+
+        end
+    }
+
+
     
     render(){
         if(!this.props.shelves) return null;
+        console.log(this.props.allBooks)
         return (
             <div className="index-shelves-main">
                 <div className="index-shelves-main-navbar">
@@ -44,7 +59,6 @@ class IndexShelves extends React.Component {
                             </div>
                             <div>
                             <ShelfFormContainer />
-                            {/* <button className="index-shelves-main-sidebar-add-shelf-button">Add Shelf</button> */}
                             </div>
                         </div>
                         <div className="index-shelves-main-shelves">
@@ -74,8 +88,12 @@ class IndexShelves extends React.Component {
                                                             </div>
                                                             <div className="index-shelf-book-title">{book.title}</div>
                                                             <div className="index-shelf-book-author">{book.author}</div>
-                                                           <div className="index-shelf-book-avg-rating">{book.average_rating}</div>
-                                                           <div className="index-shelf-book-user-rating">User Rating</div>
+                                                            <div className="index-shelf-book-rating-container">
+                                                                <div className="index-shelf-book-avg-rating">{book.average_rating}</div>
+                                                           </div>
+                                                           <div className="index-shelf-book-rating-container">
+                                                                <div className="index-shelf-book-user-rating">User Rating</div>
+                                                            </div>
                                                            <div className="index-shelf-book-added">{formatDateWithDay(book.created_at)}</div>                                                        
                                                            <div className="index-shelf-book-added">
                                                                {(book.date_read) ? 

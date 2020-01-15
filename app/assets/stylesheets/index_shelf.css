@@ -1,8 +1,9 @@
 .index-shelves-main{
-
+    overflow: auto;
 }
     .index-shelves-main-inner{
         display: flex;
+        /* justify-content: center; */
     }
         .index-shelves-main-navbar{
             display: flex;
@@ -22,6 +23,7 @@
                 color: #00635d;
                 text-decoration: none;
                 cursor: default;
+                left: 10px;
             }
         
         .index-shelves-main-content{
@@ -35,6 +37,7 @@
             width: 100px;
             padding-right: 20px;
             text-decoration: none;
+            margin-left: 46px;
         }
 
                 .index-shelves-main-sidebar-list-shelves{
@@ -44,12 +47,13 @@
                 .index-shelves-main-sidebar-add-shelf-button{
                     /* padding-top: 4px; */
                     font-size: 12px;
-                     
+                    margin: 0px 10%;
                 }
             
             .index-shelves-main-shelves{
                 display: block;
                 justify-content: space-between;
+                margin: 0px 10%;
             }
 
             .index-shelves-main-shelves-nav-bar {
@@ -123,6 +127,10 @@
                 font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
                 font-size: 14px;
                 align-items: center;
+            }
+
+            .index-shelf-book-rating-container {
+                /* align-items: center; */
             }
 
 

@@ -1,5 +1,9 @@
 .footer {
     min-height: 100%;
+    position: fixed;
+    height: 70px;
+    bottom: 0px;
+    clear: both;;
 }
 
 .footer-inner {

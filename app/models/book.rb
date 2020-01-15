@@ -20,18 +20,17 @@ class Book < ApplicationRecord
     has_one_attached :photo
 
    def average_rating
-        book = self
-        average_rating = book.reviews.average(:rating)
-        average_rating.round(2)
+    book = self
+    average_rating = book.reviews.average(:rating)
+    average_rating.round(2)
    end
+
+  
 
    def unique_shelves
      shelves = self.shelves.uniq()
    end
 
-  #  def date_Added
-      
-  #  end
 
    
 end

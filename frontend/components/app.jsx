@@ -30,10 +30,10 @@ const App = () => (
         <ProtectedRoute path="/book/:bookId" component={ShowBookContainer}/>
         <ProtectedRoute path="/shelf" component={IndexShelvesContainer} />
       </Switch>
+      {/* <footer className="footer"> */}
+        <Route path='/' component={Footer}/>
+      {/* </footer> */}
     </div>
-    <footer className="footer">
-      <Route path='/' component={Footer}/>
-    </footer>
   </div>
 );
 

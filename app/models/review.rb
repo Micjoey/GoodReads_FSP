@@ -10,5 +10,6 @@ class Review < ApplicationRecord
    foreign_key: :book_id,
    class_name: :Book
 
-   
+
+
 end
