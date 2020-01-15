@@ -38,6 +38,7 @@
                         border: none;
                         padding: none;
                         margin: none;
+                        object-fit: cover;
                     }
 
                     /* .index-book-cover:hover {

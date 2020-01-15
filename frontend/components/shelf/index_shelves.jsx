@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom';
-import IndexShelvesContainer from './index_shelves_container';
 
 class IndexShelves extends React.Component {
     constructor(props) {
@@ -10,6 +9,8 @@ class IndexShelves extends React.Component {
     componentDidMount() {
         this.props.retrieveShelves()
     }
+
+
     render(){
         console.log(this.props.shelves)
         if(!this.props.shelves) return (<p>Not Working</p>);
@@ -22,22 +23,50 @@ class IndexShelves extends React.Component {
                 <div className="index-shelves-main-inner">
                     <div className="index-shelves-main-content">
                         <div className="index-shelves-main-sidebar">
-                            <div className="index-shelves-main-sidebar-list-shelves">
-                                <p>Bookshelves</p>
+                            <div className="index-shelves-sidebar-list-shelves">
+                                <p className="index-shelves-sidebar-title">Bookshelves</p>
+                                {this.props.shelves.map((shelf, i) => (
+                                    <div key={`shelf-${i}`} className="index-shelves-sidebar-shelf">
+                                        <button className="index-shelves-sidebar-shelf-buttons">
+                                            <ul className={`index-shelves-sidebar-shelf-button-${shelf.bookshelf_title}`}>
+                                                {shelf.bookshelf_title}
+                                            </ul>
+                                        </button>
+                                    </div>
+                                ))}
                             </div>
                             <button className="index-shelves-main-sidebar-add-shelf-button">Add Shelf</button>
                         </div>
                         <div className="index-shelves-main-shelves">
                             <div className="index-shelves-main-shelves-nav-bar">
-                                <div> Cover </div>
-                                <div> Title </div>
-                                <div> Author </div>
-                                <div> Avg Rating </div>
-                                <div> My Rating </div>
-                                <div> Date Added </div>
-                                <div> Date Read </div>
+                                <div className="index-shelves-cover"> Cover </div>
+                                <div className="index-shelves-title"> Title </div>
+                                <div className="index-shelves-author"> Author </div>
+                                <div className="index-shelves-avg-rating"> Avg Rating </div>
+                                <div className="index-shelves-my-rating"> My Rating </div>
+                                <div className="index-shelves-date-added"> Date Added </div>
+                                <div className="index-shelves-date-read"> Date Read </div>
                             </div>
-                            <div className="index-shelves-books">   
+                            <div className="index-shelves-books"> 
+                                    {this.props.shelves.map((shelf,i)=>(
+                                        <div key={`shelf-${i}-${i}`} className="index-shelves-bookshelf">
+                                               <div className="index-shelf-titles"> {shelf.bookshelf_title} </div>
+                                               <div className="index-shelf-book-information"> 
+                                                   {shelf.books.map((book, i)=> (
+                                                       <div key={`${shelf}-${book}-${i}`} className="index-shelf-book-indiv-info"> 
+                                                            <div className="index-shelf-book-cover"><img src={book.photo} className="index-book-cover" /></div>
+                                                            <div>{book.title}</div>
+                                                            <div>{book.author}</div>
+                                                            <div>{book.average_rating}</div>
+                                                            <div>User Rating</div>
+                                                            <div>{book.date_added}</div>
+
+                                                        
+                                                       </div>
+                                                   ))}
+                                               </div>
+                                        </div>
+                                    ))}
                             </div>
                         </div>
                     </div>

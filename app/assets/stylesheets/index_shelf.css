@@ -21,18 +21,20 @@
                 font-size: 20px;
                 color: #00635d;
                 text-decoration: none;
+                cursor: default;
             }
         
         .index-shelves-main-content{
             display: flex;
-            justify-content: space-between;
+            /* justify-content: space-between; */
         }
 
         .index-shelves-main-sidebar{
             display: inline-block;
             height: 100%;
-            width: 70px;
+            width: 100px;
             padding-right: 20px;
+            text-decoration: none;
         }
 
                 .index-shelves-main-sidebar-list-shelves{
@@ -40,17 +42,58 @@
                 }
                 
                 .index-shelves-main-sidebar-add-shelf-button{
-                    font-size: 8px;
+                    /* padding-top: 4px; */
+                    font-size: 12px;
+                     
                 }
             
             .index-shelves-main-shelves{
-                display: flex;
+                display: block;
+                justify-content: space-between;
             }
 
             .index-shelves-main-shelves-nav-bar {
                 display: flex;
             }
 
-            .index-shelves-books{
+            .index-shelves-books {
 
             }
+
+            .index-shelf-titles {
+                font-weight: bold;
+                font-size: 14px;
+                font-style: oblique;
+            }
+
+            .index-shelves-cover {
+                padding-left: 0px;
+            }
+
+            .index-shelves-title {
+                padding-left: 40px;
+            }
+
+            .index-shelves-author {
+                padding-left: 10px;
+            }
+
+            .index-shelves-avg-rating {
+
+            }
+
+            .index-shelves-my-rating {
+
+            }
+
+            .index-shelves-date-added {
+
+            }
+
+            .index-shelves-date-read {
+                padding-left: 4px;
+            }
+
+            /* .index-book-cover {
+                height: 50px;
+            } */
