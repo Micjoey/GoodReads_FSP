@@ -31,7 +31,7 @@ const App = () => (
         <ProtectedRoute path="/shelf" component={IndexShelvesContainer} />
       </Switch>
     </div>
-    <footer>
+    <footer className="footer">
       <Route path='/' component={Footer}/>
     </footer>
   </div>

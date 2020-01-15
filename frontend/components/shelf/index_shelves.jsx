@@ -64,7 +64,7 @@ class IndexShelves extends React.Component {
                                         <div key={`shelf-${i}-${i}`} className="index-shelves-bookshelf">
                                                <div className="index-shelf-titles"> 
                                                     {shelf.bookshelf_title} 
-                                                <button className="index-shelf-delete-button" onClick={() => {this.props.deleteShelf(shelf.id)}}>Delete Shelf</button>
+                                                <button className="index-shelf-delete-button" type="button" onClick={() => {this.props.deleteShelf(shelf.id)}} >Delete Shelf</button>
                                                </div>
                                                <div className="index-shelf-book-information"> 
                                                    {shelf.books.map((book, i)=> (

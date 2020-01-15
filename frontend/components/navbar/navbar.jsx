@@ -23,7 +23,7 @@ class RootFile extends React.Component {
 
     personalGreeting() {
         return(
-        <div>
+        <div className="header-group">
             <div className="header-group-logged-in">
                 <Link to="/home" className="myreads-title-logged-in">MyReads</Link>
                 <Link to="/home" className="nav-bar-home-button">Home</Link>

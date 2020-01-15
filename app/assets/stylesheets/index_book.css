@@ -14,7 +14,7 @@
     }
 
         .index-books {
-
+            overflow: auto;
         }
 
             .index-books-book-info {

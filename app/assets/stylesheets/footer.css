@@ -1,10 +1,17 @@
 .footer {
+    min-height: 100%;
+}
+
+.footer-inner {
     display: flex;
     justify-content: space-evenly;
     background-color: #f4f2e9;
     height: 50px;
     align-items: center;
     bottom: 0px;
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
 }
 
 #footerLink {

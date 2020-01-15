@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
     retrieveShelves: () => dispatch(retrieveShelves()),
     createShelf: shelf => dispatch(createShelf(shelf)),
-    deleteShelf: shelfId => dispatch(deleteShelf(shelfId))
+    deleteShelf: shelf => dispatch(deleteShelf(shelf))
 })
 
 

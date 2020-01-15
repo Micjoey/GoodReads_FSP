@@ -1,4 +1,4 @@
-import * as ShelfAPIUtil from '../util/shelf_api_util'
+import * as UserApiUtil from '../util/user_api_util'
 
 export const RECEIVE_ALL_USER = 'RECEIVE_ALL_USER';
 
@@ -8,7 +8,7 @@ export const receiveAllUsers = allUsers => ({
     allUsers
 })
 export const allUsers = allUsers => dispatch => (
-    APIUtil.allUsers(allUsers).then(users => (
+    UserApiUtil.allUsers(allUsers).then(users => (
         dispatch(receiveAllUsers(users))
     ))
 );

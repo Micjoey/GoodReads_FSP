@@ -1,7 +1,7 @@
 .background-and-signup-box {
     padding-top: 101px;
-    min-height: 300px;
-    overflow-y: auto;
+    min-height: 800px;
+    overflow: auto;
 
 }
     .sign-up-form-box {
@@ -41,13 +41,14 @@
         align-items: flex-end;
         margin: 0px;
         padding: 0px;
-        overflow: scroll;
+        overflow: auto;
         min-height: 400px;
         z-index: -1;
     }
 
         .sign-up-box {
             height: min-content;
+            overflow: visible;
         }
    
 

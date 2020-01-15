@@ -8,7 +8,7 @@ class Footer extends React.Component {
 
     render() {
         return (
-            <div className="footer">
+            <div className="footer-inner">
                 <a href="https://www.linkedin.com/in/macallan-savett/">
                     <img className="footer-linkedin" src={images.linkedin} alt=""/>
                 </a>

@@ -10,6 +10,10 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def index
+    @user = User.all
+  end
+
   private
 
   def user_params
