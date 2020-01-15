@@ -15,7 +15,7 @@ import Splash from './splash/splash';
 import IndexBookContainer from './book/index_books_container'
 import ShowBookContainer from './book/show_book_container';
 import IndexShelvesContainer from './shelf/index_shelves_container';
-
+import Footer from './footer/footer';
 
 const App = () => (
   <div className="app">
@@ -31,6 +31,9 @@ const App = () => (
         <ProtectedRoute path="/shelf" component={IndexShelvesContainer} />
       </Switch>
     </div>
+    <footer>
+      <Route path='/' component={Footer}/>
+    </footer>
   </div>
 );
 

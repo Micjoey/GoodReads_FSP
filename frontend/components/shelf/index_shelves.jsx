@@ -11,15 +11,14 @@ class IndexShelves extends React.Component {
         this.props.retrieveShelves()
     }
 
-    hasRead(book) {
-        <div>
-            (book.date_read) ?
-        </div>
+    handleSubmit(e) {
+        e.preventDefault();
+        const shelf = Object.assign({}, this.state)
+        this.props.createShelf(shelf);
     }
 
     
     render(){
-        console.log(this.props.shelves)
         if(!this.props.shelves) return null;
         return (
             <div className="index-shelves-main">
@@ -54,11 +53,15 @@ class IndexShelves extends React.Component {
                                 <div className="index-shelves-my-rating"> My Rating </div>
                                 <div className="index-shelves-date-added"> Date Added </div>
                                 <div className="index-shelves-date-read"> Date Read </div>
+                                
                             </div>
                             <div className="index-shelves-books"> 
                                     {this.props.shelves.map((shelf,i)=>(
                                         <div key={`shelf-${i}-${i}`} className="index-shelves-bookshelf">
-                                               <div className="index-shelf-titles"> {shelf.bookshelf_title} </div>
+                                               <div className="index-shelf-titles"> 
+                                                    {shelf.bookshelf_title} 
+                                                <button className="index-shelf-delete-button" onClick={() => {this.props.deleteShelf(shelf.id)}}>Delete Shelf</button>
+                                               </div>
                                                <div className="index-shelf-book-information"> 
                                                    {shelf.books.map((book, i)=> (
                                                        <div key={`${shelf}-${book}-${i}`} className="index-shelf-book-indiv-info"> 
@@ -70,7 +73,12 @@ class IndexShelves extends React.Component {
                                                            <div className="index-shelf-book-avg-rating">{book.average_rating}</div>
                                                            <div className="index-shelf-book-user-rating">User Rating</div>
                                                            <div className="index-shelf-book-added">{formatDateWithDay(book.created_at)}</div>                                                        
-                                                           <div className="index-shelf-book-added">{formatDateWithDay(book.date_read)}</div>                                                        
+                                                           <div className="index-shelf-book-added">
+                                                               {(book.date_read) ? 
+                                                               formatDateWithDay(book.date_read) :
+                                                               <div>Hasn't Read</div>
+                                                               }
+                                                            </div>                                                        
                                                        </div>
                                                    ))}
                                                </div>

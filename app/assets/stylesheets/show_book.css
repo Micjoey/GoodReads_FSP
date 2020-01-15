@@ -78,10 +78,13 @@
         padding-top: 15px;
     }
 
-    
+    .show-book-activity-rating {
+        background: transparent;
+        border-bottom: 1px solid #D8D8D8;
+    }
 
     .show-book-activity-shelf {
-        display: flex
+        display: block
     }
 
         .show-book-all-shelves {
@@ -93,3 +96,11 @@
             /* background-color: brown; */
             color: black;
         }
+
+.show-book-unique-shelves{
+    display: flex;
+}
+
+.show-book-myactivity{
+    display: flex;
+}

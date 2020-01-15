@@ -1,5 +1,6 @@
 import React from 'react';
 import {link, Redirect} from 'react-router-dom'
+import { formatDateWithDay } from '../../util/date_util';
 
 class showBook extends React.Component {
     constructor(props){
@@ -46,6 +47,7 @@ class showBook extends React.Component {
                             <params className="show-book-my-activity-text">MY ACTIVITY</params>
                         </div>
                         <div className="show-book-activity-shelf">
+                        <div className="show-book-unique-shelves">
                             {shelf}
                             <div className="dropdown-content2">
                                 <ul className="show-book-all-shelves">
@@ -54,6 +56,13 @@ class showBook extends React.Component {
                                     ))}
                                 </ul>
                             </div>
+                        </div>
+                        <div className="show-book-myactivity">
+                            <div>
+                               Date Read: {formatDateWithDay( book.date_read)}
+                            </div>
+
+                        </div>
                         </div>
                         <div className="show-book-activity-status">
 

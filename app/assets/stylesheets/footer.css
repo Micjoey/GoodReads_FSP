@@ -1,0 +1,12 @@
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #f4f2e9;
+    height: 50px;
+}
+
+.footer-linkedin {
+    object-fit:cover;
+    height: 45;
+    width: 30px;
+}
