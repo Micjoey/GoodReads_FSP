@@ -1,4 +1,4 @@
-class Api::SessionsController < ApplicationController
+class Api::ReviewsController < ApplicationController
     def show
         @review = Review.find_by(params[:user_id])
     end

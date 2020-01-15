@@ -9,7 +9,8 @@ const mapStateToProps = (state) => {
 
     return {
         shelves: Object.values(state.entities.shelf),
-        allBooks: Object.values(state.entities.books)
+        allBooks: Object.values(state.entities.books),
+        reviews: Object.values(state.entities.reviews)
     }
 }
 
@@ -18,6 +19,7 @@ const mapDispatchToProps = dispatch => ({
     createShelf: shelf => dispatch(createShelf(shelf)),
     deleteShelf: shelf => dispatch(deleteShelf(shelf)),
     retrieveBooks: () => dispatch(retrieveBooks()),
+    retrieveReviews: () => dispatch(retrieveReviews()),
 })
 
 

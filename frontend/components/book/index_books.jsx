@@ -29,7 +29,6 @@ class IndexBook extends React.Component {
 
    
     render() {
-        
         if (!this.props.books) return null;
         const books = (
                 <div className="index-books">

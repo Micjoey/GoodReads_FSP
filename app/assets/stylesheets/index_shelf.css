@@ -80,6 +80,7 @@
                 padding-top: 1px;
                 justify-content: space-between;
                 align-items: center;
+                margin-right: 27px;
             }
 
             .index-shelves-cover {
@@ -129,8 +130,9 @@
                 align-items: center;
             }
 
-            .index-shelf-book-rating-container {
-                /* align-items: center; */
+            .index-shelf-book-avg-rating,
+            .index-shelf-book-user-rating {
+                margin-left: 18px;
             }
 
 

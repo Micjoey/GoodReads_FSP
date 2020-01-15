@@ -19,18 +19,6 @@ class IndexShelves extends React.Component {
         this.props.createShelf(shelf);
     }
 
-    myRating(title) {
-        const allBooks = this.props.allBooks
-        const correctBooks = []
-        allBooks.each( book => {
-            if (title === book.title) {
-                
-            }
-        }) 
-
-        end
-    }
-
 
     
     render(){
@@ -92,7 +80,7 @@ class IndexShelves extends React.Component {
                                                                 <div className="index-shelf-book-avg-rating">{book.average_rating}</div>
                                                            </div>
                                                            <div className="index-shelf-book-rating-container">
-                                                                <div className="index-shelf-book-user-rating">User Rating</div>
+                                                                <div className="index-shelf-book-user-rating">{book.rating}</div>
                                                             </div>
                                                            <div className="index-shelf-book-added">{formatDateWithDay(book.created_at)}</div>                                                        
                                                            <div className="index-shelf-book-added">

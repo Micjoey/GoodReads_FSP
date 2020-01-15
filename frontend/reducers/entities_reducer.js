@@ -2,13 +2,13 @@ import { combineReducers } from 'redux';
 
 import users from './users_reducer';
 import UsersReducer from './users_reducer';
-import BooksReduccer from './books_reducer'
+import BooksReducer from './books_reducer'
 import ShelvesReducer from './shelves_reducer'
+import reviewReducer from './review_reducer'
 
 export default combineReducers({
-  books: BooksReduccer,
+  books: BooksReducer,
   shelf: ShelvesReducer,
-  // reviews,
+  // reviews: reviewReducer,
   users: UsersReducer,
-  
 });
