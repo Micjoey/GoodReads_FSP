@@ -6,7 +6,6 @@ import { deleteShelf } from '../../util/shelf_api_util'
 import { retrieveBooks } from '../../actions/book_actions'
 
 const mapStateToProps = (state) => {
-
     return {
         shelves: Object.values(state.entities.shelf),
         allBooks: Object.values(state.entities.books),
