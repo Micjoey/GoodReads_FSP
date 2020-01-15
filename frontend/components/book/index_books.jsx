@@ -20,6 +20,13 @@ class IndexBook extends React.Component {
         )    
     }
 
+    readBook() {
+        (book.date_read) ? (
+            <div className='index-book-information-genre'>
+                Date Read: {book.genre}
+            </div>) : (<div className='index-book-information-genre'> Date Read: Haven't Read Yet</div>)
+    };
+
     render() {
         
         if (!this.props.books) return null;
@@ -37,6 +44,7 @@ class IndexBook extends React.Component {
                                 <div className='index-book-information-author'>by: {book.author}</div>
                                 <div className='index-book-information-rating'>Rating: {book.average_rating}</div>
                                 <div className='index-book-information-genre'>Genre: {book.genre}</div>
+                                <div className='index-book-information-genre'>Date Read: {book.genre}</div>
                                 <div className='index-book-information-description'>Description: {book.description} </div>
                             </div>
                         </div>

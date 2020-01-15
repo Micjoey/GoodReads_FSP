@@ -20,10 +20,7 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const receiveAllUsers = allUsers => ({
-  type: RECEIVE_ALL_USER,
-  allUsers
-})
+
 
 export const signUp = user => dispatch => (
   APIUtil.signup(user).then(user => (
@@ -47,8 +44,4 @@ export const logout = () => dispatch => (
   ))
 );
 
-export const allUsers = allUsers => dispatch => (
-  APIUtil.allUsers(allUsers).then( users => (
-    dispatch(receiveAllUsers(users))
-  ))
-);
+

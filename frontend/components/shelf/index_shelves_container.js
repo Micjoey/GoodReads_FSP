@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
     retrieveShelves: () => dispatch(retrieveShelves()),
+    
 })
 
 

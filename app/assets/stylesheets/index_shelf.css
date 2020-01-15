@@ -53,7 +53,13 @@
             }
 
             .index-shelves-main-shelves-nav-bar {
-                display: flex;
+                display: grid;
+                grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
+                grid-gap: 10px;
+                padding: 10px;
+                font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+                font-size: 14px;
+                align-items: center;
             }
 
             .index-shelves-books {
@@ -64,18 +70,22 @@
                 font-weight: bold;
                 font-size: 14px;
                 font-style: oblique;
+                border-top: solid 1px rosybrown;
+                border-bottom:solid 1px rosybrown;
+                padding-top: 1px
             }
 
             .index-shelves-cover {
-                padding-left: 0px;
+                /* padding-left: 0px; */
             }
 
             .index-shelves-title {
-                padding-left: 40px;
+                /* padding-left: 15px; */
             }
 
             .index-shelves-author {
-                padding-left: 10px;
+               /* padding-left: 80px; */
+                
             }
 
             .index-shelves-avg-rating {
@@ -97,3 +107,33 @@
             .index-shelves-cover {
                 padding-left: 20px;
             }
+            .index-shelf-book-cover {
+                max-width: 100px;
+                /* padding-left: 80px; */
+            }
+            .index-shelf-book-indiv-info{
+                /* display: flex; */
+                display: grid;
+                grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
+                grid-gap: 13px;
+                padding-top: 2px;
+                font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+                font-size: 14px;
+                align-items: center;
+            }
+
+
+            .index-shelf-book-cover {
+                object-fit: contain;
+                height: 80px;
+                width: auto;
+            }
+
+            .index-shelf-book-author {
+                /* margin-left: 20px; */
+            }
+
+            .index-shelf-book-title {
+
+            }
+

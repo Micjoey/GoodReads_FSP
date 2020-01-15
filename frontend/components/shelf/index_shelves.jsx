@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom';
+import { formatDate, formatDateWithDay } from '../../util/date_util';
 
 class IndexShelves extends React.Component {
     constructor(props) {
@@ -10,10 +11,16 @@ class IndexShelves extends React.Component {
         this.props.retrieveShelves()
     }
 
+    hasRead(book) {
+        <div>
+            (book.date_read) ?
+        </div>
+    }
 
+    
     render(){
         console.log(this.props.shelves)
-        if(!this.props.shelves) return (<p>Not Working</p>);
+        if(!this.props.shelves) return null;
         return (
             <div className="index-shelves-main">
                 <div className="index-shelves-main-navbar">
@@ -39,8 +46,8 @@ class IndexShelves extends React.Component {
                         </div>
                         <div className="index-shelves-main-shelves">
                             <div className="index-shelves-main-shelves-nav-bar">
-                                <div className="index-shelves-shelf-name"> Shelf Name </div>
-                                <div className="index-shelves-cover"> Cover </div>
+                                <div className="index-shelves-shelf-name"> Shelf Name/Cover </div>
+                                {/* <div className="index-shelves-cover"> Cover </div> */}
                                 <div className="index-shelves-title"> Title </div>
                                 <div className="index-shelves-author"> Author </div>
                                 <div className="index-shelves-avg-rating"> Avg Rating </div>
@@ -55,12 +62,15 @@ class IndexShelves extends React.Component {
                                                <div className="index-shelf-book-information"> 
                                                    {shelf.books.map((book, i)=> (
                                                        <div key={`${shelf}-${book}-${i}`} className="index-shelf-book-indiv-info"> 
-                                                            <div className="index-shelf-book-cover"><img src={book.photo} className="index-book-cover" /></div>
+                                                            <div className="index-shelf-book-cover">
+                                                                <img src={book.photo} className="index-shelf-book-cover" />
+                                                            </div>
                                                             <div className="index-shelf-book-title">{book.title}</div>
                                                             <div className="index-shelf-book-author">{book.author}</div>
                                                            <div className="index-shelf-book-avg-rating">{book.average_rating}</div>
                                                            <div className="index-shelf-book-user-rating">User Rating</div>
-                                                           <div className="index-shelf-book-added">{book.date_added}</div>                                                        
+                                                           <div className="index-shelf-book-added">{formatDateWithDay(book.created_at)}</div>                                                        
+                                                           <div className="index-shelf-book-added">{formatDateWithDay(book.date_read)}</div>                                                        
                                                        </div>
                                                    ))}
                                                </div>
@@ -79,3 +89,4 @@ class IndexShelves extends React.Component {
 }
 
 export default (IndexShelves)
+

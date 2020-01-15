@@ -29,6 +29,10 @@ class Book < ApplicationRecord
      shelves = self.shelves.uniq()
    end
 
+   def date_Added
+      
+   end
+
    
 end
 

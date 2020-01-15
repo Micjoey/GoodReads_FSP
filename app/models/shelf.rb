@@ -13,5 +13,9 @@ class Shelf < ApplicationRecord
     through: :shelfBooks,
     source: :book
 
+    has_many :photos,
+    through: :books,
+    source: :photo
+
 
 end
