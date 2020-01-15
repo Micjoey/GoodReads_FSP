@@ -1,14 +1,15 @@
 import * as UserApiUtil from '../util/user_api_util'
 
-export const RECEIVE_ALL_USER = 'RECEIVE_ALL_USER';
+export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 
 
-export const receiveAllUsers = allUsers => ({
-    type: RECEIVE_ALL_USER,
+const receiveAllUsers = allUsers => ({
+    type: RECEIVE_ALL_USERS,
     allUsers
 })
-export const allUsers = allUsers => dispatch => (
-    UserApiUtil.allUsers(allUsers).then(users => (
+
+export const retrieveAllUsers = allUsers => dispatch => (
+    UserApiUtil.retrieveAllUsers(allUsers).then(users => (
         dispatch(receiveAllUsers(users))
     ))
 );

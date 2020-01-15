@@ -4,22 +4,21 @@ import { formatDateWithDay } from '../../util/date_util';
 
 class showBook extends React.Component {
     constructor(props){
-        super(props) 
+        super(props);
     }
 
     componentDidMount() {
         this.props.retrieveBook(this.props.match.params.bookId)
+        this.props.retrieveAllUsers()
     }
     
     render() {
         if (typeof this.props.book === 'undefined') return null;
-        
         const book = this.props.book
         const cover = (
             <img className="show-book-cover" src={book.photo} />
         )
-
-
+        const allUsers = this.props.allUsers
         const shelf = (book.unique_shelves > 1) ? <p>Shelf Titles:</p> : <p>Shelf Title:</p>
         const book_information = (typeof this.props.book !== 'undefined') ? (
             <div className="show-book-information">
@@ -30,8 +29,6 @@ class showBook extends React.Component {
                     <div className='show-book-information-description'>Description: {book.description} </div>
             </div>
         ) : (<p>Sorry! No Books!</p>)
-        
-        console.log(this.props.currentUser)
         return (
             <div className="show-book">
                     <div className='show-book-all-information'>
@@ -76,11 +73,11 @@ class showBook extends React.Component {
                     <div className="show-book-all-reviews-text">ALL REVIEWS</div>
                         {book.reviews.map((review,i) => (
                             <div key={`review-${i}`} className="show-book-individual-review">
-                                    <div>Date Reviewed: {review.date_reviewed}</div>
-                                    <div>Review Title: {review.title}</div>
-                                    <div>User Id: {review.user_id}</div>
-                                    <div>User Rating: {review.rating}</div>
-                                    <div>Body: {review.body}</div>
+                                <div className="show-book-individual-review-date">Date Reviewed: {review.date_reviewed}</div>
+                                    <div className="show-book-individual-review-title">Review Title: {review.title}</div>
+                                <div className="show-book-individual-review-id">User Id: {allUsers[review.user_id].username}</div>
+                                    <div className="show-book-individual-review-rating">User Rating: {review.rating}</div>
+                                    <div className="show-book-individual-review-body">Body: {review.body}</div>
                             </div>
                         ))}
                     </div>

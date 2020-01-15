@@ -104,3 +104,8 @@
 .show-book-myactivity{
     display: flex;
 }
+
+.show-book-individual-review-title,
+.show-book-individual-review-id {
+    text-transform: capitalize;
+}

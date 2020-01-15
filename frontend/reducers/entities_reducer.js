@@ -9,6 +9,6 @@ export default combineReducers({
   books: BooksReduccer,
   shelf: ShelvesReducer,
   // reviews,
-  users: UsersReducer
+  users: UsersReducer,
   
 });
