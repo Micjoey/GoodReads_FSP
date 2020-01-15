@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom';
 import { formatDate, formatDateWithDay } from '../../util/date_util';
+import ShelfFormContainer from './shelf_form_container';
 
 class IndexShelves extends React.Component {
     constructor(props) {
@@ -41,7 +42,10 @@ class IndexShelves extends React.Component {
                                     </div>
                                 ))}
                             </div>
-                            <button className="index-shelves-main-sidebar-add-shelf-button">Add Shelf</button>
+                            <div>
+                            <ShelfFormContainer />
+                            {/* <button className="index-shelves-main-sidebar-add-shelf-button">Add Shelf</button> */}
+                            </div>
                         </div>
                         <div className="index-shelves-main-shelves">
                             <div className="index-shelves-main-shelves-nav-bar">

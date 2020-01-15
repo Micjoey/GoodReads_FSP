@@ -75,6 +75,7 @@
                 border-bottom:solid 1px rosybrown;
                 padding-top: 1px;
                 justify-content: space-between;
+                align-items: center;
             }
 
             .index-shelves-cover {
