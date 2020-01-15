@@ -39,6 +39,7 @@ class IndexShelves extends React.Component {
                         </div>
                         <div className="index-shelves-main-shelves">
                             <div className="index-shelves-main-shelves-nav-bar">
+                                <div className="index-shelves-shelf-name"> Shelf Name </div>
                                 <div className="index-shelves-cover"> Cover </div>
                                 <div className="index-shelves-title"> Title </div>
                                 <div className="index-shelves-author"> Author </div>
@@ -55,13 +56,11 @@ class IndexShelves extends React.Component {
                                                    {shelf.books.map((book, i)=> (
                                                        <div key={`${shelf}-${book}-${i}`} className="index-shelf-book-indiv-info"> 
                                                             <div className="index-shelf-book-cover"><img src={book.photo} className="index-book-cover" /></div>
-                                                            <div>{book.title}</div>
-                                                            <div>{book.author}</div>
-                                                            <div>{book.average_rating}</div>
-                                                            <div>User Rating</div>
-                                                            <div>{book.date_added}</div>
-
-                                                        
+                                                            <div className="index-shelf-book-title">{book.title}</div>
+                                                            <div className="index-shelf-book-author">{book.author}</div>
+                                                           <div className="index-shelf-book-avg-rating">{book.average_rating}</div>
+                                                           <div className="index-shelf-book-user-rating">User Rating</div>
+                                                           <div className="index-shelf-book-added">{book.date_added}</div>                                                        
                                                        </div>
                                                    ))}
                                                </div>

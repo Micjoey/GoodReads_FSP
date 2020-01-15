@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_14_225202) do
+ActiveRecord::Schema.define(version: 2020_01_15_002826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2020_01_14_225202) do
     t.string "author", null: false
     t.date "date_read"
     t.text "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["author"], name: "index_books_on_author"
     t.index ["title"], name: "index_books_on_title"
   end
@@ -49,6 +51,8 @@ ActiveRecord::Schema.define(version: 2020_01_14_225202) do
   create_table "on_shelf_books", force: :cascade do |t|
     t.integer "shelf_id", null: false
     t.integer "book_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -58,11 +62,15 @@ ActiveRecord::Schema.define(version: 2020_01_14_225202) do
     t.integer "rating", null: false
     t.text "body"
     t.date "date_reviewed", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "shelves", force: :cascade do |t|
     t.string "bookshelf_title", null: false
     t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_shelves_on_user_id"
   end
 
@@ -71,6 +79,8 @@ ActiveRecord::Schema.define(version: 2020_01_14_225202) do
     t.string "session_token", null: false
     t.string "password_digest", null: false
     t.string "email", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["session_token"], name: "index_users_on_session_token"
     t.index ["username"], name: "index_users_on_username"
   end
