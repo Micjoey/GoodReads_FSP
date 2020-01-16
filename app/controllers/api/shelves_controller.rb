@@ -11,6 +11,12 @@ class Api::ShelvesController < ApplicationController
 
     def index
         @shelves = current_user.shelves
+        if @shelves.length == 0
+            shelf1 = Shelf.create(bookshelf_title: "Want To Read", user_id: current_user.id)
+            shelf2 = Shelf.create(bookshelf_title: "Reading", user_id: current_user.id)
+            shelf3 = Shelf.create(bookshelf_title: "Have Read", user_id: current_user.id)
+        end
+        render :index
     end
 
     def show
