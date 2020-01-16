@@ -6,13 +6,14 @@ import { retrieveAllUsers } from '../../actions/users_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const book = state.entities.books[ownProps.match.params.bookId];
-    const user = state.entities.users[state.session];
+    // const user = state.entities.users[state.session];
+    const userId = state.session.id
     const allUsers = state.entities.users
-    debugger
     return ({
         book: book,
-        currentUser: user,
+        // currentUser: user,
         allUsers: allUsers,
+        userId: userId
     })
 }
 

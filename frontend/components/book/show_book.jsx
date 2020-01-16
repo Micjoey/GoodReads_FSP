@@ -7,6 +7,7 @@ class showBook extends React.Component {
     constructor(props){
         super(props)
         this.state = {
+
             loaded: false
         }
     }
@@ -25,6 +26,7 @@ class showBook extends React.Component {
             )
             const allUsers = this.props.allUsers
             const shelf = (book.unique_shelves.length > 1) ? <p>On Shelves:</p> : <p>On Shelf:</p>
+            // debugger
             const book_information = (typeof this.props.book !== 'undefined') ? (
                 <div className="show-book-information">
                         <div className='show-book-information-title'>{book.title}</div>
@@ -57,8 +59,8 @@ class showBook extends React.Component {
                                     <div className="dropdown-content2">
                                         <ul className="show-book-all-shelves">
                                             {book.unique_shelves.map((shelf, i)=>(
-                                                // {}
-                                                <ul key={`shelf-${i}`}>{shelf.bookshelf_title}</ul>
+                                                (shelf.id == this.state.user_id) ? <ul key={`shelf-${i}`}>{shelf.bookshelf_title}</ul> : <div></div>
+                                                // <ul key={`shelf-${i}`}>{shelf.bookshelf_title}</ul>
                                             ))}
                                         </ul>
                                     </div>

@@ -23,7 +23,7 @@ class Api::ShelvesController < ApplicationController
         @shelf.destroy
         @shelves= current_user.shelves
         if @shelf.destroy
-            render :index
+            render :show
         else
             render json: @shelf.errors.full_messages, status: 406
         end

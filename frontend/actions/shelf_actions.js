@@ -3,6 +3,7 @@ import * as ShelfAPIUtil from '../util/shelf_api_util'
 export const RECEIVE_SHELF = 'RECEIVE_SHELF';
 export const RECEIVE_ALL_SHELVES = 'RECEIVE_ALL_SHELVES';
 export const REMOVE_SHELF = 'REMOVE_SHELF'
+export const ADD_SHELF = 'ADD_SHELF'
 
 
 const receiveShelf = shelf => ({
@@ -15,10 +16,11 @@ const receiveShelves = shelves => ({
     shelves
 })
 
-const removeShelf = (shelfId) => ({
+const removeShelf = (shelf) => ({
     type: REMOVE_SHELF,
-    shelfId
+    shelf
 })
+
 
 
 
