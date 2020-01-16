@@ -81,6 +81,7 @@
     .show-book-activity-rating {
         background: transparent;
         border-bottom: 1px solid #D8D8D8;
+        padding-top: 20px;
     }
 
     .show-book-activity-shelf {
@@ -88,7 +89,7 @@
     }
 
         .show-book-all-shelves {
-            display: flex;
+            display: block;
             padding-left: 3px;
         }   
 
@@ -107,4 +108,8 @@
 
 .show-book-individual-review-id {
     text-transform: capitalize;
+}
+
+.show-book-all-reviews-text {
+    border-top: 1px solid black;
 }

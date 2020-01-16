@@ -1,0 +1,46 @@
+.add-shelf {
+  position: relative;
+  display: inline-block;
+  /* padding-right: 10px; */
+  /* padding-top: 4px; */
+  top: inherit;
+  /* padding: 4px 10px; */
+}
+
+.add-shelf-content {
+    /* display: none; */
+    /* position: absolute; */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 2px;
+    z-index: 1;
+    right: 10px;
+    opacity: 1;
+    cursor: auto;
+    background-color: none;
+}
+
+.add-shelf-title {
+    display: flex;
+    /* justify-content: center; */
+}
+
+.add-shelf:hover {
+  /* background-color: rgba(165, 140, 42, 0.632); */
+}
+
+.add-shelf:hover .add-shelf-content {
+  display: block;
+  /* cursor: pointer; */
+}
+
+.add-shelves-sidebar-shelf-button {
+    cursor: pointer;
+    display: flex;
+}
+.add-shelves-sidebar-shelf-buttons {
+   min-width: 85px;
+}
+
+.add-shelf-form {
+
+}

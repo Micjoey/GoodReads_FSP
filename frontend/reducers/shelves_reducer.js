@@ -1,6 +1,7 @@
 import {
     RECEIVE_SHELF,
-RECEIVE_ALL_SHELVES 
+RECEIVE_ALL_SHELVES, 
+REMOVE_SHELF
 } from '../actions/shelf_actions'
 
 const shelvesReducer = (state = {}, action) => {
@@ -10,6 +11,10 @@ const shelvesReducer = (state = {}, action) => {
             return Object.assign({}, state, {[action.shelf.id]: action.shelf})
         case RECEIVE_ALL_SHELVES:
             return Object.assign({}, state, action.shelves);
+        case REMOVE_SHELF:
+            let next_state = Object.assign({}, state)
+            delete next_state[action.shelfId]
+            return next_state
         default:
             return state
     }

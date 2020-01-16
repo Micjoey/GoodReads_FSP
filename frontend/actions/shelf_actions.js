@@ -2,6 +2,7 @@ import * as ShelfAPIUtil from '../util/shelf_api_util'
 
 export const RECEIVE_SHELF = 'RECEIVE_SHELF';
 export const RECEIVE_ALL_SHELVES = 'RECEIVE_ALL_SHELVES';
+export const REMOVE_SHELF = 'REMOVE_SHELF'
 
 
 const receiveShelf = shelf => ({
@@ -14,11 +15,16 @@ const receiveShelves = shelves => ({
     shelves
 })
 
+const removeShelf = (shelfId) => ({
+    type: REMOVE_SHELF,
+    shelfId
+})
+
 
 
 export const retrieveShelf = shelfId => dispatch => (
     ShelfAPIUtil.retrieveShelf(shelfId)
-        .then(shelf => dispatch(receiveShelf(book)))
+        .then(shelf => dispatch(receiveShelf(shelf)))
 )
 
 export const retrieveShelves = () => dispatch => (
@@ -32,9 +38,9 @@ export const createShelf = shelf => dispatch => (
     ))
 )
 
-export const deleteShelf = shelf => dispatch => (
-    ShelfAPIUtil.deleteShelf(shelf).then(shelf => (
-        dispatch(receiveShelf(shelf))
+export const deleteShelf = shelfId => dispatch => (
+    ShelfAPIUtil.deleteShelf(shelfId).then((shelfId) => (
+        dispatch(removeShelf(shelfId))
     ))
 )
 

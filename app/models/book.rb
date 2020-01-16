@@ -24,7 +24,6 @@ class Book < ApplicationRecord
     average_rating = book.reviews.average(:rating)
     average_rating.round(2)
    end
-
   
 
    def unique_shelves

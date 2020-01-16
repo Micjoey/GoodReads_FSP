@@ -1,7 +1,7 @@
-class Api::OnShelfBookController < ApplicationController
+class Api::OnShelfBooksController < ApplicationController
     def create
-        @onshelfbook = OnShelfBook.new(onshelfbook_params)
-        if @onshelfbook.save
+        @onshelfbook = OnShelfBook.new(on_shelf_book_params)
+        if @onshelfbook.save!
             render :show
         else
             render json: @onshelfbook.errors.full_messages, status: 406
@@ -22,7 +22,7 @@ class Api::OnShelfBookController < ApplicationController
     end
 
     private
-    def onshelfbook_params
+    def on_shelf_book_params
         params.require(:onshelfbook).permit(:book_id, :shelf_id)
     end
 end

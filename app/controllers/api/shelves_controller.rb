@@ -20,8 +20,10 @@ class Api::ShelvesController < ApplicationController
 
     def destroy
         @shelf = Shelf.find(params[:id])
+        @shelf.destroy
+        @shelves= current_user.shelves
         if @shelf.destroy
-            render :show
+            render :index
         else
             render json: @shelf.errors.full_messages, status: 406
         end

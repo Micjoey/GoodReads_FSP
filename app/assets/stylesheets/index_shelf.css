@@ -13,11 +13,11 @@
             padding-bottom: 5px;
             border-bottom: 1px solid #EBE8D5;
             color: #BBB596;
-            /* width: 100%; */
+            width: 100%;
     }
 
 
-            .index-shelves-main-navbar-mybooks{
+            .index-shelves-main-navbar-myshelves{
                 font-weight: bold;
                 font-size: 20px;
                 color: #00635d;
@@ -147,6 +147,7 @@
             }
 
             .index-shelf-book-title {
-
+                text-decoration: none;
+                color: black;
             }
 

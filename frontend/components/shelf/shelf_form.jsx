@@ -24,7 +24,7 @@ class ShelfFormContainer extends React.Component {
 
     render() {
         return (
-            <div className="create-new-shelf">
+            <div className="create-new-shelf" id="add-shelf-form-container">
                 <form onSubmit={this.handleSubmit} className="create-shelf-box">
                     <div className="create-shelf">
                         <label className="shelf-title-field">
