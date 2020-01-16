@@ -18,7 +18,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     retrieveBook: bookId => dispatch(retrieveBook(bookId)),
-    retrieveAllUsers: () => dispatch(retrieveAllUsers())
+    retrieveAllUsers: () => dispatch(retrieveAllUsers()),
+    
 })
 
 export default (connect(

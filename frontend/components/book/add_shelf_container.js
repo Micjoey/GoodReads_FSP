@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => ({
     retrieveBook: bookId => dispatch(retrieveBook(bookId)),
     retrieveShelves: () => dispatch(retrieveShelves()),
     createShelf: shelf => dispatch(createShelf(shelf)),
-
+    addToShelf: onShelfBook => dispatch(retrieveOnShelfBook(onShelfBook)),
 })
 
 export default withRouter(connect(
