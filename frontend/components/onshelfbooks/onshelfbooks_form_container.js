@@ -21,7 +21,7 @@ const mapDispatchToProps = dispatch => ({
     retrieveAllUsers: () => dispatch(retrieveAllUsers())
 })
 
-export default withRouter(connect(
+export default (connect(
     mapStateToProps,
     mapDispatchToProps
 )(OnShelfBooks))
