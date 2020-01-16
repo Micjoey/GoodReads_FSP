@@ -29,7 +29,12 @@ class AddShelf extends React.Component {
                         {this.props.shelves.map((shelf, i) => (
                             <div key={`shelf-${i}`} className="add-shelves-sidebar-shelf">
                                 <button className="add-shelves-sidebar-shelf-buttons" 
-                                onClick={() =>{this.props.addToShelf(shelf.id, this.props.book.id)} }
+                                onClick={ () =>{
+                                    this.props.addToShelf(
+                                        {shelf_id: shelf.id, book_id: this.props.book.id}
+                                            )
+                                        } 
+                                    }
                                 >
                                     <ul className={`add-shelves-sidebar-shelf-button`}>
                                         {shelf.bookshelf_title}

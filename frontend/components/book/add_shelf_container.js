@@ -3,6 +3,8 @@ import { retrieveShelves, createShelf } from '../../actions/shelf_actions'
 import { retrieveBook } from '../../actions/book_actions'
 import AddShelf from './add_shelf'
 import { withRouter } from 'react-router';
+import { retrieveOnShelfBook } from '../../actions/on_shelf_book_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
     const book = state.entities.books[ownProps.match.params.bookId];

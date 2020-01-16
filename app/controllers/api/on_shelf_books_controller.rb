@@ -2,6 +2,7 @@ class Api::OnShelfBooksController < ApplicationController
     def create
         @onshelfbook = OnShelfBook.new(on_shelf_book_params)
         if @onshelfbook.save!
+            @book = Book.find(@onshelfbook.book_id)
             render :show
         else
             render json: @onshelfbook.errors.full_messages, status: 406
