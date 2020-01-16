@@ -4,6 +4,10 @@ import { withRouter, Redirect } from 'react-router-dom';
 class OnShelfBooks extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            book_id: this.props.book_id,// coming from ln 22 on add_shelf.jsx
+            shelf_id: this.props.shelf_id,
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -21,6 +25,12 @@ class OnShelfBooks extends React.Component {
     }
 
     render() {
+
+        return (
+            <div>
+
+            </div>
+        )
     }
 }
 

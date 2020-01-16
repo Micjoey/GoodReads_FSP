@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => {
         book: book,
         currentUser: user,
         allUsers: allUsers,
+
     })
 }
 
@@ -23,6 +24,6 @@ const mapDispatchToProps = dispatch => ({
 export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(ShowBook))
+)(OnShelfBooks))
 
 

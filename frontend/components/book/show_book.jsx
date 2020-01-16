@@ -24,12 +24,12 @@ class showBook extends React.Component {
                 <img className="show-book-cover" src={book.photo} />
             )
             const allUsers = this.props.allUsers
-            const shelf = (book.unique_shelves > 1) ? <p>On Shelves:</p> : <p>On Shelf:</p>
+            const shelf = (book.unique_shelves.length > 1) ? <p>On Shelves:</p> : <p>On Shelf:</p>
             const book_information = (typeof this.props.book !== 'undefined') ? (
                 <div className="show-book-information">
                         <div className='show-book-information-title'>{book.title}</div>
                         <div className='show-book-information-author'>by: {book.author}</div>
-                        <div className='show-book-information-rating'>Rating: {book.average_rating}</div>
+                        <div className='show-book-information-rating'>Avg. Rating: {book.average_rating}</div>
                         <div className='show-book-information-genre'>Genre: {book.genre}</div>
                         <div className='show-book-information-description'>Description: {book.description} </div>
                 </div>
@@ -52,21 +52,21 @@ class showBook extends React.Component {
                                 <params className="show-book-my-activity-text">MY ACTIVITY</params>
                             </div>
                             <div className="show-book-activity-shelf">
-                            <div className="show-book-unique-shelves">
-                                {shelf}
-                                <div className="dropdown-content2">
-                                    <ul className="show-book-all-shelves">
-                                        {book.unique_shelves.map((shelf, i)=>(
-                                            <ul key={`shelf-${i}`}>{shelf.bookshelf_title}</ul>
-                                        ))}
-                                    </ul>
+                                <div className="show-book-unique-shelves">
+                                    {shelf}
+                                    <div className="dropdown-content2">
+                                        <ul className="show-book-all-shelves">
+                                            {book.unique_shelves.map((shelf, i)=>(
+                                                <ul key={`shelf-${i}`}>{shelf.bookshelf_title}</ul>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="show-book-myactivity">
-                                <div>
-                                Date Read: {formatDateWithDay( book.date_read)}
+                                <div className="show-book-myactivity">
+                                    <div>
+                                    Date Read: {formatDateWithDay( book.date_read)}
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                             <div className="show-book-activity-status">
 
