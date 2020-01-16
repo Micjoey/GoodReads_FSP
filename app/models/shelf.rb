@@ -7,7 +7,8 @@ class Shelf < ApplicationRecord
 
     has_many :shelfBooks,
     foreign_key: :shelf_id,
-    class_name: :OnShelfBook
+    class_name: :OnShelfBook,
+    dependent: :destroy
 
     has_many :books,
     through: :shelfBooks,

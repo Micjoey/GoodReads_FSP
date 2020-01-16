@@ -3,7 +3,8 @@ class Book < ApplicationRecord
 
     has_many :onshelfbooks,
     foreign_key: :book_id,
-    class_name: :OnShelfBook
+    class_name: :OnShelfBook,
+    dependent: :destroy
 
     has_many :reviews,
     foreign_key: :book_id,
