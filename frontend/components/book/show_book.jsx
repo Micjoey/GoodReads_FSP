@@ -57,7 +57,7 @@ class showBook extends React.Component {
                                     <div className="dropdown-content2">
                                         <ul className="show-book-all-shelves">
                                             {book.unique_shelves.map((shelf, i)=>(
-                                                // {if (shelf.user_id)}
+                                                // {}
                                                 <ul key={`shelf-${i}`}>{shelf.bookshelf_title}</ul>
                                             ))}
                                         </ul>

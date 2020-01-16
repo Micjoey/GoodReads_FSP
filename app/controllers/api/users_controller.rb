@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
         shelf1 = Shelf.create(bookshelf_title: "Want To Read", user_id: @user.id)
         shelf2 = Shelf.create(bookshelf_title: "Reading", user_id: @user.id)
         shelf3 = Shelf.create(bookshelf_title: "Have Read", user_id: @user.id)
-      render "api/users/show"
+        render "api/users/show"
     else
       render json: @user.errors.full_messages, status: 422
     end

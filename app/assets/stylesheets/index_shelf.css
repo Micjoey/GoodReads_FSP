@@ -1,5 +1,7 @@
 .index-shelves-main{
     overflow: auto;
+    min-height: 1000px;
+    min-width: 600px;
 }
     .index-shelves-main-inner{
         display: flex;
@@ -14,7 +16,11 @@
             border-bottom: 1px solid #EBE8D5;
             color: #BBB596;
             width: 100%;
+            
     }
+        .index-shelves-search {
+            padding-right: 23%;
+        }
 
 
             .index-shelves-main-navbar-myshelves{
@@ -54,6 +60,7 @@
                 display: block;
                 justify-content: space-between;
                 margin: 0px 10%;
+                /* min-height: 300px; */
             }
 
             .index-shelves-main-shelves-nav-bar {

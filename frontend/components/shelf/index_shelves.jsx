@@ -19,6 +19,9 @@ class IndexShelves extends React.Component {
         this.props.createShelf(shelf);
     }
 
+    noDelete(shelf, i) {
+        
+    }
 
     
     render(){
@@ -27,7 +30,7 @@ class IndexShelves extends React.Component {
             <div className="index-shelves-main">
                 <div className="index-shelves-main-navbar">
                     <p className="index-shelves-main-navbar-myshelves">My Shelves</p>
-                    <h2>Search Bar Placeholder</h2>
+                    <h2 className='index-shelves-search'>Search Bar Placeholder</h2>
                 </div>
                 <div className="index-shelves-main-inner">
                     <div className="index-shelves-main-content">
@@ -62,7 +65,7 @@ class IndexShelves extends React.Component {
                                     {this.props.shelves.map((shelf,i)=>(
                                         <div key={`shelf-${i}-${i}`} className="index-shelves-bookshelf">
                                                <div className="index-shelf-titles"> 
-                                                    {shelf.bookshelf_title} 
+                                                    {shelf.bookshelf_title}    
                                                 <button className="index-shelf-delete-button" type="button" 
                                                 onClick={() => {this.props.deleteShelf(shelf.id)}} >Delete Shelf</button>
                                                </div>

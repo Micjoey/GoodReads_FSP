@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => {
     const book = state.entities.books[ownProps.match.params.bookId];
     const user = state.entities.users[state.session];
     const allUsers = state.entities.users
+    debugger
     return ({
         book: book,
         currentUser: user,
