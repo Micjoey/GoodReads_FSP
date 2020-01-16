@@ -63,9 +63,9 @@ class showBook extends React.Component {
                                     </div>
                                 </div>
                                 <div className="show-book-myactivity">
-                                    <div>
-                                    Date Read: {formatDateWithDay( book.date_read)}
-                                    </div>
+                                    {(book.date_read) ?
+                                    formatDateWithDay(book.date_read) :
+                                    <div>Date Read: Hasn't Read Yet</div>}
                                 </div>
                             </div>
                             <div className="show-book-activity-status">
