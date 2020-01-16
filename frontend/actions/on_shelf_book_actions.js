@@ -1,14 +1,14 @@
-import * as OnShelfAPIUtil from '../util/on_shelf_book_util'
+import * as OnShelfAPIUtil from '../util/on_shelf_book_api_util';
 
-export const RECEIVE_SHELF = 'RECEIVE_SHELF'
+export const RECEIVE_ON_SHELF_BOOK = 'RECEIVE_ON_SHELF_BOOK'
 
-const receiveOnShelfBook = (onshelfbook) => ({
-    type: RECEIVE_SHELF,
-    onshelfbook
+const receiveOnShelfBook = (onShelfBook) => ({
+    type: RECEIVE_ON_SHELF_BOOK,onShelfBook,
+    onShelfBook
 
 })
 
-export const retrieveOnShelfBook = (onshelfbook) => dispatch =>(
-    OnShelfAPIUtil.receiveOnShelfBook(onshelfbook)
-        .then((onshelfbook) => dispatch(receiveOnShelfBook(onshelfbook)))
+export const retrieveOnShelfBook = (onShelfBook) => dispatch =>(
+    OnShelfAPIUtil.retrieveOnShelfBook(onShelfBook)
+        .then((onShelfBook) => dispatch(receiveOnShelfBook(onShelfBook)))
 )
