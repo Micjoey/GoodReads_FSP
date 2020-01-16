@@ -4,7 +4,7 @@ const onShelfBookReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_ON_SHELF_BOOK:
-            return Object.assign({}, {[action.onShelfBook.id]: action.shelf})
+            return Object.assign({}, state, {[action.onShelfBook.id]: action.onShelfBook})
         default:
             return state;
     }
