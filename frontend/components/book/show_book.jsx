@@ -26,7 +26,6 @@ class showBook extends React.Component {
             )
             const allUsers = this.props.allUsers
             const shelf = (book.unique_shelves.length > 1) ? <p>On Shelves:</p> : <p>On Shelf:</p>
-            // debugger
             const book_information = (typeof this.props.book !== 'undefined') ? (
                 <div className="show-book-information">
                         <div className='show-book-information-title'>{book.title}</div>
@@ -36,7 +35,6 @@ class showBook extends React.Component {
                         <div className='show-book-information-description'>Description: {book.description} </div>
                 </div>
             ) : (<p>Sorry! No Books!</p>)
-            debugger
             return (
                 <div className="show-book">
                         <div className='show-book-all-information'>

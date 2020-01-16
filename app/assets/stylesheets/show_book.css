@@ -91,6 +91,7 @@
         .show-book-all-shelves {
             display: block;
             padding-left: 3px;
+            color: brown;
         }   
 
         .dropdown-content2 {
