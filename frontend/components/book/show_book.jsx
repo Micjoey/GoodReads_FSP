@@ -36,6 +36,7 @@ class showBook extends React.Component {
                         <div className='show-book-information-description'>Description: {book.description} </div>
                 </div>
             ) : (<p>Sorry! No Books!</p>)
+            debugger
             return (
                 <div className="show-book">
                         <div className='show-book-all-information'>
@@ -59,7 +60,7 @@ class showBook extends React.Component {
                                     <div className="dropdown-content2">
                                         <ul className="show-book-all-shelves">
                                             {book.unique_shelves.map((shelf, i)=>(
-                                                (shelf.id == this.state.user_id) ? <ul key={`shelf-${i}`}>{shelf.bookshelf_title}</ul> : <div></div>
+                                                (shelf.user_id === this.props.userId) ? <ul key={`shelf-${i}`}>{shelf.bookshelf_title}</ul> : <div key={`shelf-${i}`}></div>
                                                 // <ul key={`shelf-${i}`}>{shelf.bookshelf_title}</ul>
                                             ))}
                                         </ul>
