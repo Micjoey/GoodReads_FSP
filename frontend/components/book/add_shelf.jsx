@@ -23,7 +23,7 @@ class AddShelf extends React.Component {
         if (this.state.loaded) {
         return (
         <div className="add-shelf">
-            <div className="add-shelf-title">Add To Shelf</div>
+            <button className="add-shelf-title">Add To A Shelf</button>
             <div className="add-shelf-content">
                     <div className="add-shelf-shelves">
                         {this.props.shelves.map((shelf, i) => (

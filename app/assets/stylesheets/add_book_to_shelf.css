@@ -22,8 +22,8 @@
     display: flex;
     /* justify-content: center; */
     background: #f2f2f2;
-    font-weight: bold;
-    font-size: 19px;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .add-shelf:hover {
