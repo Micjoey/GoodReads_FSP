@@ -19,6 +19,6 @@ const deleteOnShelfBook = onShelfBookId => ({
 
 export const retrieveOnShelfBook = (onShelfBook) => dispatch =>(
     OnShelfAPIUtil.retrieveOnShelfBook(onShelfBook)
-        .then((book) => dispatch(receiveBook(book)))
+        .then((book) => dispatch(receiveOnShelfBook(book)))
 )
 

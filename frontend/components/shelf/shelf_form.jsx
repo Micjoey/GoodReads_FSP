@@ -20,6 +20,7 @@ class ShelfFormContainer extends React.Component {
         // e.preventDefault();
         const title = Object.assign({}, this.state);
         this.props.createShelf(title);
+        this.state.bookshelf_title = "";
     }
 
     render() {
