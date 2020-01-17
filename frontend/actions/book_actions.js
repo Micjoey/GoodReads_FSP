@@ -28,7 +28,7 @@ export const retrieveBook = bookId => dispatch => (
     .then(book => dispatch(receiveBook(book)))
 );
 
-export const updateBook = book => dispatch => (
+export const updateBook = (book, bookId) => dispatch => (
   BookAPIUtil.updateBook(book)
     .then(book => dispatch(retrieveBooks(book)))
 )
