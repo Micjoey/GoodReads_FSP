@@ -85,7 +85,7 @@ class showBook extends React.Component {
                     <div className="show-book-reviews">
                         <div className="show-book-all-reviews">
                         <div className="show-book-all-reviews-text">ALL REVIEWS</div>
-                            {book.reviews.sort(function(a,b) {
+                            {book.reviews.sort(function(b,a) {
                                 return (new Date(a.date_reviewed))-(new Date(b.date_reviewed))
                                 }
                             ).map((review,i) => (

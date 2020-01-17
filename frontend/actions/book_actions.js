@@ -1,5 +1,5 @@
 import * as BookAPIUtil from '../util/book_api_util';
-
+import * as ReviewAPIUtil from '../util/review_api_util'
 export const RECEIVE_ALL_BOOKS = 'RECEIVE_ALL_BOOKS';
 export const RECEIVE_BOOK = 'RECEIVE_BOOK';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
@@ -33,6 +33,10 @@ export const updateBook = (book, bookId) => dispatch => (
     .then(book => dispatch(retrieveBooks(book)))
 )
 
+export const createReview = review => dispatch => (
+  ReviewAPIUtil.createReview(review)
+    .then(review => dispatch(receiveBook(review)))
+)
 
 
 		

@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
-import { retrieveBook } from '../../actions/book_actions'
 import { withRouter } from 'react-router';
-import { retrieveReview, createReview } from '../../actions/review_actions';
+import { retrieveBook, createReview } from '../../actions/book_actions';
 import AddReview from './create_review_form'
 
 const mapStateToProps = (state, ownProps) => {
