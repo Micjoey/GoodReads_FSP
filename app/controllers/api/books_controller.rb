@@ -10,4 +10,8 @@ class Api::BooksController < ApplicationController
         # render "api/books/:id"
         render :show
     end
+
+    
+
+ 
 end
