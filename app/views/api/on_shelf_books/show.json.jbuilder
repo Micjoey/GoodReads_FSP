@@ -5,3 +5,4 @@ json.photo url_for(@book.photo)
 
 
 
+

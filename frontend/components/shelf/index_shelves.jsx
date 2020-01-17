@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom';
 import { formatDate, formatDateWithDay } from '../../util/date_util';
 import ShelfFormContainer from './shelf_form_container';
+import IndexShelvesContainer from './index_shelves_container';
 
 class IndexShelves extends React.Component {
     constructor(props) {
@@ -19,12 +20,9 @@ class IndexShelves extends React.Component {
         this.props.createShelf(shelf);
     }
 
-    noDelete(shelf, i) {
-        
-    }
-
     
     render(){
+        // debugger
         if(!this.props.shelves) return null;
         return (
             <div className="index-shelves-main">
@@ -62,8 +60,8 @@ class IndexShelves extends React.Component {
                                 <div className="index-shelves-date-read"> Date Read </div>
                             </div>
                             <div className="index-shelves-books"> 
-                                    {this.props.shelves.map((shelf,i)=>(
-                                        <div key={`shelf-${i}-${i}`} className="index-shelves-bookshelf">
+                                    {this.props.shelves.map((shelf, idx)=>(
+                                        <div key={`${shelf}-${idx}`} className="index-shelves-bookshelf">
                                                <div className="index-shelf-titles"> 
                                                     {shelf.bookshelf_title}    
                                                 <button className="index-shelf-delete-button" type="button" 
@@ -95,6 +93,16 @@ class IndexShelves extends React.Component {
                                                                formatDateWithDay(book.date_read) :
                                                                <div>Hasn't Read</div>
                                                                }
+                                                            </div>
+                                                            <div>
+                                                               <button key={i}className="add-shelves-sidebar-shelf-buttons"
+                                                                   onClick={() => {
+                                                                       this.props.removeBook(
+                                                                           { shelf_id: shelf.id, book_id: book.id, id: this.props.shelves[idx].shelfBooks[i].id }
+                                                                       )
+                                                                   }
+                                                                   }
+                                                               >Remove Book</button> 
                                                             </div>                                                        
                                                        </div>
                                                    ))}

@@ -45,14 +45,6 @@ class showBook extends React.Component {
                             <div className="show-book-information-detail">
                                 {book_information}
                             </div>
-                            {/* <div className="show-book-has-read-button">
-                            <button className="show-book-has-read-button"
-                            onClick={()=> {this.props.updateBook(
-                                {book}
-                            )}}>
-                                Has Read
-                            </button>
-                            </div> */}
                         </div>
                     <div className="show-book-my-activity"> 
                         <div className="show-book-add-to-shelf"> 

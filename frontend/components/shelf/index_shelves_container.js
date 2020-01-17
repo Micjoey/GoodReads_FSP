@@ -4,6 +4,7 @@ import IndexShelves from '../shelf/index_shelves'
 import { withRouter } from 'react-router'
 import { deleteShelf } from '../../actions/shelf_actions'
 import { retrieveBooks } from '../../actions/book_actions'
+import { removeOnShelfBook} from '../../actions/on_shelf_book_actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -19,6 +20,7 @@ const mapDispatchToProps = dispatch => ({
     deleteShelf: shelf => dispatch(deleteShelf(shelf)),
     retrieveBooks: () => dispatch(retrieveBooks()),
     retrieveReviews: () => dispatch(retrieveReviews()),
+    removeBook: onShelfBook => dispatch(removeOnShelfBook(onShelfBook)),
 })
 
 
