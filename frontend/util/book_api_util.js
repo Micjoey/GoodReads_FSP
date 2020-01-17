@@ -13,13 +13,15 @@ export const retrieveBook = bookId => (
     })
 )
 
-// export const createReview = review => (
-//     $.ajax({
-//         method: 'POST',
-//         url: 'api/reviews',
-//         data: {review}
-//     })
-// )
+export const updateBook = book => (
+    $.ajax({
+        method: 'POST',
+        url: `/api/books/${book.id}`,
+        data: {book}
+    })
+)
+
+
 
 
 

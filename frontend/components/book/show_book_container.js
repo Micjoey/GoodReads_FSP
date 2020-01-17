@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { retrieveBook } from '../../actions/book_actions'
+import { retrieveBook, updateBook } from '../../actions/book_actions'
 import ShowBook from './show_book'
 import { withRouter } from 'react-router';
 import { retrieveAllUsers } from '../../actions/users_actions';
@@ -19,7 +19,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     retrieveBook: bookId => dispatch(retrieveBook(bookId)),
-    retrieveAllUsers: () => dispatch(retrieveAllUsers())
+    retrieveAllUsers: () => dispatch(retrieveAllUsers()),
+    updateBook: book => dispatch(updateBook(book))
 })
 
 export default withRouter(connect(

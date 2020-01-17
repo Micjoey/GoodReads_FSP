@@ -16,6 +16,8 @@ const receiveBook = book => ({
 
 
 
+
+
 export const retrieveBooks = () => dispatch => (
   BookAPIUtil.retrieveBooks()
     .then(books => dispatch(receiveAllBooks(books))
@@ -25,6 +27,11 @@ export const retrieveBook = bookId => dispatch => (
   BookAPIUtil.retrieveBook(bookId)
     .then(book => dispatch(receiveBook(book)))
 );
+
+export const updateBook = book => dispatch => (
+  BookAPIUtil.updateBook(book)
+    .then(book => dispatch(retrieveBooks(book)))
+)
 
 
 

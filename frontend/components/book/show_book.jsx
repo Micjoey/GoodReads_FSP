@@ -2,6 +2,7 @@ import React from 'react';
 import {link, Redirect} from 'react-router-dom'
 import { formatDateWithDay } from '../../util/date_util';
 import AddShelfContainer from './add_shelf_container';
+import { updateBook } from '../../util/book_api_util';
 
 class showBook extends React.Component {
     constructor(props){
@@ -43,6 +44,14 @@ class showBook extends React.Component {
                             </div>
                             <div className="show-book-information-detail">
                                 {book_information}
+                            </div>
+                            <div className="show-book-has-read-button">
+                            <button className="show-book-has-read-button"
+                            onClick={()=> {this.props.updateBook(
+                                {book}
+                            )}}>
+                                Has Read
+                            </button>
                             </div>
                         </div>
                     <div className="show-book-my-activity"> 
