@@ -12,10 +12,12 @@ class Api::OnShelfBooksController < ApplicationController
     def show
         @onshelfbook = @onshelfbook.find(params[:book_id])
     end
+    
 
     def destroy
         @onshelfbook = OnShelfBook.find(params[:id])
         if @onshelfbook.destroy
+            @book = Book.find(@onshelfbook.book_id)
             render :show
         else
             render json: @onshelfbook.errors.full_messages, status: 406

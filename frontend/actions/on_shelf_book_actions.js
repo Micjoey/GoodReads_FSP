@@ -1,5 +1,5 @@
 import * as OnShelfAPIUtil from '../util/on_shelf_book_api_util';
-import {RECEIVE_ALL_SHELVES} from './shelf_actions'
+import {RECEIVE_ALL_SHELVES, retrieveShelves} from './shelf_actions'
 import {RECEIVE_BOOK} from './book_actions'
 
 export const RECEIVE_ON_SHELF_BOOK = 'RECEIVE_ON_SHELF_BOOK'
@@ -34,6 +34,6 @@ export const retrieveOnShelfBook = (onShelfBook) => dispatch => (
 
 export const removeOnShelfBook = (onshelfbook) => dispatch => (
     OnShelfAPIUtil.removeOnShelfBook(onshelfbook)
-        .then(() => dispatch(receiveShelves()))
+        .then(() => dispatch(retrieveShelves()))
 )
 
