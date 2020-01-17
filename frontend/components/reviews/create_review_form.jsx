@@ -1,23 +1,21 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-class SessionFormSignUp extends React.Component {
+class AddReview extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             title: '',
             rating: '',
             body: '',
-            user_id: '',
-            book_id: '',
-            date_review: '',
+            date_reviewed: '',
+            user_id: this.props.user_id,
+            book_id: this.props.book_id
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentDidMount() {
-        
-    }
+
 
     update(field) {
         return e => this.setState({
@@ -27,30 +25,15 @@ class SessionFormSignUp extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
-        this.props.processForm(user);
-        this.props.history.push(`/`)
+        const review = Object.assign({}, this.state);
+        this.props.createReview(review);
     }
 
-    renderErrorsSignUp() {
-        if (!this.props.errors[0].includes("Invalid")) {
-            const errors = (
-                <ul className="login-errors-box">
-                    {this.props.errors.map((error, i) => (
-                        <li className="login-errors" key={`error-${i}`}>
-                            {error}
-                        </li>
-                    ))}
-                </ul>)
-            return errors
-        }
-    }
 
     render() {
         return (
             <div className="review-create-container">
                 <form onSubmit={this.handleSubmit} className="review-up-box">
-                    {this.props.errors.length > 0 ? this.renderErrorsSignUp() : null}
                     <div className="review-up">
                         <label className="title-field">
                             <input type="text"
@@ -65,6 +48,7 @@ class SessionFormSignUp extends React.Component {
                                 max='5'
                                 placeholder="Rating"
                                 value={this.state.rating}
+                                onChange={this.update('rating')}
                             />
                         </label>
                         <label className="body-field">
@@ -83,7 +67,8 @@ class SessionFormSignUp extends React.Component {
                         <label className="date-reviewed-field">
                             <input type="date"
                                 placeholder="Please Type Here"
-                                value={this.state.date_review}
+                                value={this.state.date_reviewed}
+                                onChange={this.update('date_reviewed')}
                             />
                         </label>
                         <label className="user-id-field">
@@ -101,4 +86,4 @@ class SessionFormSignUp extends React.Component {
     }
 }
 
-export default withRouter(SessionFormSignUp);
+export default withRouter(AddReview);

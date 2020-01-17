@@ -3,6 +3,7 @@ import {link, Redirect} from 'react-router-dom'
 import { formatDateWithDay } from '../../util/date_util';
 import AddShelfContainer from './add_shelf_container';
 import { updateBook } from '../../util/book_api_util';
+import CreateReviewContainer from '../reviews/create_review_form_container';
 
 class showBook extends React.Component {
     constructor(props){
@@ -38,14 +39,17 @@ class showBook extends React.Component {
             ) : (<p>Sorry! No Books!</p>)
             return (
                 <div className="show-book">
-                        <div className='show-book-all-information'>
-                            <div className="show-book-information-cover-image">
-                                {cover}
-                            </div>
-                            <div className="show-book-information-detail">
-                                {book_information}
-                            </div>
+                    <div className='show-book-all-information'>
+                        <div className="show-book-information-cover-image">
+                            {cover}
                         </div>
+                        <div className="show-book-information-detail">
+                            {book_information}
+                        </div>
+                    </div>
+                    <div className="show-book-review">
+                        <CreateReviewContainer book_id={book.id} user_id={this.props.userId}/>
+                    </div>
                     <div className="show-book-my-activity"> 
                         <div className="show-book-add-to-shelf"> 
                                 <AddShelfContainer />
@@ -81,7 +85,10 @@ class showBook extends React.Component {
                     <div className="show-book-reviews">
                         <div className="show-book-all-reviews">
                         <div className="show-book-all-reviews-text">ALL REVIEWS</div>
-                            {book.reviews.map((review,i) => (
+                            {book.reviews.sort(function(a,b) {
+                                return (new Date(a.date_reviewed))-(new Date(b.date_reviewed))
+                                }
+                            ).map((review,i) => (
                                 <div key={`review-${i}`} className="show-book-individual-review">
                                     <div className="show-book-individual-review-title">Review Title: {review.title}</div>
                                     <div className="show-book-individual-review-date">Date Reviewed: {formatDateWithDay(review.date_reviewed)}</div>

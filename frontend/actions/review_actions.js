@@ -3,10 +3,9 @@ import * as ReviewAPIUtil from '../util/review_api_util'
 export const RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS'
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW'
 
-const receiveReview = ({ review, average_rating }) => ({
+const receiveReview = (review) => ({
   type: RECEIVE_REVIEW,
   review,
-  average_rating,
 });
 
 const receiveReviews = reviews => ({
