@@ -10,6 +10,10 @@ The clone - MyReads - has been built on a Ruby on Rails, React, and Redux with a
 
 ----------
 
+## Usage
+To start the project please use `npm install` and `bundle install` to install the required supporting gems and package.json. After doing so you can use the `npm start` to get the webpack going. Before running `rails s` please run `rails db:setup`. 
+
+--------
 ### Key Features
 
    * User Authorization 
@@ -24,3 +28,5 @@ Users are able to sign up an account, or use the demo login, and instantly start
 The My Books tab on the nav bar will take you to your shelf view which will allow a user to see all shelves that they have, and all books that exist on that shelf. From this view you are able to delete or create a shelf. Future functions that I wish to add to the shelf are:
   * Delete a book off a shelf
   * Filter through the shelves
+
+
