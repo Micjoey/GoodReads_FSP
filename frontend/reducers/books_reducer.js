@@ -1,4 +1,5 @@
 import { RECEIVE_ALL_BOOKS, RECEIVE_BOOK } from "../actions/book_actions";
+import { RECEIVE_ON_SHELF_BOOK } from "../actions/on_shelf_book_actions";
 
 const booksReducer = (state = {}, action) => {
     Object.freeze(state);
