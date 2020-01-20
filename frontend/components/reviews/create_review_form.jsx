@@ -6,7 +6,7 @@ class AddReview extends React.Component {
         super(props);
         this.state = {
             title: '',
-            rating: '',
+            rating: 3,
             body: '',
             date_reviewed: '',
             user_id: this.props.user_id,
