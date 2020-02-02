@@ -51,8 +51,15 @@ class AddReview extends React.Component {
                                 onChange={this.update('rating')}
                             />
                         </label>
+                        <label className="date-reviewed-field">
+                            <input type="date"
+                                // placeholder="Please Type Here"
+                                value={this.state.date_reviewed}
+                                onChange={this.update('date_reviewed')}
+                            />
+                        </label>
                         <label className="body-field">
-                            <input type="text"
+                            <textarea type="text"
                                 placeholder="Please Type Here"
                                 value={this.state.body}
                                 onChange={this.update('body')}
@@ -62,13 +69,6 @@ class AddReview extends React.Component {
                             <input type="hidden"
                                 placeholder="Please Type Here"
                                 value={this.state.book_id}
-                            />
-                        </label>
-                        <label className="date-reviewed-field">
-                            <input type="date"
-                                placeholder="Please Type Here"
-                                value={this.state.date_reviewed}
-                                onChange={this.update('date_reviewed')}
                             />
                         </label>
                         <label className="user-id-field">

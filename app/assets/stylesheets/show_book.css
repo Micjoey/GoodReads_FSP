@@ -21,6 +21,7 @@
                 height: 300px;
                 width: auto;
                 padding-right: 5px;
+                margin-right: 6px;
             }
 
         .show-book-information-title,
@@ -72,6 +73,8 @@
         border-top: 1px solid #D8D8D8;
         border-bottom: 1px solid #D8D8D8;
         padding-top: 3px;
+        margin: 8px 0px;
+        background-color: beige;
     }
 
     .show-book-all-reviews {

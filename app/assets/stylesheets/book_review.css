@@ -1,0 +1,20 @@
+.title-field {
+    display: block;
+}
+
+.rating-field {
+    display: block;
+}
+
+.body-field {
+    margin: 0px;
+    width: 260px;
+    height: 105px;
+    min-width: 260px;
+    min-height: 100px;
+}
+
+.date-reviewed-field {
+    display: block;
+    margin: 7px 0px;
+}

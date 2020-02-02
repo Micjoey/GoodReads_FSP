@@ -9,7 +9,6 @@ class showBook extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-
             loaded: false
         }
     }
@@ -47,12 +46,15 @@ class showBook extends React.Component {
                             {book_information}
                         </div>
                     </div>
-                    <div className="show-book-review">
-                        <CreateReviewContainer book_id={book.id} user_id={this.props.userId}/>
-                    </div>
                     <div className="show-book-my-activity"> 
                         <div className="show-book-add-to-shelf"> 
                                 <AddShelfContainer />
+                        </div>
+                        <div className="show-book-review">
+                            <CreateReviewContainer book_id={book.id} user_id={this.props.userId}/>
+                        </div>
+                        <div className="empty-space">
+
                         </div>
                             <div className="show-book-activity-rating">
                                 <params className="show-book-my-activity-text">MY ACTIVITY</params>
