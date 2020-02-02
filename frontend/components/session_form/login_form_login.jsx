@@ -27,7 +27,7 @@ class SessionFormLogin extends React.Component {
 
   handleDemoLogin() {
       this.props.processForm({
-        username: "test",
+        username: "Lord Fitzgerald",
         password: "password"
       }).then(() => this.props.history.push('/'))
      
