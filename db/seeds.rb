@@ -214,8 +214,8 @@ book18 = Book.create(
     # cover_image_url: open('https://myreads-seeds.s3-us-west-1.amazonaws.com//Wild_Game_by_Adrienne_Brodeur.png'),
     description: "From the longtime New York Times labor correspondent, an in-depth look at working men and women in America, the challenges they face, and how they can be re-empowered In an era when corporate profits.",
 )
-file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/beaten_down_worked_ip.png')
-book18.photo.attach(io: file, filename:'beaten_down_worked_ip.png')
+file = open('https://myreads-seeds.s3-us-west-1.amazonaws.com/beaten_down_worked_up.png')
+book18.photo.attach(io: file, filename:'beaten_down_worked_up.png')
 
 # 19
 book19 = Book.create(
@@ -451,11 +451,11 @@ on_shelf_books14 = OnShelfBook.create(shelf_id: shelf1.id, book_id: book14.id)
 #reviews
     i = 0
 
-    100.times do
+    200.times do
     review = Review.create(
         title: Faker::Quotes::Shakespeare.hamlet_quote, 
         user_id: rand(1..3), 
-        book_id: rand(1..14), 
+        book_id: rand(1..34), 
         rating: rand(1..5),
         body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
         date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
