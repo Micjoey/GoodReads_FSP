@@ -1,6 +1,9 @@
 .title-field {
     display: block;
 }
+.title-field input{
+    width: 130px;
+}
 
 .rating-field {
     display: block;
@@ -12,6 +15,10 @@
     height: 105px;
     min-width: 260px;
     min-height: 100px;
+}
+
+.body-field textarea {
+    min-width: 130px;
 }
 
 .date-reviewed-field {
