@@ -40,7 +40,7 @@ class AddReview extends React.Component {
                         <label className="title-field">
                             <div>Title of Review:</div>
                             <input type="text"
-                                placeholder="Title"
+                                placeholder="Leave Title of Review Here"
                                 value={this.state.title}
                                 onChange={this.update('title')}
                             />
