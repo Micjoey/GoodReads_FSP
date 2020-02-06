@@ -5,6 +5,8 @@
     padding: 10px;
     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 14px;
+    overflow: auto;
+    padding-bottom: 100px;
 }
 
     .index-book-information {
@@ -13,77 +15,73 @@
         width: auto;
     }
 
-        .index-books {
-            overflow: auto;
+        .index-books-book-info {
+            border: none;
+            box-shadow: none;
+        }
+        .index-books-book-info2 {
+            border: none;
+            box-shadow: none;
+            padding: none;
         }
 
-            .index-books-book-info {
-                border: none;
-                box-shadow: none;
-            }
-            .index-books-book-info2 {
-                border: none;
-                box-shadow: none;
-                padding: none;
-            }
-
-            .index-book-covers{
-                align-items: center;
-            }
-                    .index-book-cover {
-                        width: 250px;
-                        max-width: auto;
-                        height: auto;
-                        min-width: 70px;
-                        border: none;
-                        padding: none;
-                        margin: none;
-                        object-fit: cover;
-                    }
-
-                    /* .index-book-cover:hover {
-                        width: 300px;
-                        max-width: 100%;
-                        height: auto;
-                        min-width: 70px;
-                        cursor: grab;
-                        align-content: center;
-                        background-color: lavenderblush;
-                    } */
-                    
-                .index-book-information-title,
-                .index-book-information-author {
-                    max-width: 220px;
+        .index-book-covers{
+            align-items: center;
+        }
+                .index-book-cover {
+                    width: 250px;
+                    max-width: auto;
+                    height: auto;
+                    min-width: 70px;
                     border: none;
+                    padding: none;
+                    margin: none;
+                    object-fit: cover;
                 }
 
-                .index-book-information-button {
-                    border: none;
-                    padding: 0px;
-                }
+                /* .index-book-cover:hover {
+                    width: 300px;
+                    max-width: 100%;
+                    height: auto;
+                    min-width: 70px;
+                    cursor: grab;
+                    align-content: center;
+                    background-color: lavenderblush;
+                } */
+                
+            .index-book-information-title,
+            .index-book-information-author {
+                max-width: 220px;
+                border: none;
+            }
 
-                .index-book-information-title {
-                    font-weight: bold;
-                }
+            .index-book-information-button {
+                border: none;
+                padding: 0px;
+            }
 
-                .index-book-information-author {
-                    padding: 4px 0px;
-                }
+            .index-book-information-title {
+                font-weight: bold;
+            }
 
-                .index-book-information-rating {
-                    padding: 4px 0px;
-                    font-size: 15px;
-                    line-height: 150%;
-                }
-                .index-book-information-genre {
-                    padding: 4px 0px;
-                    font-size: 15px;
-                    line-height: 150%;
-                }
-                .index-book-information-description {
-                    padding: 4px 0px;
-                    font-size: 15px;
-                    line-height: 150%;
-                }
+            .index-book-information-author {
+                padding: 4px 0px;
+            }
+
+            .index-book-information-rating {
+                padding: 4px 0px;
+                font-size: 15px;
+                line-height: 150%;
+            }
+            .index-book-information-genre {
+                padding: 4px 0px;
+                font-size: 15px;
+                line-height: 150%;
+            }
+            .index-book-information-description {
+                padding: 4px 0px;
+                font-size: 15px;
+                line-height: 150%;
+            }
     
 

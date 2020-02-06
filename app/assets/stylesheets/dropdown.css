@@ -65,6 +65,7 @@
   max-width: 200px;
   border: 4px ridge rgba(152, 126, 22, 0.632) ;
   overflow: scroll;
+  max-height: 300px;
 }
 
 
@@ -76,7 +77,7 @@
 
 .index-books-book-info:hover .dropdown-book-content {
   display: block;
-  
+  overflow: scroll;
 }
 
 /* Temp Code */

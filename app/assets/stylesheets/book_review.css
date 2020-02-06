@@ -1,12 +1,17 @@
 .title-field {
-    display: block;
+    display: flex;
+    align-items: center;
+    margin: 4px 0px;
+    margin-right: 4px;
 }
 .title-field input{
     width: 130px;
 }
 
 .rating-field {
-    display: block;
+    display: flex;
+    align-items: center;
+    margin-right: 4px;
 }
 
 .body-field {
@@ -18,10 +23,24 @@
 }
 
 .body-field textarea {
-    min-width: 130px;
+    min-width: 340px;
+    min-height: 100px;
+    margin: 4px;
 }
 
 .date-reviewed-field {
-    display: block;
+    display: flex;
+    align-items: center;
+    margin-right: 4px;
     margin: 7px 0px;
+}
+
+label div {
+    margin-right: 4px;
+}
+
+.review-up {
+    border: 2px solid beige;
+    padding: 5px;
+    width: 400px;
 }

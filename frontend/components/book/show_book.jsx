@@ -38,21 +38,25 @@ class showBook extends React.Component {
             ) : (<p>Sorry! No Books!</p>)
             return (
                 <div className="show-book">
-                    <div className='show-book-all-information'>
-                        <div className="show-book-information-cover-image">
-                            {cover}
+                    <div className='show-book-all-information-and-reviews'>
+                        <div className='show-book-all-information'>
+                            <div className="show-book-information-cover-image">
+                                {cover}
+                            </div>
+                            <div className="show-book-information-detail">
+                                {book_information}
+                            </div>
                         </div>
-                        <div className="show-book-information-detail">
-                            {book_information}
+                        <div className="show-book-review">
+                            <div className="leave-a-review"> Leave a review! </div>
+                            <CreateReviewContainer book_id={book.id} user_id={this.props.userId} />
                         </div>
                     </div>
                     <div className="show-book-my-activity"> 
                         <div className="show-book-add-to-shelf"> 
                                 <AddShelfContainer />
                         </div>
-                        <div className="show-book-review">
-                            <CreateReviewContainer book_id={book.id} user_id={this.props.userId}/>
-                        </div>
+                        
                         <div className="empty-space">
 
                         </div>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { formatDate } from '../../util/date_util';
+
 
 class AddReview extends React.Component {
     constructor(props) {
@@ -36,6 +38,7 @@ class AddReview extends React.Component {
                 <form onSubmit={this.handleSubmit} className="review-up-box">
                     <div className="review-up">
                         <label className="title-field">
+                            <div>Title of Review:</div>
                             <input type="text"
                                 placeholder="Title"
                                 value={this.state.title}
@@ -43,6 +46,7 @@ class AddReview extends React.Component {
                             />
                         </label>
                         <label className="rating-field">
+                             <div>Rating(1 through 5):</div>
                             <input type="range"
                                 min='1'
                                 max='5'
@@ -50,8 +54,10 @@ class AddReview extends React.Component {
                                 value={this.state.rating}
                                 onChange={this.update('rating')}
                             />
+                            <output name='ratingOutput' id='ratingOutput'>{this.state.rating}</output>
                         </label>
                         <label className="date-reviewed-field">
+                             <div>Date of Review:</div>
                             <input type="date"
                                 // placeholder="Please Type Here"
                                 value={this.state.date_reviewed}
@@ -59,6 +65,7 @@ class AddReview extends React.Component {
                             />
                         </label>
                         <label className="body-field">
+                             <div>Body:</div>
                             <textarea type="text"
                                 placeholder="Please Type Here"
                                 value={this.state.body}
