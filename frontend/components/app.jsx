@@ -27,8 +27,9 @@ const App = () => (
       <Switch>
         <AuthRoute exact path="/" component={Splash} /> 
         <ProtectedRoute exact path="/home" component={IndexBookContainer} />
-        <ProtectedRoute path="/book/:bookId" component={ShowBookContainer}/>
-        <ProtectedRoute path="/shelf" component={IndexShelvesContainer} />
+        <ProtectedRoute exact path="/book/:bookId" component={ShowBookContainer}/>
+        <ProtectedRoute exact path="/shelf" component={IndexShelvesContainer} />
+        <Redirect to="/home" />
       </Switch>
       {/* <footer className="footer"> */}
         <Route path='/' component={Footer}/>

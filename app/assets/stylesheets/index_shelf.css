@@ -1,7 +1,9 @@
 .index-shelves-main{
-    overflow: auto;
+    /* overflow: auto;w */
     min-height: 1000px;
     min-width: 600px;
+    overflow: hidden;
+    margin-left: 10px;
 }
     .index-shelves-main-inner{
         display: flex;

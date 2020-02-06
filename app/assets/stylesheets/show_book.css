@@ -54,6 +54,7 @@
         .show-book-information-description {
             font-family: "Merriweather", "Georgia", serif;
             line-height: 21px;
+            max-width: 300px;
         }
 
     .show-book-my-activity {
