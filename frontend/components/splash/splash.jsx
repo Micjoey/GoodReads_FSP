@@ -18,6 +18,7 @@ class Splash extends React.Component {
                     <SignUpFormContainer />
                 </div>
                 <div className="background-box">
+                    {/* <div> Track your favorite reads here!</div> */}
                     <img src={images.fireworks2} className="firework" alt="" />
                 </div>
             </div>

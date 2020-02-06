@@ -42,7 +42,8 @@ body {
  .filler-background-box {
         object-fit: cover;
         z-index: -2;
-        height: 2000px;
+        /* height: 2000px; */
+        background-color: gray;
     }
 
 

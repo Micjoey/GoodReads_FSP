@@ -44,6 +44,12 @@
         overflow: auto;
         min-height: 400px;
         z-index: -1;
+        /* background-color: gray; */
+    }
+
+    .background-box div {
+        display: flex;
+        align-items: center;
     }
 
         .sign-up-box {
