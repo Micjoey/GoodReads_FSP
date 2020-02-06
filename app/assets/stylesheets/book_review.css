@@ -40,7 +40,12 @@ label div {
 }
 
 .review-up {
-    border: 2px solid beige;
+    
     padding: 5px;
     width: 400px;
+}
+
+.show-book-review {
+    border: 2px solid gray;
+    height: 400px;
 }

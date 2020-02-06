@@ -38,28 +38,29 @@ class showBook extends React.Component {
             ) : (<p>Sorry! No Books!</p>)
             return (
                 <div className="show-book">
-                    <div className='show-book-all-information-and-reviews'>
-                        <div className='show-book-all-information'>
-                            <div className="show-book-information-cover-image">
-                                {cover}
+                    <div className='show-book-background'>
+                        <div className='show-book-all-information-and-reviews'>
+                            <div className='show-book-all-information'>
+                                <div className="show-book-information-cover-image">
+                                    {cover}
+                                </div>
+                                <div className="show-book-information-detail">
+                                    {book_information}
+                                </div>
                             </div>
-                            <div className="show-book-information-detail">
-                                {book_information}
+                            <div className="show-book-review">
+                                <div className="leave-a-review"> Leave a review! </div>
+                                <CreateReviewContainer book_id={book.id} user_id={this.props.userId} />
                             </div>
                         </div>
-                        <div className="show-book-review">
-                            <div className="leave-a-review"> Leave a review! </div>
-                            <CreateReviewContainer book_id={book.id} user_id={this.props.userId} />
-                        </div>
-                    </div>
-                    <div className="show-book-my-activity"> 
-                        <div className="show-book-add-to-shelf"> 
+                        <div className="show-book-my-activity"> 
+                            <div className="show-book-add-to-shelf"> 
                                 <AddShelfContainer />
-                        </div>
-                        
-                        <div className="empty-space">
-
-                        </div>
+                            </div>
+                            
+                            <div className="empty-space">
+                                {/* empty space */}
+                            </div>
                             <div className="show-book-activity-rating">
                                 <params className="show-book-my-activity-text">MY ACTIVITY</params>
                             </div>
@@ -81,32 +82,32 @@ class showBook extends React.Component {
                                     <div>Read: Hasn't Read Yet</div>}
                                 </div>
                             </div>
-                            <div className="show-book-activity-status">
+                                <div className="show-book-activity-status">
 
+                                </div>
+                                <div className="show-book-activity-review">
+
+                                </div>
+                        </div>
+                        <div className="show-book-reviews">
+                            <div className="show-book-all-reviews">
+                                <div className="show-book-all-reviews-text">ALL REVIEWS</div>
+                                    {book.reviews.sort(function(b,a) {
+                                        return (new Date(a.date_reviewed))-(new Date(b.date_reviewed))
+                                        }
+                                    ).map((review,i) => (
+                                        <div key={`review-${i}`} className="show-book-individual-review">
+                                            <div className="show-book-individual-review-title">Review Title: {review.title}</div>
+                                            <div className="show-book-individual-review-date">Date Reviewed: {formatDateWithDay(review.date_reviewed)}</div>
+                                            <div className="show-book-individual-review-id">User: {allUsers[review.user_id].username}</div>
+                                            <div className="show-book-individual-review-rating">User Rating: {review.rating}</div>
+                                            <div className="show-book-individual-review-body">Body: {review.body}</div>
+                                        </div>
+                                    ))}
                             </div>
-                            <div className="show-book-activity-review">
-
                         </div>
                     </div>
-                    <div className="show-book-reviews">
-                        <div className="show-book-all-reviews">
-                            <div className="show-book-all-reviews-text">ALL REVIEWS</div>
-                                {book.reviews.sort(function(b,a) {
-                                    return (new Date(a.date_reviewed))-(new Date(b.date_reviewed))
-                                    }
-                                ).map((review,i) => (
-                                    <div key={`review-${i}`} className="show-book-individual-review">
-                                        <div className="show-book-individual-review-title">Review Title: {review.title}</div>
-                                        <div className="show-book-individual-review-date">Date Reviewed: {formatDateWithDay(review.date_reviewed)}</div>
-                                        <div className="show-book-individual-review-id">User: {allUsers[review.user_id].username}</div>
-                                        <div className="show-book-individual-review-rating">User Rating: {review.rating}</div>
-                                        <div className="show-book-individual-review-body">Body: {review.body}</div>
-                                        
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
+                </div>
             )
         } else {return (<div className="loading"> LOADING</div>)}
     }

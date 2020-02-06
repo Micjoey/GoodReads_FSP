@@ -2,9 +2,11 @@
     display: block;
     align-content: center;
     padding: 20px;
-    padding-left: 14%;
+    /* padding-left: 14%; */
     /* background-color: #deb887; */
     width: 70%;
+    margin: auto;
+    background-color: #f4f2e9;
 }
 
     .show-book-all-information {
@@ -80,7 +82,7 @@
         border-bottom: 1px solid #D8D8D8;
         padding-top: 3px;
         margin: 8px 0px;
-        background-color: beige;
+        /* background-color: ; */
     }
 
     .show-book-all-reviews {
