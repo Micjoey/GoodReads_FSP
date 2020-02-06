@@ -67,7 +67,7 @@
 
             .index-shelves-main-shelves-nav-bar {
                 display: grid;
-                grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
+                grid-template-columns: 200px 100px 100px 100px 100px 100px 100px 100px;
                 grid-gap: 10px;
                 padding: 10px;
                 font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
@@ -82,14 +82,15 @@
             .index-shelf-titles {
                 display: flex;
                 font-weight: bold;
-                font-size: 14px;
+                font-size: 19px;
                 font-style: oblique;
                 border-top: solid 1px rosybrown;
                 border-bottom:solid 1px rosybrown;
                 padding-top: 1px;
                 justify-content: space-between;
                 align-items: center;
-                margin-right: 27px;
+                /* margin-right: 27px; */
+                padding: 10px;
             }
 
             .index-shelves-cover {
@@ -124,14 +125,11 @@
             .index-shelves-cover {
                 padding-left: 20px;
             }
-            .index-shelf-book-cover {
-                max-width: 100px;
-                /* padding-left: 80px; */
-            }
+
             .index-shelf-book-indiv-info{
                 /* display: flex; */
                 display: grid;
-                grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
+                grid-template-columns: 200px 100px 100px 100px 100px 100px 100px 100px;
                 grid-gap: 13px;
                 padding-top: 2px;
                 font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
@@ -147,8 +145,9 @@
 
             .index-shelf-book-cover {
                 object-fit: contain;
-                height: 80px;
+                height: 200px;
                 width: auto;
+                max-width: 200px;
             }
 
             .index-shelf-book-author {

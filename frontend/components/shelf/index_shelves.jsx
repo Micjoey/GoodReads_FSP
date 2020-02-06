@@ -58,6 +58,7 @@ class IndexShelves extends React.Component {
                                 <div className="index-shelves-my-rating"> My Rating </div>
                                 <div className="index-shelves-date-added"> Date Added </div>
                                 <div className="index-shelves-date-read"> Date Read </div>
+                                <div className="index-shelves-date-read"> Delete </div>
                             </div>
                             <div className="index-shelves-books"> 
                                     {this.props.shelves.map((shelf, idx)=>(
