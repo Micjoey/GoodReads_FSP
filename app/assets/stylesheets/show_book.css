@@ -18,7 +18,7 @@
         }
             .show-book-cover {
                 display: flex;
-                height: 300px;
+                height: 500px;
                 width: auto;
                 padding-right: 5px;
                 margin-right: 6px;
@@ -35,6 +35,7 @@
 
         .show-book-information-title {
             font-weight: bold;
+            font-size: 24px;
         }
 
         .show-book-information-author {
