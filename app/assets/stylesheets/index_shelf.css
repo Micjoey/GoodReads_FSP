@@ -75,8 +75,9 @@
                 align-items: center;
             }
 
-            .index-shelves-books {
-
+            .index-shelves-bookshelf {
+                /* margin-top: 20px;
+                margin-bottom: 20px; */
             }
 
             .index-shelf-titles {
@@ -91,6 +92,7 @@
                 align-items: center;
                 /* margin-right: 27px; */
                 padding: 10px;
+                margin: 20px 0px
             }
 
             .index-shelves-cover {
