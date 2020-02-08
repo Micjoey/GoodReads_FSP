@@ -28,7 +28,7 @@ class AddReview extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const review = Object.assign({}, this.state);
-        this.props.createReview(review);
+        this.props.createReview(review).then(() => this.props.retrieveBook(this.state.book_id));
     }
 
 
@@ -56,14 +56,14 @@ class AddReview extends React.Component {
                             />
                             <output name='ratingOutput' id='ratingOutput'>{this.state.rating}</output>
                         </label>
-                        <label className="date-reviewed-field">
+                        {/* <label className="date-reviewed-field">
                              <div>Date of Review:</div>
                             <input type="date"
                                 // placeholder="Please Type Here"
                                 value={this.state.date_reviewed}
                                 onChange={this.update('date_reviewed')}
                             />
-                        </label>
+                        </label> */}
                         <label className="body-field">
                              <div>Body:</div>
                             <textarea type="text"

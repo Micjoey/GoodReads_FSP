@@ -4,6 +4,7 @@ import { formatDateWithDay } from '../../util/date_util';
 import AddShelfContainer from './add_shelf_container';
 import { updateBook } from '../../util/book_api_util';
 import CreateReviewContainer from '../reviews/create_review_form_container';
+import { editReview } from '../../util/review_api_util';
 
 class showBook extends React.Component {
     constructor(props){
@@ -98,10 +99,13 @@ class showBook extends React.Component {
                                     ).map((review,i) => (
                                         <div key={`review-${i}`} className="show-book-individual-review">
                                             <div className="show-book-individual-review-title">Review Title: {review.title}</div>
-                                            <div className="show-book-individual-review-date">Date Reviewed: {formatDateWithDay(review.date_reviewed)}</div>
+                                            <div className="show-book-individual-review-date">Date Reviewed: {formatDateWithDay(review.created_at)}</div>
                                             <div className="show-book-individual-review-id">User: {allUsers[review.user_id].username}</div>
                                             <div className="show-book-individual-review-rating">User Rating: {review.rating}</div>
                                             <div className="show-book-individual-review-body">Body: {review.body}</div>
+                                            {/* Need to change the below code */}
+                                            <div>{(review.user_id === this.props.userId) ? this.props.userId : null }</div>
+                                            {/* ----------------------------- */}
                                         </div>
                                     ))}
                             </div>
