@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { formatDate } from '../../util/date_util';
+import { debug } from 'webpack';
 
 
 class AddReview extends React.Component {
@@ -28,6 +29,7 @@ class AddReview extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const review = Object.assign({}, this.state);
+        debugger
         this.props.createReview(review).then(() => this.props.retrieveBook(this.state.book_id));
     }
 
