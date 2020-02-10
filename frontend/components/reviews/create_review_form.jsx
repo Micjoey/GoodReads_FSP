@@ -29,8 +29,7 @@ class AddReview extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const review = Object.assign({}, this.state);
-        this.props.createReview(review)
-        // .then(() => this.props.retrieveBook(this.state.book_id));
+        this.props.createReview(review).then(() => this.props.retrieveBook(this.state.book_id));
     }
 
 
@@ -68,7 +67,6 @@ class AddReview extends React.Component {
                         </label>
                         <label className="book-id-field">
                             <input type="hidden"
-                                placeholder="Please Type Here"
                                 value={this.state.book_id}
                             />
                         </label>
