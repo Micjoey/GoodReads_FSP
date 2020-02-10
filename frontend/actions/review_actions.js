@@ -35,4 +35,7 @@ export const createReview = review => dispatch => {
 export const editReview = review => dispatch => (
     ReviewAPIUtil.editReview(review).then(review => dispatch(receiveReview(review)))
 )
+export const deleteReview = reviewId => (
+    ReviewAPIUtil.deleteReview(reviewId)
+)
 

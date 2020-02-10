@@ -2,8 +2,10 @@ import React from 'react';
 import {link, Redirect} from 'react-router-dom'
 import { formatDateWithDay } from '../../util/date_util';
 import AddShelfContainer from './add_shelf_container';
-
 import CreateReviewContainer from '../reviews/create_review_form_container';
+import EditReviewContainer from '../reviews/edit_review_container'
+import { deleteReview } from '../../actions/review_actions';
+import { retrieveBook } from '../../actions/book_actions';
 
 
 class showBook extends React.Component {
@@ -72,7 +74,6 @@ class showBook extends React.Component {
                                         <ul className="show-book-all-shelves">
                                             {book.unique_shelves.map((shelf, i)=>(
                                                 (shelf.user_id === this.props.userId) ? <ul key={`shelf-${i}`}>{shelf.bookshelf_title}</ul> : <div key={`shelf-${i}`}></div>
-                                                // <ul key={`shelf-${i}`}>{shelf.bookshelf_title}</ul>
                                             ))}
                                         </ul>
                                     </div>
@@ -102,9 +103,12 @@ class showBook extends React.Component {
                                             <div className="show-book-individual-review-date">Date Reviewed: {formatDateWithDay(review.created_at)}</div>
                                             <div className="show-book-individual-review-id">User: {allUsers[review.user_id].username}</div>
                                             <div className="show-book-individual-review-rating">User Rating: {review.rating}</div>
-                                            <div className="show-book-individual-review-body">Body: {review.body}</div>
+                                            <div className="show-book-individual-review-body">Review: {review.body}</div>
                                             {/* Need to change the below code */}
-                                            <div>{(review.user_id === this.props.userId) ? this.props.userId : null }</div>
+                                            <div>{(review.user_id === this.props.userId) ? <button 
+                                                onClick={() => deleteReview(review.id).then(()=>retrieveBook(book.id))}>
+                                                    Delete Review</button> : null }
+                                            </div>
                                             {/* ----------------------------- */}
                                         </div>
                                     ))}
