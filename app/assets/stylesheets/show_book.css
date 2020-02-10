@@ -21,7 +21,7 @@
             justify-content: space-between;
         }
 
-        @media only screen and (max-width: 1520px) {
+        @media only screen and (max-width: 1520em) {
             .show-book-all-information-and-reviews {
                 display: block;
                 max-width: 400px;
