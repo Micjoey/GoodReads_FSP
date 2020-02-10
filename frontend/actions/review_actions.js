@@ -38,4 +38,3 @@ export const editReview = review => dispatch => (
 export const deleteReview = reviewId => (
     ReviewAPIUtil.deleteReview(reviewId)
 )
-

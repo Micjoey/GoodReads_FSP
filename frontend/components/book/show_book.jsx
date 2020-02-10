@@ -3,9 +3,9 @@ import {link, Redirect} from 'react-router-dom'
 import { formatDateWithDay } from '../../util/date_util';
 import AddShelfContainer from './add_shelf_container';
 import CreateReviewContainer from '../reviews/create_review_form_container';
-import EditReviewContainer from '../reviews/edit_review_container'
 import { deleteReview } from '../../actions/review_actions';
 import { retrieveBook } from '../../actions/book_actions';
+
 
 
 class showBook extends React.Component {
@@ -20,6 +20,11 @@ class showBook extends React.Component {
         const bookMount = this.props.retrieveBook(this.props.match.params.bookId)
         const usersMount = this.props.retrieveAllUsers()
         Promise.all([bookMount, usersMount]).then( () => this.setState({loaded:true}))
+    }
+
+    handleDelete(reviewID) {
+        deleteReview(reviewID)
+        this.props.retrieveBook(this.props.book.id)
     }
     
     render() {
@@ -95,7 +100,7 @@ class showBook extends React.Component {
                             <div className="show-book-all-reviews">
                                 <div className="show-book-all-reviews-text">ALL REVIEWS</div>
                                     {book.reviews.sort(function(b,a) {
-                                        return (new Date(a.date_reviewed))-(new Date(b.date_reviewed))
+                                        return (new Date(a.created_at)) - (new Date(b.created_at))
                                         }
                                     ).map((review,i) => (
                                         <div key={`review-${i}`} className="show-book-individual-review">
@@ -106,7 +111,7 @@ class showBook extends React.Component {
                                             <div className="show-book-individual-review-body">Review: {review.body}</div>
                                             {/* Need to change the below code */}
                                             <div>{(review.user_id === this.props.userId) ? <button 
-                                                onClick={() => deleteReview(review.id).then(()=>retrieveBook(book.id))}>
+                                                onClick={() => this.handleDelete(review.id)}>
                                                     Delete Review</button> : null }
                                             </div>
                                             {/* ----------------------------- */}
