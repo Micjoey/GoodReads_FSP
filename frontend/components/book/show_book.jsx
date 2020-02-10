@@ -2,9 +2,9 @@ import React from 'react';
 import {link, Redirect} from 'react-router-dom'
 import { formatDateWithDay } from '../../util/date_util';
 import AddShelfContainer from './add_shelf_container';
-import { updateBook } from '../../util/book_api_util';
+
 import CreateReviewContainer from '../reviews/create_review_form_container';
-import { editReview } from '../../util/review_api_util';
+
 
 class showBook extends React.Component {
     constructor(props){
