@@ -1,5 +1,6 @@
 class OnShelfBook < ApplicationRecord
    validates :shelf_id, :book_id, presence: true
+   validates :shelf_id, uniqueness: { scope: :book_id}
 
    belongs_to :shelf,
    foreign_key: :shelf_id,

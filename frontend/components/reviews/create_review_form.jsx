@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { formatDate } from '../../util/date_util';
+// import { formatDate } from '../../util/date_util';
+
 
 
 class AddReview extends React.Component {
@@ -10,13 +11,13 @@ class AddReview extends React.Component {
             title: '',
             rating: 3,
             body: '',
-            date_reviewed: '',
             user_id: this.props.user_id,
             book_id: this.props.book_id
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // the issue is that reviewed_date is null:false but no date is getting passed through.
 
 
     update(field) {
@@ -56,14 +57,6 @@ class AddReview extends React.Component {
                             />
                             <output name='ratingOutput' id='ratingOutput'>{this.state.rating}</output>
                         </label>
-                        <label className="date-reviewed-field">
-                             <div>Date of Review:</div>
-                            <input type="date"
-                                // placeholder="Please Type Here"
-                                value={this.state.date_reviewed}
-                                onChange={this.update('date_reviewed')}
-                            />
-                        </label>
                         <label className="body-field">
                              <div>Body:</div>
                             <textarea type="text"
@@ -74,7 +67,6 @@ class AddReview extends React.Component {
                         </label>
                         <label className="book-id-field">
                             <input type="hidden"
-                                placeholder="Please Type Here"
                                 value={this.state.book_id}
                             />
                         </label>

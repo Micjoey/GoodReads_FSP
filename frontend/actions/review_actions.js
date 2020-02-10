@@ -1,6 +1,5 @@
 import * as ReviewAPIUtil from '../util/review_api_util'
 import { RECEIVE_BOOK } from './book_actions'
-
 export const RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS'
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW'
 
@@ -26,12 +25,16 @@ export const retrieveReview = reviewID => dispatch => (
     .then(review => dispatch(receiveReview(review)))
 )
 
-export const createReview = review => dispatch => (
+export const createReview = review => dispatch => {
+    return (
     ReviewAPIUtil.createReview(review)
     .then( review => dispatch(receiveReviews(review)))
-)
+    )
+}
 
 export const editReview = review => dispatch => (
     ReviewAPIUtil.editReview(review).then(review => dispatch(receiveReview(review)))
 )
-
+export const deleteReview = reviewId => (
+    ReviewAPIUtil.deleteReview(reviewId)
+)
