@@ -73,6 +73,7 @@
                 font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
                 font-size: 14px;
                 align-items: center;
+                text-align: center;
             }
 
             .index-shelves-bookshelf {
@@ -137,6 +138,7 @@
                 font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
                 font-size: 14px;
                 align-items: center;
+                text-align: center;
             }
 
             .index-shelf-book-avg-rating,
