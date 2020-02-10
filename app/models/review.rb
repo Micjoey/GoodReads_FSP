@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-    validates :title, :user_id, :book_id, :rating, :date_reviewed, presence: true
+    validates :title, :user_id, :book_id, :rating, presence: true
     validates :rating, inclusion: { in: (1..5)}
 
    belongs_to :user,
