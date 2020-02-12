@@ -13,6 +13,9 @@ import { openModal } from '../../actions/model_actions';
 class RootFile extends React.Component {
     constructor(props) {
         super(props); 
+        this.state = {
+            search: ''
+        }
         this.dropDownIdSwitch = this.dropDownIdSwitch.bind(this)
     }
 
@@ -21,14 +24,26 @@ class RootFile extends React.Component {
     }
 
 
+    componentDidMount() {
+        this.props.retrieveBooks()
+    }
+
+
+
+    updateSearch(event) {
+        this.setState({ search: event.target.value.substring(0, 20) })
+    }
+
     personalGreeting() {
         return(
         <div className="header-group">
             <div className="header-group-logged-in">
                 <Link to="/home" className="myreads-title-logged-in">MyReads</Link>
                 <Link to="/home" className="nav-bar-home-button">Home</Link>
-                    <Link to='/Shelf' className="nav-bar-mybooks-button">My Books</Link>
-                <button>Placeholder - search bar</button>
+                <Link to='/Shelf' className="nav-bar-mybooks-button">My Books</Link>
+               <ul>
+                 
+               </ul>
                 {/* <Link to='/Shelf' className="myBooks-link"></Link> */}
                     <div className="dropdown">
                         <img src={images.account_image} className="dropdown-image-icon" alt="" />

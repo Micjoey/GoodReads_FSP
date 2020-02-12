@@ -4,15 +4,16 @@ import ShowBookContainer from './show_book_container';
 
 class IndexBook extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.showBook = this.showBook.bind(this);
     }
+
 
     componentDidMount() {
         this.props.retrieveBooks()
     }
 
-
+   
 
     showBook(id) {
         return (
