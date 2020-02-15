@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom';
 import { formatDate, formatDateWithDay } from '../../util/date_util';
 import ShelfFormContainer from './shelf_form_container';
-import IndexShelvesContainer from './index_shelves_container';
+
 
 class IndexShelves extends React.Component {
     constructor(props) {
@@ -20,10 +20,13 @@ class IndexShelves extends React.Component {
         this.props.createShelf(shelf);
     }
 
+    // onclick filter the shelves and set a new variable
+
     
     render(){
         // debugger
         if(!this.props.shelves) return null;
+        
         return (
             <div className="index-shelves-main">
                 <div className="index-shelves-main-navbar">
