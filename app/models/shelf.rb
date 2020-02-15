@@ -1,5 +1,6 @@
 class Shelf < ApplicationRecord
     validates :bookshelf_title, :user_id, presence: true
+    validates :bookshelf_title, uniqueness: { scope: :user_id}
 
     belongs_to :user,
     foreign_key: :user_id,

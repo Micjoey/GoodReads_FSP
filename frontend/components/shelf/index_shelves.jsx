@@ -7,6 +7,9 @@ import ShelfFormContainer from './shelf_form_container';
 class IndexShelves extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            shelf: ''
+        }
     }
 
     componentDidMount() {
@@ -21,12 +24,15 @@ class IndexShelves extends React.Component {
     }
 
     // onclick filter the shelves and set a new variable
+    filterShelf(shelfTitle) {
+        let filteredShelf = shelfTitle
+        this.setState({shelf: filteredShelf})
+
+    }
 
     
     render(){
-        // debugger
         if(!this.props.shelves) return null;
-        
         return (
             <div className="index-shelves-main">
                 <div className="index-shelves-main-navbar">
@@ -40,7 +46,7 @@ class IndexShelves extends React.Component {
                                 <p className="index-shelves-sidebar-title">Bookshelves</p>
                                 {this.props.shelves.map((shelf, i) => (
                                     <div key={`shelf-${i}`} className="index-shelves-sidebar-shelf">
-                                        <button className="index-shelves-sidebar-shelf-buttons">
+                                        <button className="index-shelves-sidebar-shelf-buttons" >
                                             <ul className={`index-shelves-sidebar-shelf-button-${shelf.bookshelf_title}`}>
                                                 {shelf.bookshelf_title}
                                             </ul>
