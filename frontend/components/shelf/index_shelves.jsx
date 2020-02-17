@@ -2,11 +2,14 @@ import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom';
 import { formatDate, formatDateWithDay } from '../../util/date_util';
 import ShelfFormContainer from './shelf_form_container';
-import IndexShelvesContainer from './index_shelves_container';
+
 
 class IndexShelves extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            shelf: '',
+        }
     }
 
     componentDidMount() {
@@ -20,10 +23,21 @@ class IndexShelves extends React.Component {
         this.props.createShelf(shelf);
     }
 
+    // onclick filter the shelves and set a new variable
+    filterShelf(shelf) {
+        let shelfName = shelf
+        if (shelf !== 'All Books') {
+        let newShelf = this.props.shelves.filter(indivShelf => shelfName === indivShelf.bookshelf_title)
+        this.setState({shelf: newShelf}) } else {
+            this.setState({shelf: this.props.retrieveBooks()})
+        }
+
+    }
+
     
     render(){
-        // debugger
         if(!this.props.shelves) return null;
+            let newShelf = (this.state.shelf.length > 0) ? this.state.shelf : this.props.shelves
         return (
             <div className="index-shelves-main">
                 <div className="index-shelves-main-navbar">
@@ -35,9 +49,12 @@ class IndexShelves extends React.Component {
                         <div className="index-shelves-main-sidebar">
                             <div className="index-shelves-sidebar-list-shelves">
                                 <p className="index-shelves-sidebar-title">Bookshelves</p>
+                                <button className="index-shelves-sidebar-shelf-buttons" onClick={() => this.filterShelf('All Books')}>
+                                    All Books
+                                </button>
                                 {this.props.shelves.map((shelf, i) => (
                                     <div key={`shelf-${i}`} className="index-shelves-sidebar-shelf">
-                                        <button className="index-shelves-sidebar-shelf-buttons">
+                                        <button className="index-shelves-sidebar-shelf-buttons" onClick={()=>this.filterShelf(shelf.bookshelf_title)}>
                                             <ul className={`index-shelves-sidebar-shelf-button-${shelf.bookshelf_title}`}>
                                                 {shelf.bookshelf_title}
                                             </ul>
@@ -61,7 +78,8 @@ class IndexShelves extends React.Component {
                                 <div className="index-shelves-date-read"> Delete </div>
                             </div>
                             <div className="index-shelves-books"> 
-                                    {this.props.shelves.map((shelf, idx)=>(
+                                    {/* {this.props.shelves.map((shelf, idx)=>( */}
+                                    {newShelf.map((shelf, idx)=>(
                                         <div key={`${shelf}-${idx}`} className="index-shelves-bookshelf">
                                                <div className="index-shelf-titles"> 
                                                     {shelf.bookshelf_title}    
@@ -73,12 +91,14 @@ class IndexShelves extends React.Component {
                                                        <div key={`${shelf}-${book}-${i}`} className="index-shelf-book-indiv-info"> 
                                                             <div className="index-shelf-book-cover">
                                                                 <Link to={`/book/${book.id}`}>
-                                                               <div className="index-shelf-book-cover"><img src={book.photo} className="index-shelf-book-cover" /></div>
+                                                                    <div className="index-shelf-book-cover">
+                                                                        <img src={book.photo} className="index-shelf-book-cover" />
+                                                                    </div>
                                                                 </Link>
                                                             </div>
                                                             <div className="index-shelf-book-title">
                                                                <Link className="index-shelf-book-title" to={`/book/${book.id}`}>
-                                                                {book.title}
+                                                                    {book.title}
                                                                </Link>
                                                             </div>
                                                             <div className="index-shelf-book-author">{book.author}</div>

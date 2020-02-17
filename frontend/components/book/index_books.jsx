@@ -44,7 +44,10 @@ class IndexBook extends React.Component {
                                                                formatDateWithDay(book.date_read) :
                                                                <div>Date Read: Hasn't Read</div>}
                                 </div>
-                                <div className='index-book-information-description'>Description: {book.description} </div>
+                                <div className='index-book-information-description'>
+                                    <div> Book Description: </div>
+                                    <div> {book.description} </div>
+                                </div>
                             </div>
                         </div>
                     ))}
