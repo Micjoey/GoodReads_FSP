@@ -17,8 +17,12 @@ class Splash extends React.Component {
                     <SignUpFormContainer />
                 </div>
                 <div className="background-box">
-                    {/* <div className="flavor-text"> Track your favorite reads here!</div> */}
-                    <img src={images.books} className="background-img" alt="" />
+                    <img src={images.books} className="background-img" title="Credit: https://www.aier.org/article/another-stack-of-books-you-should-read/" />
+                </div>
+                <div className="flavor-text-box">
+                    <div className="flavor-text">
+                            Find your future reads here! Live the future, past and present through the words on the page. 
+                    </div>
                 </div>
             </div>
         )

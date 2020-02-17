@@ -29,11 +29,13 @@
                 
             }
 
+            
             .show-book-review {
                 height: 300px;
             }
         }
-
+        
+        
         .show-book-cover-image {
             display: flex;
         }
