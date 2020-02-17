@@ -9,6 +9,7 @@ class Splash extends React.Component {
     }
 
     render() {
+        // debugger
         return (
             <div className="background-and-signup-box">
                 <div className="sign-up-form-box">
@@ -17,7 +18,7 @@ class Splash extends React.Component {
                 </div>
                 <div className="background-box">
                     {/* <div className="flavor-text"> Track your favorite reads here!</div> */}
-                    <img src={images.fireworks2} className="firework" alt="" />
+                    <img src={images.books} className="background-img" alt="" />
                 </div>
             </div>
         )
