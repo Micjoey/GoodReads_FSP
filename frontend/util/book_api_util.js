@@ -15,7 +15,7 @@ export const retrieveBook = bookId => (
 
 export const updateBook = book => (
     $.ajax({
-        method: 'POST',
+        method: 'PATCH',
         url: `/api/books/${book.id}`,
         data: {book}
     })

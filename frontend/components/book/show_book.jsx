@@ -11,7 +11,8 @@ class showBook extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            loaded: false
+            loaded: false,
+            hasRead: '',
         }
     }
 
@@ -24,6 +25,15 @@ class showBook extends React.Component {
     handleDelete(reviewID) {
         deleteReview(reviewID)
         this.props.retrieveBook(this.props.book.id)
+    }
+
+    hasRead() {
+        let book = this.props.book
+        book.date_read = !book.date_read
+        this.props.updateBook(book)
+            .then(() => this.setState({hasRead: book.date_read}))
+            .then(() => this.props.retrieveBook(this.props.match.params.bookId))
+        debugger
     }
     
     render() {
@@ -84,9 +94,14 @@ class showBook extends React.Component {
                                 </div>
                                 <div className="show-book-myactivity">
                                     {(book.date_read) ?
-                                    <div>Read: Has Read</div> :
+                                    <div>Read: Have Read</div> :
                                     <div>Read: Hasn't Read Yet</div>}
                                 </div>
+                                <button className="show-book-myactivity" onClick={() => this.hasRead()}>
+                                    {(book.date_read) ?
+                                    <div>Mark as: Have Read</div> :
+                                    <div>Mark as: Hasn't Read Yet</div>}
+                                </button>
                             </div>
                                 <div className="show-book-activity-status">
 
