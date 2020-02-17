@@ -164,5 +164,14 @@
             }
 
             .index-shelves-sidebar-shelf-buttons {
-                margin: 3px 0px
+                margin: 3px 0px;
+            }
+
+            .shelf-title-field {
+                margin: 2px 0px;
+            }
+
+            .index-shelves-sidebar-title {
+                text-decoration: underline;
+                padding-bottom: 4px;
             }

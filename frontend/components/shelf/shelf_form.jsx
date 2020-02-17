@@ -33,6 +33,7 @@ class ShelfFormContainer extends React.Component {
                                 placeholder="Shelf Title"
                                 value={this.state.bookshelf_title}
                                 onChange={this.update('bookshelf_title')}
+                                className="shelf-title-field"
                             />
                         </label>
                         <input className="shelf-create-submit" type="submit" value={this.props.formType} />
