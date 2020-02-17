@@ -26,8 +26,12 @@ class IndexShelves extends React.Component {
     // onclick filter the shelves and set a new variable
     filterShelf(shelf) {
         let shelfName = shelf
+        if (shelf !== 'All Books') {
         let newShelf = this.props.shelves.filter(indivShelf => shelfName === indivShelf.bookshelf_title)
-        this.setState({shelf: newShelf})
+        this.setState({shelf: newShelf}) } else {
+            this.setState({shelf: this.props.retrieveBooks()})
+        }
+
     }
 
     
@@ -45,6 +49,9 @@ class IndexShelves extends React.Component {
                         <div className="index-shelves-main-sidebar">
                             <div className="index-shelves-sidebar-list-shelves">
                                 <p className="index-shelves-sidebar-title">Bookshelves</p>
+                                <button className="index-shelves-sidebar-shelf-buttons" onClick={() => this.filterShelf('All Books')}>
+                                    All Books
+                                </button>
                                 {this.props.shelves.map((shelf, i) => (
                                     <div key={`shelf-${i}`} className="index-shelves-sidebar-shelf">
                                         <button className="index-shelves-sidebar-shelf-buttons" onClick={()=>this.filterShelf(shelf.bookshelf_title)}>
