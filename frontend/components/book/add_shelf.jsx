@@ -31,9 +31,9 @@ class AddShelf extends React.Component {
                                 onClick={ () =>{
                                     this.props.addToShelf(
                                         {shelf_id: shelf.id, book_id: this.props.book.id}
-                                            )
-                                        } 
-                                    }
+                                        )
+                                    } 
+                                }
                                 >
                                     <ul className={`add-shelves-sidebar-shelf-button`}>
                                         {shelf.bookshelf_title}
