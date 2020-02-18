@@ -31,7 +31,9 @@ class IndexBook extends React.Component {
                         <div key={`book-${i}`} className="index-books-book-info">
                             <div className='dropdown-book'>
                             <Link to={`/book/${i+1}`}>
-                                <div className="index-book-covers"><img src={book.photo} className="index-book-cover"/></div>
+                                <div className="index-book-covers">
+                                    <img src={book.photo} className="index-book-cover"/>
+                                </div>
                             </Link>
                             </div>
                             <div className="dropdown-book-content">
@@ -41,7 +43,7 @@ class IndexBook extends React.Component {
                                 <div className='index-book-information-genre'>Genre: {book.genre}</div>
                                 {/* <div className='index-book-information-date-read'>Date Read: {book.date_read}</div> */}
                                 <div className='index-book-information-date-read'>{(book.date_read) ? 
-                                                               formatDateWithDay(book.date_read) :
+                                                                <div>Date Read: Has Read</div> :
                                                                <div>Date Read: Hasn't Read</div>}
                                 </div>
                                 <div className='index-book-information-description'>

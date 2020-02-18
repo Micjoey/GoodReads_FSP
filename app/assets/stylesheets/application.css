@@ -18,6 +18,11 @@
      /* overflow: auto; */
  }
 
+.background-color {
+    background-color: #f4f2e980;
+
+}
+
  .content {
      height: 100%;
      padding-bottom: 100px;

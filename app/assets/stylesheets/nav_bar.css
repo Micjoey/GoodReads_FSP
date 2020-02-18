@@ -7,6 +7,7 @@
     width: 100%;
     padding: 0px;
     padding-bottom: 7px;
+    padding-top: 5px;
     height: 60px;
     border-bottom: 1px solid black;
     align-items: center;
@@ -15,6 +16,7 @@
     background-color: #f4f2e9;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
+    min-width: 500px;
 }
 
     .myreads-title-logged-in {

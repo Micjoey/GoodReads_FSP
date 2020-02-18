@@ -111,7 +111,7 @@ class IndexShelves extends React.Component {
                                                            <div className="index-shelf-book-added">{formatDateWithDay(book.created_at)}</div>                                                        
                                                            <div className="index-shelf-book-added">
                                                                {(book.date_read) ? 
-                                                               formatDateWithDay(book.date_read) :
+                                                               <div> Have Read </div> :
                                                                <div>Hasn't Read</div>
                                                                }
                                                             </div>

@@ -54,6 +54,7 @@ class showBook extends React.Component {
                 </div>
             ) : (<p>Sorry! No Books!</p>)
             return (
+            <div className='background-color'>
                 <div className="show-book">
                     <div className='show-book-background'>
                         <div className='show-book-all-information-and-reviews'>
@@ -133,6 +134,7 @@ class showBook extends React.Component {
                         </div>
                     </div>
                 </div>
+            </div>
             )
         } else {return (<div className="loading"> LOADING</div>)}
     }
