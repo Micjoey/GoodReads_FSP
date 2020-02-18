@@ -8,6 +8,7 @@ class IndexBook extends React.Component {
         this.state = {
             bookSearch: '',
             books: [],
+            loaded: false,
         }
         this.showBook = this.showBook.bind(this);
         this.filterBooks = this.filterBooks.bind(this)
@@ -15,7 +16,8 @@ class IndexBook extends React.Component {
 
 
     componentDidMount() {
-        this.props.retrieveBooks()
+       const books = this.props.retrieveBooks()
+        Promise.all([books]).then(() => this.setState({ loaded: true }))
     }
 
    
@@ -31,15 +33,17 @@ class IndexBook extends React.Component {
     }
 
     filterBooks() {
+        // debugger
         let allBooks = this.props.books.filter(indivBook => 
             indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) || 
             indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
             indivBook.description.toLowerCase().includes(this.state.bookSearch.toLowerCase())||
             indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase())
-            )
-        let notfound = images.notFound;
-        if (this.state.books.length === 0) {
-            this.state.books.push({title: 'Not Found', photo: notfound})
+            ).map(indivBook => indivBook)
+        // let notfound = images.notFound;
+        if (allBooks === 0) {
+            // this.state.books.push({title: 'Not Found', photo: notfound})
+            console.log('hit')
         } else {
             this.setState({ books: allBooks })
         }
@@ -81,26 +85,30 @@ class IndexBook extends React.Component {
                     ))}
                 </div>
             )  
-        return (
-            <div className='background-color'>
-                <div className='search-bar'>
-                    <form className="index-book-search-bar" onSubmit={this.filterBooks}>
-                        <input type="text"
-                            className="index-book-search-bar-text"
-                            placeholder="Search for book"
-                            // value={this.state.currentHp}
-                            onChange={text => this.setState({
-                                bookSearch: text.target.value
-                            })}
-                        />
-                    </form>   
+        if (this.state.loaded) {
+            return (
+                <div className='background-color'>
+                    <div className='search-bar'>
+                        <form className="index-book-search-bar" onSubmit={this.filterBooks}>
+                            <input type="text"
+                                className="index-book-search-bar-text"
+                                placeholder="Search for book"
+                                // value={this.state.currentHp}
+                                onChange={text => this.setState({
+                                    bookSearch: text.target.value
+                                })}
+                            />
+                        </form>   
 
+                    </div>
+                    <div className="index-book-information"> 
+                    {books}
+                    </div>
                 </div>
-                <div className="index-book-information"> 
-                  {books}
-                </div>
-            </div>
-        )
+            )
+        } else {
+            return (<div>Loading</div>)
+        }
         
     }
 
