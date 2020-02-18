@@ -75,10 +75,12 @@
 
     .flavor-text {
         float: left;
-        min-width: 500px;
+        /* min-width: 100px; */
         z-index: 3;
         font-size: 40px;
         position: absolute;
+        width: initial;
+
     }
 
     .flavor-text-box {
@@ -98,12 +100,14 @@
      @media only screen and (max-width: 63em) {
         .flavor-text {
             font-size: 20px;
-            
+            width: inherit;
         }
+
         .flavor-text-box {
             /* min-width: 400px; */
              height: auto;
-            width: 100px;
+            width: 60%;
+
         }
     }
 
