@@ -26,6 +26,10 @@ class IndexBook extends React.Component {
         )    
     }
 
+    componentDidUpdate(prevProps) {
+
+    }
+
     filterBooks() {
         debugger
         let allBooks = this.props.books.filter(indivBook => indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()))

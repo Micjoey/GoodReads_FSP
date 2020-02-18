@@ -50,6 +50,11 @@
         color: black;
         flex-flow: nowrap;
         margin: 5px 0px;
+        font-size: 14px;
+    }
+    .nav-bar-dropdown-mybooks-button:hover {
+        text-decoration: underline;
+        
     }
 
     .nav-bar-home-button:hover,

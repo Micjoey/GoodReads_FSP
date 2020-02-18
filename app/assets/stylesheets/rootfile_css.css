@@ -60,6 +60,8 @@ body {
     text-transform: capitalize;
     margin: 5px 0px;
     cursor: default;
+    font-weight: bolder;
+    font-size: 18px;
 }
 
 
