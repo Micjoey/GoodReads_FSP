@@ -175,3 +175,7 @@
                 text-decoration: underline;
                 padding-bottom: 4px;
             }
+
+            .checkBook {
+                height: 40px;
+            } 

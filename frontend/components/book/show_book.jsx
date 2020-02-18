@@ -33,7 +33,7 @@ class showBook extends React.Component {
         this.props.updateBook(book)
             .then(() => this.setState({hasRead: book.date_read}))
             .then(() => this.props.retrieveBook(this.props.match.params.bookId))
-        debugger
+        
     }
     
     render() {

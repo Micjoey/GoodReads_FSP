@@ -9,7 +9,6 @@ class Splash extends React.Component {
     }
 
     render() {
-        // debugger
         return (
             <div className="background-and-signup-box">
                 <div className="sign-up-form-box">
