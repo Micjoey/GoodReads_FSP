@@ -10,6 +10,7 @@ class IndexBook extends React.Component {
             books: [],
         }
         this.showBook = this.showBook.bind(this);
+        this.filterBooks = this.filterBooks.bind(this)
     }
 
 
@@ -25,11 +26,10 @@ class IndexBook extends React.Component {
         )    
     }
 
-    filterShelf() {
-        
-        // if () {
-        //     let newShelf = this.props.shelves.filter(indivShelf => shelfName === indivShelf.bookshelf_title)
-        //     this.setState({ shelf: newShelf })
+    filterBooks() {
+        debugger
+        let allBooks = this.props.books.filter(indivBook => indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()))
+        this.setState({ books: allBooks })
         // } else {
         //     this.setState({ shelf: this.props.retrieveBooks() })
         // }
@@ -38,9 +38,12 @@ class IndexBook extends React.Component {
    
     render() {
         if (!this.props.books) return null;
+        let allBooks
+        (this.state.books.length === 0) ? allBooks = this.props.books : allBooks = this.state.books
         const books = (
                 <div className="index-books">
-                    {this.props.books.map((book, i) => (
+                    {allBooks.map((book, i) => (
+                    // {this.props.books.map((book, i) => (
                         <div key={`book-${i}`} className="index-books-book-info">
                             <div className='dropdown-book'>
                             <Link to={`/book/${i+1}`}>
@@ -67,11 +70,11 @@ class IndexBook extends React.Component {
                         </div>
                     ))}
                 </div>
-            )
+            )  
         return (
             <div className='background-color'>
                 <div className='search-bar'>
-                    <form className="index-book-search-bar">
+                    <form className="index-book-search-bar" onSubmit={this.filterBooks}>
                         <input type="text"
                             className="index-book-search-bar-text"
                             placeholder="Search for book"
@@ -81,6 +84,7 @@ class IndexBook extends React.Component {
                             })}
                         />
                     </form>   
+
                 </div>
                 <div className="index-book-information"> 
                   {books}
