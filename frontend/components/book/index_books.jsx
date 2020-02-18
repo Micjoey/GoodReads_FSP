@@ -38,7 +38,6 @@ class IndexBook extends React.Component {
             indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase())
             )
         let notfound = images.notFound;
-            debugger
         if (this.state.books.length === 0) {
             this.state.books.push({title: 'Not Found', photo: notfound})
         } else {
