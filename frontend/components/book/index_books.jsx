@@ -31,12 +31,19 @@ class IndexBook extends React.Component {
     }
 
     filterBooks() {
-        debugger
-        let allBooks = this.props.books.filter(indivBook => indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()))
-        this.setState({ books: allBooks })
-        // } else {
-        //     this.setState({ shelf: this.props.retrieveBooks() })
-        // }
+        let allBooks = this.props.books.filter(indivBook => 
+            indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) || 
+            indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
+            indivBook.description.toLowerCase().includes(this.state.bookSearch.toLowerCase())||
+            indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase())
+            )
+        let notfound = images.notFound;
+            debugger
+        if (this.state.books.length === 0) {
+            this.state.books.push({title: 'Not Found', photo: notfound})
+        } else {
+            this.setState({ books: allBooks })
+        }
 
     }
    
