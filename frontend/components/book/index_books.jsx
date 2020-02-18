@@ -56,9 +56,11 @@ class IndexBook extends React.Component {
                 </div>
             )
         return (
+            <div className='background-color'>
                 <div className="index-book-information"> 
                   {books}
                 </div>
+            </div>
         )
         
     }

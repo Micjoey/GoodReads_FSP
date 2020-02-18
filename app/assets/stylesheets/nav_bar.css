@@ -36,11 +36,20 @@
         color: black;
         min-width: 20px;
         flex-flow: nowrap;
+        font-size: 20px;
     }
     .nav-bar-mybooks-button {
         text-decoration: none;
         color: black;
         flex-flow: nowrap;
+        margin: 5px 0px;
+        font-size: 20px;
+    }
+    .nav-bar-dropdown-mybooks-button {
+        text-decoration: none;
+        color: black;
+        flex-flow: nowrap;
+        margin: 5px 0px;
     }
 
     .nav-bar-home-button:hover,
@@ -49,5 +58,10 @@
         text-decoration: underline;
     }
 
+    .header-button {
+        opacity: 200%;
+        width: 50%;
+        cursor: pointer;
+    }
 
 

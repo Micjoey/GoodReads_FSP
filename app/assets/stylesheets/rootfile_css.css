@@ -52,13 +52,14 @@ body {
 .header-currentuser-name {
     display: flex;
     position: relative;
-     padding: 5px;
+    /* padding: 5px; */
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-    padding-right: 50px;
+    /* padding-right: 50px; */
     text-transform: capitalize;
-    
+    margin: 5px 0px;
+    cursor: default;
 }
 
 

@@ -20,12 +20,15 @@
 
 .background-color {
     background-color: #f4f2e980;
+    /* Test Color */
+    /* background-color: red; */
+    /*  */
 
 }
 
  .content {
      height: 100%;
-     padding-bottom: 100px;
+     /* padding-bottom: 100px; */
      /* background-color: #dad8cd; */
  }
 
