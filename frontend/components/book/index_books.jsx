@@ -38,7 +38,7 @@ class IndexBook extends React.Component {
             indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) || 
             indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
             indivBook.description.toLowerCase().includes(this.state.bookSearch.toLowerCase())||
-            indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase())
+            indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
             ).map(indivBook => indivBook)
         // let notfound = images.notFound;
         if (allBooks === 0) {

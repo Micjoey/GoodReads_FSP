@@ -22,7 +22,7 @@ class RootFile extends React.Component {
     }
 
     reload () {
-        window.location.reload();
+        window.location.assign('/home');
     }
 
     personalGreeting() {
@@ -30,8 +30,8 @@ class RootFile extends React.Component {
         return(
         <div className="header-group">
             <div className="header-group-logged-in">
-                <Link to="/home" className="myreads-title-logged-in" onClick={() => this.reload()}>MyReads</Link>
-                <Link to="/home" className="nav-bar-home-button" onClick={() => this.reload()}>Home</Link>
+                <Link to="/home" className="myreads-title-logged-in" >MyReads</Link>
+                <Link to="/home" className="nav-bar-home-button" >Home</Link>
                 <Link to='/Shelf' className="nav-bar-mybooks-button">My Books</Link>
                     <div className="dropdown">
                         <img src={images.account_image} className="dropdown-image-icon" alt="" />
