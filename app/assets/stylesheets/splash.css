@@ -1,7 +1,8 @@
 .background-and-signup-box {
-    padding-top: 101px;
-    min-height: 800px;
-    overflow: none;
+    /* padding-top: 101px; */
+    /* min-height: 800px; */
+
+    scroll-behavior: unset;
 
 }
     .sign-up-form-box {
@@ -19,6 +20,7 @@
     background-color: #f4f2e9;
     align-items: center;
     z-index: 1;
+    margin-top: 101px;
     }   
 
         .sign-up-form-title {

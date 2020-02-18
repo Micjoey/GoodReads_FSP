@@ -17,6 +17,8 @@ class AddShelf extends React.Component {
         Promise.all([shelvesMount, bookMount]).then(() => this.setState({ loaded: true }))
     }
 
+    
+
 
     render() {
         if (this.state.loaded) {

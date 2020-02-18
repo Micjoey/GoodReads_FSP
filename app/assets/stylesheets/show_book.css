@@ -6,7 +6,7 @@
     /* background-color: #deb887; */
     width: 70%;
     margin: auto;
-    background-color: #f4f2e9;
+    background-color: #e9e8e0;
     min-width: 650px;
     margin-bottom: 50px;
 }
@@ -44,7 +44,8 @@
                 display: flex;
                 height: 500px;
                 width: auto;
-                padding-right: 5px;
+                padding-right: 25px;
+                padding-bottom: 10px;
                 margin-right: 6px;
             }
 
@@ -142,6 +143,7 @@
 
 .show-book-all-reviews-text {
     border-top: 1px solid black;
+    padding-top: 5px;
 }
 
 .leave-a-review {

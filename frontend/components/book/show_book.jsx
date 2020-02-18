@@ -35,6 +35,8 @@ class showBook extends React.Component {
             .then(() => this.props.retrieveBook(this.props.match.params.bookId))
         
     }
+
+    
     
     render() {
         if (this.state.loaded) {

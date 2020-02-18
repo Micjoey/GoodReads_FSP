@@ -10,6 +10,24 @@
     margin: 0px 50px;
 }
 
+.search-bar {
+  background-color: #fcf6f6;  
+}
+    .index-book-search-bar {
+        display: inline-flex;
+        justify-content: flex-end;
+        width: 90%;
+        margin: 10px;
+    }
+
+    .index-book-search-bar-text {
+        width: 200px;
+        height: 25px;
+        background-color: #f2f2f2;
+        margin-left: 50%;
+        margin-top: 10px;
+    }
+
     .index-book-information {
         padding: 10px;
         height: auto;

@@ -5,6 +5,10 @@ import ShowBookContainer from './show_book_container';
 class IndexBook extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            bookSearch: '',
+            books: [],
+        }
         this.showBook = this.showBook.bind(this);
     }
 
@@ -21,7 +25,16 @@ class IndexBook extends React.Component {
         )    
     }
 
+    filterShelf() {
+        
+        // if () {
+        //     let newShelf = this.props.shelves.filter(indivShelf => shelfName === indivShelf.bookshelf_title)
+        //     this.setState({ shelf: newShelf })
+        // } else {
+        //     this.setState({ shelf: this.props.retrieveBooks() })
+        // }
 
+    }
    
     render() {
         if (!this.props.books) return null;
@@ -57,6 +70,18 @@ class IndexBook extends React.Component {
             )
         return (
             <div className='background-color'>
+                <div className='search-bar'>
+                    <form className="index-book-search-bar">
+                        <input type="text"
+                            className="index-book-search-bar-text"
+                            placeholder="Search for book"
+                            // value={this.state.currentHp}
+                            onChange={text => this.setState({
+                                bookSearch: text.target.value
+                            })}
+                        />
+                    </form>   
+                </div>
                 <div className="index-book-information"> 
                   {books}
                 </div>
