@@ -9,6 +9,7 @@ class AddShelf extends React.Component {
         this.state = {
             loaded: false
         }
+        this.addShelf = this.addShelf.bind(this)
     }
 
     componentDidMount() {
@@ -17,7 +18,12 @@ class AddShelf extends React.Component {
         Promise.all([shelvesMount, bookMount]).then(() => this.setState({ loaded: true }))
     }
 
-    
+
+    addShelf(shelf) {
+        this.props.addToShelf(
+            { shelf_id: shelf.id, book_id: this.props.book.id }
+        )
+    }
 
 
     render() {
@@ -30,11 +36,8 @@ class AddShelf extends React.Component {
                             {this.props.shelves.map((shelf, i) => (
                                 <div key={`shelf-${i}`} className="add-shelves-sidebar-shelf">
                                     <button className="add-shelves-sidebar-shelf-buttons" 
-                                    onClick={ () =>{
-                                        this.props.addToShelf(
-                                            {shelf_id: shelf.id, book_id: this.props.book.id}
-                                            )
-                                        } 
+                                    onClick={ () => this.addShelf(shelf)
+                                        
                                     }
                                     >
                                         <ul className={`add-shelves-sidebar-shelf-button`}>
