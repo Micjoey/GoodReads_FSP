@@ -185,3 +185,7 @@
             .checkBook {
                 height: 40px;
             } 
+
+            .index-shelf-delete-button {
+                background-color: rgba(128, 128, 128, 0.577);
+            }
