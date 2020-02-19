@@ -82,7 +82,7 @@ class showBook extends React.Component {
                                 {/* empty space */}
                             </div>
                             <div className="show-book-activity-rating">
-                                <params className="show-book-my-activity-text">MY ACTIVITY</params>
+                                <params className="show-book-my-activity-text">MY BOOK ACTIVITY</params>
                             </div>
                             <div className="show-book-activity-shelf">
                                 <div className="show-book-unique-shelves">
