@@ -41,8 +41,9 @@ export const createShelf = shelf => dispatch => (
 )
 
 export const deleteShelf = shelfId => dispatch => (
-    ShelfAPIUtil.deleteShelf(shelfId).then((shelfId) => (
-        dispatch(removeShelf(shelfId))
-    ))
+    ShelfAPIUtil.deleteShelf(shelfId)
+    .then((shelfId) => (dispatch(removeShelf(shelfId)))
+    .then(() => dispatch(retrieveShelves()))
+    )
 )
 
