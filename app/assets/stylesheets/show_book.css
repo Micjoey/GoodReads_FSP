@@ -115,7 +115,8 @@
     }
 
     .show-book-activity-shelf {
-        display: block
+        display: block;
+        padding: 1vh 0vh
     }
 
         .show-book-all-shelves {
@@ -131,10 +132,12 @@
 
 .show-book-unique-shelves{
     display: flex;
+    margin: 1vh 0vh
 }
 
 .show-book-myactivity{
     display: flex;
+    margin: 1vh 0vh
 }
 
 .show-book-individual-review-id {
