@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
 import GreetingContainer from '../greeting/greeting_container';
 import SignUpFormContainer from '../session_form/signup_form_container';
@@ -50,9 +50,9 @@ class SearchBar extends React.Component {
         // let notfound = images.notFound;
         if (allBooks === 0) {
             // this.state.books.push({title: 'Not Found', photo: notfound})
-            this.setState({ books: [], bookSearch: '' })
+            this.setState({ books: this.props.books, bookSearch: '' })
         } else {
-            console.log('updating list of books', allBooks);
+            // console.log('updating list of books', allBooks);
             const setting = this.setState({ books: allBooks })
             Promise.all([setting])
         }
@@ -95,10 +95,13 @@ class SearchBar extends React.Component {
                         // {this.props.books.map((book, i) => (
                         <div key={`book-${i}`} className="search-bar-book-info">
                             <div className='dropdown-book'>
-                                <Link to={`/book/${book.id}`}>
+                                <Link to={`/book/${book.id}`} onClick={()=>window.location.reload()}>
                                     <div className="search-bar-covers">
                                         <img src={book.photo} className="search-bar-cover" />
-                                        <div className='search-bar-information-title'>{book.title}</div>
+                                        <div className='search-bar-box'>
+                                            <div className='search-bar-information-title'>{book.title}</div>
+                                            <div className='search-bar-book-information-author'>by: {book.author}</div>
+                                        </div>
                                     </div>
                                 </Link>
                             </div>
