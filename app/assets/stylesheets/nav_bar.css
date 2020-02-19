@@ -68,5 +68,9 @@
         width: 50%;
         cursor: pointer;
     }
-
-    
+    .nav-bar-search-bar-text {
+        width: 200px;
+        height: 25px;
+        background-color: #f2f2f2;
+        text-align: center;
+    }

@@ -18,6 +18,11 @@
      /* overflow: auto; */
  }
 
+ button {
+    border-radius: 28px;
+    background-color: rgba(237, 205, 164, 0.81);
+ }
+
 .background-color {
     background-color: #f4f2e980;
     /* Test Color */

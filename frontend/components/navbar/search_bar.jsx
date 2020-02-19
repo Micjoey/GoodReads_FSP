@@ -73,7 +73,7 @@ class SearchBar extends React.Component {
 
     render() {
         let allBooks = [];
-        if(this.state.bookSearch.length > 1) {
+        if(this.state.bookSearch.length > 0) {
            allBooks = this.state.books
         }
         return (
