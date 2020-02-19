@@ -81,7 +81,7 @@
         font-size: 40px;
         position: absolute;
         width: initial;
-
+        background-color: rgba(173, 216, 230, 0.2);
     }
 
     .flavor-text-box {

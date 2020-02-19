@@ -12,6 +12,7 @@ class IndexBook extends React.Component {
         }
         this.showBook = this.showBook.bind(this);
         this.filterBooks = this.filterBooks.bind(this)
+        this.updateState = this.updateState.bind(this)
     }
 
 
@@ -28,39 +29,37 @@ class IndexBook extends React.Component {
         )    
     }
 
-    componentDidUpdate(prevProps) {
-
-    }
-
-    filterBooks() {
-        // debugger
-        let allBooks = this.props.books.filter(indivBook => 
-            indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) || 
+    
+    updateState() {
+        let allBooks = this.props.books.filter(indivBook =>
+            indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
             indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
-            indivBook.description.toLowerCase().includes(this.state.bookSearch.toLowerCase())||
             indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
-            ).map(indivBook => indivBook)
+        ).map(indivBook => indivBook)
         // let notfound = images.notFound;
         if (allBooks === 0) {
             // this.state.books.push({title: 'Not Found', photo: notfound})
-            console.log('hit')
+            this.setState({ books: [], bookSearch: '' })
         } else {
             this.setState({ books: allBooks })
         }
+    }
 
+    filterBooks(text) {
+        this.setState({bookSearch: text}, () => this.updateState())
     }
    
     render() {
         if (!this.props.books) return null;
         let allBooks
-        (this.state.books.length === 0) ? allBooks = this.props.books : allBooks = this.state.books
+        (this.state.books.length < 1) ? allBooks = this.props.books : allBooks = this.state.books
         const books = (
                 <div className="index-books">
                     {allBooks.map((book, i) => (
                     // {this.props.books.map((book, i) => (
                         <div key={`book-${i}`} className="index-books-book-info">
                             <div className='dropdown-book'>
-                            <Link to={`/book/${i+1}`}>
+                            <Link to={`/book/${book.id}`}>
                                 <div className="index-book-covers">
                                     <img src={book.photo} className="index-book-cover"/>
                                 </div>
@@ -94,15 +93,14 @@ class IndexBook extends React.Component {
                                 className="index-book-search-bar-text"
                                 placeholder="Search for book"
                                 // value={this.state.currentHp}
-                                onChange={text => this.setState({
-                                    bookSearch: text.target.value
-                                })}
+                                onChange={text => this.filterBooks(
+                                    text.target.value
+                                )}
                             />
                         </form>   
-
                     </div>
                     <div className="index-book-information"> 
-                    {books}
+                        {books}
                     </div>
                 </div>
             )

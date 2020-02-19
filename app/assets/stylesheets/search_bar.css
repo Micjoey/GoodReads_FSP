@@ -1,0 +1,38 @@
+.nav-bar-search-book-dropdown{
+        background-color: rgba(189, 185, 185, 1);
+        display: none;
+        position: absolute;
+        top: inherit;
+        overflow: auto;
+        height: auto;
+        max-height: 140px;
+        padding: 15px;
+        width: 260px;
+        text-decoration: none;
+        color: black;
+        z-index: 4;
+    }
+
+
+
+    .search-bar-book-info {
+        margin: 3px;
+        font-size: 12px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .search-bar-cover {
+        height: 40px;
+    }
+    .search-bar-covers {
+        display: flex;
+    }
+
+    .search-bar-information-title {
+        display: flex;
+        align-items: center;
+        margin: 0em 1em;
+        text-decoration: none;
+        color:black;
+    }

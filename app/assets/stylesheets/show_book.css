@@ -7,7 +7,7 @@
     width: 70%;
     margin: auto;
     background-color: #e9e8e0;
-    min-width: 650px;
+    min-width: 100vh;
     margin-bottom: 50px;
 }
 
@@ -97,8 +97,8 @@
 
 
     .show-book-individual-review {
-        border-top: 1px solid #D8D8D8;
-        border-bottom: 1px solid #D8D8D8;
+        border-top: 2px solid gray;
+        border-bottom: 2px solid gray;
         padding-top: 3px;
         margin: 8px 0px;
         /* background-color: ; */
@@ -115,7 +115,8 @@
     }
 
     .show-book-activity-shelf {
-        display: block
+        display: block;
+        padding: 1vh 0vh
     }
 
         .show-book-all-shelves {
@@ -131,10 +132,12 @@
 
 .show-book-unique-shelves{
     display: flex;
+    margin: 1vh 0vh
 }
 
 .show-book-myactivity{
     display: flex;
+    margin: 1vh 0vh
 }
 
 .show-book-individual-review-id {
@@ -143,7 +146,7 @@
 
 .show-book-all-reviews-text {
     border-top: 1px solid black;
-    padding-top: 5px;
+    padding-top: 1em;
 }
 
 .leave-a-review {
