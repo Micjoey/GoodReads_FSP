@@ -12,6 +12,7 @@ class IndexBook extends React.Component {
         }
         this.showBook = this.showBook.bind(this);
         this.filterBooks = this.filterBooks.bind(this)
+        this.updateState = this.updateState.bind(this)
     }
 
 
@@ -31,29 +32,31 @@ class IndexBook extends React.Component {
     componentDidUpdate(prevProps) {
 
     }
-
-    filterBooks(text) {
-        // debugger
-        this.setState({bookSearch: text})
-        let allBooks = this.props.books.filter(indivBook => 
-            indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) || 
+    updateState() {
+        let allBooks = this.props.books.filter(indivBook =>
+            indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
             indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
             indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
-            ).map(indivBook => indivBook)
+        ).map(indivBook => indivBook)
         // let notfound = images.notFound;
         if (allBooks === 0) {
             // this.state.books.push({title: 'Not Found', photo: notfound})
-            this.setState({books: [], bookSearch:''})
+            this.setState({ books: [], bookSearch: '' })
         } else {
+            console.log('updating list of books', allBooks);
             this.setState({ books: allBooks })
         }
+    }
 
+    filterBooks(text) {
+        // debugger
+        this.setState({bookSearch: text}, () => this.updateState())
     }
    
     render() {
         if (!this.props.books) return null;
         let allBooks
-        (this.state.books.length === 0) ? allBooks = this.props.books : allBooks = this.state.books
+        (this.state.books.length < 1) ? allBooks = this.props.books : allBooks = this.state.books
         const books = (
                 <div className="index-books">
                     {allBooks.map((book, i) => (
@@ -102,7 +105,7 @@ class IndexBook extends React.Component {
 
                     </div>
                     <div className="index-book-information"> 
-                    {books}
+                        {books}
                     </div>
                 </div>
             )
