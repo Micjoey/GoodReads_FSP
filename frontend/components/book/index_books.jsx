@@ -29,9 +29,7 @@ class IndexBook extends React.Component {
         )    
     }
 
-    componentDidUpdate(prevProps) {
-
-    }
+    
     updateState() {
         let allBooks = this.props.books.filter(indivBook =>
             indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
@@ -43,13 +41,11 @@ class IndexBook extends React.Component {
             // this.state.books.push({title: 'Not Found', photo: notfound})
             this.setState({ books: [], bookSearch: '' })
         } else {
-            console.log('updating list of books', allBooks);
             this.setState({ books: allBooks })
         }
     }
 
     filterBooks(text) {
-        // debugger
         this.setState({bookSearch: text}, () => this.updateState())
     }
    
@@ -102,7 +98,6 @@ class IndexBook extends React.Component {
                                 )}
                             />
                         </form>   
-
                     </div>
                     <div className="index-book-information"> 
                         {books}
