@@ -56,7 +56,6 @@ class SearchBar extends React.Component {
             const setting = this.setState({ books: allBooks })
             Promise.all([setting])
         }
-        // debugger
         if (this.state.bookSearch.length > 0) {
             document.getElementsByClassName("nav-bar-search-book-dropdown")[0].style.display = 'block'
         } else {
@@ -66,7 +65,6 @@ class SearchBar extends React.Component {
     }
 
     updateState(text) {
-        // debugger
         this.setState({ bookSearch: text }, () => this.filterBooks())
     }
 

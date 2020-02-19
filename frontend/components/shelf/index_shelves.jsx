@@ -10,6 +10,7 @@ class IndexShelves extends React.Component {
         this.state = {
             shelf: '',
         }
+        this.handleDeleteShelf = this.handleDeleteShelf.bind(this)
     }
 
     componentDidMount() {
@@ -36,7 +37,6 @@ class IndexShelves extends React.Component {
 
     handleDeleteShelf(shelf) {
         this.props.deleteShelf(shelf.id)
-        debugger
          window.location.reload()
     }
 
