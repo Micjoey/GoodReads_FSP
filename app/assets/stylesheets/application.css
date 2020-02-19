@@ -21,6 +21,7 @@
  button {
     border-radius: 28px;
     background-color: rgba(237, 205, 164, 0.81);
+    font-weight: 600;
  }
 
 .background-color {
