@@ -32,12 +32,12 @@ class IndexBook extends React.Component {
 
     }
 
-    filterBooks() {
+    filterBooks(text) {
         // debugger
+        this.setState({bookSearch: text})
         let allBooks = this.props.books.filter(indivBook => 
             indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) || 
             indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
-            indivBook.description.toLowerCase().includes(this.state.bookSearch.toLowerCase())||
             indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
             ).map(indivBook => indivBook)
         // let notfound = images.notFound;
@@ -94,9 +94,9 @@ class IndexBook extends React.Component {
                                 className="index-book-search-bar-text"
                                 placeholder="Search for book"
                                 // value={this.state.currentHp}
-                                onChange={text => this.setState({
-                                    bookSearch: text.target.value
-                                })}
+                                onChange={text => this.filterBooks(
+                                    text.target.value
+                                )}
                             />
                         </form>   
 
