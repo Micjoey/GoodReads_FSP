@@ -42,7 +42,7 @@ class IndexShelves extends React.Component {
             <div className="index-shelves-main">
                 <div className="index-shelves-main-navbar">
                     <p className="index-shelves-main-navbar-myshelves">My Shelves</p>
-                    <h2 className='index-shelves-search'>Search Bar Placeholder</h2>
+                    {/* <h2 className='index-shelves-search'>Search Bar Placeholder</h2> */}
                 </div>
                 <div className="index-shelves-main-inner">
                     <div className="index-shelves-main-content">
