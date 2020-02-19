@@ -1,4 +1,37 @@
-.nav-bar-search-book-dropdown {
-    display: none;
-    display: block;
-}
+.nav-bar-search-book-dropdown{
+        background-color: rgba(128, 128, 128, 0.797);
+        display: none;
+        position: absolute;
+        top: inherit;
+        overflow: auto;
+        height: auto;
+        max-height: 140px;
+        padding: 10px;
+        width: 260px;
+        text-decoration: none;
+        color: black;
+    }
+
+
+
+    .search-bar-book-info {
+        margin: 3px;
+        font-size: 12px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .search-bar-cover {
+        height: 40px;
+    }
+    .search-bar-covers {
+        display: flex;
+    }
+
+    .search-bar-information-title {
+        display: flex;
+        align-items: center;
+        margin: 0em 1em;
+        text-decoration: none;
+        color:black;
+    }

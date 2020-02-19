@@ -17,14 +17,21 @@ class SearchBar extends React.Component {
             bookSearch: '',
             books: [],
         }
-        this.dropDownIdSwitch = this.dropDownIdSwitch.bind(this)
+        this.dropDownToggle = this.dropDownToggle.bind(this)
     }
 
     // If the search is longer than 0, then toggle dropdown and map over the books showing what is available
 
-    dropDownIdSwitch() {
-        document.getElementsByClassName("nav-bar-search-book-dropdown").classList.toggle("show");
+    dropDownToggle() {
+        if (allBooks.length > 0) {
+            document.getElementsByClassName("nav-bar-search-book-dropdown")[0].style.display = 'block'
+        } else {
+            document.getElementsByClassName("nav-bar-search-book-dropdown")[0].style.display = 'none'
+ 
+        }
     }
+
+    
 
 
     componentDidMount() {
@@ -47,6 +54,12 @@ class SearchBar extends React.Component {
         } else {
             console.log('updating list of books', allBooks);
             this.setState({ books: allBooks })
+        }
+
+        if (this.state.bookSearch.length > 0) {
+            document.getElementsByClassName("nav-bar-search-book-dropdown")[0].style.display = 'block'
+        } else {
+            document.getElementsByClassName("nav-bar-search-book-dropdown")[0].style.display = 'none'
         }
 
     }
@@ -79,12 +92,12 @@ class SearchBar extends React.Component {
                 <div className='nav-bar-search-book-dropdown'>
                     {allBooks.map((book, i) => (
                         // {this.props.books.map((book, i) => (
-                        <div key={`book-${i}`} className="nav-bars-book-info">
+                        <div key={`book-${i}`} className="search-bar-book-info">
                             <div className='dropdown-book'>
                                 <Link to={`/book/${i + 1}`}>
-                                    <div className="nav-bar-covers">
-                                        {/* <img src={book.photo} className="nav-bar-cover" /> */}
-                                        <div className='nav-bar-information-title'>{book.title}</div>
+                                    <div className="search-bar-covers">
+                                        <img src={book.photo} className="search-bar-cover" />
+                                        <div className='search-bar-information-title'>{book.title}</div>
                                     </div>
                                 </Link>
                             </div>

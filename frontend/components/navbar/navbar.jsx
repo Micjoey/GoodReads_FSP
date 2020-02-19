@@ -20,11 +20,7 @@ class RootFile extends React.Component {
         window.location.assign('/home');
     }
 
-    filterChange(text) {
 
-    }
-
-  
 
     personalGreeting() {
 
