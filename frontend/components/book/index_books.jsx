@@ -35,11 +35,15 @@ class IndexBook extends React.Component {
             indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
             indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
             indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
-        ).map(indivBook => indivBook)
-        // let notfound = images.notFound;
-        if (allBooks === 0) {
+        ).map(indivBook => indivBook);
+
+        let notfound = images.notFound;
+      
+        if (allBooks.length === 0) {
             // this.state.books.push({title: 'Not Found', photo: notfound})
-            this.setState({ books: [], bookSearch: '' })
+
+            // this.state.books.push()
+            this.setState({ books: [{ title: 'Not Found', photo: notfound }] , bookSearch: '' })
         } else {
             this.setState({ books: allBooks })
         }

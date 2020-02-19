@@ -47,14 +47,13 @@ class SearchBar extends React.Component {
             indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
             indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
         ).map(indivBook => indivBook)
-        // let notfound = images.notFound;
-        if (this.state.bookSearch < 1) {
-            // this.state.books.push({title: 'Not Found', photo: notfound})
+        if (this.state.bookSearch.length < 1) {
             this.setState({ books: this.props.books, bookSearch: '' })
         } else {
             // console.log('updating list of books', allBooks);
             const setting = this.setState({ books: allBooks })
             Promise.all([setting])
+            debugger
         }
         if (this.state.bookSearch.length > 0) {
             document.getElementsByClassName("nav-bar-search-book-dropdown")[0].style.display = 'block'
@@ -75,6 +74,7 @@ class SearchBar extends React.Component {
         if(this.state.bookSearch.length > 0) {
            allBooks = this.state.books
         }
+        
         return (
             <div>
                 <div className='nav-bar-search'>
@@ -113,4 +113,4 @@ class SearchBar extends React.Component {
 }
 
 
-export default SearchBar;
+export default (SearchBar);

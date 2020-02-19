@@ -55,7 +55,7 @@
         .show-book-information-rating, 
         .show-book-information-description {
             display: block;
-            padding-bottom: 4px;
+            padding-bottom: 6px;
         }
 
         .show-book-information-title {
