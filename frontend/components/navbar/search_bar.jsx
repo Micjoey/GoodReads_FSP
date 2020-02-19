@@ -94,7 +94,7 @@ class SearchBar extends React.Component {
                         // {this.props.books.map((book, i) => (
                         <div key={`book-${i}`} className="search-bar-book-info">
                             <div className='dropdown-book'>
-                                <Link to={`/book/${i + 1}`}>
+                                <Link to={`/book/${book.id}`}>
                                     <div className="search-bar-covers">
                                         <img src={book.photo} className="search-bar-cover" />
                                         <div className='search-bar-information-title'>{book.title}</div>

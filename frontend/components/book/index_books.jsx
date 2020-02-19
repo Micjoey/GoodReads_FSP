@@ -59,7 +59,7 @@ class IndexBook extends React.Component {
                     // {this.props.books.map((book, i) => (
                         <div key={`book-${i}`} className="index-books-book-info">
                             <div className='dropdown-book'>
-                            <Link to={`/book/${i+1}`}>
+                            <Link to={`/book/${book.id}`}>
                                 <div className="index-book-covers">
                                     <img src={book.photo} className="index-book-cover"/>
                                 </div>
