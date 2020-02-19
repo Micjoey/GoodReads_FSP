@@ -53,9 +53,10 @@ class SearchBar extends React.Component {
             this.setState({ books: [], bookSearch: '' })
         } else {
             console.log('updating list of books', allBooks);
-            this.setState({ books: allBooks })
+            const setting = this.setState({ books: allBooks })
+            Promise.all([setting])
         }
-
+        // debugger
         if (this.state.bookSearch.length > 0) {
             document.getElementsByClassName("nav-bar-search-book-dropdown")[0].style.display = 'block'
         } else {
@@ -82,7 +83,7 @@ class SearchBar extends React.Component {
                     <form className="nav-bar-search-bar" onSubmit={this.filterBooks}>
                         <input type="text"
                             className="nav-bar-search-bar-text"
-                            placeholder="Search for book"
+                            placeholder="Search For Book"
                             onChange={text => this.updateState(
                                 text.target.value
                             )}

@@ -91,7 +91,7 @@ class IndexBook extends React.Component {
                         <form className="index-book-search-bar" onSubmit={this.filterBooks}>
                             <input type="text"
                                 className="index-book-search-bar-text"
-                                placeholder="Search for book"
+                                placeholder="Filter Books"
                                 // value={this.state.currentHp}
                                 onChange={text => this.filterBooks(
                                     text.target.value
