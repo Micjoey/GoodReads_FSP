@@ -49,3 +49,15 @@ label div {
     border: 2px solid gray;
     height: 400px;
 }
+
+.show-book-individual-review-title,
+.show-book-individual-review-date,
+.show-book-individual-review-id,
+.show-book-individual-review-rating,
+.show-book-individual-review-body {
+    margin: 1% 0em;
+}
+
+.show-book-individual-review {
+    padding: 2px;
+}
