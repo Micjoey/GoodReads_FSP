@@ -34,6 +34,12 @@ class IndexShelves extends React.Component {
 
     }
 
+    handleDeleteShelf(shelf) {
+        this.props.deleteShelf(shelf.id)
+        debugger
+         window.location.reload()
+    }
+
     
     render(){
         if(!this.props.shelves) return null;
@@ -84,7 +90,7 @@ class IndexShelves extends React.Component {
                                                <div className="index-shelf-titles"> 
                                                     {shelf.bookshelf_title}    
                                                 <button className="index-shelf-delete-button" type="button" 
-                                                onClick={() => this.props.deleteShelf(shelf.id)} >Delete Shelf</button>
+                                                onClick={() => this.handleDeleteShelf(shelf)} >Delete Shelf</button>
                                                </div>
                                                <div className="index-shelf-book-information"> 
                                                    {shelf.books.map((book, i)=> (

@@ -48,7 +48,7 @@ class SearchBar extends React.Component {
             indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
         ).map(indivBook => indivBook)
         // let notfound = images.notFound;
-        if (allBooks === 0) {
+        if (this.state.bookSearch < 1) {
             // this.state.books.push({title: 'Not Found', photo: notfound})
             this.setState({ books: this.props.books, bookSearch: '' })
         } else {
@@ -95,7 +95,7 @@ class SearchBar extends React.Component {
                         // {this.props.books.map((book, i) => (
                         <div key={`book-${i}`} className="search-bar-book-info">
                             <div className='dropdown-book'>
-                                <Link to={`/book/${book.id}`} onClick={()=>window.location.reload()}>
+                                <Link to={`/book/${book.id}`}>
                                     <div className="search-bar-covers">
                                         <img src={book.photo} className="search-bar-cover" />
                                         <div className='search-bar-box'>
