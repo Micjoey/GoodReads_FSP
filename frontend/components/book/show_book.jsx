@@ -41,7 +41,7 @@ class showBook extends React.Component {
     
     render() {
         if (this.state.loaded) {
-
+            debugger
             const book = this.props.book
             const cover = (
                 <img className="show-book-cover" src={book.photo} />
@@ -140,7 +140,15 @@ class showBook extends React.Component {
                 </div>
             </div>
             )
-        } else {return (<div className="loading"> LOADING</div>)}
+        } else {
+            return (<div className="loading-page">
+                <div className="loading-sections">
+                    <div>
+                        <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                        <span className="sr-only">Loading...If longer than 1 min, please refresh the page.</span>
+                    </div>
+                </div>
+            </div>)}
     }
 }
 

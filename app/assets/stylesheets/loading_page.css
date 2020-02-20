@@ -3,4 +3,27 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 101px;
+    color: rgba(152, 126, 22, 0.632);
 }
+
+.loading-sections {
+    display: block;
+    align-items: center;
+    margin: 1em;
+}
+
+.loading-circle {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+
+.loading-text {
+    margin: 1em;
+    font-size: 30px;
+    /* color: black; */
+
+}
+
