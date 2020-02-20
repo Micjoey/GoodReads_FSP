@@ -9,6 +9,7 @@ class IndexShelves extends React.Component {
         super(props)
         this.state = {
             shelf: '',
+            change: false,
         }
         this.handleDeleteShelf = this.handleDeleteShelf.bind(this)
     }
@@ -29,8 +30,10 @@ class IndexShelves extends React.Component {
         let shelfName = shelf
         if (shelf !== 'All Books') {
         let newShelf = this.props.shelves.filter(indivShelf => shelfName === indivShelf.bookshelf_title)
+        // debugger
         this.setState({shelf: newShelf}) } else {
             this.setState({shelf: this.props.retrieveBooks()})
+            // this.setState({shelf: this.props.retrieveBooks()})
         }
 
     }
@@ -125,8 +128,8 @@ class IndexShelves extends React.Component {
                                                                <button key={i}className="add-shelves-sidebar-shelf-buttons"
                                                                    onClick={() => {
                                                                        this.props.removeBook(
-                                                                           { shelf_id: shelf.id, book_id: book.id, id: this.props.shelves[idx].shelfBooks[i].id }
-                                                                       )
+                                                                           { shelf_id: shelf.id, book_id: book.id, id: newShelf[idx].shelfBooks[i].id }
+                                                                       ).then(() => window.location.reload())
                                                                    }
                                                                    }
                                                                >Remove Book</button> 
