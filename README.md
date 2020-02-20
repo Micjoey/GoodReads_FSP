@@ -23,8 +23,6 @@ To start the project please use `npm install` and `bundle install` to install th
 --------
 Users are able to sign up an account, or use the demo login, and instantly start adding books to their pre-constructed shelves.
 
-![login_shelf](https://github.com/Micjoey/MyReads_FSP/blob/master/app/assets/videos/login_add_book_small.mov)
-
 --------
 Users are able to see all reviews for a book and who gave the review when looking at an individual book.
 
