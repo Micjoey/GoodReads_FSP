@@ -30,7 +30,7 @@ class RootFile extends React.Component {
                 <Link to="/home" className="myreads-title-logged-in" >MyReads</Link>
                 <Link to="/home" className="nav-bar-home-button" >Home</Link>
                 <Link to='/Shelf' className="nav-bar-mybooks-button">My Books</Link>
-                <SearchBarContainer />
+                {/* <SearchBarContainer /> */}
                 <div className="dropdown">
                     <img src={images.account_image} className="dropdown-image-icon" alt="" />
                     <div className="dropdown-content">
