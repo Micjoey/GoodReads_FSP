@@ -21,7 +21,6 @@ class GenerateTables < ActiveRecord::Migration[5.2]
       t.integer "book_id", null: false
       t.integer "rating", null: false
       t.text "body"
-      t.date "date_reviewed", null: false
     end
 
     create_table "shelves", force: :cascade do |t|

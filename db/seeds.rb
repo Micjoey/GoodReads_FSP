@@ -458,7 +458,6 @@ on_shelf_books14 = OnShelfBook.create(shelf_id: shelf1.id, book_id: book14.id)
         book_id: rand(1..34), 
         rating: rand(1..5),
         body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-        # date_reviewed: Faker::Date.between(from: 1.year.ago, to: Date.today)
     )
     i += 1
     end

@@ -17,7 +17,7 @@ class IndexBook extends React.Component {
 
 
     componentDidMount() {
-       const books = this.props.retrieveBooks()
+        const books = this.props.retrieveBooks()
         Promise.all([books]).then(() => this.setState({ loaded: true }))
     }
 
