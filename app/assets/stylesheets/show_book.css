@@ -98,7 +98,7 @@
 
     .show-book-individual-review {
         border-top: 2px solid gray;
-        border-bottom: 2px solid gray;
+        /* border-bottom: 2px solid gray; */
         padding-top: 3px;
         margin: 8px 0px;
         /* background-color: ; */

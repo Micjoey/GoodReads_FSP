@@ -98,8 +98,8 @@ class showBook extends React.Component {
                                 </div>
                                 <div className="show-book-myactivity">
                                     {(book.date_read) ?
-                                    <div>Read: Read</div> :
-                                    <div>Read: Hasn't Read Yet</div>}
+                                    <div>Book: Read</div> :
+                                    <div>Book: Hasn't Read Yet</div>}
                                 </div>
                                 <button className="show-book-myactivity" onClick={() => this.hasRead()}>
                                     {(!book.date_read) ?

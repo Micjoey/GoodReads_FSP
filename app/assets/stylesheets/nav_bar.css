@@ -34,7 +34,7 @@
     .nav-bar-home-button {
         text-decoration: none;
         color: black;
-        min-width: 20px;
+        min-width: 90px;
         flex-flow: nowrap;
         font-size: 20px;
     }
@@ -44,6 +44,7 @@
         flex-flow: nowrap;
         margin: 5px 0px;
         font-size: 20px;
+        min-width: 90px;
     }
     .nav-bar-dropdown-mybooks-button {
         text-decoration: none;
