@@ -23,14 +23,13 @@ class RootFile extends React.Component {
 
 
     personalGreeting() {
-
         return(
         <div className="header-group">
             <div className="header-group-logged-in">
                 <Link to="/home" className="myreads-title-logged-in" >MyReads</Link>
                 <Link to="/home" className="nav-bar-home-button" >Home</Link>
                 <Link to='/Shelf' className="nav-bar-mybooks-button">My Books</Link>
-                <SearchBarContainer />
+                <SearchBarContainer allBooks={this.props.retrieveBooks()}/>
                 <div className="dropdown">
                     <img src={images.account_image} className="dropdown-image-icon" alt="" />
                     <div className="dropdown-content">

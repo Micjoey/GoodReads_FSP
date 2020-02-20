@@ -5,11 +5,9 @@ import { retrieveBooks, retrieveBook } from '../../actions/book_actions'
 import { withRouter } from 'react-router';
 
 
-const mapStateToProps = ({ entities: { books } }) => {
-    // const bookId = state.entities.books[ownProps.match.params.bookId]
+const mapStateToProps = ({ entities: { books },  }) => {
     return {
         books: Object.values(books),
-        // bookId: bookId
     };
 };
 

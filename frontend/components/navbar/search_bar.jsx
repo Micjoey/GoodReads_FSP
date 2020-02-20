@@ -12,9 +12,11 @@ class SearchBar extends React.Component {
             bookSearch: '',
             books: [],
             loaded: false,
+            allBooks: this.props.allBooks,
         }
         this.dropDownToggle = this.dropDownToggle.bind(this)
         this.clearState = this.clearState.bind(this)
+        // this.resetAllBooks = this.resetAllBooks.bind(this)
     }
 
     // If the search is longer than 0, then toggle dropdown and map over the books showing what is available
@@ -32,25 +34,26 @@ class SearchBar extends React.Component {
 
 
     componentDidMount() {
-       const bookMount = this.props.retrieveBooks()
-        Promise.all([bookMount]).then(() => this.setState({ loaded: true }))
+       this.props.retrieveBooks()
     }
 
-   
+
 
 
 
 
     filterBooks() {
         let bookSearch = this.state.bookSearch.toLowerCase()
-        let allBooks = this.props.books.filter(indivBook =>
+        const booksCopy = this.props.books.map(indivBook => indivBook)
+        let newBooks = booksCopy.map(indivBook => indivBook).filter(indivBook =>
             indivBook.title.toLowerCase().includes(bookSearch) ||
             indivBook.author.toLowerCase().includes(bookSearch) ||
             indivBook.genre.toLowerCase().includes(bookSearch)
-        ).map(indivBook => indivBook)
-        if (allBooks.length === 0 || bookSearch.length === 0) {
-            this.setState({ books: []})
-            this.setState({ books: allBooks })
+        )
+        if (newBooks.length === 0 || bookSearch.length === 0) {
+            this.setState({ books: [] })
+        } else {
+            this.setState({books: newBooks})
         }
         
         if (this.state.bookSearch.length > 0) {
