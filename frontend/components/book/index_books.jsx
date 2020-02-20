@@ -106,7 +106,15 @@ class IndexBook extends React.Component {
                 </div>
             )
         } else {
-            return (<div>Loading</div>)
+            return (<div className="loading-page">
+				<img src={splashImg} alt="background" className="splash-image" />
+				<div className="loading-sections">
+					<div>
+						<i id="loading-die" className="fas fa-dice-six fa-spin"></i>
+					</div>
+					<div className="loading-message">Loading - If longer than 1 min, please refresh the page.</div>
+				</div>
+			</div>)
         }
         
     }

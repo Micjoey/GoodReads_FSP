@@ -51,7 +51,14 @@ class AddShelf extends React.Component {
                 </div>
             </div>
         )} else {
-            return (<div>Loading</div>)
+            return (<div className="loading-page">
+				<div className="loading-sections">
+					<div>
+                        <i class="fa fa-spinner" aria-hidden="true"></i>
+					</div>
+					<div className="loading-message">Loading - If longer than 1 min, please refresh the page.</div>
+				</div>
+			</div>)
         }
     }
 }
