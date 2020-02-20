@@ -40,9 +40,6 @@ class IndexBook extends React.Component {
         let notfound = images.notFound;
       
         if (allBooks.length === 0) {
-            // this.state.books.push({title: 'Not Found', photo: notfound})
-
-            // this.state.books.push()
             this.setState({ books: [{ title: 'Not Found', photo: notfound }] , bookSearch: '' })
         } else {
             this.setState({ books: allBooks })

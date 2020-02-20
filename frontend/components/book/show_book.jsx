@@ -22,6 +22,7 @@ class showBook extends React.Component {
         Promise.all([bookMount, usersMount]).then( () => this.setState({loaded:true}))
     }
 
+
     handleDelete(reviewID) {
         deleteReview(reviewID)
         this.props.retrieveBook(this.props.book.id)
@@ -40,6 +41,7 @@ class showBook extends React.Component {
     
     render() {
         if (this.state.loaded) {
+
             const book = this.props.book
             const cover = (
                 <img className="show-book-cover" src={book.photo} />
