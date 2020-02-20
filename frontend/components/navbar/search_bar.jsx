@@ -32,8 +32,8 @@ class SearchBar extends React.Component {
 
 
     componentDidMount() {
-    //    const bookMount = this.props.retrieveBooks()
-        // Promise.all([bookMount]).then(() => this.setState({ loaded: true }))
+       const bookMount = this.props.retrieveBooks()
+        Promise.all([bookMount]).then(() => this.setState({ loaded: true }))
     }
 
    
@@ -42,7 +42,6 @@ class SearchBar extends React.Component {
 
 
     filterBooks() {
-        this.props.retrieveBooks()
         let bookSearch = this.state.bookSearch.toLowerCase()
         let allBooks = this.props.books.filter(indivBook =>
             indivBook.title.toLowerCase().includes(bookSearch) ||
