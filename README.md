@@ -26,9 +26,13 @@ Users are able to sign up an account, or use the demo login, and instantly start
 ![login_shelf]()
 
 --------
-Users are able to see all reviews for a book and who gave the review when looking at an individual book. 
+Users are able to see all reviews for a book and who gave the review when looking at an individual book.
+
+![all_reviews](https://github.com/Micjoey/MyReads_FSP/blob/master/app/assets/images/All%20Reviews.png)
 
 From this view you are also able to see what shelves the book is on and add it to any shelf that you wish, in addition you can create a new shelf from that view. 
+
+![your_review](https://github.com/Micjoey/MyReads_FSP/blob/master/app/assets/images/personal_review.png)
 
 
 --------
