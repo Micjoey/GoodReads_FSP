@@ -41,8 +41,8 @@ From the show book page you are also able to delete any comments that you have m
 
 --------
 The My Books tab on the nav bar will take you to your shelf view which will allow a user to see all shelves that they have, and all books that exist on that shelf. 
-![shelf_filtering](https://github.com/Micjoey/MyReads_FSP/blob/master/app/assets/images/personal_review.png)
-![your_review](https://github.com/Micjoey/MyReads_FSP/blob/master/app/assets/images/personal_review.png)
+![your_review](https://github.com/Micjoey/MyReads_FSP/blob/master/app/assets/images/myBooks.png)
+![shelf_filtering](https://github.com/Micjoey/MyReads_FSP/blob/master/app/assets/images/filteringmybooks.png)
 
 
 
