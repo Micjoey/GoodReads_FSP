@@ -20,14 +20,17 @@ class AddShelf extends React.Component {
 
 
     addShelf(shelf, shelfName, idx) {
+        debugger
         this.props.addToShelf(
             { shelf_id: shelf.id, book_id: this.props.book.id }
         )
     }
-
-
+    
+    
     render() {
         if (this.state.loaded) {
+            // Book has unique shelves, if i can check if its on the shelf then I can grab by id and toggle
+            
             return (
             <div className="add-shelf">
                 <button className="add-shelf-title">Add To A Shelf</button>

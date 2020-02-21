@@ -1,0 +1,30 @@
+.rating {
+  line-height: 1;
+  display: inline-block;
+  &-item {
+    display: inline;
+    font-size: 0;
+    &::before {
+      font-size: 18px;
+      content: "★";
+      color: lightgray;
+    }
+  }
+  &-input {
+    position: absolute;
+    visibility: hidden;
+  }
+}
+.rating:hover .rating-item::before {
+  color: gold;
+}
+.rating-item:hover ~ .rating-item::before {
+  color: lightgray;
+}
+.rating-item-selected::before {
+  color: gold;
+}
+
+.noHover{
+    pointer-events: none;
+}

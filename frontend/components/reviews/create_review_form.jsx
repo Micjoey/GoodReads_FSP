@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import { formatDate } from '../../util/date_util';
+import { Rating } from '../stars/star';
+
+
 
 
 
@@ -9,7 +11,7 @@ class AddReview extends React.Component {
         super(props);
         this.state = {
             title: '',
-            rating: 3,
+            rating: 1,
             body: '',
             user_id: this.props.user_id,
             book_id: this.props.book_id
@@ -32,13 +34,19 @@ class AddReview extends React.Component {
         this.props.createReview(review).then(() => this.props.retrieveBook(this.state.book_id))
         this.setState({
             title: '',
-            rating: 3,
+            rating: 1,
             body: '',
         })
     }
 
+    range(min, max) {
+        return Array(max - min + 1).fill().map((_, i) => min + i)
+    }
+
 
     render() {
+        
+        
         return (
             <div className="review-create-container">
                 <form onSubmit={this.handleSubmit} className="review-up-box">
@@ -51,7 +59,7 @@ class AddReview extends React.Component {
                                 onChange={this.update('title')}
                             />
                         </label>
-                        <label className="rating-field">
+                        {/* <label className="rating-field">
                              <div>Rating(1 through 5):</div>
                             <input type="range"
                                 min='1'
@@ -61,7 +69,13 @@ class AddReview extends React.Component {
                                 onChange={this.update('rating')}
                             />
                             <output name='ratingOutput' id='ratingOutput'>{this.state.rating}</output>
-                        </label>
+                        </label> */}
+                        <Rating min={1} max={5}
+                            value={this.state.rating}
+                            onChange={(rating) => {
+                                this.setState({ rating })
+                            }} />
+                        {/* <output name='ratingOutput' id='ratingOutput'>{this.state.rating}</output> */}
                         <label className="body-field">
                              <div>Body:</div>
                             <textarea type="text"
