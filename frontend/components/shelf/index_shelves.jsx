@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom';
 import { formatDate, formatDateWithDay } from '../../util/date_util';
 import ShelfFormContainer from './shelf_form_container';
+import { IndivRating } from '../stars/star';
 
 
 class IndexShelves extends React.Component {
@@ -112,7 +113,10 @@ class IndexShelves extends React.Component {
                                                             </div>
                                                             <div className="index-shelf-book-author">{book.author}</div>
                                                             <div className="index-shelf-book-rating-container">
-                                                                <div className="index-shelf-book-avg-rating">{book.average_rating}</div>
+                                                                {/* <div className="index-shelf-book-avg-rating">{book.average_rating}</div> */}
+                                                               <IndivRating min={1} max={5}
+                                                                   value={book.average_rating}
+                                                               />
                                                            </div>
                                                            {/* <div className="index-shelf-book-rating-container">
                                                                 <div className="index-shelf-book-user-rating">{book.rating}</div>
