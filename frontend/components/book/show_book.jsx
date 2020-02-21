@@ -4,7 +4,7 @@ import { formatDateWithDay } from '../../util/date_util';
 import AddShelfContainer from './add_shelf_container';
 import CreateReviewContainer from '../reviews/create_review_form_container';
 import { deleteReview } from '../../actions/review_actions';
-import { Rating } from '../stars/star';
+import { Rating, IndivRating } from '../stars/star';
 
 
 
@@ -128,10 +128,9 @@ class showBook extends React.Component {
                                             <div className="show-book-individual-review-id">User: {allUsers[review.user_id].username}</div>
                                             <div className="show-book-individual-review-rating">User Rating: {review.rating}</div>
                                             <div className="show-book-individual-review-rating">User Rating: 
-                                                <Rating min={1} max={5}
+                                                <IndivRating min={1} max={5}
                                                     value={review.rating}
-                                                    disabled={true}
-                                                    />
+                                                />
                                             </div>
                                             <div className="show-book-individual-review-body">Review: {review.body}</div>
                                             <div>{(review.user_id === this.props.userId) ? <button 
