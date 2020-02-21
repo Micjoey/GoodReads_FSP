@@ -15,18 +15,18 @@
     visibility: hidden;
   }
 }
-// .rating:hover .rating-item::before {
-//   color: gold;
-// }
-// .rating-item:hover ~ .rating-item::before {
-//   color: lightgray;
-// }
+.rating:hover .rating-item::before {
+  color: gold;
+}
+.rating-item:hover ~ .rating-item::before {
+  color: lightgray;
+}
 .rating-item-selected::before {
   color: gold;
 }
 
 // ---------------------- Show Book All Ratings --------------
-.rating-y {
+.rating-indiv {
   line-height: 1;
   display: inline-block;
   &-item {
@@ -48,11 +48,11 @@
   color: gold;
 }
 
-// .rating:hover .rating-item::before {
+// .rating-y:hover .rating-y-item::before {
 //   color: gold;
 // }
-// .rating-item:hover ~ .rating-item::before {
-//   color: lightgray;
+// .rating-y-item:hover ~ .rating-y-item::before {
+//   color: red;
 // }
 
 

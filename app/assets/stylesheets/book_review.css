@@ -59,6 +59,10 @@ label div {
     margin: 1% 0em;
 }
 
+.show-book-individual-review-rating {
+    display: flex;
+}
+
 .show-book-individual-review {
     padding: 2px;
 }

@@ -41,7 +41,7 @@ const IndivRange = (min, max) => Array(max - min + 1).fill().map((_, i) => min +
 
 const IndivRatingItem = ({ checked, colored, value }) => (
     <label
-        className={`rating-item ${colored ? 'rating-item-selected-t' : ''}`} >
+        className={`rating-indiv-item ${colored ? 'rating-item-selected-t' : ''}`} >
         <input
             checked={checked}
             className='rating-input'
@@ -60,7 +60,6 @@ export const IndivRating = ({min, max, value}) => {
                     colored={value >= item}
                     checked={value === item}
                     value={item} 
-                    // readOnly
 />
             ))
             }
