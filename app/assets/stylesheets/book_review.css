@@ -11,7 +11,8 @@
 .rating-field {
     display: flex;
     align-items: center;
-    margin-right: 4px;
+    margin: 4px;
+
 }
 
 .body-field {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { editReview } from '../../actions/review_actions';
+
 
 
 const Range = (min, max) => Array(max - min + 1).fill().map((_, i) => min + i)
@@ -14,8 +14,8 @@ const RatingItem = ({ checked, colored, onChange, value }) => (
                     onChange(value)
                 }}
                 type="radio"
-                value={value} 
-                id='review-rating'/>
+                value={value}
+                />
     </label>
 )
 
@@ -41,31 +41,26 @@ const IndivRange = (min, max) => Array(max - min + 1).fill().map((_, i) => min +
 
 const IndivRatingItem = ({ checked, colored, value }) => (
     <label
-        className={`rating-item ${colored ? 'rating-item-selected' : ''}`} >
+        className={`rating-item ${colored ? 'rating-item-selected-t' : ''}`} >
         <input
             checked={checked}
             className='rating-input'
-            // onChange={(e) => {
-            //     onChange(value)
-            // }}
             type="radio"
             value={value}
-            id='review-rating' />
+            readOnly
+            />
     </label>
 )
 
 export const IndivRating = ({min, max, value}) => {
-    if (document.getElementById("review-rating")) {
-        const allReviews = document.getElementsByClassName("rating-item-selected")
-        // debugger
-    }
     return (
-        <div className='rating' >
+        <div className='rating-y' >
             {IndivRange(min, max).map(item => (
                 <IndivRatingItem key={item}
                     colored={value >= item}
                     checked={value === item}
                     value={item} 
+                    // readOnly
 />
             ))
             }
