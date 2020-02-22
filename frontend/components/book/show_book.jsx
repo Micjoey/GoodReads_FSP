@@ -126,7 +126,7 @@ class showBook extends React.Component {
                                             <div className="show-book-individual-review-title">Review Title: {review.title}</div>
                                             <div className="show-book-individual-review-date">Date Reviewed: {formatDateWithDay(review.created_at)}</div>
                                             <div className="show-book-individual-review-id">User: {allUsers[review.user_id].username}</div>
-                                            <div className="show-book-individual-review-rating">User Rating: {review.rating}</div>
+                                            {/* <div className="show-book-individual-review-rating">User Rating: {review.rating}</div> */}
                                             <div className="show-book-individual-review-rating">User Rating: 
                                                 <IndivRating min={1} max={5}
                                                     value={review.rating}
