@@ -52,7 +52,12 @@ class showBook extends React.Component {
                 <div className="show-book-information">
                         <div className='show-book-information-title'>{book.title}</div>
                         <div className='show-book-information-author'>by: {book.author}</div>
-                        <div className='show-book-information-rating'>Avg. Rating: {book.average_rating}</div>
+                    <div className='show-book-information-rating '>Avg. Rating: {book.average_rating} 
+                            <IndivRating min={1} max={5}
+                                value={book.average_rating}
+                            />
+                            
+                        </div>
                         <div className='show-book-information-genre'>Genre: {book.genre}</div>
                         <div className='show-book-information-description'>Description: {book.description} </div>
                 </div>
