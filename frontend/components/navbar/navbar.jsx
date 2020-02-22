@@ -26,7 +26,7 @@ class RootFile extends React.Component {
         return(
         <div className="header-group">
             <div className="header-group-logged-in">
-                <Link to="/home" className="myreads-title-logged-in" >MyReads</Link>
+                <Link to="/home" className="FunReads-title-logged-in" >FunReads</Link>
                 <Link to="/home" className="nav-bar-home-button" >Home</Link>
                 <Link to='/Shelf' className="nav-bar-mybooks-button">My Books</Link>
                 <SearchBarContainer allBooks={this.props.retrieveBooks()}/>

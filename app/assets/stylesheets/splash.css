@@ -71,7 +71,7 @@
         orientation: landscape;
         background-repeat: repeat;
         object-fit: cover;
-        background-color: rosybrown;
+        /* background-color: rosybrown; */
     }
 
     .flavor-text {
@@ -81,15 +81,13 @@
         font-size: 40px;
         position: absolute;
         width: initial;
-        background-color: rgba(173, 216, 230, 0.2);
+        /* background-color: rgba(173, 216, 230, 0.2); */
     }
 
     .flavor-text-box {
         float: left;
-        /* margin: 15% 15%; */
         z-index: 2;
         font-size: 40px;
-        /* background-color: red; */
         position: absolute;
         top: 150px;
         left: 15%;
@@ -106,7 +104,7 @@
 
         .flavor-text-box {
             /* min-width: 400px; */
-             height: auto;
+            height: auto;
             width: 60%;
         }
     }
