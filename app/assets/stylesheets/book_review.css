@@ -15,6 +15,10 @@
 
 }
 
+.rating-star {
+    margin-right: 5px;
+}
+
 .body-field {
     margin: 0px;
     width: 260px;
