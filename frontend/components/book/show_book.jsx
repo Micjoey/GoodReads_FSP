@@ -4,7 +4,7 @@ import { formatDateWithDay } from '../../util/date_util';
 import AddShelfContainer from './add_shelf_container';
 import CreateReviewContainer from '../reviews/create_review_form_container';
 import { deleteReview } from '../../actions/review_actions';
-import { Rating, IndivRating } from '../stars/star';
+import { IndivRating } from '../stars/star';
 
 
 
