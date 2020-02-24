@@ -20,7 +20,6 @@ class AddShelf extends React.Component {
 
 
     addShelf(shelf, shelfName, idx) {
-        debugger
         this.props.addToShelf(
             { shelf_id: shelf.id, book_id: this.props.book.id }
         )

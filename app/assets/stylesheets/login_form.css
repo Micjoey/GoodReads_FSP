@@ -3,8 +3,9 @@
     align-items: center;
     background-color: #f4f2e9;
     height: auto;
-    display: flex;
+    display: inline-flex;
     flex-direction: row-reverse;
+    /* position: fixed; */
 }
 
 
@@ -116,6 +117,12 @@
 }
 .password-field {
     margin-right: 10px;
+}
+
+.error-message {
+    margin: 2px;
+    color: red;
+    font-weight: bold;
 }
 
 .login-fields {

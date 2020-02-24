@@ -14,7 +14,9 @@ class Greeting extends React.Component {
       <div className="navbar-view-to-login-or-signup">
         <div className="navbar-view-to-login">
             <Link to="/" className="FunReads-title">FunReads</Link>
-            <LoginFormContainer/>
+            <div className='nav-bar-login-form-cont'>
+              <LoginFormContainer/>
+            </div>
         </div>
     </div>
     )
