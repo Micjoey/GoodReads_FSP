@@ -38,10 +38,16 @@ From the show book page you are also able to delete any comments that you have m
 
 
 --------
-The My Books tab on the nav bar will take you to your shelf view which will allow a user to see all shelves that they have, and all books that exist on that shelf. 
-
-![your_review](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/images/myBooks.png)
+The `My Books` tab on the nav bar will take you to your shelf view which will allow a user to see all shelves that they have, and all books that exist on that shelf. 
 ![shelf_filtering](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/images/filteringmybooks.png)
+![your_review](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/images/myBooks.png)
+
+--------
+
+Most of the components use Promise's to make sure that the asynchronous calls are being loaded at the same time, showing a loading screen if they are not. 
+![Usage of Promise](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/images/promise.png)
+![Loading Code](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/images/loading%20code.png)
+
 
 
 
