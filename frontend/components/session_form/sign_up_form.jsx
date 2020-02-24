@@ -98,9 +98,7 @@ class SessionFormSignUp extends React.Component {
                   onChange={this.update('username')}
                 />
               </label>
-            <div className='error-message'>
-              {this.props.errors.length > 0 ? this.renderUsernameError() : null}
-            </div>
+            {this.props.errors.length > 0 ? this.renderUsernameError() : null}
             <label className="email-field">
                 <input type="email"
                   placeholder="Email"
@@ -108,9 +106,7 @@ class SessionFormSignUp extends React.Component {
                   onChange={this.update('email')}
                 />
             </label> 
-            <div className='error-message'>
               {this.props.errors.length > 0 ? this.renderEmailError() : null}
-            </div>
             <label className="password-field">
                 <input type="password"
                   placeholder="Password"
@@ -118,9 +114,7 @@ class SessionFormSignUp extends React.Component {
                   onChange={this.update('password')}
                 />
               </label>
-              <div className='error-message'>
-                {this.props.errors.length > 0 ? this.renderPasswordError() : null}
-              </div>
+              {this.props.errors.length > 0 ? this.renderPasswordError() : null}
               <br/>
               <br/>
               <input className="session-submit" type="submit" value={this.props.formType} />

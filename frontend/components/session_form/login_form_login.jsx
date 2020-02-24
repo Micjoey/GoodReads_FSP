@@ -34,7 +34,7 @@ class SessionFormLogin extends React.Component {
   }
 
   renderErrors() {
-    if (this.props.errors[0].includes("Invalid")) {
+    if ((this.props.errors[0].includes("Invalid")) || (this.props.errors[0].includes("Woops"))) {
     const errors = (
     <ul>
       {this.props.errors.map((error, i) => (
