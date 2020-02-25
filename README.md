@@ -22,9 +22,37 @@ To start the project please use `npm install` and `bundle install` to install th
    * Shelves
 --------
 Users are able to sign up an account, or use the demo login, and instantly start adding books to their pre-constructed shelves.
+Signing up a user:
 
-Sign in error messages:
-![login_error](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/error-message.gif)
+```renderUsernameError() {
+    if (!this.props.errors[0].includes("Invalid")) {
+      const usernameError = this.props.errors.filter(error => error.includes("Username"))
+      const errors = (
+        <ul className="login-errors-box">
+          {usernameError.map((error, i) => (
+            <li className="login-errors" key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>)
+      return errors
+    }
+  }```
+
+```<label className="username-field">
+                <input type="text"
+                  placeholder="Username"
+                  // placeholder={this.props.errors.length > 0 ? "Username can't be blank" : 'Username'}
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                />
+              </label>
+   {this.props.errors.length > 0 ? this.renderUsernameError() : null}```
+   
+![signing_up](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/sign%20up.gif)
+
+
+Sign in error messages:  
 ```def create
     @user = User.find_by_credentials(
       params[:user][:username],
@@ -39,8 +67,7 @@ Sign in error messages:
     end
   end```
 
-Signing up a user:
-![signing_up](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/sign%20up.gif)
+![login_error](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/error-message.gif)
 
 Signing Up Error Message:
 
