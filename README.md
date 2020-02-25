@@ -45,7 +45,7 @@ Signing up a user:
 Signing Up Error Message:
 
 Demo Login:
-![demo_login]()
+![demo_login](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/demo%20login.gif)
 ```handleDemoLogin() {
       this.props.processForm({
         username: "Lord Fitzgerald",
