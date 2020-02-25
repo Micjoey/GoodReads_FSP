@@ -50,7 +50,8 @@ Signing up a user:
                   onChange={this.update('username')}
                 />
               </label>
-   {this.props.errors.length > 0 ? this.renderUsernameError() : null}```
+   {this.props.errors.length > 0 ? this.renderUsernameError() : null}
+   ```
 
 Video:
 
