@@ -21,6 +21,8 @@ To start the project please use `npm install` and `bundle install` to install th
    * Reviews
    * Shelves
 --------
+
+#### User Authorization
 Users are able to sign up an account, or use the demo login, and instantly start adding books to their pre-constructed shelves.
 
 Signing up a user:
@@ -50,10 +52,15 @@ Signing up a user:
               </label>
    {this.props.errors.length > 0 ? this.renderUsernameError() : null}```
 
+Video:
+
 ![signing_up](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/sign%20up.gif)
 
 
-Sign in error messages:  
+Sign in error messages: 
+
+Code:
+
 ```def create
     @user = User.find_by_credentials(
       params[:user][:username],
@@ -66,23 +73,44 @@ Sign in error messages:
     else
       render json: ["Woops! That is wrong, try again!"], status: 401
     end
-  end```
+  end 
+```
+
+Video:
 
 ![login_error](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/error-message.gif)
 
 Signing Up Error Message:
 
 Demo Login:
-![demo_login](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/demo%20login.gif)
+
+Code:
 ```handleDemoLogin() {
       this.props.processForm({
         username: "Lord Fitzgerald",
         password: "password"
       }).then(() => this.props.history.push('/'))
-  }```
+  }
+```
 
+Video:
+
+![demo_login](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/demo%20login.gif)
 --------
+
+#### Books
+--------
+There is both a filtering option when on the index page, and a search option always available.
+
+
+
 Users are able to see all reviews for a book and who gave the review when looking at an individual book.
+Code:
+```
+
+```
+
+Video:
 
 ![all_reviews](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/images/All%20Reviews.png)
 
