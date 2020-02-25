@@ -30,7 +30,6 @@ class SessionFormLogin extends React.Component {
         username: "Lord Fitzgerald",
         password: "password"
       }).then(() => this.props.history.push('/'))
-     
   }
 
   renderErrors() {

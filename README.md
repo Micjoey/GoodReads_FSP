@@ -23,6 +23,36 @@ To start the project please use `npm install` and `bundle install` to install th
 --------
 Users are able to sign up an account, or use the demo login, and instantly start adding books to their pre-constructed shelves.
 
+Sign in error messages:
+![login_error](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/error-message.gif)
+```def create
+    @user = User.find_by_credentials(
+      params[:user][:username],
+      params[:user][:password]
+    )
+
+    if @user
+      login(@user)
+      render "api/users/show"
+    else
+      render json: ["Woops! That is wrong, try again!"], status: 401
+    end
+  end```
+
+Signing up a user:
+![signing_up](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/sign%20up.gif)
+
+Signing Up Error Message:
+
+Demo Login:
+![demo_login]()
+```handleDemoLogin() {
+      this.props.processForm({
+        username: "Lord Fitzgerald",
+        password: "password"
+      }).then(() => this.props.history.push('/'))
+  }```
+
 --------
 Users are able to see all reviews for a book and who gave the review when looking at an individual book.
 
