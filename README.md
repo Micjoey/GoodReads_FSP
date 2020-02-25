@@ -22,6 +22,7 @@ To start the project please use `npm install` and `bundle install` to install th
    * Shelves
 --------
 Users are able to sign up an account, or use the demo login, and instantly start adding books to their pre-constructed shelves.
+
 Signing up a user:
 
 ```renderUsernameError() {
@@ -37,9 +38,9 @@ Signing up a user:
         </ul>)
       return errors
     }
-  }```
+  }
 
-```<label className="username-field">
+<label className="username-field">
                 <input type="text"
                   placeholder="Username"
                   // placeholder={this.props.errors.length > 0 ? "Username can't be blank" : 'Username'}
@@ -48,7 +49,7 @@ Signing up a user:
                 />
               </label>
    {this.props.errors.length > 0 ? this.renderUsernameError() : null}```
-   
+
 ![signing_up](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/sign%20up.gif)
 
 
