@@ -178,6 +178,11 @@
                 background-color: lightgray;
                 font-weight: bold;
             }
+            .index-shelves-sidebar-shelf-buttons:active {
+                background-color: rgba(5, 84, 5, 0.755);
+                border-color: none;
+                font-weight: bold;
+            }
 
             .shelf-create-submit:hover {
                 background-color: lightgray;
