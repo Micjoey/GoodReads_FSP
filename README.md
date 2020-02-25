@@ -102,38 +102,43 @@ Video:
 --------
 There is both a filtering option when on the index page, and a search option always available.
 
+You can see all of the books and a description when you are on the home page.
+
+Video:
+
+![demo_login](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/index%20books.gif)
 
 
 Users are able to see all reviews for a book and who gave the review when looking at an individual book.
 Code:
 
 ```
-   <div className="show-book-reviews">
-                            <div className="show-book-all-reviews">
-                                <div className="show-book-all-reviews-text">ALL REVIEWS</div>
-                                    {book.reviews.sort(function(b,a) {
-                                        return (new Date(a.created_at)) - (new Date(b.created_at))
-                                        }
-                                    ).map((review,i) => (
-                                        <div key={`review-${i}`} className="show-book-individual-review">
-                                            <div className="show-book-individual-review-title">Review Title: {review.title}</div>
-                                            <div className="show-book-individual-review-date">Date Reviewed: {formatDateWithDay(review.created_at)}</div>
-                                            <div className="show-book-individual-review-id">User: {allUsers[review.user_id].username}</div>
-                                            {/* <div className="show-book-individual-review-rating">User Rating: {review.rating}</div> */}
-                                            <div className="show-book-individual-review-rating">User Rating: 
-                                                <IndivRating min={1} max={5}
-                                                    value={review.rating}
-                                                />
-                                            </div>
-                                            <div className="show-book-individual-review-body">Review: {review.body}</div>
-                                            <div>{(review.user_id === this.props.userId) ? <button 
-                                                onClick={() => this.handleDelete(review.id)}>
-                                                    Delete Review</button> : null }
-                                            </div>
-                                        </div>
-                                    ))}
-                            </div>
-                        </div>
+<div className="show-book-reviews">
+   <div className="show-book-all-reviews">
+      <div className="show-book-all-reviews-text">ALL REVIEWS</div>
+         {book.reviews.sort(function(b,a) {
+               return (new Date(a.created_at)) - (new Date(b.created_at))
+               }
+         ).map((review,i) => (
+               <div key={`review-${i}`} className="show-book-individual-review">
+                  <div className="show-book-individual-review-title">Review Title: {review.title}</div>
+                  <div className="show-book-individual-review-date">Date Reviewed: {formatDateWithDay(review.created_at)}</div>
+                  <div className="show-book-individual-review-id">User: {allUsers[review.user_id].username}</div>
+                  {/* <div className="show-book-individual-review-rating">User Rating: {review.rating}</div> */}
+                  <div className="show-book-individual-review-rating">User Rating: 
+                     <IndivRating min={1} max={5}
+                           value={review.rating}
+                     />
+                  </div>
+                  <div className="show-book-individual-review-body">Review: {review.body}</div>
+                  <div>{(review.user_id === this.props.userId) ? <button 
+                     onClick={() => this.handleDelete(review.id)}>
+                           Delete Review</button> : null }
+                  </div>
+            </div>
+      ))}
+      </div>
+</div>
 ```
 
 Video:
