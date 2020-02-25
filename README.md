@@ -80,8 +80,6 @@ Video:
 
 ![login_error](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/error-message.gif)
 
-Signing Up Error Message:
-
 Demo Login:
 
 Code:
@@ -106,7 +104,7 @@ You can see all of the books and a description when you are on the home page.
 
 Video:
 
-![demo_login](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/index%20books.gif)
+![All Books](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/videos/index%20books.gif)
 
 
 Users are able to see all reviews for a book and who gave the review when looking at an individual book.
@@ -141,7 +139,7 @@ Code:
 </div>
 ```
 
-Video:
+Picture:
 
 ![all_reviews](https://github.com/Micjoey/FunReads_FSP/blob/master/app/assets/images/All%20Reviews.png)
 
