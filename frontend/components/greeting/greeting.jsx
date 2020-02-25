@@ -13,7 +13,7 @@ class Greeting extends React.Component {
     return (
       <div className="navbar-view-to-login-or-signup">
         <div className="navbar-view-to-login">
-            <Link to="/" className="FunReads-title">FunReads</Link>
+            <Link to="/" className="FunReads-title-logged-in">FunReads</Link>
             <div className='nav-bar-login-form-cont'>
               <LoginFormContainer/>
             </div>

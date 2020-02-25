@@ -90,7 +90,7 @@
 
 }
 .demo-login {
-    background-color: #f5e7a5;
+    background-color: #fdd05f;
     font-weight: bold;
     border: none;
     white-space: nowrap;
@@ -102,6 +102,8 @@
     width: 85px;
     font-weight: bolder;
     text-align: center;
+    border-radius: 4px;
+    
 }
 
 ::placeholder{

@@ -39,6 +39,11 @@ body {
     
 }
 
+.FunReads-title,
+.FunReads-title-logged-in {
+    color: lightcoral
+}
+
  .filler-background-box {
         object-fit: cover;
         z-index: -2;
@@ -91,7 +96,7 @@ body {
 } */
 
 .session-submit:hover {
-    background-color: rgb(119, 249, 249);
+    background-color: darkgray;
     font-weight: bolder;
     cursor: pointer;
 }
@@ -100,10 +105,11 @@ body {
     padding: 8px;
     border: 0px;
     border-radius: 4px;
-    background-color: #fdd05f;
+    background-color: #eebe44;
     font-size: 18px;
     line-height: 22px;
     width: 85px;
+    font-weight: bold;
 }
 
 

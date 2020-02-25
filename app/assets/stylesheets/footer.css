@@ -19,15 +19,27 @@
     position: fixed;
 }
 
+
 #footerLink {
     
 }
 
 .footer-linkedin,
-.footer-github {
+.footer-github,
+#footerlink {
     /* object-fit:cover; */
     height: 40px;
     text-decoration: none;
     color: black;
+}
+.footer-linkedin:hover,
+.footer-github:hover {
+    /* object-fit:cover; */
+    border-radius: 10px;
+    background-color: rgba(62, 62, 255, 0.571);
+}
+
+#footerlink:hover {
+    background-color: rgba(62, 62, 255, 0.571);
 }
 

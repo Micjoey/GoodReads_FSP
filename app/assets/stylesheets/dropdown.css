@@ -49,6 +49,7 @@
   /* padding-top: 4px; */
   top: inherit;
   padding: 4px 10px;
+  margin: 0px 40px
 }
 
 .dropdown-book-content {
@@ -68,6 +69,7 @@
   border: 4px ridge rgba(152, 126, 22, 0.632) ;
   overflow: scroll;
   max-height: 300px;
+  text-align: left;
 }
 
 
