@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom'
 import ShowBookContainer from './show_book_container';
-
+import { IndivRating } from '../stars/star';
 class IndexBook extends React.Component {
     constructor(props) {
         super(props);
@@ -70,6 +70,11 @@ class IndexBook extends React.Component {
                                 <div className='index-book-information-title'>{book.title}</div>
                                 <div className='index-book-information-author'>by: {book.author}</div>
                                 <div className='index-book-information-rating'>Rating: {book.average_rating}</div>
+                                <div className='index-book-information-rating'>Rating: 
+                                        <IndivRating min={1} max={5}
+                                        value={review.rating}
+                                    />
+                                </div>
                                 <div className='index-book-information-genre'>Genre: {book.genre}</div>
                                 {/* <div className='index-book-information-date-read'>Date Read: {book.date_read}</div> */}
                                 <div className='index-book-information-date-read'>{(book.date_read) ? 
