@@ -184,6 +184,10 @@
                 font-weight: bold;
             }
 
+            .filtered {
+                background-color: rgba(5, 84, 5, 0.755);
+            }
+
             .shelf-create-submit:hover {
                 background-color: lightgray;
                 border-color: none;
