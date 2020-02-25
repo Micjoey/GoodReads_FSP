@@ -43,6 +43,15 @@
    min-width: 85px;
 }
 
+.add-shelves-sidebar-shelf-buttons:hover {
+  background-color: white;
+  font-weight: bold;
+}
+.add-shelves-sidebar-shelf-buttons:active {
+  background-color: green;
+  font-weight: bold;
+}
+
 .add-shelf-form {
 
 }

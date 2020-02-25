@@ -173,6 +173,23 @@
                 margin: 3px 0px;
             }
 
+            .index-shelves-sidebar-shelf-buttons:hover {
+                cursor: pointer;
+                background-color: lightgray;
+                font-weight: bold;
+            }
+
+            .shelf-create-submit:hover {
+                background-color: lightgray;
+                border-color: none;
+                font-weight: bold;
+            }
+            .shelf-create-submit:active {
+                background-color: rgba(5, 84, 5, 0.755);
+                border-color: none;
+                font-weight: bold;
+            }
+
             .shelf-title-field {
                 margin: 2px 0px;
             }
@@ -189,3 +206,15 @@
             .index-shelf-delete-button {
                 background-color: rgba(128, 128, 128, 0.577);
             }
+
+            .index-shelf-delete-button:hover {
+                background-color: white;
+                border-color: none;
+                font-weight: bold;
+            }
+            .index-shelf-delete-button:active {
+                background-color: rgba(5, 84, 5, 0.755);
+                border-color: none;
+                font-weight: bold;
+            }
+
