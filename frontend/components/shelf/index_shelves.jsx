@@ -51,6 +51,7 @@ class IndexShelves extends React.Component {
     render(){
         if(!this.props.shelves) return null;
             let newShelf = (this.state.shelf.length > 0) ? this.state.shelf : this.props.shelves
+            debugger
         return (
             <div className="index-shelves-main">
                 <div className="index-shelves-main-navbar">

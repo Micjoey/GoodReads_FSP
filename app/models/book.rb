@@ -21,6 +21,8 @@ class Book < ApplicationRecord
 
     has_one_attached :photo
 
+  
+
    def average_rating
     book = self
     average_rating = book.reviews.average(:rating)
@@ -30,6 +32,7 @@ class Book < ApplicationRecord
 
    def unique_shelves
      shelves = self.shelves.uniq()
+    #  shelves.select{|shelf| shelf.user_id == self.users}
    end
 
 

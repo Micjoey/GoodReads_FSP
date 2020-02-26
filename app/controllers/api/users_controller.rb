@@ -1,4 +1,9 @@
+module CurrentScope
+  thread_mattr_accessor :user
+end
+
 class Api::UsersController < ApplicationController
+
   def create
     @user = User.new(user_params)
     

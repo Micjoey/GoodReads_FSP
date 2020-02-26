@@ -10,6 +10,8 @@ class AddShelf extends React.Component {
             loaded: false
         }
         this.addShelf = this.addShelf.bind(this)
+        this.toggleSelectedShelves = this.toggleSelectedShelves.bind(this)
+        this.removeShelf = this.removeShelf.bind(this)
     }
 
     componentDidMount() {
@@ -19,10 +21,38 @@ class AddShelf extends React.Component {
     }
 
 
-    addShelf(shelf, shelfName, idx) {
+    addShelf(shelf) {
         this.props.addToShelf(
             { shelf_id: shelf.id, book_id: this.props.book.id }
         )
+    }
+
+    removeShelf(shelf, shelfName, i) {
+        debugger
+        const book = this.props.book
+        const onshelfid = book.onshelfbooks.filter(shelf => shelf.shelf_id === shelf.id).id
+        if (document.getElementById(`${shelfName}`)) {
+            debugger
+            this.props.removeBook(
+                { shelf_id: shelf.id, book_id: book.id, id: onshelfid }
+            )
+        }
+    }
+
+    toggleSelectedShelves() {
+        // debugger
+        const book = this.props.book
+        book.unique_shelves.forEach(indivShelf => {
+            let styling = document.getElementById(`${indivShelf.bookshelf_title}`)
+            let indivShelfEle = document.getElementById(indivShelf.bookshelf_title)
+            if (indivShelfEle) {
+                    if (indivShelf.user_id === this.props.currentUser.id) {
+                        styling.classList.add('filtered')
+                        styling.setAttribute('name', 'checked')
+                    }
+                }
+            }
+            )
     }
     
 
@@ -30,7 +60,8 @@ class AddShelf extends React.Component {
     render() {
         if (this.state.loaded) {
             // Book has unique shelves, if i can check if its on the shelf then I can grab by id and toggle
-            
+            this.toggleSelectedShelves()
+
             return (
             <div className="add-shelf">
                 <button className="add-shelf-title">Add To A Shelf</button>
@@ -39,9 +70,12 @@ class AddShelf extends React.Component {
                             {this.props.shelves.map((shelf, i) => (
                                 <div key={`shelf-${i}`} className="add-shelves-sidebar-shelf">
                                     <button className="add-shelves-sidebar-shelf-buttons" 
-                                    onClick={() => this.addShelf(shelf, `add-shelves-sidebar-shelf-button`, i) }
+                                        onClick={() => document.getElementById(`${shelf.bookshelf_title}`).name === "checked"
+                                        ? this.removeShelf(shelf, `${shelf.bookshelf_title}`, i) 
+                                        : this.addShelf(shelf)}
+                                    id={`${shelf.bookshelf_title}`}
                                     >
-                                        <ul className={`add-shelves-sidebar-shelf-button`}>
+                                        <ul className={`add-shelves-sidebar-shelf-button`} >
                                             {shelf.bookshelf_title}
                                         </ul>
                                     </button>
