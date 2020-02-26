@@ -7,11 +7,14 @@ class AddShelf extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            loaded: false
+            loaded: false,
+            switch: '',
+            book: [],
         }
         this.addShelf = this.addShelf.bind(this)
         this.toggleSelectedShelves = this.toggleSelectedShelves.bind(this)
         this.removeShelf = this.removeShelf.bind(this)
+        this.handleShelf = this.handleShelf.bind(this)
     }
 
     componentDidMount() {
@@ -20,27 +23,47 @@ class AddShelf extends React.Component {
         Promise.all([shelvesMount, bookMount]).then(() => this.setState({ loaded: true }))
     }
 
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     if (this.props.book !== prevProps.book) {
+    //         this.setState = ({book: this.props.book})
+    //     }
+    // }
+
+
+
 
     addShelf(shelf) {
+        const book = this.props.book
         this.props.addToShelf(
-            { shelf_id: shelf.id, book_id: this.props.book.id }
-        )
+            { shelf_id: shelf.id, book_id: book.id }
+        ).then(() => this.props.retrieveBook(book.id))
+        let styling = document.getElementById(`${shelf.bookshelf_title}`)
+        styling.classList.add('filtered')
+        styling.setAttribute('name', 'checked')
     }
 
-    removeShelf(shelf, shelfName, i) {
-        debugger
+    removeShelf(shelf, shelfName) {
+        const shelfId = shelf.id
         const book = this.props.book
-        const onshelfid = book.onshelfbooks.filter(shelf => shelf.shelf_id === shelf.id).id
-        if (document.getElementById(`${shelfName}`)) {
-            debugger
+        const onshelfId = shelf.shelfBooks.filter(shelf => shelf.shelf_id === shelfId && shelf.book_id === book.id)[0]
+        let styling = document.getElementById(`${shelfName}`)
+        if (onshelfId && styling.name) {
             this.props.removeBook(
-                { shelf_id: shelf.id, book_id: book.id, id: onshelfid }
-            )
-        }
+                { shelf_id: shelf.id, book_id: book.id, id: onshelfId.id }
+                ).then(() => this.toggleSelectedShelves()).then(() => this.addShelf())
+            }
+    }
+
+    handleShelf(shelf, shelfName) {
+        const shelfId = shelf.id
+        const book = this.props.book
+        const onshelfId = shelf.shelfBooks.filter(shelf => shelf.shelf_id === shelfId && shelf.book_id === book.id)[0]
+        // onshelfId ? this.removeShelf(shelf, shelfName) : this.addShelf(shelf)
+        this.addShelf(shelf)
     }
 
     toggleSelectedShelves() {
-        // debugger
         const book = this.props.book
         book.unique_shelves.forEach(indivShelf => {
             let styling = document.getElementById(`${indivShelf.bookshelf_title}`)
@@ -61,7 +84,6 @@ class AddShelf extends React.Component {
         if (this.state.loaded) {
             // Book has unique shelves, if i can check if its on the shelf then I can grab by id and toggle
             this.toggleSelectedShelves()
-
             return (
             <div className="add-shelf">
                 <button className="add-shelf-title">Add To A Shelf</button>
@@ -70,9 +92,7 @@ class AddShelf extends React.Component {
                             {this.props.shelves.map((shelf, i) => (
                                 <div key={`shelf-${i}`} className="add-shelves-sidebar-shelf">
                                     <button className="add-shelves-sidebar-shelf-buttons" 
-                                        onClick={() => document.getElementById(`${shelf.bookshelf_title}`).name === "checked"
-                                        ? this.removeShelf(shelf, `${shelf.bookshelf_title}`, i) 
-                                        : this.addShelf(shelf)}
+                                        onClick={() => this.handleShelf(shelf, `${shelf.bookshelf_title}`, i)}
                                     id={`${shelf.bookshelf_title}`}
                                     >
                                         <ul className={`add-shelves-sidebar-shelf-button`} >

@@ -66,7 +66,7 @@ class IndexBook extends React.Component {
                                 </div>
                             </Link>
                             </div>
-                            <div className="dropdown-book-content">
+                            <Link to={`/book/${book.id}`} className="dropdown-book-content">
                                 <div className='index-book-information-title'>{book.title}</div>
                                 <div className='index-book-information-author'>by: {book.author}</div>
                                 <div className='index-book-information-rating'>Rating: {book.average_rating}</div>
@@ -85,7 +85,7 @@ class IndexBook extends React.Component {
                                     <div> Book Description: </div>
                                     <div> {book.description} </div>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     ))}
                 </div>

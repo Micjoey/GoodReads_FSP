@@ -70,6 +70,8 @@
   overflow: scroll;
   max-height: 300px;
   text-align: left;
+  text-decoration: none;
+  color: black;
 }
 
 
@@ -82,5 +84,6 @@
 .index-books-book-info:hover .dropdown-book-content {
   display: block;
   overflow: scroll;
+  scroll-behavior: smooth;
 }
 
