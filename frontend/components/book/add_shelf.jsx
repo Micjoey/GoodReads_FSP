@@ -82,7 +82,6 @@ class AddShelf extends React.Component {
     
     render() {
         if (this.state.loaded) {
-            // Book has unique shelves, if i can check if its on the shelf then I can grab by id and toggle
             this.toggleSelectedShelves()
             return (
             <div className="add-shelf">

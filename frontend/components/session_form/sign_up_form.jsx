@@ -27,7 +27,6 @@ class SessionFormSignUp extends React.Component {
   }
 
   renderErrorsSignUp() {
-    // debugger
     if (!this.props.errors[0].includes("Invalid")) {
       const errors = (
         <ul className="login-errors-box">
