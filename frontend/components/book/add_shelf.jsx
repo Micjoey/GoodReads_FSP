@@ -23,12 +23,6 @@ class AddShelf extends React.Component {
         Promise.all([shelvesMount, bookMount]).then(() => this.setState({ loaded: true }))
     }
 
-    // componentDidUpdate(prevProps) {
-    //     debugger
-    //     if (this.props.book !== prevProps.book) {
-    //         this.setState = ({book: this.props.book})
-    //     }
-    // }
 
 
 
