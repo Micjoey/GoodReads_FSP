@@ -33,10 +33,6 @@ export const updateBook = (book) => dispatch => (
     .then(book => dispatch(retrieveBooks(book)))
 )
 
-// export const createReview = review => dispatch => (
-//   ReviewAPIUtil.createReview(review)
-//     .then(review => dispatch(receiveBook(review)))
-// )
 
 
 		
