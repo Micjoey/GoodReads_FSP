@@ -2,10 +2,6 @@ import React from 'react';
 
 
 class Footer extends React.Component {
-    componentDidMount() {
-
-    }
-
     render() {
         return (
             <div className="footer-inner">
@@ -15,9 +11,8 @@ class Footer extends React.Component {
                 <a href="https://github.com/Micjoey/FunReads_FSP" rel="noopener noreferrer" target="_blank" >
                     <img src={images.github} className="footer-github" />
                 </a>
-                <a href="macallan.space" id="footerLink" rel="noopener noreferrer" target='_blank'>©  Macallan Savett</a>
+                <a href="https://macallan.space" id="footerLink" rel="noopener noreferrer" target='_blank'>Macallan Savett</a>
             </div>
-
         );
     }
 };
