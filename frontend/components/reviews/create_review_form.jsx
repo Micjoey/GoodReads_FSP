@@ -2,10 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Rating } from '../stars/star';
 
-
-
-
-
 class AddReview extends React.Component {
     constructor(props) {
         super(props);
