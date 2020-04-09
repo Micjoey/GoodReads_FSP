@@ -120,27 +120,30 @@ class IndexBook extends React.Component {
                 <div className='background-color'>
                     <div className='search-bar'>
                         <div className='nav-bar-search'>
-                            <div className='nav-bar-search-by-genre'>
-                                <button className="add-shelves-sidebar-shelf-buttons"
-                                onClick={() => this.filterBooksByGenre(``)}>
-                                    All Books
-                                </button>
-                               {this.allGenres().map(genre => (
-                                <div key={`${genre}`} className="add-shelves-sidebar-shelf">
+                            <div className="dropdown"> 
+                                <h3>Genre</h3>
+                                <div className='nav-bar-search-by-genre dropdown-content'>
                                     <button className="add-shelves-sidebar-shelf-buttons"
-                                        onClick={() => this.filterBooksByGenre(`${genre}`)}
-                                    >
-                                    <ul className={`add-shelves-sidebar-shelf-button`} >
-                                        {genre}
-                                    </ul>
+                                        onClick={() => this.filterBooksByGenre(``)}>
+                                        All Books
                                     </button>
+                                    {this.allGenres().map(genre => (
+                                        <div key={`${genre}`} className="add-shelves-sidebar-shelf">
+                                            <button className="add-shelves-sidebar-shelf-buttons"
+                                                onClick={() => this.filterBooksByGenre(`${genre}`)}
+                                            >
+                                                <ul className={`add-shelves-sidebar-shelf-button`} >
+                                                    {genre}
+                                                </ul>
+                                            </button>
+                                        </div>
+                                    ))}
                                 </div>
-                               ))}
                             </div>
                         </div>
-                        <form className="index-book-search-bar" onSubmit={this.filterBooks}>
+                        <form className="index-book-filter-bar" onSubmit={this.filterBooks}>
                             <input type="text"
-                                className="index-book-search-bar-text"
+                                className="index-book-filter-bar-text"
                                 placeholder="Filter Books"
                                 // value={this.state.currentHp}
                                 onChange={text => this.filterBooks(
