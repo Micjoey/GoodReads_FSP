@@ -16,6 +16,7 @@ class IndexBook extends React.Component {
         this.filterBooksByGenre = this.filterBooksByGenre.bind(this)
         this.filterBooksByRating = this.filterBooksByRating.bind(this)
         this.allGenres = this.allGenres.bind(this)
+        this.dropDown = this.dropDown.bind(this)
     }
 
 
@@ -39,10 +40,9 @@ class IndexBook extends React.Component {
             indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
             indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
         ).map(indivBook => indivBook);
+
         let indexBooksHTML = document.getElementsByClassName("index-books")[0]
-        console.log(indexBooksHTML)
         if (allBooks.length === 2) {
-            console.log(allBooks.length)
             indexBooksHTML.style.gridTemplateColumns = "auto auto"; 
         } else if (allBooks.length === 1) {
             indexBooksHTML.style.gridTemplateColumns = "auto"; 
@@ -83,6 +83,19 @@ class IndexBook extends React.Component {
 
     filterBooksByRating(rating) {
         
+    }
+
+    dropDown() {
+        let dropDown = document.getElementById("genre-dropdown")
+        let genreTitle = document.getElementById("genre-header")
+        if (dropDown.style.display) {
+            dropDown.style.display = null
+            genreTitle.classList.toggle("filter-bar-clicked-on")
+        } else {
+            dropDown.style.display = "block"
+            genreTitle.classList.toggle("filter-bar-clicked-on")
+        }
+
     }
 
 
@@ -133,8 +146,9 @@ class IndexBook extends React.Component {
                     <div className='search-bar'>
                         <div className='nav-bar-search'>
                             <div className="dropdown"> 
-                                <h3 className="nav-bar-mybooks-button">Genre</h3>
-                                <div className='nav-bar-search-by-genre dropdown-content'>
+                                <h3 className="filter-bar-titles" id="genre-header"
+                                onClick={() => this.dropDown()}>Genre</h3>
+                                <div className='nav-bar-search-by-genre' id="genre-dropdown">
                                     <button className="index-book-filter-bar-buttons"
                                         onClick={() => this.filterBooksByGenre(``)}>
                                         All Books
