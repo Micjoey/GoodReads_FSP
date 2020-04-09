@@ -10,9 +10,9 @@ function Modal({modal, closeModal}) {
     }
     let component;
     switch(modal) {
-        case 'logout':
-            component = <LoggedinFormContainer />;
-            break;
+        // case 'logout':
+        //     component = <LoggedinFormContainer />;
+        //     break;
         case 'search':
             component = <SearchBarContainer/>;
         default:
