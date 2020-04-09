@@ -88,7 +88,7 @@ class AddShelf extends React.Component {
                                         onClick={() => this.handleShelf(shelf, `${shelf.bookshelf_title}`, i)}
                                     id={`${shelf.bookshelf_title}`}
                                     >
-                                        <ul className={`add-shelves-sidebar-shelf-button`} >
+                                        <ul className={`add-shelves-sidebar-shelf-buttons`} >
                                             {shelf.bookshelf_title}
                                         </ul>
                                     </button>

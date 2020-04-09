@@ -13,7 +13,13 @@
 }
 
 .search-bar {
-  background-color: #fcf6f6;  
+    background-color: #fcf6f6; 
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around; 
+    padding: 10px 0px;
+    border-bottom: #b0b0b0c9 thin solid;
 }
     
 

@@ -121,18 +121,18 @@ class IndexBook extends React.Component {
                     <div className='search-bar'>
                         <div className='nav-bar-search'>
                             <div className="dropdown"> 
-                                <h3>Genre</h3>
+                                <h3 className="nav-bar-mybooks-button">Genre</h3>
                                 <div className='nav-bar-search-by-genre dropdown-content'>
-                                    <button className="add-shelves-sidebar-shelf-buttons"
+                                    <button className="index-book-filter-bar-buttons"
                                         onClick={() => this.filterBooksByGenre(``)}>
                                         All Books
                                     </button>
                                     {this.allGenres().map(genre => (
                                         <div key={`${genre}`} className="add-shelves-sidebar-shelf">
-                                            <button className="add-shelves-sidebar-shelf-buttons"
+                                            <button className="index-book-filter-bar-buttons"
                                                 onClick={() => this.filterBooksByGenre(`${genre}`)}
                                             >
-                                                <ul className={`add-shelves-sidebar-shelf-button`} >
+                                                <ul className={`index-book-filter-bar-buttons`} >
                                                     {genre}
                                                 </ul>
                                             </button>
@@ -141,7 +141,7 @@ class IndexBook extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <form className="index-book-filter-bar" onSubmit={this.filterBooks}>
+                        <form className="index-book-search-bar" onSubmit={this.filterBooks}>
                             <input type="text"
                                 className="index-book-filter-bar-text"
                                 placeholder="Filter Books"
@@ -150,7 +150,7 @@ class IndexBook extends React.Component {
                                     text.target.value
                                 )}
                             />
-                        </form>   
+                        </form> 
                     </div>
                     <div className="index-book-information"> 
                         {books}
