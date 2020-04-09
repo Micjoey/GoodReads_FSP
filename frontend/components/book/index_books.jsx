@@ -39,11 +39,22 @@ class IndexBook extends React.Component {
             indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
             indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
         ).map(indivBook => indivBook);
+        let indexBooksHTML = document.getElementsByClassName("index-books")[0]
+        console.log(indexBooksHTML)
+        if (allBooks.length === 2) {
+            console.log(allBooks.length)
+            indexBooksHTML.style.gridTemplateColumns = "auto auto"; 
+        } else if (allBooks.length === 1) {
+            indexBooksHTML.style.gridTemplateColumns = "auto"; 
+        } else if (indexBooksHTML) {
+            indexBooksHTML.style.gridTemplateColumns = "auto auto auto";
+        }
 
         let notfound = images.notFound;
       
         if (allBooks.length === 0) {
             this.setState({ books: [{ title: 'Not Found', photo: notfound }] , bookSearch: '' })
+            indexBooksHTML.style.gridTemplateColumns = "auto";
         } else {
             this.setState({ books: allBooks })
         }
@@ -73,8 +84,9 @@ class IndexBook extends React.Component {
     filterBooksByRating(rating) {
         
     }
-   
-   
+
+
+
     render() {
         if (!this.props.books) return null;
         let allBooks
