@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal} from '../../actions/model_actions';
 import { connect } from 'react-redux';
-import LoggedinFormContainer from '../greeting/logged_in_container';
+// import LoggedinFormContainer from '../greeting/logged_in_container';
 import SearchBarContainer from '../navbar/search_bar_container';
 
 function Modal({modal, closeModal}) {
