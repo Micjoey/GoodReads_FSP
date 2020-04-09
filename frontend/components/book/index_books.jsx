@@ -13,6 +13,9 @@ class IndexBook extends React.Component {
         this.showBook = this.showBook.bind(this);
         this.filterBooks = this.filterBooks.bind(this)
         this.updateState = this.updateState.bind(this)
+        this.filterBooksByGenre = this.filterBooksByGenre.bind(this)
+        this.filterBooksByRating = this.filterBooksByRating.bind(this)
+        this.allGenres = this.allGenres.bind(this)
     }
 
 
@@ -49,6 +52,28 @@ class IndexBook extends React.Component {
     filterBooks(text) {
         this.setState({bookSearch: text}, () => this.updateState())
     }
+
+    allGenres() {
+        const indivGenres = {}
+        this.props.books.map(indivBook => indivGenres[indivBook.genre] = true)
+        return Object.keys(indivGenres)
+    }
+
+    filterBooksByGenre(genre) {
+        const indivGenres = {}
+        this.props.books.map(indivBook => indivGenres[indivBook.genre] = true)
+        if (genre !== 'All Books') {
+            this.filterBooks(genre)
+        } else {
+            this.filterBooks()
+        }
+        
+    }
+
+    filterBooksByRating(rating) {
+        
+    }
+   
    
     render() {
         if (!this.props.books) return null;
@@ -94,6 +119,25 @@ class IndexBook extends React.Component {
             return (
                 <div className='background-color'>
                     <div className='search-bar'>
+                        <div className='nav-bar-search'>
+                            <div className='nav-bar-search-by-genre'>
+                                <button className="add-shelves-sidebar-shelf-buttons"
+                                onClick={() => this.filterBooksByGenre(``)}>
+                                    All Books
+                                </button>
+                               {this.allGenres().map(genre => (
+                                <div key={`${genre}`} className="add-shelves-sidebar-shelf">
+                                    <button className="add-shelves-sidebar-shelf-buttons"
+                                        onClick={() => this.filterBooksByGenre(`${genre}`)}
+                                    >
+                                    <ul className={`add-shelves-sidebar-shelf-button`} >
+                                        {genre}
+                                    </ul>
+                                    </button>
+                                </div>
+                               ))}
+                            </div>
+                        </div>
                         <form className="index-book-search-bar" onSubmit={this.filterBooks}>
                             <input type="text"
                                 className="index-book-search-bar-text"

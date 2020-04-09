@@ -30,17 +30,9 @@ class SearchBar extends React.Component {
         }
     }
 
-    
-
-
     componentDidMount() {
        this.props.retrieveBooks()
     }
-
-
-
-
-
 
     filterBooks() {
         let bookSearch = this.state.bookSearch.toLowerCase()
@@ -71,6 +63,7 @@ class SearchBar extends React.Component {
     clearState() {
         this.setState({ bookSearch: ''}, () => document.getElementsByClassName("nav-bar-search-book-dropdown")[0].style.display = 'none')
     }
+
 
     
 
