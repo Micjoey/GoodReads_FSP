@@ -22,7 +22,7 @@ ActiveRecord::Base.transaction do
 book1 = Book.create(
     title: "American Spy",
     author: "Lauren Wilkinson",
-    genre: Faker::Book.genre,
+    genre: "Thriller",
     # cover_image_url: open('https://FunReads-seeds./American_Spy_By_Lauren_wilkinson.png'),
     description: "American Spy is her story, written in 1992 in the first person as a diary for her young twin sons to read when they're older. The action spans the thirty preceding years—from the Cuban Missile Crisis to the `New World Order` following the end of the Cold War. Marie is the younger of two sisters.",
 )
@@ -32,7 +32,7 @@ book1.photo.attach(io: file1, filename:'American_Spy.jpg')
 book2 = Book.create(
     title: "Book Of Strange New Things",
     author: "Michel Faber",
-    genre: Faker::Book.genre,
+    genre: "Science fiction",
     # cover_image_url: open('https://FunReads-seeds./Book-of-Strange-New-Things.jpg'),
     description: "The Book of Strange New Things is a 2014 science fiction novel by Dutch-born author Michel Faber. The work was first published in the United States on October 28, 2014 and concerns an English pastor who is sent to the planet of Oasis to teach its reclusive native inhabitants about Christianity.",
 )
@@ -43,7 +43,7 @@ book2.photo.attach(io: file, filename:'Book-of-Strange-New-Things.jpg')
 book3 = Book.create(
     title: "Upright Women Wanted",
     author: "Sarah Gailey",
-    genre: Faker::Book.genre,
+    genre: "Science Fiction",
     # cover_image_url: open('https://FunReads-seeds./upright_woman_wanted.jpeg'),
     description: "Esther is a stowaway. She’s hidden herself away in the Librarian’s book wagon in an attempt to escape the marriage her father has arranged for her―a marriage to the man who was previously engaged to her best friend. Her best friend who she was in love with. Her best friend who was just executed for possession of resistance propaganda.",
 )

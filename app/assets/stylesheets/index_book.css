@@ -13,23 +13,15 @@
 }
 
 .search-bar {
-  background-color: #fcf6f6;  
+    background-color: #fcf6f6; 
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around; 
+    padding: 10px 0px;
+    border-bottom: #b0b0b0c9 thin solid;
 }
-    .index-book-search-bar {
-        display: inline-flex;
-        justify-content: flex-end;
-        width: 90%;
-        margin: 10px;
-    }
-
-    .index-book-search-bar-text {
-        width: 200px;
-        height: 25px;
-        background-color: #f2f2f2;
-        margin-left: 50%;
-        margin-top: 10px;
-        text-align: center;
-    }
+    
 
     .index-book-information {
         padding: 10px;

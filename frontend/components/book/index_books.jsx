@@ -13,6 +13,10 @@ class IndexBook extends React.Component {
         this.showBook = this.showBook.bind(this);
         this.filterBooks = this.filterBooks.bind(this)
         this.updateState = this.updateState.bind(this)
+        this.filterBooksByGenre = this.filterBooksByGenre.bind(this)
+        this.filterBooksByRating = this.filterBooksByRating.bind(this)
+        this.allGenres = this.allGenres.bind(this)
+        this.dropDown = this.dropDown.bind(this)
     }
 
 
@@ -37,10 +41,20 @@ class IndexBook extends React.Component {
             indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
         ).map(indivBook => indivBook);
 
+        let indexBooksHTML = document.getElementsByClassName("index-books")[0]
+        if (allBooks.length === 2) {
+            indexBooksHTML.style.gridTemplateColumns = "auto auto"; 
+        } else if (allBooks.length === 1) {
+            indexBooksHTML.style.gridTemplateColumns = "auto"; 
+        } else if (indexBooksHTML) {
+            indexBooksHTML.style.gridTemplateColumns = "auto auto auto";
+        }
+
         let notfound = images.notFound;
       
         if (allBooks.length === 0) {
             this.setState({ books: [{ title: 'Not Found', photo: notfound }] , bookSearch: '' })
+            indexBooksHTML.style.gridTemplateColumns = "auto";
         } else {
             this.setState({ books: allBooks })
         }
@@ -49,7 +63,43 @@ class IndexBook extends React.Component {
     filterBooks(text) {
         this.setState({bookSearch: text}, () => this.updateState())
     }
-   
+
+    allGenres() {
+        const indivGenres = {}
+        this.props.books.map(indivBook => indivGenres[indivBook.genre] = true)
+        return Object.keys(indivGenres)
+    }
+
+    filterBooksByGenre(genre) {
+        const indivGenres = {}
+        this.props.books.map(indivBook => indivGenres[indivBook.genre] = true)
+        if (genre !== 'All Books') {
+            this.filterBooks(genre)
+        } else {
+            this.filterBooks()
+        }
+        
+    }
+
+    filterBooksByRating(rating) {
+        
+    }
+
+    dropDown() {
+        let dropDown = document.getElementById("genre-dropdown")
+        let genreTitle = document.getElementById("genre-header")
+        if (dropDown.style.display) {
+            dropDown.style.display = null
+            genreTitle.classList.toggle("filter-bar-clicked-on")
+        } else {
+            dropDown.style.display = "block"
+            genreTitle.classList.toggle("filter-bar-clicked-on")
+        }
+
+    }
+
+
+
     render() {
         if (!this.props.books) return null;
         let allBooks
@@ -94,16 +144,39 @@ class IndexBook extends React.Component {
             return (
                 <div className='background-color'>
                     <div className='search-bar'>
+                        <div className='nav-bar-search'>
+                            <div className="dropdown"> 
+                                <h3 className="filter-bar-titles" id="genre-header"
+                                onClick={() => this.dropDown()}>Genre</h3>
+                                <div className='nav-bar-search-by-genre' id="genre-dropdown">
+                                    <button className="index-book-filter-bar-buttons"
+                                        onClick={() => this.filterBooksByGenre(``)}>
+                                        All Books
+                                    </button>
+                                    {this.allGenres().map(genre => (
+                                        <div key={`${genre}`} className="add-shelves-sidebar-shelf">
+                                            <button className="index-book-filter-bar-buttons"
+                                                onClick={() => this.filterBooksByGenre(`${genre}`)}
+                                            >
+                                                <ul className={`index-book-filter-bar-buttons`} >
+                                                    {genre}
+                                                </ul>
+                                            </button>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
                         <form className="index-book-search-bar" onSubmit={this.filterBooks}>
                             <input type="text"
-                                className="index-book-search-bar-text"
+                                className="index-book-filter-bar-text"
                                 placeholder="Filter Books"
                                 // value={this.state.currentHp}
                                 onChange={text => this.filterBooks(
                                     text.target.value
                                 )}
                             />
-                        </form>   
+                        </form> 
                     </div>
                     <div className="index-book-information"> 
                         {books}
