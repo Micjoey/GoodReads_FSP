@@ -46,6 +46,7 @@ class IndexBook extends React.Component {
         let indexBookCover = document.getElementsByClassName("index-book-covers")[0]
         if (allBooks.length === 2) {
             indexBooksHTML.style.gridTemplateColumns = "auto auto"; 
+            indexBooksHTML.style.display = "grid"; 
             indexBookInfo.style.padding = `5%`
         } else if (allBooks.length === 1) {
             indexBooksHTML.style.gridTemplateColumns = "auto"; 
@@ -53,8 +54,9 @@ class IndexBook extends React.Component {
             indexBookInfo.style.padding = `7%`
         } else if (indexBooksHTML) {
             indexBooksHTML.style.gridTemplateColumns = "auto auto auto";
-            indexBooksHTML.style.gridTemplateColumns = "auto auto auto";
             indexBookInfo.style.padding = `1%`
+        } else {
+            indexBooksHTML.style.display = "grid"; 
         }
 
         let notfound = images.notFound;
