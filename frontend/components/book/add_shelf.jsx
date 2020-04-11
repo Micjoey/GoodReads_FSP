@@ -29,7 +29,6 @@ class AddShelf extends React.Component {
 
     toggleColoring(shelf) {
         let styling = document.getElementById(`${shelf.bookshelf_title}`)
-        debugger
         if (styling.name === 'checked') {
             styling.classList.remove('filtered')
             styling.name = `not-checked`
@@ -64,8 +63,9 @@ class AddShelf extends React.Component {
 
     handleShelf(shelf, shelfName, i, book) {
         const shelfId = shelf.id
-        const onshelfId = shelf.shelfBooks.filter(shelf => shelf.shelf_id === shelfId && shelf.book_id === book.id)[0]
-        onshelfId ? this.removeShelf(shelf, shelfName) : this.addToShelf(shelf)
+        const onShelfId = shelf.shelfBooks.filter(shelf => shelf.shelf_id === shelfId && shelf.book_id === book.id)[0]
+        const bookId = book.id
+        onShelfId ? this.removeShelf(shelf, shelfName) : this.addToShelf(shelf)
     }
 
     firstColorOnShelfBooks() {
