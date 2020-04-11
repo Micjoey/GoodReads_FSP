@@ -6,11 +6,11 @@ import { createReview } from '../../actions/review_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-    const book = state.entities.books[ownProps.match.params.bookId];
-    const user = state.entities.users[state.session];
+    // const book = state.entities.books[ownProps.match.params.bookId];
+    // const user = state.entities.users[state.session];
     return ({
-        book: book,
-        currentUser: user,
+        // book: book,
+        // currentUser: user,
     })
 }
 

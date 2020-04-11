@@ -10,73 +10,86 @@ class AddShelf extends React.Component {
             loaded: false,
             switch: '',
             book: [],
+            bookInfo: this.props.book,
         }
-        this.addShelf = this.addShelf.bind(this)
-        this.toggleSelectedShelves = this.toggleSelectedShelves.bind(this)
+        this.addToShelf = this.addToShelf.bind(this)
+        this.firstColorOnShelfBooks = this.firstColorOnShelfBooks.bind(this)
         this.removeShelf = this.removeShelf.bind(this)
         this.handleShelf = this.handleShelf.bind(this)
+        this.toggleColoring = this.toggleColoring.bind(this)
+
     }
 
     componentDidMount() {
         const shelvesMount = this.props.retrieveShelves()
-        const bookMount = this.props.retrieveBook(this.props.match.params.bookId)
-        Promise.all([shelvesMount, bookMount]).then(() => this.setState({ loaded: true }))
+        // const bookMount = this.props.retrieveBook(this.props.match.params.bookId)
+        // Promise.all([shelvesMount, bookMount]).then(() => this.setState({ loaded: true }))
+        Promise.all([shelvesMount]).then(() => this.setState({ loaded: true }))
     }
 
+    toggleColoring(shelf) {
+        let styling = document.getElementById(`${shelf.bookshelf_title}`)
+        if (styling.name === 'checked') {
+            styling.classList.remove('filtered')
+            styling.name = `not-checked`
+        } else {
+            styling.classList.add('filtered')
+            styling.setAttribute('name', 'checked')
+        }
+    }
 
-
-
-
-    addShelf(shelf) {
+    addToShelf(shelf) {
         const book = this.props.book
         this.props.addToShelf(
             { shelf_id: shelf.id, book_id: book.id }
-        ).then(() => this.props.retrieveBook(book.id))
-        let styling = document.getElementById(`${shelf.bookshelf_title}`)
-        styling.classList.add('filtered')
-        styling.setAttribute('name', 'checked')
+        )
+        //.then(() => this.props.retrieveBook(book.id))
+        .then(() => this.toggleColoring(shelf))
     }
 
     removeShelf(shelf, shelfName) {
         const shelfId = shelf.id
         const book = this.props.book
         const onshelfId = shelf.shelfBooks.filter(shelf => shelf.shelf_id === shelfId && shelf.book_id === book.id)[0]
-        let styling = document.getElementById(`${shelfName}`)
+        let styling = document.getElementById(`${shelf.bookshelf_title}`)
         if (onshelfId && styling.name) {
             this.props.removeBook(
                 { shelf_id: shelf.id, book_id: book.id, id: onshelfId.id }
-                ).then(() => this.toggleSelectedShelves()).then(() => this.addShelf())
+                )// removes the book from the shelf
+                .then(() => this.toggleColoring(shelf)) //switches the shelf from checked to uncheck
+                .then(() => this.props.retrieveBook(this.props.match.params.bookId)     )
+                //.then(() => this.addToShelf())
             }
     }
 
-    handleShelf(shelf, shelfName) {
+    handleShelf(shelf, shelfName, i, book) {
         const shelfId = shelf.id
-        const book = this.props.book
         const onshelfId = shelf.shelfBooks.filter(shelf => shelf.shelf_id === shelfId && shelf.book_id === book.id)[0]
-        // onshelfId ? this.removeShelf(shelf, shelfName) : this.addShelf(shelf)
-        this.addShelf(shelf)
+        onshelfId ? this.removeShelf(shelf, shelfName) : this.addToShelf(shelf)
+        // this.addToShelf(shelf)
     }
 
-    toggleSelectedShelves() {
+    firstColorOnShelfBooks() {
         const book = this.props.book
         book.unique_shelves.forEach(indivShelf => {
             let styling = document.getElementById(`${indivShelf.bookshelf_title}`)
             let indivShelfEle = document.getElementById(indivShelf.bookshelf_title)
             if (indivShelfEle) {
-                    if (indivShelf.user_id === this.props.currentUser.id) {
-                        styling.classList.add('filtered')
-                        styling.setAttribute('name', 'checked')
-                    }
-                }
-            }
-            )
+                if (indivShelf.user_id === this.props.currentUser.id && styling.name !== 'not-checked' ) {
+                    styling.classList.add('filtered')
+                    styling.setAttribute('name', 'checked')
+                    // this.toggleColoring(indivShelf)
+                } 
+            } 
+        })
     }
     
 
     
     render() {
+        const book = this.props.book
         if (this.state.loaded) {
-            this.toggleSelectedShelves()
+            this.firstColorOnShelfBooks()
             return (
             <div className="add-shelf">
                 <button className="add-shelf-title">Add To A Shelf</button>
@@ -85,7 +98,7 @@ class AddShelf extends React.Component {
                             {this.props.shelves.map((shelf, i) => (
                                 <div key={`shelf-${i}`} className="add-shelves-sidebar-shelf">
                                     <button className="add-shelves-sidebar-shelf-buttons" 
-                                        onClick={() => this.handleShelf(shelf, `${shelf.bookshelf_title}`, i)}
+                                        onClick={() => this.handleShelf(shelf, `${shelf.bookshelf_title}`, i, book)}
                                     id={`${shelf.bookshelf_title}`}
                                     >
                                         <ul className={`add-shelves-sidebar-shelf-buttons`} >

@@ -33,7 +33,7 @@ class showBook extends React.Component {
         book.date_read = !book.date_read
         this.props.updateBook(book)
             .then(() => this.setState({hasRead: book.date_read}))
-            .then(() => this.props.retrieveBook(this.props.match.params.bookId))
+            // .then(() => this.props.retrieveBook(this.props.match.params.bookId))
         
     }
 
@@ -76,12 +76,12 @@ class showBook extends React.Component {
                             </div>
                             <div className="show-book-review">
                                 <div className="leave-a-review"> Leave a review! </div>
-                                <CreateReviewContainer book_id={book.id} user_id={this.props.userId} />
+                                <CreateReviewContainer book={book} book_id={book.id} user_id={this.props.userId} />
                             </div>
                         </div>
                         <div className="show-book-my-activity"> 
                             <div className="show-book-add-to-shelf"> 
-                                <AddShelfContainer />
+                                <AddShelfContainer book={book}/>
                             </div>
                             
                             <div className="empty-space">

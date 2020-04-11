@@ -10,7 +10,8 @@ class AddReview extends React.Component {
             rating: '',
             body: '',
             user_id: this.props.user_id,
-            book_id: this.props.book_id
+            book_id: this.props.book_id,
+            book: this.props.book,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -27,7 +28,8 @@ class AddReview extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const review = Object.assign({}, this.state);
-        this.props.createReview(review).then(() => this.props.retrieveBook(this.state.book_id))
+        this.props.createReview(review)
+        .then(() => this.props.retrieveBook(this.state.book_id))
         this.setState({
             title: '',
             rating: 1,
@@ -41,7 +43,6 @@ class AddReview extends React.Component {
 
 
     render() {
-        
         
         return (
             <div className="review-create-container">

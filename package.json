@@ -1,7 +1,7 @@
 {
   "name": "FunReads",
   "version": "1.0.0",
-  "description": "air bnb for benches!",
+  "description": "Clone of goodreads!",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -24,6 +24,7 @@
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
+    "core-js": "^3.6.5",
     "css-star-rating": "^1.2.4",
     "postinstall": "^0.7.0",
     "react": "^15.6.1",
