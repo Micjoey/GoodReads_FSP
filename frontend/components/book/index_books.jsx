@@ -42,12 +42,19 @@ class IndexBook extends React.Component {
         ).map(indivBook => indivBook);
 
         let indexBooksHTML = document.getElementsByClassName("index-books")[0]
+        let indexBookInfo = document.getElementsByClassName("index-book-information")[0]
+        let indexBookCover = document.getElementsByClassName("index-book-covers")[0]
         if (allBooks.length === 2) {
             indexBooksHTML.style.gridTemplateColumns = "auto auto"; 
+            indexBookInfo.style.padding = `5%`
         } else if (allBooks.length === 1) {
             indexBooksHTML.style.gridTemplateColumns = "auto"; 
+            indexBooksHTML.style.display = "block"; 
+            indexBookInfo.style.padding = `7%`
         } else if (indexBooksHTML) {
             indexBooksHTML.style.gridTemplateColumns = "auto auto auto";
+            indexBooksHTML.style.gridTemplateColumns = "auto auto auto";
+            indexBookInfo.style.padding = `1%`
         }
 
         let notfound = images.notFound;
@@ -55,6 +62,7 @@ class IndexBook extends React.Component {
         if (allBooks.length === 0) {
             this.setState({ books: [{ title: 'Not Found', photo: notfound }] , bookSearch: '' })
             indexBooksHTML.style.gridTemplateColumns = "auto";
+            indexBookInfo.style.padding = `7%`
         } else {
             this.setState({ books: allBooks })
         }
