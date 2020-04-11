@@ -44,6 +44,7 @@
             align-items: center;
         }
                 .index-book-cover {
+                    /* min-height: 383px; */
                     width: 250px;
                     max-width: auto;
                     height: auto;

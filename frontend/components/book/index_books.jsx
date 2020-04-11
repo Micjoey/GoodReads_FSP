@@ -45,19 +45,18 @@ class IndexBook extends React.Component {
         let indexBookInfo = document.getElementsByClassName("index-book-information")[0]
         let indexBookCover = document.getElementsByClassName("index-book-covers")[0]
         if (allBooks.length === 2) {
-            indexBooksHTML.style.gridTemplateColumns = "auto auto"; 
             indexBooksHTML.style.display = "grid"; 
+            indexBooksHTML.style.gridTemplateColumns = "auto auto"; 
             indexBookInfo.style.padding = `5%`
         } else if (allBooks.length === 1) {
             indexBooksHTML.style.gridTemplateColumns = "auto"; 
             indexBooksHTML.style.display = "block"; 
             indexBookInfo.style.padding = `7%`
         } else if (indexBooksHTML) {
+            indexBooksHTML.style.display = "grid"; 
             indexBooksHTML.style.gridTemplateColumns = "auto auto auto";
             indexBookInfo.style.padding = `1%`
-        } else {
-            indexBooksHTML.style.display = "grid"; 
-        }
+        } 
 
         let notfound = images.notFound;
       
