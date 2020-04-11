@@ -31,8 +31,7 @@ class Book < ApplicationRecord
   
 
    def unique_shelves
-     shelves = self.shelves.uniq()
-    #  shelves.select{|shelf| shelf.user_id == self.users}
+     shelves = self.shelves.uniq().sort{|a,b| b<=>a } 
    end
 
 

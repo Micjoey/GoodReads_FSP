@@ -29,10 +29,11 @@ class AddShelf extends React.Component {
 
     toggleColoring(shelf) {
         let styling = document.getElementById(`${shelf.bookshelf_title}`)
+        debugger
         if (styling.name === 'checked') {
             styling.classList.remove('filtered')
             styling.name = `not-checked`
-        } else {
+        } else if (styling.name === `not-checked`) {
             styling.classList.add('filtered')
             styling.setAttribute('name', 'checked')
         }
@@ -43,8 +44,7 @@ class AddShelf extends React.Component {
         this.props.addToShelf(
             { shelf_id: shelf.id, book_id: book.id }
         )
-        //.then(() => this.props.retrieveBook(book.id))
-        .then(() => this.toggleColoring(shelf))
+        
     }
 
     removeShelf(shelf, shelfName) {
@@ -57,7 +57,7 @@ class AddShelf extends React.Component {
                 { shelf_id: shelf.id, book_id: book.id, id: onshelfId.id }
                 )// removes the book from the shelf
                 .then(() => this.toggleColoring(shelf)) //switches the shelf from checked to uncheck
-                .then(() => this.props.retrieveBook(this.props.match.params.bookId)     )
+                .then(() => this.props.retrieveBook(this.props.match.params.bookId))
                 //.then(() => this.addToShelf())
             }
     }
@@ -66,7 +66,6 @@ class AddShelf extends React.Component {
         const shelfId = shelf.id
         const onshelfId = shelf.shelfBooks.filter(shelf => shelf.shelf_id === shelfId && shelf.book_id === book.id)[0]
         onshelfId ? this.removeShelf(shelf, shelfName) : this.addToShelf(shelf)
-        // this.addToShelf(shelf)
     }
 
     firstColorOnShelfBooks() {
@@ -75,10 +74,9 @@ class AddShelf extends React.Component {
             let styling = document.getElementById(`${indivShelf.bookshelf_title}`)
             let indivShelfEle = document.getElementById(indivShelf.bookshelf_title)
             if (indivShelfEle) {
-                if (indivShelf.user_id === this.props.currentUser.id && styling.name !== 'not-checked' ) {
+                if (indivShelf.user_id === this.props.currentUser.id) {
                     styling.classList.add('filtered')
                     styling.setAttribute('name', 'checked')
-                    // this.toggleColoring(indivShelf)
                 } 
             } 
         })
