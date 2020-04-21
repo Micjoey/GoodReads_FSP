@@ -35,15 +35,15 @@ class IndexBook extends React.Component {
 
     
     updateState() {
-        let allBooks = this.props.books.filter(indivBook =>
+        const allBooks = this.props.books.filter(indivBook =>
             indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
             indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
             indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
         ).map(indivBook => indivBook);
 
-        let indexBooksHTML = document.getElementsByClassName("index-books")[0]
-        let indexBookInfo = document.getElementsByClassName("index-book-information")[0]
-        let indexBookCover = document.getElementsByClassName("index-book-covers")[0]
+        const indexBooksHTML = document.getElementsByClassName("index-books")[0]
+        const indexBookInfo = document.getElementsByClassName("index-book-information")[0]
+        const indexBookCover = document.getElementsByClassName("index-book-covers")[0]
         if (allBooks.length === 2) {
             indexBooksHTML.style.display = "grid"; 
             indexBooksHTML.style.gridTemplateColumns = "auto auto"; 
@@ -95,8 +95,8 @@ class IndexBook extends React.Component {
     }
 
     dropDown() {
-        let dropDown = document.getElementById("genre-dropdown")
-        let genreTitle = document.getElementById("genre-header")
+        const dropDown = document.getElementById("genre-dropdown")
+        const genreTitle = document.getElementById("genre-header")
         if (dropDown.style.display) {
             dropDown.style.display = null
             genreTitle.classList.toggle("filter-bar-clicked-on")

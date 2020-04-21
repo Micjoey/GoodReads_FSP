@@ -15,7 +15,7 @@ class RootFile extends React.Component {
     }
 
     dropDownIdSwitch() {
-        getElementById("myDropdown").classList.toggdocument.le("show");
+        getElementById("myDropdown").classList.toggledocument("show");
     }
 
     reload () {
