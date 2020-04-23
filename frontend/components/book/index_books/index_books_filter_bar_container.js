@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { retrieveBooks } from '../../../actions/book_actions'
+
 import IndexBooksFilterBar from './Index_books_filter_bar'
 
 const mapStateToProps = (state) => {

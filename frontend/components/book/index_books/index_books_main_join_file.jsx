@@ -1,30 +1,19 @@
 import React from 'react';
-import { Link, Redirect, withRouter } from 'react-router-dom'
 import IndexBooksFilter from './index_books_filter_bar_container';
 import IndexBooks from './index_books_container';
-class IndexBooksMainJoinFile extends React.Component {
+
+class IndexBooksMainFile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             bookSearch: '',
             books: [],
-            loaded: true,
+            loaded: false,
         }
-        this.showBook = this.showBook.bind(this);
     }
-
-
     componentDidMount() {
         const books = this.props.retrieveBooks()
         Promise.all([books]).then(() => this.setState({ loaded: true }))
-    }
-
-
-
-    showBook(id) {
-        return (
-            <Redirect to={`/book/${id}`} />
-        )
     }
 
 
@@ -37,32 +26,32 @@ class IndexBooksMainJoinFile extends React.Component {
             return (
                 <div className="background-color">
                     <div className='search-bar'>
-                        <IndexBooksFilter allBooks={allBooks} books={books}/>
+                        <IndexBooksFilter />
                     </div>
-                    <div className='index-books'>
-                        <IndexBooks allBooks={allBooks} books={books}/>
+                    <div className="index-book-information">
+                        <IndexBooks />
                     </div>
                 </div>
             )
         } else {
-            return (<div className="loading-page">
-                <div className="loading-sections">
-                    <div className='loading-circle'>
-                        <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-                    </div>
-                    <div className='loading-text'>
-                        <h1>Loading...If longer than 1 min, please refresh the page.</h1>
+            return (
+                <div className="loading-page">
+                    <div className="loading-sections">
+                        <div className='loading-circle'>
+                            <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                        </div>
+                        <div className='loading-text'>
+                            <h1>Loading...If longer than 1 min, please refresh the page.</h1>
+                        </div>
                     </div>
                 </div>
-            </div>)
+            )
         }
-
     }
-
 }
 
 
-export default IndexBooksMainJoinFile
+export default IndexBooksMainFile
 
 
 

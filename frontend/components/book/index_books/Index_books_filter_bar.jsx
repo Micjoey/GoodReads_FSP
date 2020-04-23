@@ -152,9 +152,9 @@ class IndexBooksFilterBar extends React.Component {
                             />
                         </form>
                     </div>
-                    <div className="index-book-information">
+                    {/* <div className="index-book-information">
                         <IndexBook/>
-                    </div>
+                    </div> */}
                 </div>
             )
         } else {

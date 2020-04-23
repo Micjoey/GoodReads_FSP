@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { retrieveBooks, retrieveBook } from '../../../actions/book_actions'
-import IndexBooksMainJoinFile from './index_books_main_join_file'
+import { retrieveBooks } from '../../../actions/book_actions'
+import IndexBooksMainFile from './Index_books_filter_bar'
 
 const mapStateToProps = (state) => {
     return {
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(IndexBooksMainJoinFile)
+)(IndexBooksMainFile)

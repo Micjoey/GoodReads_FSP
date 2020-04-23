@@ -30,7 +30,9 @@ const App = () => (
     <div className="content">
       <Switch>
         <AuthRoute exact path="/" component={Splash} /> 
-        <ProtectedRoute exact path="/home" component={IndexBooksFilterBar} />
+        <ProtectedRoute exact path="/test" component={IndexBooksMainJoinFile} />
+        <ProtectedRoute exact path="/home" component={IndexBooks} />
+        <ProtectedRoute exact path="/bar" component={IndexBooksFilterBar} />
         <ProtectedRoute exact path="/book/:bookId" component={ShowBookContainer}/>
         <ProtectedRoute exact path="/shelf" component={IndexShelvesContainer} />
         <Redirect to="/home" />
