@@ -18,6 +18,7 @@ class IndexBooksFilterBar extends React.Component {
         this.filterBooksByRating = this.filterBooksByRating.bind(this)
         this.allGenres = this.allGenres.bind(this)
         this.dropDown = this.dropDown.bind(this)
+        this.dynamicGridStyling = this.dynamicGridStyling.bind(this)
     }
 
 
@@ -34,22 +35,15 @@ class IndexBooksFilterBar extends React.Component {
         )
     }
 
-
-    updateState() {
-        const allBooks = this.props.books.filter(indivBook =>
-            indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
-            indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
-            indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
-        ).map(indivBook => indivBook);
-
+    dynamicGridStyling(booksArray) {
         const indexBooksHTML = document.getElementsByClassName("index-books")[0]
         const indexBookInfo = document.getElementsByClassName("index-book-information")[0]
         // const indexBookCover = document.getElementsByClassName("index-book-covers")[0]
-        if (allBooks.length === 2) {
+        if (booksArray.length === 2) {
             indexBooksHTML.style.display = "grid";
             indexBooksHTML.style.gridTemplateColumns = "auto auto";
             indexBookInfo.style.padding = `5%`
-        } else if (allBooks.length === 1) {
+        } else if (booksArray.length === 1) {
             indexBooksHTML.style.gridTemplateColumns = "auto";
             indexBooksHTML.style.display = "block";
             indexBookInfo.style.padding = `7%`
@@ -59,15 +53,30 @@ class IndexBooksFilterBar extends React.Component {
             indexBookInfo.style.padding = `1%`
         }
 
+        if (booksArray.length === 0) {
+            indexBooksHTML.style.gridTemplateColumns = "auto";
+            indexBookInfo.style.padding = `7%`
+        }
+
+    }
+
+    updateState() {
+        const allBooks = this.props.books.filter(indivBook =>
+            indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
+            indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
+            indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
+        ).map(indivBook => indivBook);
+
+        
+
         let notfound = images.notFound;
 
         if (allBooks.length === 0) {
             this.setState({ books: [{ title: 'Not Found', photo: notfound }], bookSearch: '' })
-            indexBooksHTML.style.gridTemplateColumns = "auto";
-            indexBookInfo.style.padding = `7%`
         } else {
             this.setState({ books: allBooks })
         }
+        this.dynamicGridStyling(allBooks)
     }
 
     filterBooks(text) {
