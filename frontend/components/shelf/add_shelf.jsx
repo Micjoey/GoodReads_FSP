@@ -1,7 +1,7 @@
 import React from 'react';
 import { link, Redirect, withRouter } from 'react-router-dom'
 import { formatDateWithDay } from '../../util/date_util';
-import ShelfFormContainer from '../shelf/shelf_form_container'
+import ShelfFormContainer from './shelf_form_container'
 
 class AddShelf extends React.Component {
     constructor(props) {

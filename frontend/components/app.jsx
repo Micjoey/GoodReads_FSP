@@ -12,10 +12,14 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal'
 import NavBarContainer from './navbar/navbar_container';
 import Splash from './splash/splash';
-import IndexBookContainer from './book/index_books_container'
-import ShowBookContainer from './book/show_book_container';
+import IndexBooksMainJoinFile from './book/index_books/index_books_main_join_file_container'
+import ShowBookContainer from './book/show_book/show_book_container';
 import IndexShelvesContainer from './shelf/index_shelves_container';
 import Footer from './footer/footer';
+import IndexBooks from './book/index_books/index_books_container';
+import IndexBooksFilterBar from './book/index_books/index_books_filter_bar_container';
+
+
 
 const App = () => (
   <div className="app">
@@ -26,7 +30,7 @@ const App = () => (
     <div className="content">
       <Switch>
         <AuthRoute exact path="/" component={Splash} /> 
-        <ProtectedRoute exact path="/home" component={IndexBookContainer} />
+        <ProtectedRoute exact path="/home" component={IndexBooksFilterBar} />
         <ProtectedRoute exact path="/book/:bookId" component={ShowBookContainer}/>
         <ProtectedRoute exact path="/shelf" component={IndexShelvesContainer} />
         <Redirect to="/home" />

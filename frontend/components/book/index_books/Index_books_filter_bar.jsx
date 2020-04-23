@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom'
-import ShowBookContainer from './show_book_container';
-import { IndivRating } from '../stars/star';
-class IndexBook extends React.Component {
+import { IndivRating } from '../../stars/star';
+import IndexBook from './index_books';
+
+class IndexBooksFilterBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,15 +26,15 @@ class IndexBook extends React.Component {
         Promise.all([books]).then(() => this.setState({ loaded: true }))
     }
 
-   
+
 
     showBook(id) {
         return (
-        <Redirect to={`/book/${id}`}/>   
-        )    
+            <Redirect to={`/book/${id}`} />
+        )
     }
 
-    
+
     updateState() {
         const allBooks = this.props.books.filter(indivBook =>
             indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
@@ -43,25 +44,25 @@ class IndexBook extends React.Component {
 
         const indexBooksHTML = document.getElementsByClassName("index-books")[0]
         const indexBookInfo = document.getElementsByClassName("index-book-information")[0]
-        const indexBookCover = document.getElementsByClassName("index-book-covers")[0]
+        // const indexBookCover = document.getElementsByClassName("index-book-covers")[0]
         if (allBooks.length === 2) {
-            indexBooksHTML.style.display = "grid"; 
-            indexBooksHTML.style.gridTemplateColumns = "auto auto"; 
+            indexBooksHTML.style.display = "grid";
+            indexBooksHTML.style.gridTemplateColumns = "auto auto";
             indexBookInfo.style.padding = `5%`
         } else if (allBooks.length === 1) {
-            indexBooksHTML.style.gridTemplateColumns = "auto"; 
-            indexBooksHTML.style.display = "block"; 
+            indexBooksHTML.style.gridTemplateColumns = "auto";
+            indexBooksHTML.style.display = "block";
             indexBookInfo.style.padding = `7%`
         } else if (indexBooksHTML) {
-            indexBooksHTML.style.display = "grid"; 
+            indexBooksHTML.style.display = "grid";
             indexBooksHTML.style.gridTemplateColumns = "auto auto auto";
             indexBookInfo.style.padding = `1%`
-        } 
+        }
 
         let notfound = images.notFound;
-      
+
         if (allBooks.length === 0) {
-            this.setState({ books: [{ title: 'Not Found', photo: notfound }] , bookSearch: '' })
+            this.setState({ books: [{ title: 'Not Found', photo: notfound }], bookSearch: '' })
             indexBooksHTML.style.gridTemplateColumns = "auto";
             indexBookInfo.style.padding = `7%`
         } else {
@@ -70,7 +71,7 @@ class IndexBook extends React.Component {
     }
 
     filterBooks(text) {
-        this.setState({bookSearch: text}, () => this.updateState())
+        this.setState({ bookSearch: text }, () => this.updateState())
     }
 
     allGenres() {
@@ -87,11 +88,11 @@ class IndexBook extends React.Component {
         } else {
             this.filterBooks()
         }
-        
+
     }
 
     filterBooksByRating(rating) {
-        
+
     }
 
     dropDown() {
@@ -113,50 +114,14 @@ class IndexBook extends React.Component {
         if (!this.props.books) return null;
         let allBooks
         (this.state.books.length < 1) ? allBooks = this.props.books : allBooks = this.state.books
-        const books = (
-                <div className="index-books">
-                    {allBooks.map((book, i) => (
-                    // {this.props.books.map((book, i) => (
-                        <div key={`book-${i}`} className="index-books-book-info">
-                            <div className='dropdown-book'>
-                            <Link to={`/book/${book.id}`}>
-                                <div className="index-book-covers">
-                                    <img src={book.photo} className="index-book-cover"/>
-                                </div>
-                            </Link>
-                            </div>
-                            <Link to={`/book/${book.id}`} className="dropdown-book-content">
-                                <div className='index-book-information-title'>{book.title}</div>
-                                <div className='index-book-information-author'>by: {book.author}</div>
-                                <div className='index-book-information-rating'>Rating: {book.average_rating}</div>
-                                <div className='index-book-information-rating'>
-                                        <IndivRating min={1} max={5}
-                                        value={book.average_rating}
-                                    />
-                                </div>
-                                <div className='index-book-information-genre'>Genre: {book.genre}</div>
-                                {/* <div className='index-book-information-date-read'>Date Read: {book.date_read}</div> */}
-                                <div className='index-book-information-date-read'>{(book.date_read) ? 
-                                                                <div>Date Read: Has Read</div> :
-                                                               <div>Date Read: Hasn't Read</div>}
-                                </div>
-                                <div className='index-book-information-description'>
-                                    <div> Book Description: </div>
-                                    <div> {book.description} </div>
-                                </div>
-                            </Link>
-                        </div>
-                    ))}
-                </div>
-            )  
         if (this.state.loaded) {
             return (
                 <div className='background-color'>
                     <div className='search-bar'>
                         <div className='nav-bar-search'>
-                            <div className="dropdown"> 
+                            <div className="dropdown">
                                 <h3 className="filter-bar-titles" id="genre-header"
-                                onClick={() => this.dropDown()}>Genre</h3>
+                                    onClick={() => this.dropDown()}>Genre</h3>
                                 <div className='nav-bar-search-by-genre' id="genre-dropdown">
                                     <button className="index-book-filter-bar-buttons"
                                         onClick={() => this.filterBooksByGenre(``)}>
@@ -185,32 +150,32 @@ class IndexBook extends React.Component {
                                     text.target.value
                                 )}
                             />
-                        </form> 
+                        </form>
                     </div>
-                    <div className="index-book-information"> 
-                        {books}
+                    <div className="index-book-information">
+                        <IndexBook/>
                     </div>
                 </div>
             )
         } else {
             return (<div className="loading-page">
-				<div className="loading-sections">
-					<div className='loading-circle'>
+                <div className="loading-sections">
+                    <div className='loading-circle'>
                         <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-					</div>
+                    </div>
                     <div className='loading-text'>
                         <h1>Loading...If longer than 1 min, please refresh the page.</h1>
                     </div>
-				</div>
-			</div>)
+                </div>
+            </div>)
         }
-        
+
     }
 
 }
 
 
-export default IndexBook
+export default IndexBooksFilterBar
 
 
 

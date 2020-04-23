@@ -5,9 +5,6 @@ import SearchBarContainer from './search_bar_container';
 import LoginFormContainer from '../session_form/login_form_container';
 
 
-
-
-
 class RootFile extends React.Component {
     constructor(props) {
         super(props); 

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
-import { retrieveBook, updateBook } from '../../actions/book_actions'
+import { retrieveBook, updateBook } from '../../../actions/book_actions'
 import ShowBook from './show_book'
 import { withRouter } from 'react-router';
-import { retrieveAllUsers } from '../../actions/users_actions';
+import { retrieveAllUsers } from '../../../actions/users_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const book = state.entities.books[ownProps.match.params.bookId];

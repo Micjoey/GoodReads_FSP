@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
-import { retrieveBooks, retrieveBook } from '../../actions/book_actions'
+import { retrieveBooks } from '../../../actions/book_actions'
 import IndexBook from './index_books'
-import { withRouter } from 'react-router'
+
 
 const mapStateToProps = (state) => {
     return {
