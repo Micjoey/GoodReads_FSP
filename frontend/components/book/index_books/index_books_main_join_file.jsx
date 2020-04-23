@@ -1,6 +1,7 @@
 import React from 'react';
 import IndexBooksFilter from './index_books_filter_bar_container';
 import IndexBooks from './index_books_container';
+import {IndexBook} from './index_books'
 
 class IndexBooksMainFile extends React.Component {
     constructor(props) {

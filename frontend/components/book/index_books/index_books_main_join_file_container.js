@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { retrieveBooks } from '../../../actions/book_actions'
-import IndexBooksMainFile from './Index_books_filter_bar'
+import IndexBooksMainFile from './index_books_main_join_file'
 
 const mapStateToProps = (state) => {
     return {

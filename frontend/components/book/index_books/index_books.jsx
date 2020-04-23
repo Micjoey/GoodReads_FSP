@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom'
-import { IndexBooksFilterBar } from './Index_books_filter_bar'
-import ShowBookContainer from '../show_book/show_book_container';
 import { IndivRating } from '../../stars/star';
 class IndexBook extends React.Component {
     constructor(props) {
