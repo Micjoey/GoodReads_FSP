@@ -12,7 +12,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal'
 import NavBarContainer from './navbar/navbar_container';
 import Splash from './splash/splash';
-import IndexBooksMainJoinFile from './book/index_books/index_books_main_join_file_container'
 import ShowBookContainer from './book/show_book/show_book_container';
 import IndexShelvesContainer from './shelf/index_shelves_container';
 import Footer from './footer/footer';
