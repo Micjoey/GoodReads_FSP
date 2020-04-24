@@ -15,12 +15,13 @@
     }
 
 .index-book-filter-bar-buttons {
-    cursor: pointer;
-    display: flex;
+  cursor: pointer;
+  display: flex;
 }
 .index-book-filter-bar-buttons {
-   min-width: 85px;
-   width: 100%;
+  text-transform: capitalize;
+  min-width: 85px;
+  width: 100%;
 }
 
 .add-shelves-sidebar-shelf {
