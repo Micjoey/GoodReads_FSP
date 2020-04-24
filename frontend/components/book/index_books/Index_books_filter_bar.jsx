@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom'
 import { IndivRating } from '../../stars/star';
-import IndexBook from './index_books_container';
 import IndexBooks from './index_books';
 
 
