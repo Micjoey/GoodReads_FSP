@@ -17,7 +17,6 @@ class EditReview extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // the issue is that reviewed_date is null:false but no date is getting passed through.
 
 
     update(field) {
