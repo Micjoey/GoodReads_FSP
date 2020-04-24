@@ -16,7 +16,7 @@ class ShelfFormContainer extends React.Component {
         });
     }
 
-    handleSubmit(e) {
+    handleSubmit() {
         // e.preventDefault();
         const title = Object.assign({}, this.state);
         this.props.createShelf(title);

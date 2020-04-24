@@ -2,8 +2,9 @@ import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom';
 import { formatDate, formatDateWithDay } from '../../util/date_util';
 import ShelfFormContainer from './shelf_form_container';
-import { IndivRating } from '../stars/star';
 import FilterShelves from './filter_Shelves'
+
+
 
 
 class IndexShelves extends React.Component {
@@ -52,8 +53,7 @@ class IndexShelves extends React.Component {
     render(){
         if(!this.props.shelves) return null;
         let currentUsersPersonalShelves = (this.state.shelf.length > 0) ? this.state.shelf : this.props.shelves
-        const allShelves = this.props.shelves
-        // debugger
+        
         return (
             <div className="index-shelves-main">
                 <div className="index-shelves-main-navbar">
@@ -81,20 +81,7 @@ class IndexShelves extends React.Component {
                             <ShelfFormContainer />
                             </div>
                         </div>
-                        <div className="index-shelves-main-shelves">
-                            <div className="index-shelves-main-shelves-nav-bar">
-                                <div className="index-shelves-shelf-name"> Cover </div>
-                                <div className="index-shelves-title"> Title </div>
-                                <div className="index-shelves-author"> Author </div>
-                                <div className="index-shelves-avg-rating"> Avg Rating </div>
-                                <div className="index-shelves-date-added"> Date Added </div>
-                                <div className="index-shelves-date-read"> Has Read </div>
-                                <div className="index-shelves-date-read"> Delete </div>
-                            </div>
-                            <div className="index-shelves-books"> 
-                                {FilterShelves(currentUsersPersonalShelves, this.handleDeleteShelf)}
-                            </div>
-                        </div>
+                        {FilterShelves(currentUsersPersonalShelves, this.handleDeleteShelf)}
                     </div>
                 </div>
             </div>
