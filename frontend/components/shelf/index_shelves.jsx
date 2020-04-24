@@ -55,7 +55,6 @@ class IndexShelves extends React.Component {
             <div className="index-shelves-main">
                 <div className="index-shelves-main-navbar">
                     <p className="index-shelves-main-navbar-myshelves">My Shelves</p>
-                    {/* <h2 className='index-shelves-search'>Search Bar Placeholder</h2> */}
                 </div>
                 <div className="index-shelves-main-inner">
                     <div className="index-shelves-main-content">
@@ -85,13 +84,12 @@ class IndexShelves extends React.Component {
                                 <div className="index-shelves-title"> Title </div>
                                 <div className="index-shelves-author"> Author </div>
                                 <div className="index-shelves-avg-rating"> Avg Rating </div>
-                                {/* <div className="index-shelves-my-rating"> Rating </div> */}
                                 <div className="index-shelves-date-added"> Date Added </div>
                                 <div className="index-shelves-date-read"> Has Read </div>
                                 <div className="index-shelves-date-read"> Delete </div>
                             </div>
                             <div className="index-shelves-books"> 
-                                    {/* {this.props.shelves.map((shelf, idx)=>( */}
+
                                     {currentUsersPersonalShelves.map((shelf, idx)=>(
                                         <div key={`${shelf}-${idx}`} className="index-shelves-bookshelf">
                                                <div className="index-shelf-titles"> 
@@ -116,14 +114,11 @@ class IndexShelves extends React.Component {
                                                             </div>
                                                             <div className="index-shelf-book-author">{book.author}</div>
                                                             <div className="index-shelf-book-rating-container">
-                                                                {/* <div className="index-shelf-book-avg-rating">{book.average_rating}</div> */}
                                                                <IndivRating min={1} max={5}
                                                                    value={book.average_rating}
                                                                />
                                                            </div>
-                                                           {/* <div className="index-shelf-book-rating-container">
-                                                                <div className="index-shelf-book-user-rating">{book.rating}</div>
-                                                            </div> */}
+
                                                            <div className="index-shelf-book-added">{formatDateWithDay(shelf.shelfBooks[i].updated_at)}</div>                                                        
                                                            <div className="index-shelf-book-added">
                                                                {(book.date_read) ? 
