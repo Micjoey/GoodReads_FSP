@@ -32,9 +32,9 @@ class IndexShelves extends React.Component {
         let styling = document.getElementById(`${shelfName}`)
         this.props.shelves.forEach(indivShelf => document.getElementById(indivShelf.bookshelf_title).classList.remove('filtered'))
         if (shelf !== 'All Books') {
-            let newShelf = this.props.shelves.filter(indivShelf => shelfName === indivShelf.bookshelf_title)
+            let currentUsersPersonalShelves = this.props.shelves.filter(indivShelf => shelfName === indivShelf.bookshelf_title)
             styling.classList.add('filtered')
-        this.setState({shelf: newShelf}) } else {
+        this.setState({shelf: currentUsersPersonalShelves}) } else {
             this.setState({shelf: this.props.retrieveBooks()})
             // this.setState({shelf: this.props.retrieveBooks()})
         }
@@ -49,7 +49,8 @@ class IndexShelves extends React.Component {
     
     render(){
         if(!this.props.shelves) return null;
-            let newShelf = (this.state.shelf.length > 0) ? this.state.shelf : this.props.shelves
+        let currentUsersPersonalShelves = (this.state.shelf.length > 0) ? this.state.shelf : this.props.shelves
+        debugger
         return (
             <div className="index-shelves-main">
                 <div className="index-shelves-main-navbar">
@@ -91,7 +92,7 @@ class IndexShelves extends React.Component {
                             </div>
                             <div className="index-shelves-books"> 
                                     {/* {this.props.shelves.map((shelf, idx)=>( */}
-                                    {newShelf.map((shelf, idx)=>(
+                                    {currentUsersPersonalShelves.map((shelf, idx)=>(
                                         <div key={`${shelf}-${idx}`} className="index-shelves-bookshelf">
                                                <div className="index-shelf-titles"> 
                                                     {shelf.bookshelf_title}    
@@ -123,7 +124,7 @@ class IndexShelves extends React.Component {
                                                            {/* <div className="index-shelf-book-rating-container">
                                                                 <div className="index-shelf-book-user-rating">{book.rating}</div>
                                                             </div> */}
-                                                           <div className="index-shelf-book-added">{formatDateWithDay(book.created_at)}</div>                                                        
+                                                           <div className="index-shelf-book-added">{formatDateWithDay(shelf.shelfBooks[i].updated_at)}</div>                                                        
                                                            <div className="index-shelf-book-added">
                                                                {(book.date_read) ? 
                                                                 <img src={images.checkBook} className="checkBook" alt="" /> :
@@ -134,7 +135,7 @@ class IndexShelves extends React.Component {
                                                                <button key={i}className="add-shelves-sidebar-shelf-buttons"
                                                                    onClick={() => {
                                                                        this.props.removeBook(
-                                                                           { shelf_id: shelf.id, book_id: book.id, id: newShelf[idx].shelfBooks[i].id }
+                                                                           { shelf_id: shelf.id, book_id: book.id, id: currentUsersPersonalShelves[idx].shelfBooks[i].id }
                                                                        ).then(() => window.location.reload())
                                                                    }
                                                                    }
