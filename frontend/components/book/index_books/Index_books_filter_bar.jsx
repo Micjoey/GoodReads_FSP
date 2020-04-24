@@ -3,6 +3,7 @@ import { Link, Redirect, withRouter } from 'react-router-dom'
 import { IndivRating } from '../../stars/star';
 import IndexBook from './index_books_container';
 
+
 class IndexBooksFilterBar extends React.Component {
     constructor(props) {
         super(props);
@@ -11,7 +12,7 @@ class IndexBooksFilterBar extends React.Component {
             books: [],
             loaded: false,
         }
-        this.showBook = this.showBook.bind(this);
+
         this.filterBooks = this.filterBooks.bind(this)
         this.updateState = this.updateState.bind(this)
         this.filterBooksByGenre = this.filterBooksByGenre.bind(this)
@@ -28,12 +29,6 @@ class IndexBooksFilterBar extends React.Component {
     }
 
 
-
-    showBook(id) {
-        return (
-            <Redirect to={`/book/${id}`} />
-        )
-    }
 
     dynamicGridStyling(booksArray) {
         const indexBooksHTML = document.getElementsByClassName("index-books")[0]
@@ -121,7 +116,7 @@ class IndexBooksFilterBar extends React.Component {
 
     render() {
         if (!this.props.books) return null;
-        let allBooks
+        let allBooks 
         (this.state.books.length < 1) ? allBooks = this.props.books : allBooks = this.state.books
         if (this.state.loaded) {
             return (
@@ -162,7 +157,7 @@ class IndexBooksFilterBar extends React.Component {
                         </form>
                     </div>
                     <div className="index-book-information">
-                        <IndexBook/>
+                        <IndexBook allBooks = {allBooks}/>
                     </div>
                 </div>
             )
