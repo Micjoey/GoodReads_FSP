@@ -3,7 +3,8 @@ import { Link, Redirect, withRouter } from 'react-router-dom'
 import { IndivRating } from '../../stars/star';
 import IndexBooks from './index_books';
 import MinMaxBookRatings from '../min_max_book_rating';
-import LoadingScreen from '../../loading_screen';
+import LoadingScreen from '../../misc/loading_screen';
+import ToggleColoring from '../../misc/Toggle_coloring';
 
 
 
@@ -58,6 +59,7 @@ class IndexBooksFilterBar extends React.Component {
 
     filterBooks(text, idx) {
         this.setState({ bookSearch: text }, () => this.updateState())
+        ToggleColoring(text)
     }
 
     updateState() {
@@ -121,16 +123,7 @@ class IndexBooksFilterBar extends React.Component {
 
 
 
-    toggleColoring(shelf) {
-        let styling = document.getElementById(`${shelf.bookshelf_title}`)
-        if (styling.name === 'checked') {
-            styling.classList.remove('filtered')
-            styling.name = `not-checked`
-        } else if (styling.name === `not-checked`) {
-            styling.classList.add('filtered')
-            styling.setAttribute('name', 'checked')
-        }
-    }
+
 
 
 

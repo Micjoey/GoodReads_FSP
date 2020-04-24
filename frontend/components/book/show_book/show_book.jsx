@@ -4,6 +4,7 @@ import AddShelfContainer from '../../shelf/add_shelf_container';
 import CreateReviewContainer from '../../reviews/create_review_form_container';
 import { deleteReview } from '../../../actions/review_actions';
 import { IndivRating } from '../../stars/star';
+import LoadingScreen from '../../misc/loading_screen';
 
 
 

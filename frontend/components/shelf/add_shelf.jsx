@@ -2,6 +2,9 @@ import React from 'react';
 import { link, Redirect, withRouter } from 'react-router-dom'
 import { formatDateWithDay } from '../../util/date_util';
 import ShelfFormContainer from './shelf_form_container'
+import LoadingScreen from '../misc/loading_screen';
+import ToggleColoring from '../misc/Toggle_coloring';
+
 
 class AddShelf extends React.Component {
     constructor(props) {
@@ -16,7 +19,6 @@ class AddShelf extends React.Component {
         this.firstColorOnShelfBooks = this.firstColorOnShelfBooks.bind(this)
         this.removeShelf = this.removeShelf.bind(this)
         this.handleShelf = this.handleShelf.bind(this)
-        this.toggleColoring = this.toggleColoring.bind(this)
 
     }
 
@@ -27,16 +29,6 @@ class AddShelf extends React.Component {
         Promise.all([shelvesMount]).then(() => this.setState({ loaded: true }))
     }
 
-    toggleColoring(shelf) {
-        let styling = document.getElementById(`${shelf.bookshelf_title}`)
-        if (styling.name === 'checked') {
-            styling.classList.remove('filtered')
-            styling.name = `not-checked`
-        } else if (styling.name === `not-checked`) {
-            styling.classList.add('filtered')
-            styling.setAttribute('name', 'checked')
-        }
-    }
 
     addToShelf(shelf) {
         const book = this.props.book
@@ -55,7 +47,7 @@ class AddShelf extends React.Component {
             this.props.removeBook(
                 { shelf_id: shelf.id, book_id: book.id, id: onshelfId.id }
                 )// removes the book from the shelf
-                .then(() => this.toggleColoring(shelf)) //switches the shelf from checked to uncheck
+                .then(() => ToggleColoring(shelf)) //switches the shelf from checked to uncheck
                 .then(() => this.props.retrieveBook(this.props.match.params.bookId))
                 //.then(() => this.addToShelf())
             }
