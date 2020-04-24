@@ -2,6 +2,9 @@ import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom'
 import { IndivRating } from '../../stars/star';
 import IndexBook from './index_books_container';
+import IndexBooks from './index_books';
+
+
 
 
 class IndexBooksFilterBar extends React.Component {
@@ -117,7 +120,9 @@ class IndexBooksFilterBar extends React.Component {
     render() {
         if (!this.props.books) return null;
         let allBooks 
+        // (this.state.books.length < 1) ? allBooks = this.props.books : allBooks = this.state.books
         (this.state.books.length < 1) ? allBooks = this.props.books : allBooks = this.state.books
+        // debugger
         if (this.state.loaded) {
             return (
                 <div className='background-color'>
@@ -157,7 +162,8 @@ class IndexBooksFilterBar extends React.Component {
                         </form>
                     </div>
                     <div className="index-book-information">
-                        <IndexBook allBooks = {allBooks}/>
+                        {/* <IndexBook allBooks = {allBooks}/> */}
+                        {IndexBooks(allBooks)}
                     </div>
                 </div>
             )
