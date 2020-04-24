@@ -150,14 +150,12 @@ class showBook extends React.Component {
             </div>
             )
         } else {
-            return (<div className="loading-page">
-                <div className="loading-sections">
-                    <div>
-                        <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-                        <span className="sr-only">Loading...If longer than 1 min, please refresh the page.</span>
-                    </div>
+            return (
+                <div>
+                    {LoadingScreen()}
                 </div>
-            </div>)}
+            )
+        }
     }
 }
 

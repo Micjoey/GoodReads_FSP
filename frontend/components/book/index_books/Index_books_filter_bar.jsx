@@ -3,6 +3,7 @@ import { Link, Redirect, withRouter } from 'react-router-dom'
 import { IndivRating } from '../../stars/star';
 import IndexBooks from './index_books';
 import MinMaxBookRatings from '../min_max_book_rating';
+import LoadingScreen from '../../loading_screen';
 
 
 
@@ -91,7 +92,6 @@ class IndexBooksFilterBar extends React.Component {
 
 
     filterBooksByRating(rating) {
-       
         const leveledRating = Math.floor(parseInt(rating))
         let filteredBooks = this.props.books
         
@@ -103,8 +103,7 @@ class IndexBooksFilterBar extends React.Component {
         } 
         this.setState({ books: filteredBooks })
         this.dynamicGridStyling(filteredBooks)
-        
-
+    
     }
 
     dropDown(dropDownId) {
@@ -193,7 +192,6 @@ class IndexBooksFilterBar extends React.Component {
                             <input type="text"
                                 className="index-book-filter-bar-text"
                                 placeholder="Filter Books"
-                                // value={this.state.currentHp}
                                 onChange={text => this.filterBooks(
                                     text.target.value
                                 )}
@@ -201,22 +199,16 @@ class IndexBooksFilterBar extends React.Component {
                         </form>
                     </div>
                     <div className="index-book-information">
-                        {/* <IndexBook allBooks = {allBooks}/> */}
                         {IndexBooks(allBooks)}
                     </div>
                 </div>
             )
         } else {
-            return (<div className="loading-page">
-                <div className="loading-sections">
-                    <div className='loading-circle'>
-                        <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-                    </div>
-                    <div className='loading-text'>
-                        <h1>Loading...If longer than 1 min, please refresh the page.</h1>
-                    </div>
+            return (
+                <div>
+                    {LoadingScreen()}
                 </div>
-            </div>)
+            )
         }
 
     }
