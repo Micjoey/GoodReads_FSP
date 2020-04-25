@@ -4,7 +4,7 @@ import { IndivRating } from '../../stars/star';
 import IndexBooks from './index_books';
 import MinMaxBookRatings from '../min_max_book_rating';
 import LoadingScreen from '../../misc/loading_screen';
-import ToggleColoring from '../../misc/Toggle_coloring';
+// import ToggleColoring from '../../misc/Toggle_coloring';
 
 
 
@@ -59,7 +59,7 @@ class IndexBooksFilterBar extends React.Component {
 
     filterBooks(text, idx) {
         this.setState({ bookSearch: text }, () => this.updateState())
-        ToggleColoring(text)
+        // ToggleColoring(text)
     }
 
     updateState() {
@@ -98,7 +98,6 @@ class IndexBooksFilterBar extends React.Component {
         let filteredBooks = this.props.books
         
         if (rating !== '') {
-            debugger
             filteredBooks = this.props.books.filter(indivBook =>
                 Math.floor(parseInt(indivBook.average_rating)) === leveledRating
             ).map(indivBook => indivBook);
@@ -120,11 +119,6 @@ class IndexBooksFilterBar extends React.Component {
         }
 
     }
-
-
-
-
-
 
 
     render() {
@@ -203,9 +197,7 @@ class IndexBooksFilterBar extends React.Component {
                 </div>
             )
         }
-
     }
-
 }
 
 
