@@ -3,7 +3,7 @@ import { link, Redirect, withRouter } from 'react-router-dom'
 import { formatDateWithDay } from '../../util/date_util';
 import ShelfFormContainer from './shelf_form_container'
 import LoadingScreen from '../misc/loading_screen';
-import ToggleColoring from '../misc/Toggle_coloring';
+import ToggleColoring from '../misc/toggle_coloring';
 
 
 class AddShelf extends React.Component {

@@ -4,6 +4,7 @@ import { IndivRating } from '../../stars/star';
 import IndexBooks from './index_books';
 import MinMaxBookRatings from '../min_max_book_rating';
 import LoadingScreen from '../../misc/loading_screen';
+import ToggleColoring from '../../misc/toggle_coloring';
 
 
 
