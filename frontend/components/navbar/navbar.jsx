@@ -15,7 +15,7 @@ class RootFile extends React.Component {
         getElementById("myDropdown").classList.toggledocument("show");
     }
 
-    reload () {
+    reload() {
         window.location.assign('/home');
     }
 

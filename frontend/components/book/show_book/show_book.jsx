@@ -50,16 +50,16 @@ class showBook extends React.Component {
             const shelf = (book.unique_shelves.length > 1) ? <p>On Shelves:</p> : <p>On Shelf:</p>
             const book_information = (typeof this.props.book !== 'undefined') ? (
                 <div className="show-book-information">
-                        <div className='show-book-information-title'>{book.title}</div>
-                        <div className='show-book-information-author'>by: {book.author}</div>
+                    <div className='show-book-information-title'>{book.title}</div>
+                    <div className='show-book-information-author'>by: {book.author}</div>
                     <div className='show-book-information-rating '>Avg. Rating: {book.average_rating} 
-                            <IndivRating min={1} max={5}
-                                value={book.average_rating}
-                            />
-                            
-                        </div>
-                        <div className='show-book-information-genre'>Genre: {book.genre}</div>
-                        <div className='show-book-information-description'>Description: {book.description} </div>
+                        <IndivRating 
+                            min={1} max={5}
+                            value={book.average_rating}
+                        />
+                    </div>
+                    <div className='show-book-information-genre'>Genre: {book.genre}</div>
+                    <div className='show-book-information-description'>Description: {book.description} </div>
                 </div>
             ) : (<p>Sorry! No Books!</p>)
             return (
@@ -138,9 +138,8 @@ class showBook extends React.Component {
                                                 />
                                             </div>
                                             <div className="show-book-individual-review-body">Review: {review.body}</div>
-                                            <div>{(review.user_id === this.props.userId) ? <button 
-                                                onClick={() => this.handleDelete(review.id)}>
-                                                    Delete Review</button> : null }
+                                            <div>{(review.user_id === this.props.userId) ? 
+                                                <button  onClick={() => this.handleDelete(review.id)}> Delete Review</button> : null }
                                             </div>
                                         </div>
                                     ))}

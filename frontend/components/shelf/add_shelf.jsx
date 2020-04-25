@@ -24,8 +24,6 @@ class AddShelf extends React.Component {
 
     componentDidMount() {
         const shelvesMount = this.props.retrieveShelves()
-        // const bookMount = this.props.retrieveBook(this.props.match.params.bookId)
-        // Promise.all([shelvesMount, bookMount]).then(() => this.setState({ loaded: true }))
         Promise.all([shelvesMount]).then(() => this.setState({ loaded: true }))
     }
 
