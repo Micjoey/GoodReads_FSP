@@ -5,8 +5,6 @@ import ShelfFormContainer from './shelf_form_container';
 import FilterShelves from './filter_Shelves'
 
 
-
-
 class IndexShelves extends React.Component {
     constructor(props) {
         super(props)
@@ -81,7 +79,7 @@ class IndexShelves extends React.Component {
                             <ShelfFormContainer />
                             </div>
                         </div>
-                        {FilterShelves(currentUsersPersonalShelves, this.handleDeleteShelf)}
+                        {FilterShelves(currentUsersPersonalShelves, this.handleDeleteShelf, this.props.removeBook)}
                     </div>
                 </div>
             </div>

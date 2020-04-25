@@ -5,7 +5,7 @@ import { formatDate, formatDateWithDay } from '../../util/date_util';
 
 
 
-function FilterShelves(currentUsersPersonalShelves, handleDeleteShelf) {
+function FilterShelves(currentUsersPersonalShelves, handleDeleteShelf, removeBook) {
     return (
         <div className="index-shelves-main-shelves"> 
             <div className="index-shelves-main-shelves-nav-bar">
@@ -58,7 +58,7 @@ function FilterShelves(currentUsersPersonalShelves, handleDeleteShelf) {
                                         <div>
                                             <button key={i} className="add-shelves-sidebar-shelf-buttons"
                                                 onClick={() => {
-                                                    this.props.removeBook(
+                                                    removeBook(
                                                         { shelf_id: shelf.id, book_id: book.id, id: currentUsersPersonalShelves[idx].shelfBooks[i].id }
                                                     ).then(() => window.location.reload())
                                                 }
