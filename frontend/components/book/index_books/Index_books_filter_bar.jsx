@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link, Redirect, withRouter } from 'react-router-dom'
-import { IndivRating } from '../../stars/star';
 import IndexBooks from './index_books';
 import MinMaxBookRatings from '../min_max_book_rating';
 import LoadingScreen from '../../misc/loading_screen';
