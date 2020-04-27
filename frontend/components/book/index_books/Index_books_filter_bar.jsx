@@ -123,9 +123,7 @@ class IndexBooksFilterBar extends React.Component {
     render() {
         if (!this.props.books) return null;
         let allBooks 
-        // (this.state.books.length < 1) ? allBooks = this.props.books : allBooks = this.state.books
         (this.state.books.length < 1) ? allBooks = this.props.books : allBooks = this.state.books
-        // debugger
         if (this.state.loaded) {
             return (
                 <div className='background-color'>

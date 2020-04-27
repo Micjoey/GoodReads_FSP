@@ -47,14 +47,12 @@ class AddShelf extends React.Component {
                 )// removes the book from the shelf
                 .then(() => ToggleColoring(shelf)) //switches the shelf from checked to uncheck
                 .then(() => this.props.retrieveBook(this.props.match.params.bookId))
-                //.then(() => this.addToShelf())
             }
     }
 
     handleShelf(shelf, shelfName, i, book) {
         const shelfId = shelf.id
         const onShelfId = shelf.shelfBooks.filter(shelf => shelf.shelf_id === shelfId && shelf.book_id === book.id)[0]
-        const bookId = book.id
         onShelfId ? this.removeShelf(shelf, shelfName) : this.addToShelf(shelf)
     }
 
