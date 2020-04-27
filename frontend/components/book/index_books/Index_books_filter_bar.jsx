@@ -2,10 +2,6 @@ import React from 'react';
 import IndexBooks from './index_books';
 import MinMaxBookRatings from '../min_max_book_rating';
 import LoadingScreen from '../../misc/loading_screen';
-import ToggleColoring from '../../misc/toggle_coloring';
-
-
-
 
 
 class IndexBooksFilterBar extends React.Component {
@@ -17,8 +13,8 @@ class IndexBooksFilterBar extends React.Component {
             loaded: false,
         }
 
-        this.filterBooks = this.filterBooks.bind(this)
         this.updateState = this.updateState.bind(this)
+        this.filterBooks = this.filterBooks.bind(this)
         this.filterBooksByRating = this.filterBooksByRating.bind(this)
         this.allGenres = this.allGenres.bind(this)
         this.dropDown = this.dropDown.bind(this)
@@ -31,12 +27,9 @@ class IndexBooksFilterBar extends React.Component {
         Promise.all([books]).then(() => this.setState({ loaded: true }))
     }
 
-
-
     dynamicGridStyling(booksArray) {
         const indexBooksHTML = document.getElementsByClassName("index-books")[0]
         const indexBookInfo = document.getElementsByClassName("index-book-information")[0]
-        // const indexBookCover = document.getElementsByClassName("index-book-covers")[0]
         if (booksArray.length === 2) {
             indexBooksHTML.style.display = "grid";
             indexBooksHTML.style.gridTemplateColumns = "auto auto";
@@ -56,12 +49,12 @@ class IndexBooksFilterBar extends React.Component {
         }
     }
 
-    filterBooks(text, idx) {
-        this.setState({ bookSearch: text }, () => this.updateState())
+    updateState(text) {
+        this.setState({ bookSearch: text }, () => this.filterBooks())
         // ToggleColoring(text)
     }
 
-    updateState() {
+    filterBooks() {
         const searchElement = this.state.bookSearch
         const filteredBooks = this.props.books.filter(indivBook =>
             indivBook.title.toLowerCase().includes(searchElement.toLowerCase()) ||
@@ -81,8 +74,6 @@ class IndexBooksFilterBar extends React.Component {
         this.dynamicGridStyling(filteredBooks)
     }
 
-    
-
     allGenres() {
         const indivGenres = {}
         this.props.books.map(indivBook => {
@@ -90,8 +81,6 @@ class IndexBooksFilterBar extends React.Component {
         return Object.keys(indivGenres)
     }
     
-
-
     filterBooksByRating(rating) {
         const leveledRating = Math.floor(parseInt(rating))
         let filteredBooks = this.props.books
@@ -134,13 +123,13 @@ class IndexBooksFilterBar extends React.Component {
                                     onClick={() => this.dropDown("genre")}>Genre</h3>
                                 <div className='nav-bar-search-by-genre' id="genre-dropdown">
                                     <button className="index-book-filter-bar-buttons"
-                                        onClick={() => this.filterBooks(``)}>
+                                        onClick={() => this.updateState(``)}>
                                         All Books
                                     </button>
                                     {this.allGenres().map((genre, idx) => (
                                         <div key={`${genre}`} className="add-shelves-sidebar-shelf">
                                             <button className="index-book-filter-bar-buttons"
-                                                onClick={() => this.filterBooks(`${genre}`, `${idx}`)}
+                                                onClick={() => this.updateState(`${genre}`, `${idx}`)}
                                             >
                                                 <ul className={`index-book-filter-bar-buttons`} id={`genre-${idx}`}>
                                                     {genre}
@@ -172,11 +161,11 @@ class IndexBooksFilterBar extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <form className="index-book-search-bar" onSubmit={this.filterBooks}>
+                        <form className="index-book-search-bar" onSubmit={this.updateState}>
                             <input type="text"
                                 className="index-book-filter-bar-text"
                                 placeholder="Filter Books"
-                                onChange={text => this.filterBooks(
+                                onChange={text => this.updateState(
                                     text.target.value
                                 )}
                             />
