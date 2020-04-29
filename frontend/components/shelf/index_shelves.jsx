@@ -51,7 +51,7 @@ class IndexShelves extends React.Component {
     render(){
         if(!this.props.shelves) return null;
         const currentUsersPersonalShelves = (this.state.shelf.length > 0) ? this.state.shelf : this.props.shelves
-        
+        const allShelves = this.props.shelves
         return (
             <div className="index-shelves-main">
                 <div className="index-shelves-main-navbar">
@@ -65,7 +65,7 @@ class IndexShelves extends React.Component {
                                 <button className="index-shelves-sidebar-shelf-buttons" id={`'All Books'`} onClick={() => this.filterShelf('All Books')}>
                                     All Books
                                 </button>
-                                {currentUsersPersonalShelves.map((shelf, i) => (
+                                {allShelves.map((shelf, i) => (
                                     <div key={`shelf-${i}`} className="index-shelves-sidebar-shelf">
                                         <button className="index-shelves-sidebar-shelf-buttons" id={`${shelf.bookshelf_title}`} onClick={()=>this.filterShelf(shelf.bookshelf_title)}>
                                             <ul className={`index-shelves-sidebar-shelf-button-${shelf.bookshelf_title}`} >
