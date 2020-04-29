@@ -11,7 +11,7 @@ class AddShelf extends React.Component {
         super(props)
         this.state = {
             loaded: false,
-            switch: '',
+            onShelves: {},
             book: [],
             bookInfo: this.props.book,
         }
@@ -33,7 +33,6 @@ class AddShelf extends React.Component {
         this.props.addToShelf(
             { shelf_id: shelf.id, book_id: book.id }
         )
-        
     }
 
     removeShelf(shelf, shelfName) {
@@ -50,9 +49,20 @@ class AddShelf extends React.Component {
             }
     }
 
+
+
     handleShelf(shelf, shelfName, i, book) {
         const shelfId = shelf.id
         const onShelfId = shelf.shelfBooks.filter(shelf => shelf.shelf_id === shelfId && shelf.book_id === book.id)[0]
+        const onShelf = !!this.props.onShelves[shelfName]
+        debugger
+        // if (onShelf) {
+        //     this.removeShelf(shelf, shelfName)
+        // } else {
+        //     this.addToShelf(shelf)
+        //     this.setState({onShelves: {shelf: true}})
+        // }
+         
         onShelfId ? this.removeShelf(shelf, shelfName) : this.addToShelf(shelf)
     }
 
@@ -75,6 +85,7 @@ class AddShelf extends React.Component {
     render() {
         const book = this.props.book
         if (this.state.loaded) {
+
             this.firstColorOnShelfBooks()
             return (
             <div className="add-shelf">
