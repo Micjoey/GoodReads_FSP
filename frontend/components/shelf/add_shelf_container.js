@@ -10,10 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     const book = state.entities.books[ownProps.match.params.bookId];
     const user = state.entities.users[state.session.id];
     const onShelves = {}
-    // onShelves = book.unique_shelves.forEach(indivShelf => {
-    //     onShelves[indivShelf.bookshelf_title] = true
-    // })
-
+    book.unique_shelves.forEach(indivShelf => { onShelves[indivShelf.bookshelf_title] = true })
     return ({
         book: book,
         shelves: Object.values(state.entities.shelf),

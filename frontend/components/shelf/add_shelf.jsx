@@ -11,7 +11,7 @@ class AddShelf extends React.Component {
         super(props)
         this.state = {
             loaded: false,
-            onShelves: {},
+            // onShelves: {},
             book: [],
             bookInfo: this.props.book,
         }
@@ -28,42 +28,48 @@ class AddShelf extends React.Component {
     }
 
 
-    addToShelf(shelf) {
-        const book = this.props.book
+    addToShelf(shelf, shelfName) {
+        const book = this.props.book;
+        let newOnShelves = this.props.onShelves;
+        console.log(newOnShelves, "addshelf")
         this.props.addToShelf(
             { shelf_id: shelf.id, book_id: book.id }
         )
+        .then(newOnShelves[shelfName] = true, this.setState({ onShelves: newOnShelves }))
+        console.log(newOnShelves)
     }
 
     removeShelf(shelf, shelfName) {
-        const shelfId = shelf.id
+        let newOnShelves = this.props.onShelves;
+        let shelfId = shelf.id
         const book = this.props.book
-        const onshelfId = shelf.shelfBooks.filter(shelf => shelf.shelf_id === shelfId && shelf.book_id === book.id)[0]
+        let onshelfId = shelf.shelfBooks.filter(shelf => shelf.shelf_id === shelfId && shelf.book_id === book.id)[0]
         let styling = document.getElementById(`${shelf.bookshelf_title}`)
+        console.log(newOnShelves, "removeshelf")
         if (onshelfId && styling.name) {
             this.props.removeBook(
                 { shelf_id: shelf.id, book_id: book.id, id: onshelfId.id }
                 )// removes the book from the shelf
                 .then(() => ToggleColoring(shelf)) //switches the shelf from checked to uncheck
                 .then(() => this.props.retrieveBook(this.props.match.params.bookId))
+                .then(newOnShelves[shelfName] = false, this.setState({ onShelves: newOnShelves }) )
             }
+
+        console.log(newOnShelves)
     }
 
 
 
     handleShelf(shelf, shelfName, i, book) {
-        const shelfId = shelf.id
-        const onShelfId = shelf.shelfBooks.filter(shelf => shelf.shelf_id === shelfId && shelf.book_id === book.id)[0]
         const onShelf = !!this.props.onShelves[shelfName]
-        debugger
-        // if (onShelf) {
-        //     this.removeShelf(shelf, shelfName)
-        // } else {
-        //     this.addToShelf(shelf)
-        //     this.setState({onShelves: {shelf: true}})
-        // }
+        console.log(onShelf)
+        // debugger
+        if (onShelf) {
+            this.removeShelf(shelf, shelfName)
+        } else {  
+            this.addToShelf(shelf, shelfName)
+        }
          
-        onShelfId ? this.removeShelf(shelf, shelfName) : this.addToShelf(shelf)
     }
 
     firstColorOnShelfBooks() {
@@ -85,7 +91,6 @@ class AddShelf extends React.Component {
     render() {
         const book = this.props.book
         if (this.state.loaded) {
-
             this.firstColorOnShelfBooks()
             return (
             <div className="add-shelf">
