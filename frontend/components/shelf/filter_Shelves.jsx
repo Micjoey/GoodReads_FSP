@@ -60,7 +60,7 @@ function FilterShelves(currentUsersPersonalShelves, handleDeleteShelf, removeBoo
                                                 onClick={() => {
                                                     removeBook(
                                                         { shelf_id: shelf.id, book_id: book.id, id: currentUsersPersonalShelves[idx].shelfBooks[i].id }
-                                                    ).then(() => window.location.reload())
+                                                    )
                                                 }
                                                 }
                                             >Remove Book</button>

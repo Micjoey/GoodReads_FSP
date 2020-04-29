@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
     validates :title, :genre,:description, :author, presence: true
-    # validate :
+
 
     has_many :onshelfbooks,
     foreign_key: :book_id,
