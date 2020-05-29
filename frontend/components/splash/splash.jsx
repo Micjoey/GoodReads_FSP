@@ -20,7 +20,10 @@ class Splash extends React.Component {
                 </div>
                 <div className="flavor-text-box">
                     <div className="flavor-text">
-                            Find your future reads here! Live the future, past and present through the words on the page. 
+                        Find your future reads here! Live the future, past and present through the words on the page. 
+                            <div id="carousel-container">
+                                 
+                            </div>
                     </div>
                 </div>
             </div>
