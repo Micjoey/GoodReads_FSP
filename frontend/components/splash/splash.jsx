@@ -9,6 +9,7 @@ class Splash extends React.Component {
     }
 
     render() {
+       
         return (
             <div className="background-and-signup-box">
                 <div className="sign-up-form-box">
@@ -21,10 +22,9 @@ class Splash extends React.Component {
                 <div className="flavor-text-box">
                     <div className="flavor-text">
                         Find your future reads here! Live the future, past and present through the words on the page. 
-                            <div id="carousel-container">
-                                 
-                            </div>
                     </div>
+                </div>
+                <div className="carousel" id="carousel-container">
                 </div>
             </div>
         )

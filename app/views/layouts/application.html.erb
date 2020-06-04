@@ -12,7 +12,9 @@
       gtag('config', 'UA-157870805-1');
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Favicon -->
     <%=favicon_link_tag asset_url('transparent-favicons-books-5-transparent.png')%>
+     <!-- Favicon -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -22,11 +24,12 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3bd411c4d4.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+     <!-- Built in images -->
     <script type="text/javascript">
       window.images = {
         bookshelf: "<%= image_url('bookshelf.png')%>",
         notFound: "<%= image_url('notFound.png')%>",
-        github: "<%= image_url('github-512.png')%>",
+        a: "<%= image_url('github-512.png')%>",
         checkBook: "<%= image_url('checkmark-book.png')%>",
         linkedin: "<%= image_url('LinkedIn (1).png')%>",
         fireworks1: "<%= image_url('fireworks.jpeg')%>",
@@ -47,10 +50,12 @@
         they_called_us_enemy: "<%= image_url('They_Called_us_enemy_by_Georege_takei.png')%>",
         upright_woman_wanted: "<%= image_url('upright_woman_wanted.jpeg')%>",
         wild_game: "<%= image_url('Wild_Game_by_Adrienne_Brodeur.png')%>",
+        arrow: "<%= image_url('left_arrow.png')%>",
       }
     </script>
-      
-
+    <!-- Built in images -->
+    <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
     <% if logged_in?%>
       <script type="text/javascript">
           window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>

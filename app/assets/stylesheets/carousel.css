@@ -1,0 +1,64 @@
+.image-slide {
+    height: 100%;
+    width: 100%;
+    transition: background-image .3s ease-in-out;
+}
+
+.slide-arrow {
+    color: #14B6D4;
+    cursor: pointer;
+    font-size: 2rem;
+    position: fixed;
+    top: 50%; 
+}
+
+.slide-arrow.left {
+    left: 1rem;
+}
+
+#carousel-container {
+    /* background-color: rgba(255, 0, 0, 0.242); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    z-index: 2;
+    font-size: 40px;
+    position: absolute;
+    top: 330px;
+    left: 8%;
+    height: 350px;
+    width: 700px;
+    color: black;
+    font-size: larger;
+}
+
+
+.carousel {
+  /* background: #EEE; */
+  z-index: 3;
+}
+.carousel-cell {
+  width: 100%; /* full width */
+  height: 160px; /* height of carousel */
+  margin-right: 10px;
+}
+
+.carousel-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
