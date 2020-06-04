@@ -7,6 +7,11 @@ import Carousel from '../carousel/carousel';
 class Splash extends React.Component {
     constructor(props) {
         super(props)
+        this.carouselImages = this.carouselImages.bind(this)
+    }
+
+    carouselImages() {
+        return [images.books, images.github]
     }
 
     render() {
@@ -25,9 +30,8 @@ class Splash extends React.Component {
                         Find your future reads here! Live the future, past and present through the words on the page. 
                     </div>
                 </div>
-                <div className="carousel" id="carousel-container">
-                    <Carousel />
-                </div>
+                <Carousel carouselImages={this.carouselImages()}/>
+              
             </div>
         )
     }

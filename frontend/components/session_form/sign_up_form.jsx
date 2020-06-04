@@ -102,6 +102,7 @@ class SessionFormSignUp extends React.Component {
             <label className="email-field">
                 <input type="email"
                   placeholder="Email"
+                  autoComplete="username"
                   value={this.state.email}
                   onChange={this.update('email')}
                 />
