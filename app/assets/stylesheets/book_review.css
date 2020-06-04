@@ -25,12 +25,16 @@
     height: 105px;
     min-width: 260px;
     min-height: 100px;
+    max-width: inherit;
+    max-height: inherit;
 }
 
 .body-field textarea {
     min-width: 340px;
     min-height: 100px;
     margin: 4px;
+    resize: none;
+    overflow-y: scroll;
 }
 
 .date-reviewed-field {
