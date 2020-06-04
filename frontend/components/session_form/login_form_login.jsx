@@ -56,6 +56,7 @@ class SessionFormLogin extends React.Component {
                 {/* Username: */}
                 <input type="text"
                   placeholder="Username"
+                  autoComplete="username"
                   value={this.state.username}
                   onChange={this.update('username')}
                   className="username-field"
@@ -65,6 +66,7 @@ class SessionFormLogin extends React.Component {
                 {/* Password: */}
                 <input type="password"
                   placeholder="Password"
+                  autoComplete="current-password"
                   value={this.state.password}
                   onChange={this.update('password')}
                   className="password-field"

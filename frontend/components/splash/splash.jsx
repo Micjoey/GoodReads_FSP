@@ -1,5 +1,6 @@
 import React from 'react';
 import SignUpFormContainer from '../session_form/signup_form_container'
+import Carousel from '../carousel/carousel';
 
 
 
@@ -25,6 +26,7 @@ class Splash extends React.Component {
                     </div>
                 </div>
                 <div className="carousel" id="carousel-container">
+                    <Carousel />
                 </div>
             </div>
         )
