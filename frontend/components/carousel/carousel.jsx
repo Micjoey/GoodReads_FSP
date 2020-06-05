@@ -7,7 +7,7 @@ class Carousel extends React.Component {
         this.state = {
             loaded: false,
             index: 0,
-            carouselImages: [images.linkedin, images.github, images.wild_game],
+            carouselImages: this.props.images,
         }
         this.increaseSlide = this.increaseSlide.bind(this)
         this.decreaseSlide = this.decreaseSlide.bind(this)
@@ -58,7 +58,6 @@ class Carousel extends React.Component {
         let currentIndex = this.state.index
         let dots = document.getElementsByClassName("dot");
         let i; 
-        console.log(currentIndex)       
         for (i = 0; i < slides.length; i++) {
             if (i === currentIndex) {
                 slides[i].style.display = "block";
@@ -84,31 +83,18 @@ class Carousel extends React.Component {
     render () {
         return (
             <div className="slideshow-container" id="carousel-container">
-                <div className="carousel">
-                    {/* Full-width images with number and caption text */}
-                    {this.allImages().map((img, idx) => (
-                        <div className="mySlides fade" key={idx}>
-                            <div className="numbertext"> {idx + 1}</div>
-                            <img src={img} alt="" width="100%" />
-                            <div className="text">Caption Text</div>
-                        </div>
-                    ))}
-                {/* <div className="mySlides fade">
-                        <div className="numbertext"> 1 / 3</div>
-                        <img src={images.linkedin} alt="" width="100%" display="block"/>
-                        <div className="text">Caption Text</div>
-                    </div>
-                    <div className="mySlides fade">
-                        <div className="numbertext"> 2 / 3</div>
-                        <img src={images.github} alt="" width="100%"/>
-                        <div className="text">Caption Text</div>
-                    </div>
-                    <div className="mySlides fade">
-                        <div className="numbertext"> 3 / 3</div>
-                        <img src={images.wild_game} alt="" width="100%"/>
-                        <div className="text">Caption Text</div>
-                    </div> */}
+                <div className="carousel-container">
                     <a className="prev" onClick={() => this.direction(-1)}>&#10094;</a>
+                    <div className="carousel">
+                        {/* Full-width images with number and caption text */}
+                        {this.allImages().map((img, idx) => (
+                            <div className="mySlides fade" key={idx}>
+                                {/* <div className="numbertext"> {idx + 1}</div> */}
+                                <img src={img} alt="" width="100%" />
+                                <div className="text">Caption Text</div>
+                            </div>
+                        ))}
+                    </div>
                     <a className="next" onClick={() => this.direction(1)}>&#10095;</a>
                 </div>
                 {/* dot logic */}

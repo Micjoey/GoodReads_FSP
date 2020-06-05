@@ -13,6 +13,7 @@ class Splash extends React.Component {
     
 
     render() {
+        let img = [gifs.shelf_filter, gifs.show_shelf, gifs.sign_up]
         return (
             <div className="background-and-signup-box">
                 <div className="sign-up-form-box">
@@ -27,7 +28,7 @@ class Splash extends React.Component {
                         Find your future reads here! Live the future, past and present through the words on the page. 
                     </div>
                 </div>
-                <Carousel/>
+                <Carousel images={img}/>
               
             </div>
         )
