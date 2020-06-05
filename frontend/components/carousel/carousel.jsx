@@ -87,11 +87,11 @@ class Carousel extends React.Component {
                     <a className="prev" onClick={() => this.direction(-1)}>&#10094;</a>
                     <div className="carousel">
                         {/* Full-width images with number and caption text */}
-                        {this.allImages().map((img, idx) => (
+                        {this.allImages().map((info, idx) => (
                             <div className="mySlides fade" key={idx}>
                                 {/* <div className="numbertext"> {idx + 1}</div> */}
-                                <img src={img} alt="" width="100%" />
-                                <div className="text">Caption Text</div>
+                                <img src={info[0]} alt="" width="100%" />
+                                <div className="text">{info[1]}</div>
                             </div>
                         ))}
                     </div>

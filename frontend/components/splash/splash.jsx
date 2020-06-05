@@ -13,7 +13,7 @@ class Splash extends React.Component {
     
 
     render() {
-        let img = [gifs.shelf_filter, gifs.show_shelf, gifs.sign_up]
+        let img = [[gifs.shelf_filter, "Shelf Filter"], [gifs.show_shelf, "Show Shelf"], [gifs.sign_up, "Sign Up"]]
         return (
             <div className="background-and-signup-box">
                 <div className="sign-up-form-box">
