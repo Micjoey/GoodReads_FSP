@@ -1,7 +1,7 @@
 .image-slide {
     height: 100%;
     width: 100%;
-    transition: background-image .3s ease-in-out;
+    transition: background-image 2s ease-in-out;
 }
 
 .slide-arrow {
