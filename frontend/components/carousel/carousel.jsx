@@ -6,41 +6,68 @@ class Carousel extends React.Component {
         super(props)
         this.state = {
             loaded: false,
-            index: 0,
+            index: -1,
             carouselImages: this.props.carouselImages,
         }
-        this.plusSlides = this.plusSlides.bind(this)
+        this.increaseSlide = this.increaseSlide.bind(this)
+        this.decreaseSlide = this.decreaseSlide.bind(this)
+        this.direction = this.direction.bind(this)
         this.currentSlide = this.currentSlide.bind(this)
         this.showSlides = this.showSlides.bind(this)
         
     }
 
-    plusSlides(n) {
-        let currentIdx = this.state.index
-        currentIdx += n
-        this.setState({index: currentIdx})
+    direction(n) {
+        let slides = document.getElementsByClassName("mySlides");
+        if (n < 0) {
+            this.decreaseSlide(slides)
+        } else {
+            this.increaseSlide(slides)
+        }
+    }
+
+    increaseSlide(slides) {
+        if (this.state.index === slides.length - 1) {
+            this.state.index = 0
+        } else {
+            this.state.index += 1
+        }
+        this.showSlides(slides)
+    }
+
+    decreaseSlide(slides) {
+        
+        if (this.state.index === 0) {
+            this.state.index = slides.length - 1
+        } else {
+            this.state.index -= 1
+        }
+        this.showSlides(slides)
     }
 
     currentSlide(n) {
         this.setState({index: n})
     }
 
-    showSlides(n) {
-        let i;
-        let slideIndex = this.state.index;
-        let slides = document.getElementsByClassName("mySlides");
+    showSlides(slides) {
+        let currentIndex = this.state.index
         let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) this.setState({index: 0});
-        if (n < 1) this.setState({index: slides.length - 1})
-        for (i = o; i < slides.length; i++) {
-            slides[i].style.display = "none"
+        let i;        
+        for (i = 0; i < slides.length; i++) {
+            if (i === currentIndex) {
+                slides[i].style.display = "block";
+            } else {
+                slides[i].style.display = "none"
+            }
         }
         for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
+            if (i === currentIndex) {
+                dots[i].className += "active";
+            } else {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
         }
-
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += "active";
+        
     }
 
 
@@ -51,26 +78,26 @@ class Carousel extends React.Component {
                     {/* Full-width images with number and caption text */}
                     <div className="mySlides fade">
                         <div className="numbertext"> 1 / 3</div>
-                        <img src="" alt="" width="100%"/>
+                        <img src={images.linkedin} alt="" width="100%" display="block"/>
                         <div className="text">Caption Text</div>
                     </div>
                     <div className="mySlides fade">
                         <div className="numbertext"> 2 / 3</div>
-                        <img src="" alt="" width="100%"/>
+                        <img src={images.github} alt="" width="100%"/>
                         <div className="text">Caption Text</div>
                     </div>
                     <div className="mySlides fade">
                         <div className="numbertext"> 3 / 3</div>
-                        <img src="" alt="" width="100%"/>
+                        <img src={images.wild_game} alt="" width="100%"/>
                         <div className="text">Caption Text</div>
                     </div>
-                    <a className="prev" onClick={() => this.plusSlides(-1)}>&#10094;</a>
-                    <a className="next" onClick={() => this.plusSlides(-1)}>&#10095;</a>
+                    <a className="prev" onClick={() => this.direction(-1)}>&#10094;</a>
+                    <a className="next" onClick={() => this.direction(1)}>&#10095;</a>
                 </div>
                 <div>
-                    <span className="dot" onClick="currentSlide(1)"></span>
-                    <span className="dot" onClick="currentSlide(2)"></span>
-                    <span className="dot" onClick="currentSlide(3)"></span>
+                    <span className="dot" onClick={() => currentSlide(1)}></span>
+                    <span className="dot" onClick={() => currentSlide(2)}></span>
+                    <span className="dot" onClick={() => currentSlide(3)}></span>
                 </div>
             </div>
         )
