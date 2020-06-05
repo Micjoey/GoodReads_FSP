@@ -19,10 +19,10 @@ class Splash extends React.Component {
             [gifs.error_message, "Error Message"],
             [gifs.index_books, "Index Books"],
             [gifs.search_books, "Search Books"],
-            [gifs.shelf_filter, "Shelf Filter"],
-            [gifs.filter_books, "Filter Books"],
-            [gifs.delete_and_create, "Delete and Create Review"],
+            [gifs.filter_books, "Filter Books"], 
             [gifs.show_shelf, "Show Shelf"], 
+            [gifs.shelf_filter, "Shelf Filter"],
+            [gifs.delete_and_create, "Delete and Create Review"],
 
 
         ]

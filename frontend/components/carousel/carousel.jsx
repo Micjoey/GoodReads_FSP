@@ -71,11 +71,9 @@ class Carousel extends React.Component {
         for (let i = 0; i < dots.length; i++) {
             if (i === n) {
                 dots[i].className += " active";
-                console.log(i, n, dots[i], dots[i].className)
             } else {
                 dots[i].className = dots[i].className.replace(" active", "");
                 dots[i].className = dots[i].className.replace(" dot-first-child", "");
-                console.log(i, n, dots[i], dots[i].className)
             }
         }
         
@@ -105,10 +103,6 @@ class Carousel extends React.Component {
                     {this.allImages().map((info, idx) => (
                         <span className="dot dot-first-child" onClick={() => this.showSlides(idx)}></span>
                     ))}
-                    
-                    {/* <span className="dot" onClick={() => this.showSlides(1)}></span>
-                    <span className="dot" onClick={() => this.showSlides(2)}></span>
-                    <span className="dot" onClick={() => this.showSlides(3)}></span> */}
                 </div>
             </div>
         )
