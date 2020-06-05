@@ -41,7 +41,6 @@ class Splash extends React.Component {
                     </div>
                 </div>
                 <Carousel images={img}/>
-              
             </div>
         )
     }

@@ -12,7 +12,6 @@ class Carousel extends React.Component {
         this.increaseSlide = this.increaseSlide.bind(this)
         this.decreaseSlide = this.decreaseSlide.bind(this)
         this.direction = this.direction.bind(this)
-        this.currentSlide = this.currentSlide.bind(this)
         this.showSlides = this.showSlides.bind(this)
         this.allImages = this.allImages.bind(this)
     }
@@ -37,7 +36,7 @@ class Carousel extends React.Component {
         } else {
             this.state.index += 1
         }
-        this.showSlides(slides)
+        this.showSlides()
     }
 
     decreaseSlide(slides) {
@@ -47,16 +46,15 @@ class Carousel extends React.Component {
         } else {
             this.state.index -= 1
         }
-        this.showSlides(slides)
+        this.showSlides()
     }
 
-    currentSlide(n) {
-        this.setState({index: n})
-    }
 
-    showSlides(slides) {
-        let currentIndex = this.state.index
+
+    showSlides(n) {
+        let slides = document.getElementsByClassName("mySlides");
         let dots = document.getElementsByClassName("dot");
+        let currentIndex = this.state.index
         let i; 
         for (i = 0; i < slides.length; i++) {
             if (i === currentIndex) {
@@ -65,16 +63,22 @@ class Carousel extends React.Component {
                 slides[i].style.display = "none"
             }
         }
-
-        // <------- dot logic --------->
-        // for (i = 0; i < dots.length; i++) {
-        //     if (i === currentIndex) {
-        //         dots[i].className += "active";
-        //     } else {
-        //         dots[i].className = dots[i].className.replace(" active", "");
-        //     }
-        // }
-        // <------- dot logic --------->
+        if (!!n) {
+            this.state.index = n;
+        } else {
+            n = this.state.index
+        }
+        for (let i = 0; i < dots.length; i++) {
+            if (i === n) {
+                dots[i].className += " active";
+                console.log(i, n, dots[i], dots[i].className)
+            } else {
+                dots[i].className = dots[i].className.replace(" active", "");
+                dots[i].className = dots[i].className.replace(" dot-first-child", "");
+                console.log(i, n, dots[i], dots[i].className)
+            }
+        }
+        
         
     }
 
@@ -90,20 +94,22 @@ class Carousel extends React.Component {
                         {this.allImages().map((info, idx) => (
                             <div className="mySlides fade" key={idx}>
                                 {/* <div className="numbertext"> {idx + 1}</div> */}
-                                <img src={info[0]} alt="" width="100%" />
                                 <div className="text">{info[1]}</div>
+                                <img src={info[0]} alt="" width="100%" />
                             </div>
                         ))}
                     </div>
                     <a className="next" onClick={() => this.direction(1)}>&#10095;</a>
                 </div>
-                {/* dot logic */}
-                {/* <div>
-                    <span className="dot" onClick={() => currentSlide(1)}></span>
-                    <span className="dot" onClick={() => currentSlide(2)}></span>
-                    <span className="dot" onClick={() => currentSlide(3)}></span>
-                </div> */}
-                {/* dot logic */}
+                <div className="dots-container">
+                    {this.allImages().map((info, idx) => (
+                        <span className="dot dot-first-child" onClick={() => this.showSlides(idx)}></span>
+                    ))}
+                    
+                    {/* <span className="dot" onClick={() => this.showSlides(1)}></span>
+                    <span className="dot" onClick={() => this.showSlides(2)}></span>
+                    <span className="dot" onClick={() => this.showSlides(3)}></span> */}
+                </div>
             </div>
         )
     }
