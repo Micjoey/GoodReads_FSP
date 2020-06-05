@@ -25,7 +25,7 @@
     /* z-index: 1; */
     font-size: 40px;
     position: absolute;
-    top: 330px;
+    top: 50%;
     left: 15%;
     height: 350px;
     width: 700px;
@@ -35,10 +35,7 @@
 }
 
 
-.carousel {
-  /* background: #EEE; */
-  /* z-index: 3; */
-}
+
 .carousel-cell {
   width: 100%; /* full width */
   height: 160px; /* height of carousel */
@@ -80,6 +77,10 @@
 /* Hide the images by default */
 .mySlides {
   display: none;
+}
+
+.mySlides:first-child {
+  display: block;
 }
 
 /* Next & previous buttons */
