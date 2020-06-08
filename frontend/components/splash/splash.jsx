@@ -23,8 +23,6 @@ class Splash extends React.Component {
             [gifs.show_shelf, "Show Shelf"], 
             [gifs.shelf_filter, "Shelf Filter"],
             [gifs.delete_and_create, "Delete and Create Review"],
-
-
         ]
         return (
             <div className="background-and-signup-box">
