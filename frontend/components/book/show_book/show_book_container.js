@@ -3,6 +3,7 @@ import { retrieveBook, updateBook } from '../../../actions/book_actions'
 import ShowBook from './show_book'
 import { withRouter } from 'react-router';
 import { retrieveAllUsers } from '../../../actions/users_actions';
+import { deleteReview } from '../../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const book = state.entities.books[ownProps.match.params.bookId];
@@ -20,7 +21,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
     retrieveBook: bookId => dispatch(retrieveBook(bookId)),
     retrieveAllUsers: () => dispatch(retrieveAllUsers()),
-    updateBook: book => dispatch(updateBook(book))
+    updateBook: book => dispatch(updateBook(book)),
+    deleteReview: reviewId => dispatch(deleteReview(reviewId)),
 })
 
 export default withRouter(connect(
