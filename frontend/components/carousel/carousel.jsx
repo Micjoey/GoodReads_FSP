@@ -101,7 +101,7 @@ class Carousel extends React.Component {
                 </div>
                 <div className="dots-container">
                     {this.allImages().map((info, idx) => (
-                        <span className="dot dot-first-child" onClick={() => this.showSlides(idx)}></span>
+                        <span key={idx+1} className="dot dot-first-child" onClick={() => this.showSlides(idx)}></span>
                     ))}
                 </div>
             </div>
