@@ -171,6 +171,9 @@
 
             .index-shelves-sidebar-shelf-buttons {
                 margin: 3px 0px;
+                min-width: 85px;
+                width: fit-content;
+                text-align: left;
             }
 
             .index-shelves-sidebar-shelf-buttons:hover {
@@ -200,6 +203,7 @@
             }
 
             .shelf-title-field {
+                width: 100px;
                 margin: 2px 0px;
             }
 

@@ -12,7 +12,9 @@
       gtag('config', 'UA-157870805-1');
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Favicon -->
     <%=favicon_link_tag asset_url('transparent-favicons-books-5-transparent.png')%>
+     <!-- Favicon -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -22,6 +24,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3bd411c4d4.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+     <!-- Built in images -->
     <script type="text/javascript">
       window.images = {
         bookshelf: "<%= image_url('bookshelf.png')%>",
@@ -47,10 +50,30 @@
         they_called_us_enemy: "<%= image_url('They_Called_us_enemy_by_Georege_takei.png')%>",
         upright_woman_wanted: "<%= image_url('upright_woman_wanted.jpeg')%>",
         wild_game: "<%= image_url('Wild_Game_by_Adrienne_Brodeur.png')%>",
+        arrow: "<%= image_url('left_arrow.png')%>",
+        shelf_filter: "<%= image_url('shelf filter.gif')%>",
+        show_shelf: "<%= image_url('left_arrow.png')%>",
+        sign_up: "<%= image_url('left_arrow.png')%>",
+
       }
     </script>
-      
+    <script type="text/javascript">
+      window.gifs = {
+        shelf_filter: "<%= video_url('shelf filter.gif')%>",
+        show_shelf: "<%= video_url('show shelf.gif')%>",
+        sign_up: "<%= video_url('sign up.gif')%>",
+        delete_and_create: "<%= video_url('delete and create review.gif')%>",
+        demo_login: "<%= video_url('demo login.gif')%>",
+        error_message: "<%= video_url('error-message.gif')%>",
+        filter_books: "<%= video_url('filter books.gif')%>",
+        index_books: "<%= video_url('index books.gif')%>",
+        search_books: "<%= video_url('search books.gif')%>",
 
+      }
+    </script>
+    <!-- Built in images -->
+    <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
     <% if logged_in?%>
       <script type="text/javascript">
           window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>

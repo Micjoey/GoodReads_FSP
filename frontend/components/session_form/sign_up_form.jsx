@@ -92,6 +92,7 @@ class SessionFormSignUp extends React.Component {
               <label className="username-field">
                 <input type="text"
                   placeholder="Username"
+                  autoComplete="new-password"
                   // placeholder={this.props.errors.length > 0 ? "Username can't be blank" : 'Username'}
                   value={this.state.username}
                   onChange={this.update('username')}
@@ -101,6 +102,7 @@ class SessionFormSignUp extends React.Component {
             <label className="email-field">
                 <input type="email"
                   placeholder="Email"
+                  autoComplete="username"
                   value={this.state.email}
                   onChange={this.update('email')}
                 />
@@ -109,6 +111,7 @@ class SessionFormSignUp extends React.Component {
             <label className="password-field">
                 <input type="password"
                   placeholder="Password"
+                  autoComplete="new-password"
                   value={this.state.password}
                   onChange={this.update('password')}
                 />

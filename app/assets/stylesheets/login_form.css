@@ -82,6 +82,7 @@
     width: 85px;
     font-weight: bolder;
     text-align: center;
+    background-color: #eebe44;
 }
 
 .demo-login:hover {

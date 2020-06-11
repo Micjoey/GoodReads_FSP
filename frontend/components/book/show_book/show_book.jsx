@@ -2,7 +2,6 @@ import React from 'react';
 import { formatDateWithDay } from '../../../util/date_util';
 import AddShelfContainer from '../../shelf/add_shelf_container';
 import CreateReviewContainer from '../../reviews/create_review_form_container';
-import { deleteReview } from '../../../actions/review_actions';
 import { IndivRating } from '../../stars/star';
 import LoadingScreen from '../../misc/loading_screen';
 
@@ -25,7 +24,7 @@ class showBook extends React.Component {
 
 
     handleDelete(reviewID) {
-        deleteReview(reviewID)
+        this.props.deleteReview(reviewID)
         this.props.retrieveBook(this.props.book.id)
     }
 
