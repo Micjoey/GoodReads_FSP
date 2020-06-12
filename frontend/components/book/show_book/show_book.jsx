@@ -34,13 +34,13 @@ class showBook extends React.Component {
         this.props.updateBook(book)
             .then(() => this.setState({hasRead: book.date_read}))
             // .then(() => this.props.retrieveBook(this.props.match.params.bookId))
-        
     }
 
     
     
     render() {
         if (this.state.loaded) {
+            debugger
             const book = this.props.book
             const cover = (
                 <img className="show-book-cover" src={book.photo} />
