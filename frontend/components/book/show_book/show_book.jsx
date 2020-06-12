@@ -40,7 +40,6 @@ class showBook extends React.Component {
     
     render() {
         if (this.state.loaded) {
-            debugger
             const book = this.props.book
             const cover = (
                 <img className="show-book-cover" src={book.photo} />
