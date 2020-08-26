@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { IndivRating } from '../../stars/star';
 
 
-function IndexBooks(allBooks) {
+function IndexBooks(allBooks) { 
     return (
         <div className="index-books">
             {allBooks.map((book, i) => (

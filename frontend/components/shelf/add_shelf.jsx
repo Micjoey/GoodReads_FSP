@@ -43,7 +43,7 @@ class AddShelf extends React.Component {
         const book = this.props.book
         let onshelfId = shelf.shelfBooks.filter(shelf => shelf.shelf_id === shelfId && shelf.book_id === book.id)[0]
         let styling = document.getElementById(`${shelf.bookshelf_title}`)
-        // console.log(newOnShelves, "removeshelf")
+
         if (onshelfId && styling.name) {
             this.props.removeBook(
                 { shelf_id: shelf.id, book_id: book.id, id: onshelfId.id }
@@ -53,7 +53,6 @@ class AddShelf extends React.Component {
                 .then(newOnShelves[shelfName] = false, this.setState({ onShelves: newOnShelves }) )
             }
 
-        // console.log(newOnShelves)
     }
 
 
