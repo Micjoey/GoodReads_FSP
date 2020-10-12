@@ -54,10 +54,11 @@
 }
 
 .footer-logo {
-    height: 3em;
+    height: 2.5em;
 }
 
 .logo-caption {
     color: rgb(4, 156, 146);
-    font-size: small;
+    font-size: x-small;
+    margin-bottom: 2px;
 }
