@@ -11,7 +11,12 @@ class Footer extends React.Component {
                 <a href="https://github.com/Micjoey/FunReads_FSP" rel="noopener noreferrer" target="_blank" >
                     <img src={images.github} className="footer-github" />
                 </a>
-                <a href="https://macallan.space" id="footerLink" rel="noopener noreferrer" target='_blank'>Macallan Savett</a>
+                <a href="https://bit.ly/2F0FCgR" rel="noopener noreferrer" target='_blank'>
+                    <figure>
+                        <img src={images.personal_logo} className="footer-logo" alt="personal-logo" />
+                        <figcaption className="logo-caption">Personal Portfolio</figcaption>
+                    </figure>
+                </a>
             </div>
         );
     }
