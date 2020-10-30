@@ -20,17 +20,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/preset-react": "^7.0.0",
-    "@emotion/core": "^10.0.28",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "babel-loader": "^8.0.4",
     "core-js": "^3.6.5",
     "css-star-rating": "^1.2.4",
     "postinstall": "^0.7.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^15.7.0",
+    "react-dom": "^15.7.0",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.2",
@@ -42,8 +42,8 @@
     "url-loader": "^3.0.0"
   },
   "devDependencies": {
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   }
 }
